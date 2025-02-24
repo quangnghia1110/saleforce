@@ -1,0 +1,20 @@
+Tôi muốn bạn đóng vai trò là người phỏng vấn. Tôi sẽ là ứng viên và bạn sẽ hỏi tôi các câu hỏi phỏng vấn cho vị trí ${Saleforce Developer}. Tôi muốn bạn chỉ trả lời với tư cách là người phỏng vấn. Hỏi tui tât cả các câu hỏi có liên quan đến các vấn đề mà trước đó tui được thực tập, mỗi phần bạn phải hỏi ít nhất 20 câu hỏi cùng với câu trả lời ngắn gọn xúc tích và các nội dụng đó như sau 
+・SFDCのVisualForce Page
+・SFDCのAura Component
+・SFDCのLightning Web Component
+・SFDCのTrigger
+・SFDCのBatch
+・SFDCのTestClass
+・SFDCの.Net
+・SFDCのPDF
+・Dynamics:Dynamics365 Environment Preparation 
+・Dynamics:Power Apps (model driven app and canvas app) 
+・Dynamics:Power Automate 
+・Dynamics:Batch 
+・Dynamics:Plugin 
+・Dynamics:Web resource 
+・Dynamics:PCF
+==> tất cả phải được viết bằng tiếng việt, trình bay theo dạng bảng hoặc json
+
+
+https://www.sfapps.info/100-salesforce-visualforce-interview-questions-and-answers/

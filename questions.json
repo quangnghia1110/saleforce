@@ -1,0 +1,2428 @@
+{
+    "SFDC’s VisualForce Page": [
+        {
+            "question": "VisualForce Page là gì?",
+            "answer": "Trang VisualForce là trang web tùy chỉnh trong SalesForce, dùng markup tương tự HTML và controller Apex để tạo giao diện và xử lý dữ liệu."
+        },
+        {
+            "question": "Làm cách nào để tạo một VisualForce Page?",
+            "answer": "Mở Developer Console, chọn 'File' > 'New' > 'Visualforce Page', nhập tên, viết mã markup giữa thẻ <apex:page>."
+        },
+        {
+            "question": "Những phần chính của một VisualForce Page là gì?",
+            "answer": "Markup (thẻ VisualForce), controller (standard hoặc custom Apex), và extension/helper tùy chọn."
+        },
+        {
+            "question": "Trang VisualForce tương tác với dữ liệu SalesForce như thế nào?",
+            "answer": "Dùng controller Apex để truy cập, thao tác dữ liệu qua các hoạt động như truy vấn, chèn, cập nhật, xóa."
+        },
+        {
+            "question": "Sự khác biệt giữa standard controller và custom controller trong VisualForce là gì?",
+            "answer": "Standard controller xử lý hoạt động cơ bản cho đối tượng tiêu chuẩn; custom controller là lớp Apex tùy chỉnh cho logic phức tạp."
+        },
+        {
+            "question": "Làm cách nào để xử lý đầu vào từ người dùng trong VisualForce Page?",
+            "answer": "Dùng thành phần như <apex:inputText> hoặc <apex:selectList>, truy cập giá trị qua thuộc tính trong controller."
+        },
+        {
+            "question": "Vai trò của thẻ <apex:page> là gì?",
+            "answer": "Là thẻ gốc, định nghĩa thuộc tính trang như controller, extensions, và các thuộc tính khác."
+        },
+        {
+            "question": "Làm cách nào để bao gồm CSS và JavaScript trong một trang VisualForce?",
+            "answer": "Dùng thẻ <apex:stylesheets> và <apex:scripts>, hoặc nhúng trực tiếp trong trang."
+        },
+        {
+            "question": "Vai trò của thẻ <apex:form> là gì?",
+            "answer": "Định nghĩa biểu mẫu gửi đến máy chủ, cần thiết cho thành phần như <apex:commandButton>."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi và ngoại lệ trong một trang VisualForce?",
+            "answer": "Dùng try-catch trong controller Apex, hiển thị lỗi qua <apex:messages>."
+        },
+        {
+            "question": "Sự khác biệt giữa <apex:outputText> và <apex:inputText> là gì?",
+            "answer": "<apex:outputText> hiển thị văn bản không chỉnh sửa; <apex:inputText> cho phép nhập văn bản."
+        },
+        {
+            "question": "Làm cách nào để xử lý phân trang trong một trang VisualForce?",
+            "answer": "Dùng <apex:pageBlockTable> với fetchSize, hoặc triển khai logic phân trang bằng Apex."
+        },
+        {
+            "question": "Vai trò của thẻ <apex:include> là gì?",
+            "answer": "Bao gồm trang VisualForce khác, hỗ trợ sử dụng lại mã."
+        },
+        {
+            "question": "Làm cách nào để xử lý tải lên tệp tin trong VisualForce?",
+            "answer": "Dùng <apex:inputFile>, xử lý trong controller qua lớp Attachment của Apex."
+        },
+        {
+            "question": "Mục đích của thẻ <apex:actionFunction> là gì?",
+            "answer": "Gọi phương thức Apex từ JavaScript, hỗ trợ tương tác client kích hoạt server."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của một trang VisualForce?",
+            "answer": "Giảm truy vấn cơ sở dữ liệu, dùng SOQL hiệu quả, tránh tính toán không cần thiết, dùng caching."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong một trang VisualForce?",
+            "answer": "Dùng try-catch trong controller, hiển thị lỗi qua <apex:messages> hoặc thành phần tùy chỉnh."
+        },
+        {
+            "question": "Vai trò của thẻ <apex:sectionHeader> là gì?",
+            "answer": "Tạo tiêu đề phần trong trang, tổ chức nội dung thành các phần."
+        },
+        {
+            "question": "Làm cách nào để tạo một nút tùy chỉnh trong một trang VisualForce?",
+            "answer": "Dùng thẻ <apex:commandButton>, liên kết với phương thức Apex để thực hiện hành động."
+        },
+        {
+            "question": "Làm cách nào để triển khai một trang VisualForce?",
+            "answer": "Triển khai qua Developer Console hoặc gói SalesForce, đảm bảo kiểm tra trước khi phát hành."
+        },
+        {
+            "question": "Làm thế nào để ngừa các cuộc tấn công XSS trên trang VisualForce?",
+            "answer": "Encode đầu vào người dùng bằng các hàm như `JSENCODE`, `HTMLENCODE`, `URLENCODE`, và thiết lập `escape=\"true\"` trên các thẻ hiển thị dữ liệu người dùng."
+        },
+        {
+            "question": "CSRF protection là gì, và làm thế nào để triển khai nó trong VisualForce?",
+            "answer": "CSRF protection ngừa yêu cầu không được ủy quyền. Trong VisualForce, nó được kích hoạt mặc định cho biểu mẫu, đảm bảo dùng thẻ `apex:form` để bao gồm mã thông báo CSRF."
+        },
+        {
+            "question": "Làm thế nào để xử lý quyền hạn và kiểm soát truy cập trên trang VisualForce?",
+            "answer": "Sử dụng Apex để kiểm soát dựa trên hồ sơ người dùng hoặc quyền tùy chỉnh, kiểm tra quyền trước khi cho phép hành động hoặc xem dữ liệu nhạy cảm."
+        },
+        {
+            "question": "Những thực hành tốt nhất để bảo mật các custom controllers là gì?",
+            "answer": "Kiểm tra kỹ lường các lỗ hổng, tránh mã hóa cứng thông tin nhạy cảm, dùng phương pháp an toàn để truy xuất dữ liệu, và kiểm tra đầu vào người dùng."
+        },
+        {
+            "question": "Làm thế nào để quản lý bảo mật phiên trong VisualForce?",
+            "answer": "SalesForce xử lý bảo mật phiên bên trong, nhưng tránh lưu trữ thông tin nhạy cảm trong phiên và đảm bảo tương tác qua HTTPS."
+        },
+        {
+            "question": "Vai trò của Content Security Policy (CSP) trong bảo mật VisualForce là gì?",
+            "answer": "CSP giúp ngừa XSS và tấn công tiêm nhập bằng cách xác định nguồn nội dung đáng tin cậy, thiết lập qua thuộc tính `contentSecurityPolicy` của thẻ `apex:page`."
+        },
+        {
+            "question": "Làm thế nào để xử lý tải lên tệp tin một cách an toàn trong VisualForce?",
+            "answer": "Kiểm tra loại và kích thước tệp để ngừa tệp độc hại, dùng cơ chế xử lý tệp tin tích hợp của SalesForce và lưu trữ an toàn."
+        },
+        {
+            "question": "Những lỗ hổng phổ biến trong VisualForce là gì và làm thế nào để giảm thiểu chúng?",
+            "answer": "Lỗ hổng phổ biến bao gồm XSS, CSRF, và tấn công tiêm nhập, giảm thiểu bằng cách encode đầu vào, dùng bảo vệ CSRF, và kiểm tra dữ liệu."
+        },
+        {
+            "question": "Làm thế nào để đảm bảo rằng các trang VisualForce tuân thủ các quy định bảo vệ dữ liệu?",
+            "answer": "Đảm bảo xử lý dữ liệu tuân thủ GDPR hoặc HIPAA bằng kiểm soát truy cập, mã hóa dữ liệu, và ghi log kiểm toán."
+        },
+        {
+            "question": "Những bước nào nên được thực hiện nếu nghi ngờ có sự xâm phạm bảo mật trên một trang VisualForce?",
+            "answer": "Điều tra ngay, xác định lỗ hổng, vá lỗi, thông báo người dùng bị ảnh hưởng, và tuân theo thủ tục phản ứng sự cố bảo mật của SalesForce."
+        },
+        {
+            "question": "Làm thế nào để tối ưu hóa việc truy xuất dữ liệu trong VisualForce để cải thiện hiệu suất?",
+            "answer": "Dùng truy vấn SOQL hiệu quả, giảm số lượng cuộc gọi cơ sở dữ liệu, chỉ lấy dữ liệu cần thiết, và dùng caching cho dữ liệu truy cập thường xuyên."
+        },
+        {
+            "question": "Những thực hành tốt nhất để giảm thiểu các truy vấn cơ sở dữ liệu trên trang VisualForce là gì?",
+            "answer": "Truy xuất dữ liệu theo lô, dùng mối quan hệ để lấy dữ liệu liên quan trong một truy vấn, và tránh vòng lặp lồng nhau gây nhiều truy vấn."
+        },
+        {
+            "question": "Làm thế nào để sử dụng caching trong VisualForce để tăng cường hiệu suất?",
+            "answer": "Triển khai caching cho dữ liệu không thay đổi thường xuyên, dùng cơ chế caching của SalesForce hoặc giải pháp tùy chỉnh để lưu trữ và truy xuất nhanh."
+        },
+        {
+            "question": "SalesForce cung cấp những công cụ nào để giám sát và kiểm tra hiệu suất của trang VisualForce?",
+            "answer": "Dùng Developer Console để xem chỉ số hiệu suất, Lightning Usage App để giám sát thời gian thực, và Browser Developer Tools để phân tích phía client."
+        },
+        {
+            "question": "Làm thế nào để tối ưu hóa markup và giảm bớt các thành phần không cần thiết trên trang VisualForce?",
+            "answer": "Giảm dùng thành phần nặng, tránh cấu trúc lồng nhau không cần thiết, dùng kỹ thuật render hiệu quả, và loại bỏ mã hoặc thành phần không dùng."
+        },
+        {
+            "question": "Vai trò của phân trang trong việc cải thiện hiệu suất là gì?",
+            "answer": "Phân trang giới hạn dữ liệu hiển thị trên mỗi trang, giảm tải cho máy chủ và cải thiện thời gian tải cho người dùng."
+        },
+        {
+            "question": "Làm thế nào để xử lý các tập dữ liệu lớn trong VisualForce một cách hiệu quả?",
+            "answer": "Triển khai phân trang, dùng phương pháp truy xuất dữ liệu hiệu quả, và tối ưu hóa hiển thị để xử lý tập dữ liệu lớn mà không làm quá tải hệ thống."
+        },
+        {
+            "question": "Những thực hành tốt nhất để tối ưu hóa JavaScript và CSS trong VisualForce là gì?",
+            "answer": "Giảm kích thước và nén tệp JavaScript và CSS, dùng kỹ thuật tải hiệu quả, và tránh mã thừa."
+        },
+        {
+            "question": "Làm thế nào để đo lường và cải thiện thời gian tải của trang VisualForce?",
+            "answer": "Dùng công cụ giám sát hiệu suất để đo thời gian tải, xác định điểm chai, tối ưu hóa, và kiểm tra dưới các điều kiện khác nhau để đảm bảo hiệu suất nhất quán."
+        },
+        {
+            "question": "Tác động của việc sử dụng các thành phần tiêu chuẩn so với các thành phần tùy chỉnh đối với hiệu suất là gì?",
+            "answer": "Thành phần tiêu chuẩn được tối ưu và có hiệu suất tốt; thành phần tùy chỉnh có thể gây tác động hiệu suất, cần thiết kế hiệu quả để giảm thiểu."
+        },
+        {
+            "question": "Làm thế nào để sử dụng Developer Console để debug trang VisualForce?",
+            "answer": "Developer Console cho phép xem debug logs, thực hiện mã Apex ẩn danh, và debug trang VisualForce, dùng tab Logs để xem chi tiết thực thi."
+        },
+        {
+            "question": "Những bước nào để kích hoạt và xem debug logs cho trang VisualForce?",
+            "answer": "Kích hoạt ghi log debug cho người dùng truy cập trang, sau đó xem logs trong Developer Console hoặc qua menu Setup."
+        },
+        {
+            "question": "Làm thế nào để sử dụng các công cụ phát triển trình duyệt để debug trang VisualForce?",
+            "answer": "Dùng Chrome DevTools để kiểm tra phần tử, xem yêu cầu mạng, và debug mã JavaScript phía client."
+        },
+        {
+            "question": "Những thực hành tốt nhất để kiểm tra trang VisualForce là gì?",
+            "answer": "Viết trường hợp kiểm tra toàn diện, kiểm tra dưới các hồ sơ người dùng khác nhau, phủ sóng trường hợp biên, và dùng Selenium cho kiểm tra hồi quy."
+        },
+        {
+            "question": "Làm thế nào để xử lý và debug các lỗi trên trang VisualForce?",
+            "answer": "Dùng try-catch trong Apex để xử lý ngoại lệ, hiển thị thông báo lỗi có ý nghĩa, và phân tích debug logs để chẩn đoán vấn đề."
+        },
+        {
+            "question": "Vai trò của kiểm tra đơn vị trong phát triển VisualForce là gì?",
+            "answer": "Kiểm tra đơn vị đảm bảo thành phần riêng lẻ hoạt động đúng, viết kiểm tra cho controller, helper, và logic để phát hiện lỗi sớm."
+        },
+        {
+            "question": "Làm thế nào để kiểm tra hiệu suất của trang VisualForce?",
+            "answer": "Dùng công cụ kiểm tra hiệu suất để đo thời gian tải, thời gian phản hồi, và các chỉ số khác, xác định và tối ưu hóa khu vực chậm."
+        },
+        {
+            "question": "Những kỹ thuật debug phổ biến cho trang VisualForce là gì?",
+            "answer": "In câu debug bằng `System.debug`, dùng Developer Console để bước qua mã, và dùng công cụ trình duyệt để debug vấn đề phía client."
+        },
+        {
+            "question": "Làm thế nào để debug các vấn đề liên quan đến quyền hạn của người dùng trong VisualForce?",
+            "answer": "Đảm bảo người dùng có quyền cần thiết để truy cập trang và dữ liệu, kiểm tra hồ sơ và vai trò của người dùng."
+        },
+        {
+            "question": "Quy trình để triển khai và kiểm tra trang VisualForce trong các môi trường khác nhau là gì?",
+            "answer": "Phát triển trong sandbox, kiểm tra kỹ lường, triển khai đến production, dùng kiểm soát phiên bản và công cụ triển khai để quản lý thay đổi."
+        },
+        {
+            "question": "Làm thế nào để tích hợp các API bên ngoài trong trang VisualForce?",
+            "answer": "Dùng Apex để thực hiện cuộc gọi HTTP đến API bên ngoài, lấy dữ liệu, và hiển thị trên trang VisualForce."
+        },
+        {
+            "question": "Những tính năng nâng cao của VisualForce cho việc thao tác và hiển thị dữ liệu là gì?",
+            "answer": "VisualForce cung cấp thẻ cho hiển thị phức tạp như biểu đồ, bản đồ, bố cục tùy chỉnh, dùng Apex để thao tác dữ liệu trước khi render."
+        },
+        {
+            "question": "Làm thế nào để tạo và sử dụng các thành phần tùy chỉnh trong VisualForce?",
+            "answer": "Định nghĩa thành phần tùy chỉnh bằng thẻ `apex:component`, tái sử dụng trên nhiều trang để duy trì nhất quán và giảm lặp mã."
+        },
+        {
+            "question": "Làm thế nào để xử lý các cập nhật dữ liệu thời gian thực trên trang VisualForce?",
+            "answer": "Dùng kỹ thuật Comet hoặc long-polling để đẩy cập nhật thời gian thực, hoặc dùng JavaScript để làm mới định kỳ một phần trang."
+        },
+        {
+            "question": "Vai trò của JavaScript remoting trong VisualForce là gì?",
+            "answer": "JavaScript remoting cho phép JavaScript phía client gọi phương thức Apex phía server, tạo tương tác động mà không cần tải lại trang."
+        },
+        {
+            "question": "Làm thế nào để triển khai phân trang trên trang VisualForce?",
+            "answer": "Dùng `apex:pageBlockTable` với `fetchSize` để giới hạn bản ghi hiển thị, cung cấp kiểm soát để người dùng phân trang qua dữ liệu."
+        },
+        {
+            "question": "Những tùy chọn để styling trang VisualForce là gì?",
+            "answer": "Dùng CSS để styling, có thể inline, trong tệp style sheet, hoặc qua thẻ `apex:stylesheets`, đảm bảo styles nhất quán và hiệu quả."
+        },
+        {
+            "question": "Làm thế nào để xử lý quốc tế hóa trên trang VisualForce?",
+            "answer": "Dùng tính năng localization của SalesForce, như nhãn và bản dịch, để hỗ trợ nhiều ngôn ngữ."
+        },
+        {
+            "question": "Quy trình để triển khai trang VisualForce đến môi trường production là gì?",
+            "answer": "Gói trang VisualForce và thành phần liên quan, kiểm tra trong staging, triển khai đến production bằng change sets hoặc phương pháp khác."
+        },
+        {
+            "question": "Làm thế nào để tối ưu hóa trang VisualForce cho các thiết bị di động?",
+            "answer": "Dùng kỹ thuật thiết kế đáp ứng như media queries, đảm bảo trang dễ chạm và tải hiệu quả trên mạng di động."
+        },
+        {
+            "question": "Những thực hành tốt nhất về các quy tắc đặt tên trong VisualForce là gì?",
+            "answer": "Dùng tên có ý nghĩa và nhất quán cho biến, thẻ, và thành phần để mã dễ đọc và duy trì."
+        },
+        {
+            "question": "Làm thế nào để tổ chức và cấu trúc trang VisualForce để tăng tính dễ đọc?",
+            "answer": "Dùng khoảng trống, ghi chú, và nhóm thẻ logic để làm markup rõ ràng và dễ hiểu."
+        },
+        {
+            "question": "Những hướng dẫn để sử dụng các controller tiêu chuẩn so với các controller tùy chỉnh là gì?",
+            "answer": "Dùng controller tiêu chuẩn cho trang đơn giản, chuyên về đối tượng; dùng controller tùy chỉnh cho logic phức tạp hoặc nhiều đối tượng."
+        },
+        {
+            "question": "Làm thế nào để quản lý và tái sử dụng mã trong VisualForce?",
+            "answer": "Tạo thành phần và lớp helper có thể tái sử dụng, dùng extension để thêm chức năng cho controller tiêu chuẩn."
+        },
+        {
+            "question": "Những thực hành tốt nhất để xử lý lỗi trong VisualForce là gì?",
+            "answer": "Dùng try-catch để xử lý ngoại lệ, hiển thị thông báo lỗi có ý nghĩa, và ghi log lỗi để debug."
+        },
+        {
+            "question": "Làm thế nào để đảm bảo rằng trang VisualForce dễ tiếp cận cho người khuyết tật?",
+            "answer": "Tuân theo hướng dẫn tiếp cận, dùng thuộc tính ARIA, và đảm bảo trang có thể điều hướng bằng bàn phím."
+        },
+        {
+            "question": "Những cân nhắc khi sử dụng thư viện bên thứ ba trong VisualForce là gì?",
+            "answer": "Đảm bảo thư viện tương thích với yêu cầu bảo mật và hiệu suất của SalesForce, dùng chúng một cách hợp lý và cập nhật thường xuyên."
+        },
+        {
+            "question": "Làm thế nào để theo kịp các phát triển mới và thực hành tốt nhất trong VisualForce?",
+            "answer": "Theo dõi tài liệu SalesForce, tham gia cộng đồng phát triển, và tham dự hội thảo, webinar để cập nhật thông tin."
+        },
+        {
+            "question": "Những sai lầm phổ biến cần tránh trong phát triển VisualForce là gì?",
+            "answer": "Tránh mã hóa cứng ID, không encode đầu vào người dùng, bỏ qua tối ưu hóa hiệu suất, và đảm bảo mã được kiểm tra kỹ lường."
+        },
+        {
+            "question": "Làm thế nào để lập kế hoạch và thiết kế một trang VisualForce hiệu quả?",
+            "answer": "Hiểu rõ yêu cầu, phác thảo bố cục, lập kế hoạch truy xuất dữ liệu và logic, sau đó triển khai từng bước và kiểm tra trong quá trình."
+        },
+        {
+            "question": "Mục đích của thẻ <apex:page> là gì?",
+            "answer": "Thẻ gốc định nghĩa thuộc tính trang như controller, extensions, và các thuộc tính khác."
+        },
+        {
+            "question": "Làm thế nào để bao gồm CSS và JavaScript trong một trang VisualForce?",
+            "answer": "Dùng thẻ <apex:stylesheets> và <apex:scripts>, hoặc nhúng trực tiếp trong trang."
+        },
+        {
+            "question": "Vai trò của thẻ <apex:form> là gì?",
+            "answer": "Định nghĩa biểu mẫu gửi đến máy chủ, cần thiết cho thành phần như <apex:commandButton>."
+        },
+        {
+            "question": "Thẻ <apex:include> hoạt động như thế nào?",
+            "answer": "Bao gồm trang VisualForce khác, hỗ trợ sử dụng lại mã."
+        },
+        {
+            "question": "Sự khác biệt giữa <apex:outputText> và <apex:inputText> là gì?",
+            "answer": "<apex:outputText> hiển thị văn bản không chỉnh sửa; <apex:inputText> cho phép nhập văn bản."
+        },
+        {
+            "question": "Làm thế nào để xử lý tải lên tệp tin trong VisualForce?",
+            "answer": "Dùng <apex:inputFile>, xử lý trong controller qua lớp Attachment của Apex."
+        },
+        {
+            "question": "Mục đích của thẻ <apex:actionFunction> là gì?",
+            "answer": "Gọi phương thức Apex từ JavaScript, hỗ trợ tương tác client kích hoạt server."
+        },
+        {
+            "question": "Làm thế nào để tạo một nút tùy chỉnh trong trang VisualForce?",
+            "answer": "Dùng thẻ <apex:commandButton>, liên kết với phương thức Apex để thực hiện hành động."
+        },
+        {
+            "question": "Thẻ <apex:sectionHeader> dùng để làm gì?",
+            "answer": "Tạo tiêu đề phần trong trang, tổ chức nội dung thành các phần."
+        },
+        {
+            "question": "Làm thế nào để hiển thị danh sách bản ghi bằng <apex:repeat>?",
+            "answer": "Dùng <apex:repeat> để lặp qua tập hợp bản ghi, định nghĩa value và var, hiển thị các trường bên trong thẻ."
+        },
+        {
+            "question": "Sự khác biệt giữa controller tiêu chuẩn và custom controller trong VisualForce là gì?",
+            "answer": "Controller tiêu chuẩn xử lý hoạt động cơ bản cho đối tượng tiêu chuẩn; custom controller là lớp Apex tùy chỉnh cho logic phức tạp."
+        },
+        {
+            "question": "Làm thế nào để sử dụng một standard controller trong trang VisualForce?",
+            "answer": "Chỉ định standard controller trong thẻ <apex:page> bằng thuộc tính standardController, theo sau là tên đối tượng."
+        },
+        {
+            "question": "Controller extension là gì, và khi nào nên dùng chúng?",
+            "answer": "Controller extension là lớp Apex mở rộng chức năng của controller tiêu chuẩn hoặc tùy chỉnh, dùng khi cần thêm logic mà không thay thế toàn bộ controller."
+        },
+        {
+            "question": "Làm thế nào để truyền tham số đến controller từ trang VisualForce?",
+            "answer": "Dùng thuộc tính action trong thẻ <apex:page> để gọi phương thức controller khi trang tải, truyền tham số qua tham số của phương thức."
+        },
+        {
+            "question": "Chu kỳ sống của một controller trong VisualForce là gì?",
+            "answer": "Controller được khởi tạo khi trang tải, và các phương thức được gọi dựa trên tương tác người dùng hoặc sự kiện trang."
+        },
+        {
+            "question": "Làm thế nào để xử lý phân trang với standard controller?",
+            "answer": "Dùng <apex:pageBlockTable> với standard controller để tự động xử lý phân trang."
+        },
+        {
+            "question": "Những thực hành tốt nhất để viết mã controller hiệu quả là gì?",
+            "answer": "Giảm truy vấn cơ sở dữ liệu, dùng cấu trúc dữ liệu hiệu quả, tránh tính toán không cần thiết, và đảm bảo mã sạch, tổ chức tốt, được kiểm tra."
+        },
+        {
+            "question": "Làm thế nào để debug một controller trong VisualForce?",
+            "answer": "Dùng `System.debug` để ghi log thông tin, và xem debug logs trong Developer Console."
+        },
+        {
+            "question": "Vai trò của các phương thức getter và setter trong controller là gì?",
+            "answer": "Getter lấy dữ liệu để hiển thị trên trang, setter xử lý đầu vào người dùng, quan trọng cho việc liên kết dữ liệu giữa trang và controller."
+        },
+        {
+            "question": "Làm thế nào để xử lý ngoại lệ trong một controller?",
+            "answer": "Dùng try-catch để xử lý ngoại lệ, ghi log lỗi, và cung cấp phản hồi phù hợp cho người dùng."
+        },
+        {
+            "question": "Làm thế nào để xử lý đầu vào người dùng trong trang VisualForce?",
+            "answer": "Dùng thành phần như <apex:inputText>, <apex:selectList>, truy cập giá trị qua thuộc tính trong controller."
+        },
+        {
+            "question": "Những cách nào để kiểm tra đầu vào người dùng trong VisualForce?",
+            "answer": "Dùng quy tắc kiểm tra trong controller, như kiểm tra trường bắt buộc hoặc định dạng hợp lệ, hiển thị lỗi qua <apex:messages>."
+        },
+        {
+            "question": "Làm thế nào để hiển thị dữ liệu động dựa trên lựa chọn của người dùng?",
+            "answer": "Dùng <apex:rendered> để render điều kiện, hoặc JavaScript để hiển thị/ẩn phần trang dựa trên đầu vào người dùng."
+        },
+        {
+            "question": "Quy trình để lưu dữ liệu do người dùng nhập là gì?",
+            "answer": "Dùng controller để xử lý đầu vào và lưu vào cơ sở dữ liệu bằng các thao tác DML như insert hoặc update."
+        },
+        {
+            "question": "Làm thế nào để xử lý tệp đính kèm trong VisualForce?",
+            "answer": "Dùng <apex:inputFile> để cho phép tải lên tệp, và trong controller, tạo đối tượng Attachment và chèn vào cơ sở dữ liệu."
+        }
+    ],
+    "SFDC’s Aura Component": [
+        {
+            "question": "Aura Component là gì?",
+            "answer": "Thành phần giao diện người dụng có thể sử dụng lại, dùng khung Aura trong Lightning, tạo giao diện động cho web và di động."
+        },
+        {
+            "question": "Sự khác biệt giữa Aura Component và VisualForce Page là gì?",
+            "answer": "Aura Component xây dựng ứng dụng trang đơn, nhấn mạnh sử dụng lại; VisualForce Page là trang web truyền thống với markup."
+        },
+        {
+            "question": "Những phần chính của một gói Aura Component là gì?",
+            "answer": "Markup (.cmp), controller (JavaScript), helper, style (CSS), và tài liệu (tùy chọn)."
+        },
+        {
+            "question": "Làm cách nào để tạo một Aura Component?",
+            "answer": "Mở Developer Console, chọn 'File' > 'New' > 'Lightning Component', nhập tên, định nghĩa markup và controller."
+        },
+        {
+            "question": "Làm cách nào để sử dụng JavaScript trong Aura Component?",
+            "answer": "Dùng trong controller và helper để xử lý sự kiện, thao tác dữ liệu, và tương tác với SalesForce qua Apex."
+        },
+        {
+            "question": "Vai trò của controller trong một Aura Component là gì?",
+            "answer": "Chứa phương thức xử lý sự kiện từ markup, trung gian giữa view và model."
+        },
+        {
+            "question": "Làm cách nào để xử lý sự kiện trong Aura Component?",
+            "answer": "Định nghĩa handler trong controller, dùng sự kiện tùy chỉnh để giao tiếp giữa các thành phần."
+        },
+        {
+            "question": "Sự khác biệt giữa Aura Component và Lightning Web Component (LWC) là gì?",
+            "answer": "Aura dùng công nghệ cũ, LWC dùng tiêu chuẩn web hiện đại, hiệu suất cao hơn, dễ tích hợp."
+        },
+        {
+            "question": "Làm cách nào để triển khai một Aura Component?",
+            "answer": "Triển khai qua gói SalesForce hoặc Developer Console, tích hợp kiểm soát nguồn nếu cần."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho việc phát triển Aura Component là gì?",
+            "answer": "Giữ thành phần nhỏ, dùng sự kiện giao tiếp, tận dụng liên kết dữ liệu, đảm bảo truy cập và đáp ứng."
+        },
+        {
+            "question": "Sự khác biệt giữa một thành phần và một ứng dụng trong Aura là gì?",
+            "answer": "Ứng dụng là điểm vào giao diện; thành phần là phần giao diện có thể sử dụng lại."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu giữa các thành phần trong Aura?",
+            "answer": "Dùng thuộc tính, sự kiện, hoặc Dịch vụ Dữ liệu Lightning (LDS)."
+        },
+        {
+            "question": "Vai trò của Lightning Locker trong Aura Component là gì?",
+            "answer": "Cung cấp môi trường an toàn, tách biệt namespace, ngăn chặn can thiệp giữa các thành phần."
+        },
+        {
+            "question": "Làm cách nào để xử lý quốc tế hóa trong Aura Component?",
+            "answer": "Dùng $Label để truy cập nhãn tùy chỉnh, hỗ trợ nhiều ngôn ngữ."
+        },
+        {
+            "question": "Mục đích của thành phần aura:iteration là gì?",
+            "answer": "Lặp qua bộ sưu tập, hiển thị thành phần con cho mỗi mục."
+        },
+        {
+            "question": "Làm cách nào để xử lý xác thực người dùng trong Aura Component?",
+            "answer": "SalesForce xử lý, truy cập thông tin qua $User."
+        },
+        {
+            "question": "Sự khác biệt giữa Lightning Component và VisualForce Component là gì?",
+            "answer": "Lightning Component dùng Aura, hiện đại, đáp ứng; VisualForce Component là trang web truyền thống."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra Aura Component?",
+            "answer": "Dùng Dịch vụ Kiểm tra Lightning (LTS) để viết và chạy bài kiểm tra."
+        },
+        {
+            "question": "Vai trò của thành phần aura:handler là gì?",
+            "answer": "Định nghĩa handler sự kiện, phản hồi sự kiện từ các thành phần khác."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của Aura Component?",
+            "answer": "Giảm thao tác DOM, dùng liên kết dữ liệu hiệu quả, tránh re-render không cần, dùng caching."
+        },
+        {
+            "question": "Vai trò của tệp helper trong một Aura Component là gì?",
+            "answer": "Tệp helper chứa các phương thức JavaScript có thể sử dụng lại, giúp controller giảm tính phức tạp và tăng tính sạch sẽ của mã."
+        },
+        {
+            "question": "Vai trò của tệp style trong một Aura Component là gì?",
+            "answer": "Tệp style chứa các định nghĩa CSS để tùy chỉnh giao diện của component."
+        },
+        {
+            "question": "Vai trò của tệp documentation trong một Aura Component là gì?",
+            "answer": "Tệp documentation cung cấp thông tin tài liệu về component, có thể bao gồm mô tả, ví dụ, và hướng dẫn sử dụng."
+        },
+        {
+            "question": "Làm cách nào để tạo một Aura Component sử dụng Developer Console?",
+            "answer": "Mở Developer Console, chọn 'File' > 'New' > 'Lightning Component', nhập tên, và định nghĩa markup và controller."
+        },
+        {
+            "question": "Làm cách nào để triển khai một Aura Component?",
+            "answer": "Triển khai qua gói SalesForce hoặc sử dụng Developer Console, có thể sử dụng kiểm soát nguồn nếu cần."
+        },
+        {
+            "question": "Những loại thuộc tính khác nhau trong Aura Components là gì?",
+            "answer": "Loại nguyên thủy (Long, String), mảng (String[]), bộ sưu tập (List, Map, Set), đối tượng tiêu chuẩn/tùy chỉnh (Account, Expense__c), lớp Apex tùy chỉnh, loại khung (Aura.Component, Aura.Component[], Aura.Action)."
+        },
+        {
+            "question": "Làm cách nào để liên kết dữ liệu trong Aura Components?",
+            "answer": "Sử dụng { v.attribute } cho liên kết một chiều (display only), và { !v.attribute } cho liên kết hai chiều (thường dùng trong các trường input)."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu giữa các thành phần trong Aura?",
+            "answer": "Dùng thuộc tính, sự kiện, hoặc Dịch vụ Dữ liệu Lightning (LDS)."
+        },
+        {
+            "question": "Những loại sự kiện khác nhau trong Aura Components là gì?",
+            "answer": "Sự kiện thành phần (cho cấu trúc chứa) và sự kiện ứng dụng (cho mô hình xuất bản-đăng ký)."
+        },
+        {
+            "question": "Làm cách nào để tạo và xử lý sự kiện thành phần trong Aura Components?",
+            "answer": "Để tạo sự kiện thành phần, sử dụng thẻ <aura:event>. Để xử lý sự kiện, định nghĩa handler trong controller của thành phần."
+        },
+        {
+            "question": "Làm cách nào để sử dụng sự kiện ứng dụng để giao tiếp giữa các thành phần?",
+            "answer": "Định nghĩa sự kiện ứng dụng bằng thẻ <aura:applicationEvent>, phát sự kiện từ một thành phần, và đăng ký handler trong các thành phần khác để xử lý sự kiện đó."
+        },
+        {
+            "question": "Vai trò của caching trong Aura Components là gì?",
+            "answer": "Caching giúp lưu trữ kết quả của các cuộc gọi server để tránh gọi lại, giúp tăng hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để giảm thao tác DOM trong Aura Components?",
+            "answer": "Sử dụng liên kết dữ liệu để tự động cập nhật UI, tránh thao tác trực tiếp với DOM."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho việc tối ưu hóa hiệu suất của Aura Components là gì?",
+            "answer": "Giảm thao tác DOM, dùng liên kết dữ liệu hiệu quả, tránh re-render không cần, dùng caching, và tối ưu hóa các cuộc gọi server."
+        },
+        {
+            "question": "Vai trò của Lightning Locker trong Aura Component là gì?",
+            "answer": "Cung cấp môi trường an toàn, tách biệt namespace, ngăn chặn can thiệp giữa các thành phần."
+        },
+        {
+            "question": "Những giới hạn nào mà Lightning Locker áp đặt trên Aura Components?",
+            "answer": "Lightning Locker ngăn chặn truy cập trực tiếp đến DOM của các thành phần khác, giới hạn việc sử dụng các phương thức và thuộc tính của JavaScript."
+        },
+        {
+            "question": "Làm cách nào để xử lý quốc tế hóa trong Aura Component?",
+            "answer": "Dùng $Label để truy cập nhãn tùy chỉnh, hỗ trợ nhiều ngôn ngữ."
+        },
+        {
+            "question": "Làm cách nào để hiển thị ngày và số theo định dạng của địa phương trong Aura Components?",
+            "answer": "Sử dụng các hàm định dạng của JavaScript, hoặc sử dụng các thành phần tiêu chuẩn của SFDC hỗ trợ định dạng địa phương."
+        },
+        {
+            "question": "Sự khác biệt giữa Aura Component và Lightning Web Component (LWC) là gì?",
+            "answer": "Aura dùng công nghệ cũ, LWC dùng tiêu chuẩn web hiện đại, hiệu suất cao hơn, dễ tích hợp."
+        },
+        {
+            "question": "Tại sao nên chuyển từ Aura Components sang LWC?",
+            "answer": "LWC sử dụng các tiêu chuẩn web hiện đại như ES6, Shadow DOM, và Web Components, cung cấp hiệu suất tốt hơn và tích hợp dễ dàng hơn với các công nghệ bên ngoài."
+        },
+        {
+            "question": "Chu trình sống của một Aura Component là gì?",
+            "answer": "Chu trình sống bao gồm các giai đoạn như khởi tạo (init), render, và các sự kiện hệ thống khác. Phương thức doInit() trong controller được gọi sau khi component được khởi tạo."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi và ngoại lệ trong Aura Components?",
+            "answer": "Sử dụng try-catch trong JavaScript để xử lý lỗi, và sử dụng các sự kiện lỗi của framework để báo cáo lỗi."
+        },
+        {
+            "question": "Làm cách nào để tích hợp thư viện bên ngoài trong Aura Components?",
+            "answer": "Sử dụng thẻ <ltng:require> để tải các tệp JavaScript bên ngoài, và sử dụng chúng trong controller hoặc helper."
+        },
+        {
+            "question": "Những cách để tạo sự kiện tùy chỉnh trong Aura Components là gì?",
+            "answer": "Định nghĩa sự kiện tùy chỉnh bằng thẻ <aura:event>, và phát sự kiện từ controller hoặc helper."
+        },
+        {
+            "question": "Làm cách nào để sử dụng thuộc tính Aura hiệu quả?",
+            "answer": "Định nghĩa thuộc tính với các loại phù hợp, sử dụng các giá trị mặc định và required để kiểm soát dữ liệu, và sử dụng liên kết dữ liệu để cập nhật UI."
+        },
+        {
+            "question": "Làm cách nào để xử lý ngôn ngữ RTL (từ phải sang trái) trong Aura Components?",
+            "answer": "Sử dụng @if(isRTL) trong CSS và đảm bảo rằng các thuộc tính tự động chuyển đổi, hoặc dùng @noflip để ngừa chuyển đổi."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho việc phát triển Aura Component là gì?",
+            "answer": "Giữ thành phần nhỏ, dùng sự kiện giao tiếp, tận dụng liên kết dữ liệu, đảm bảo truy cập và đáp ứng."
+        },
+        {
+            "question": "Sự khác biệt giữa một thành phần và một ứng dụng trong Aura là gì?",
+            "answer": "Ứng dụng là điểm vào giao diện; thành phần là phần giao diện có thể sử dụng lại."
+        },
+        {
+            "question": "Làm cách nào để định nghĩa một thuộc tính danh sách trong Aura Component?",
+            "answer": "Sử dụng type=\"List\" hoặc type=\"Object[]\" để định nghĩa một thuộc tính là một danh sách."
+        },
+        {
+            "question": "Làm cách nào để lặp qua một thuộc tính danh sách trong markup?",
+            "answer": "Sử dụng thẻ <aura:iteration> để lặp qua danh sách và hiển thị các phần tử."
+        },
+        {
+            "question": "Làm cách nào để xử lý thay đổi của một thuộc tính danh sách và cập nhật UI tương ứng?",
+            "answer": "Sử dụng liên kết dữ liệu để tự động cập nhật UI khi danh sách thay đổi."
+        },
+        {
+            "question": "Sự khác biệt giữa phát sự kiện và xuất bản sự kiện là gì?",
+            "answer": "Phát sự kiện gửi sự kiện đến các thành phần cha, trong khi xuất bản sự kiện gửi sự kiện đến toàn bộ ứng dụng."
+        },
+        {
+            "question": "Làm cách nào để xử lý tham số sự kiện trong một handler?",
+            "answer": "Trong handler, sự kiện được truyền làm tham số, và bạn có thể truy cập các thuộc tính của sự kiện để lấy thông tin."
+        },
+        {
+            "question": "Khung xử lý re-rendering của component như thế nào?",
+            "answer": "Khung sẽ re-render component khi có sự thay đổi trong dữ liệu liên kết hoặc khi có sự kiện yêu cầu re-render."
+        },
+        {
+            "question": "Khi nào thì một component được re-render?",
+            "answer": "Component re-render khi thuộc tính của nó thay đổi, hoặc khi có sự kiện hoặc hành động yêu cầu re-render."
+        },
+        {
+            "question": "Làm cách nào để xử lý xác thực người dùng trong Aura Components?",
+            "answer": "SalesForce xử lý xác thực người dụng, và bạn có thể truy cập thông tin người dụng qua $User."
+        },
+        {
+            "question": "Vai trò của $User trong Aura Components là gì?",
+            "answer": "$User cung cấp thông tin về người dụng hiện tại, như tên, ID, và các thuộc tính khác."
+        },
+        {
+            "question": "Làm cách nào để định dạng ngày dựa trên địa phương của người dùng?",
+            "answer": "Sử dụng các hàm định dạng của JavaScript, hoặc sử dụng các thành phần tiêu chuẩn của SFDC hỗ trợ định dạng địa phương."
+        },
+        {
+            "question": "Làm cách nào để sử dụng $Locale trong Aura Components?",
+            "answer": "$Locale cung cấp thông tin về địa phương của người dụng, có thể sử dụng để định dạng ngày, số, v.v."
+        },
+        {
+            "question": "Lợi ích của LWC so với Aura Components là gì?",
+            "answer": "LWC có hiệu suất tốt hơn, sử dụng các tiêu chuẩn web hiện đại, và dễ tích hợp với các công nghệ bên ngoài."
+        },
+        {
+            "question": "Trong trường hợp nào bạn vẫn chọn sử dụng Aura Components thay vì LWC?",
+            "answer": "Nếu bạn có mã nguồn hiện có sử dụng Aura và muốn giữ nó, hoặc nếu có những tính năng cụ thể mà Aura hỗ trợ tốt hơn."
+        },
+        {
+            "question": "Làm cách nào để di chuyển từ Aura Components sang LWC?",
+            "answer": "Sử dụng các công cụ và hướng dẫn của SFDC để chuyển đổi từ Aura sang LWC, hoặc viết lại component mới sử dụng LWC."
+        },
+        {
+            "question": "Custom renderer trong Aura Components là gì?",
+            "answer": "Custom renderer cho phép bạn tùy chỉnh quá trình render của component, cho phép bạn tương tác trực tiếp với DOM."
+        },
+        {
+            "question": "Làm cách nào để sử dụng custom renderer để sửa đổi DOM của component?",
+            "answer": "Định nghĩa một file renderer.js và ghi đè các phương thức như render(), afterRender(), v.v. để tùy chỉnh DOM."
+        },
+        {
+            "question": "Các phương thức vòng đời khác nhau trong custom renderer là gì?",
+            "answer": "Các phương thức chính là render(), afterRender(), unrender(), và beforeDestroy()."
+        },
+        {
+            "question": "Làm cách nào để xử lý sự kiện init trong một component?",
+            "answer": "Định nghĩa một handler cho sự kiện init trong controller, sử dụng <aura:handler name=\"init\" value=\"{!this}\" action=\"{!c.initHandler}\"/>."
+        },
+        {
+            "question": "Mục đích của hàm doInit() là gì?",
+            "answer": "doInit() là phương thức mặc định được gọi sau khi component được khởi tạo, thường sử dụng để khởi tạo dữ liệu hoặc thiết lập ban đầu."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong các hành động server-side?",
+            "answer": "Sử dụng các callback trong server-side actions để xử lý kết quả thành công hoặc thất bại."
+        },
+        {
+            "question": "Làm cách nào để hiển thị thông báo toast trong Aura Components?",
+            "answer": "Sử dụng thành phần lightning:toast để hiển thị các thông báo toast."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Lightning Utility Bar trong Aura Components?",
+            "answer": "Định nghĩa một component và đăng ký nó với utility bar sử dụng các API của utility bar."
+        },
+        {
+            "question": "Làm cách nào để xử lý tải lên tệp trong Aura Components?",
+            "answer": "Sử dụng thành phần lightning:fileUpload hoặc sử dụng các phương thức JavaScript để xử lý tải lên tệp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Lightning Data Service (LDS) trong Aura Components?",
+            "answer": "Sử dụng thẻ <aura:iteration> với thuộc tính aura:lds để liên kết với dữ liệu từ LDS."
+        },
+        {
+            "question": "Sự khác biệt giữa LDS và các truy vấn SOQL truyền thống là gì?",
+            "answer": "LDS cung cấp dữ liệu theo thời gian thực và tự động cập nhật, trong khi SOQL là các truy vấn tĩnh."
+        },
+        {
+            "question": "Làm cách nào để xử lý phân trang trong Aura Components?",
+            "answer": "Sử dụng các tham số limit và offset trong các cuộc gọi server để lấy dữ liệu phân trang."
+        },
+        {
+            "question": "Làm cách nào để triển khai sắp xếp và lọc trong danh sách bản ghi?",
+            "answer": "Sử dụng các tham số order by và where trong SOQL để sắp xếp và lọc dữ liệu."
+        },
+        {
+            "question": "Làm cách nào để sử dụng thành phần lightning:datatable?",
+            "answer": "Định nghĩa các cột và dữ liệu cho datatable, và sử dụng các thuộc tính để tùy chỉnh hiển thị."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh thành phần lightning:datatable?",
+            "answer": "Sử dụng các thuộc tính như columns, data, và các event handler để tùy chỉnh hành vi và hiển thị."
+        },
+        {
+            "question": "Làm cách nào để xử lý các tập dữ liệu lớn trong lightning:datatable?",
+            "answer": "Sử dụng phân trang và tải dữ liệu theo yêu cầu để quản lý các tập dữ liệu lớn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng thành phần lightning:accordion?",
+            "answer": "Định nghĩa các tiêu đề và nội dung cho các mục trong accordion."
+        },
+        {
+            "question": "Làm cách nào để sử dụng thành phần lightning:tabset?",
+            "answer": "Định nghĩa các tab và nội dung tương ứng, và sử dụng các thuộc tính để quản lý hoạt động của tab."
+        },
+        {
+            "question": "Làm cách nào để tạo các chủ đề tùy chỉnh trong Aura Components?",
+            "answer": "Sử dụng các tệp CSS để định nghĩa các phong cách tùy chỉnh và áp dụng chúng cho component."
+        },
+        {
+            "question": "Làm cách nào để xử lý thiết kế đáp ứng trong Aura Components?",
+            "answer": "Sử dụng các kỹ thuật CSS như media queries và các lớp của Lightning Design System để tạo giao diện đáp ứng."
+        },
+        {
+            "question": "Vai trò của thành phần lightning:container là gì?",
+            "answer": "lightning:container cung cấp một khung để chứa các component khác, giúp tổ chức giao diện."
+        },
+        {
+            "question": "Làm cách nào để sử dụng lightning:overlayLibrary để tạo modal?",
+            "answer": "Sử dụng các phương thức của overlayLibrary để hiển thị và đóng các modal."
+        },
+        {
+            "question": "Làm cách nào để xử lý điều hướng bàn phím trong Aura Components cho khả năng tiếp cận?",
+            "answer": "Đảm bảo rằng các phần tử có thể tập trung bằng tab và sử dụng các thuộc tính ARIA để hỗ trợ người dùng khuyết tật."
+        },
+        {
+            "question": "Làm cách nào để đảm bảo component của bạn tương thích với công cụ đọc màn hình?",
+            "answer": "Sử dụng các thuộc tính ARIA để cung cấp mô tả và thông tin cho các công cụ đọc màn hình."
+        },
+        {
+            "question": "Các thuộc tính ARIA là gì và làm cách nào để sử dụng chúng trong Aura Components?",
+            "answer": "ARIA attributes là các thuộc tính HTML để mô tả vai trò, trạng thái, và các đặc tính khác của các phần tử cho các công cụ trợ giúp. Sử dụng chúng trong markup của component."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra khả năng tiếp cận trong Aura Components?",
+            "answer": "Sử dụng các công cụ kiểm tra accessibility như Wave, Lighthouse, hoặc các trình duyệt có tính năng kiểm tra accessibility."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu từ một component cha đến component con sử dụng thuộc tính?",
+            "answer": "Định nghĩa các thuộc tính trong child component và truyền giá trị từ parent component qua các thuộc tính đó."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu từ component con đến component cha sử dụng sự kiện?",
+            "answer": "Child component phát một sự kiện, và parent component đăng ký handler để xử lý sự kiện đó và nhận dữ liệu."
+        },
+        {
+            "question": "Sự khác biệt giữa thuộc tính công khai và thuộc tính riêng tư là gì?",
+            "answer": "Public attributes có thể được truy cập từ bên ngoài component, trong khi private attributes chỉ có thể được sử dụng bên trong component."
+        },
+        {
+            "question": "Làm cách nào để làm cho một thuộc tính là bắt buộc?",
+            "answer": "Sử dụng thuộc tính required=\"true\" trong thẻ <aura:attribute>."
+        },
+        {
+            "question": "Làm cách nào để đặt giá trị mặc định cho một thuộc tính?",
+            "answer": "Sử dụng thuộc tính default=\"value\" trong thẻ <aura:attribute>."
+        },
+        {
+            "question": "Làm cách nào để phát một sự kiện thành phần?",
+            "answer": "Sử dụng phương thức component.getEvent(\"eventName\").setParams({params}).fire() để phát sự kiện."
+        },
+        {
+            "question": "Làm cách nào để xử lý một sự kiện thành phần trong component cha?",
+            "answer": "Định nghĩa một handler cho sự kiện trong parent component, sử dụng <aura:handler event=\"c:ChildComponentEvent\" action=\"{!c.handleEvent}\"/>."
+        },
+        {
+            "question": "Event bubbling trong Aura Components là gì?",
+            "answer": "Event bubbling là quá trình sự kiện được truyền từ child component lên parent component và các component cha khác."
+        },
+        {
+            "question": "Làm cách nào để ngăn chặn sự lan truyền sự kiện?",
+            "answer": "Sử dụng phương thức event.stopPropagation() trong handler của sự kiện để ngừa sự kiện lan truyền tiếp."
+        },
+        {
+            "question": "Làm cách nào để tạo và sử dụng sự kiện ứng dụng?",
+            "answer": "Định nghĩa một sự kiện ứng dụng bằng thẻ <aura:applicationEvent>, phát sự kiện từ bất kỳ component nào, và đăng ký handler trong các component khác để xử lý sự kiện."
+        },
+        {
+            "question": "Làm cách nào để giảm số lượng cuộc gọi server trong Aura Components?",
+            "answer": "Sử dụng batching để kết hợp các hành động server thành một cuộc gọi duy nhất, và sử dụng caching để lưu trữ kết quả."
+        },
+        {
+            "question": "Batching trong Aura là gì, và nó giúp cải thiện hiệu suất như thế nào?",
+            "answer": "Batching cho phép bạn kết hợp nhiều hành động server thành một cuộc gọi duy nhất, giảm số lượng request đến server và tăng hiệu suất."
+        }
+    ],
+    "SFDC’s Lightning Web Component": [
+        {
+            "question": "Lightning Web Component (LWC) là gì?",
+            "answer": "Khung tạo giao diện hiện đại trên SalesForce, dùng JavaScript, HTML, CSS, tuân thủ Web Components."
+        },
+        {
+            "question": "Sự khác biệt giữa LWC và Aura Component là gì?",
+            "answer": "LWC dùng tiêu chuẩn web hiện đại, hiệu suất cao; Aura dùng công nghệ cũ, đang dần kết thúc."
+        },
+        {
+            "question": "Những tính năng chính của LWC là gì?",
+            "answer": "Dùng web chuẩn, tuân thủ Web Components, liên kết dữ liệu qua LDS, dễ kiểm tra, hỗ trợ Shadow DOM."
+        },
+        {
+            "question": "Làm cách nào để thiết lập môi trường phát triển cho LWC?",
+            "answer": "Dùng SalesForce DX, CLI, tích hợp VS Code, kết nối org, dùng CLI LWC tạo và quản lý thành phần."
+        },
+        {
+            "question": "Làm cách nào để tạo một LWC cơ bản?",
+            "answer": "Chạy `sfdx lwc:create -n MyComponent`, tạo tệp mycomponent.js, .html, .css."
+        },
+        {
+            "question": "Cấu trúc của một LWC là gì?",
+            "answer": "Gồm module JavaScript, mẫu HTML, và tệp CSS."
+        },
+        {
+            "question": "Làm cách nào để xử lý dữ liệu trong LWC?",
+            "answer": "Dùng thuộc tính JavaScript, liên kết dữ liệu hiển thị, dùng LDS cho dữ liệu SalesForce."
+        },
+        {
+            "question": "Làm cách nào để giao tiếp giữa các thành phần trong LWC?",
+            "answer": "Dùng sự kiện, phát sự kiện tùy chỉnh, xử lý qua listener."
+        },
+        {
+            "question": "Vai trò của Dịch vụ Dữ liệu Lightning (LDS) trong LWC là gì?",
+            "answer": "Cung cấp cách thống nhất truy cập, thao tác dữ liệu SalesForce, xử lý caching, lỗi."
+        },
+        {
+            "question": "Làm cách nào để triển khai một LWC đến tổ chức SalesForce của bạn?",
+            "answer": "Dùng `sfdx force:source:deploy` từ dự án, đẩy thay đổi đến org."
+        },
+        {
+            "question": "Sự khác biệt giữa LWC và thành phần web truyền thống là gì?",
+            "answer": "LWC có tích hợp SalesForce như LDS, trên cơ sở Web Components chuẩn."
+        },
+        {
+            "question": "Làm cách nào để xử lý styling trong LWC?",
+            "answer": "Dùng CSS, selector :host, hỗ trợ Shadow DOM cho đóng gói."
+        },
+        {
+            "question": "Vai trò của trang bị @track trong LWC là gì?",
+            "answer": "Theo dõi thay đổi thuộc tính, hỗ trợ re-render hiệu quả."
+        },
+        {
+            "question": "Làm cách nào để xử lý sự kiện trong LWC?",
+            "answer": "Dùng addListener, removeListener, hoặc @api cho phương thức công cộng."
+        },
+        {
+            "question": "Dịch vụ Dữ liệu Lightning (LDS) là gì và hoạt động như thế nào với LWC?",
+            "answer": "LDS thống nhất truy cập, thao tác dữ liệu SalesForce, xử lý caching, lỗi."
+        },
+        {
+            "question": "Làm cách nào để triển khai LWC đến tổ chức SalesForce của bạn?",
+            "answer": "Dùng `sfdx force:source:deploy`, đẩy thay đổi từ dự án."
+        },
+        {
+            "question": "Mục đích của trang bị @wire trong LWC là gì?",
+            "answer": "Kết nối LWC với nguồn dữ liệu SalesForce, như Apex hoặc LDS, lấy và hiển thị dữ liệu."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong LWC?",
+            "answer": "Dùng try-catch trong controller, hiển thị lỗi trong mẫu."
+        },
+        {
+            "question": "Sự khác biệt giữa một Lightning Web Component và một Aura Component là gì?",
+            "answer": "LWC hiện đại, hiệu suất cao; Aura cũ, đang dần kết thúc."
+        },
+        {
+            "question": "Làm cách nào để tạo một phần tử tùy chỉnh trong LWC?",
+            "answer": "Mọi thành phần là phần tử tùy chỉnh, dùng tên như <c-my-component>."
+        },
+        {
+            "question": "Tại sao chọn LWC thay vì Aura Components?",
+            "answer": "LWC dùng tiêu chuẩn web hiện đại, hiệu suất cao hơn, dễ tích hợp và bảo trì hơn."
+        },
+        {
+            "question": "LWC có hỗ trợ Shadow DOM không?",
+            "answer": "Có, LWC sử dụng Shadow DOM để đóng gói component, giúp tránh xung đột CSS và JavaScript giữa các component."
+        },
+        {
+            "question": "Làm cách nào để tạo một LWC mới?",
+            "answer": "Sử dụng CLI của SalesForce DX, chạy lệnh `sfdx lwc:create -n MyComponent` để tạo thư mục và tệp cơ bản cho component."
+        },
+        {
+            "question": "Các tệp chính của một LWC là gì?",
+            "answer": "mycomponent.js (module JavaScript), mycomponent.html (mẫu HTML), và mycomponent.css (tệp CSS)."
+        },
+        {
+            "question": "Làm cách nào để liên kết dữ liệu trong LWC?",
+            "answer": "Định nghĩa thuộc tính trong module JavaScript sử dụng @api, và sử dụng {this.propertyName} trong mẫu HTML để hiển thị dữ liệu."
+        },
+        {
+            "question": "Vai trò của @track decorator trong LWC là gì?",
+            "answer": "@track giúp theo dõi thay đổi của thuộc tính, và kích hoạt re-rendering của component khi thuộc tính thay đổi."
+        },
+        {
+            "question": "Làm cách nào để phát và xử lý sự kiện tùy chỉnh trong LWC?",
+            "answer": "Để phát sự kiện, sử dụng phương thức this.dispatchEvent(new CustomEvent('eventName', { detail: data })). Để xử lý, sử dụng listener trong component khác."
+        },
+        {
+            "question": "LDS là gì và tại sao quan trọng trong LWC?",
+            "answer": "Dịch vụ Dữ liệu Lightning (LDS) cung cấp cách thống nhất để truy cập và thao tác dữ liệu SalesForce. Nó giúp quản lý caching, xử lý lỗi, và cung cấp dữ liệu theo thời gian thực."
+        },
+        {
+            "question": "Làm cách nào để sử dụng LDS trong LWC để lấy dữ liệu từ SalesForce?",
+            "answer": "Sử dụng decorator @wire để kết nối với LDS, chẳng hạn @wire(getRecord, { recordId: '$recordId', fields: ['Contact.FirstName', 'Contact.LastName'] })"
+        },
+        {
+            "question": "Làm cách nào để triển khai các thay đổi của LWC đến tổ chức SalesForce?",
+            "answer": "Sử dụng lệnh `sfdx force:source:deploy` từ dự án của bạn để đẩy các thay đổi đến tổ chức."
+        },
+        {
+            "question": "Làm cách nào để xử lý sự kiện từ phần tử HTML trong LWC?",
+            "answer": "Sử dụng event handlers trong mẫu HTML, chẳng hạn <button onclick={handleClick}>Click me</button>, và định nghĩa phương thức handleClick trong module JavaScript."
+        },
+        {
+            "question": "Làm cách nào để sử dụng CSS cho LWC?",
+            "answer": "Tạo tệp CSS cùng tên với component, sử dụng selector :host để tùy chỉnh styling của component."
+        },
+        {
+            "question": "Làm cách nào để tích hợp LWC với các thư viện JavaScript bên ngoài?",
+            "answer": "Sử dụng npm để cài đặt thư viện, và import chúng trong module JavaScript của component."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra LWC?",
+            "answer": "Sử dụng @salesforce/lwc-jest để viết và chạy bài kiểm tra đơn vị cho LWC."
+        },
+        {
+            "question": "Làm cách nào để sử dụng slot trong LWC để tạo component có thể mở rộng?",
+            "answer": "Định nghĩa slot trong mẫu HTML của component, và component cha có thể truyền nội dung vào slot đó."
+        },
+        {
+            "question": "Làm cách nào để xử lý quốc tế hóa (i18n) trong LWC?",
+            "answer": "Sử dụng @salesforce/i18n để định dạng ngày, số, và các giá trị khác theo địa phương của người dùng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Apex trong LWC?",
+            "answer": "Sử dụng @wire kết hợp với Wire Adapters để kết nối với Apex, hoặc gọi Apex từ module JavaScript sử dụng fetch hoặc XMLHttpRequest."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong LWC?",
+            "answer": "Sử dụng try-catch trong module JavaScript để xử lý lỗi, và hiển thị thông báo lỗi trong mẫu HTML."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của LWC?",
+            "answer": "Giảm thao tác DOM, sử dụng @track để theo dõi thay đổi hiệu quả, và sử dụng caching của LDS."
+        },
+        {
+            "question": "Sự khác biệt giữa LWC và các web component chuẩn là gì?",
+            "answer": "LWC là web component chuẩn, nhưng có tích hợp sâu với SalesForce, như hỗ trợ LDS, và các tính năng đặc thù của platform."
+        },
+        {
+            "question": "Làm cách nào để chuyển đổi một Aura Component sang LWC?",
+            "answer": "Viết lại component mới sử dụng LWC, hoặc sử dụng các hướng dẫn của SalesForce để chuyển đổi thủ công."
+        },
+        {
+            "question": "Làm cách nào để hỗ trợ phiên bản cũ của component trong quá trình chuyển đổi?",
+            "answer": "Giữ cả hai version của component, và dần dần chuyển sang sử dụng LWC."
+        },
+        {
+            "question": "Làm cách nào để sử dụng conditional rendering trong LWC?",
+            "answer": "Sử dụng <template if:true={condition}> để hiển thị nội dung có điều kiện."
+        },
+        {
+            "question": "Làm cách nào để lặp qua một mảng trong mẫu HTML của LWC?",
+            "answer": "Sử dụng <template for:each={array} for:item='item'> để lặp qua mảng và hiển thị mỗi phần tử."
+        },
+        {
+            "question": "Làm cách nào để truy cập phần tử DOM trong LWC?",
+            "answer": "Mặc dù LWC khuyến khích sử dụng liên kết dữ liệu để tránh thao tác DOM trực tiếp, nhưng nếu cần, bạn có thể truy cập phần tử DOM sử dụng querySelector hoặc getElementById trong phương thức connectedCallback."
+        },
+        {
+            "question": "Làm cách nào để sử dụng JavaScript third-party libraries trong LWC?",
+            "answer": "Cài đặt thư viện sử dụng npm, và import chúng trong module JavaScript của component."
+        },
+        {
+            "question": "Làm cách nào để tạo một component có thể sử dụng lại?",
+            "answer": "Thiết kế component với các thuộc tính và sự kiện rõ ràng, và tránh hardcoding các giá trị cụ thể để nó có thể được sử dụng trong các tình huống khác nhau."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra hiệu suất của LWC?",
+            "answer": "Sử dụng các công cụ như Chrome DevTools để đo thời gian render, hoặc sử dụng các bài kiểm tra hiệu suất tự động."
+        },
+        {
+            "question": "Làm cách nào để sử dụng localStorage hoặc sessionStorage trong LWC?",
+            "answer": "Sử dụng các API chuẩn của JavaScript như localStorage.setItem() và localStorage.getItem()."
+        },
+        {
+            "question": "Làm cách nào để sử dụng XMLHttpRequest hoặc fetch để gọi API bên ngoài?",
+            "answer": "Sử dụng fetch hoặc XMLHttpRequest trong module JavaScript của component để gọi API."
+        },
+        {
+            "question": "Làm cách nào để xử lý CORS trong LWC?",
+            "answer": "Khi gọi API bên ngoài, bạn cần đảm bảo rằng API đó hỗ trợ CORS, hoặc cấu hình tổ chức SalesForce để cho phép CORS cho các domain cụ thể."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Promise trong LWC?",
+            "answer": "Sử dụng Promise như bình thường trong JavaScript để quản lý các hoạt động bất đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng async/await trong LWC?",
+            "answer": "Định nghĩa phương thức async, và sử dụng await trước các Promise để chờ kết quả."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Reactivity API của LWC để theo dõi thay đổi của đối tượng phức tạp?",
+            "answer": "Sử dụng @track cho thuộc tính đối tượng phức tạp. Tuy nhiên, nếu bạn thay đổi các thuộc tính con của đối tượng, bạn có thể cần gán lại đối tượng hoặc sử dụng các phương pháp để kích hoạt re-render."
+        },
+        {
+            "question": "Làm cách nào để sử dụng lifecycle hooks trong LWC?",
+            "answer": "Sử dụng các phương thức như constructor, connectedCallback, renderedCallback, disconnectedCallback, errorCallback để xử lý các giai đoạn khác nhau của chu trình sống component."
+        },
+        {
+            "question": "Làm cách nào để sử dụng renderedCallback để thao tác DOM sau khi component được render?",
+            "answer": "Định nghĩa phương thức renderedCallback() trong module JavaScript, và thao tác DOM tại đó."
+        },
+        {
+            "question": "Làm cách nào để sử dụng disconnectedCallback để làm sạch các tài nguyên?",
+            "answer": "Định nghĩa phương thức disconnectedCallback() để xóa các listener, giải phóng tài nguyên, v.v. trước khi component bị hủy."
+        },
+        {
+            "question": "Làm cách nào để sử dụng errorCallback để xử lý lỗi?",
+            "answer": "Định nghĩa phương thức errorCallback(error, stack) để xử lý lỗi xảy ra trong component."
+        },
+        {
+            "question": "Làm cách nào để sử dụng constructor trong LWC?",
+            "answer": "Constructor được sử dụng để khởi tạo component, nhưng bạn nên tránh thao tác DOM hoặc gọi các hành động phức tạp tại đây. Thay vào đó, sử dụng connectedCallback để thực hiện các hoạt động sau khi component được kết nối với DOM."
+        },
+        {
+            "question": "Làm cách nào để sử dụng i18n (quốc tế hóa) trong LWC?",
+            "answer": "Sử dụng @salesforce/i18n để định dạng ngày, số, và các giá trị khác theo địa phương của người dùng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng localStorage để lưu trữ dữ liệu giữa các session?",
+            "answer": "Sử dụng localStorage để lưu trữ dữ liệu, nhưng nhớ rằng nó có thể bị xóa bởi người dùng và có thể có vấn đề về bảo mật."
+        },
+        {
+            "question": "Làm cách nào để sử dụng sessionStorage để lưu trữ dữ liệu trong một session?",
+            "answer": "Sử dụng sessionStorage để lưu trữ dữ liệu, dữ liệu sẽ mất khi tab trình duyệt đóng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng cookies để lưu trữ dữ liệu?",
+            "answer": "Sử dụng document.cookies để đọc và ghi cookies, nhưng cần phải xử lý parsing và encoding thích hợp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng geolocation API trong LWC?",
+            "answer": "Sử dụng navigator.geolocation để lấy vị trí địa lý của người dùng, nếu trình duyệt hỗ trợ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng media queries để tạo giao diện đáp ứng?",
+            "answer": "Sử dụng media queries trong tệp CSS của component để tùy chỉnh styling dựa trên kích thước màn hình."
+        },
+        {
+            "question": "Làm cách nào để sử dụng flexbox hoặc grid layout trong LWC?",
+            "answer": "Sử dụng các thuộc tính CSS flexbox hoặc grid layout trong tệp CSS của component để tổ chức các phần tử."
+        },
+        {
+            "question": "Làm cách nào để sử dụng animations hoặc transitions trong LWC?",
+            "answer": "Sử dụng các thuộc tính CSS như transition, animation, hoặc sử dụng các thư viện JavaScript để tạo animations."
+        },
+        {
+            "question": "Làm cách nào để sử dụng canvas để vẽ đồ họa trong LWC?",
+            "answer": "Sử dụng phần tử <canvas> trong mẫu HTML, và sử dụng API canvas của JavaScript để vẽ trên nó."
+        },
+        {
+            "question": "Làm cách nào để sử dụng video hoặc audio trong LWC?",
+            "answer": "Sử dụng phần tử <video> hoặc <audio> trong mẫu HTML, và cung cấp các thuộc tính và sự kiện thích hợp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng form và input elements trong LWC?",
+            "answer": "Sử dụng các phần tử form chuẩn của HTML, và sử dụng event handlers để xử lý các sự kiện như submit, change, v.v."
+        },
+        {
+            "question": "Làm cách nào để xử lý validation của form trong LWC?",
+            "answer": "Sử dụng các thuộc tính validation của HTML5, như required, pattern, min, max, v.v., và sử dụng phương thức checkValidity() để kiểm tra form."
+        },
+        {
+            "question": "Làm cách nào để sử dụng file input để tải lên tệp?",
+            "answer": "Sử dụng phần tử <input type='file'>, và sử dụng event handler change để xử lý các tệp được chọn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng XMLHttpRequest để gọi API bên ngoài?",
+            "answer": "Sử dụng XMLHttpRequest để gửi request HTTP đến API, và xử lý response tương ứng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng fetch API để gọi API bên ngoài?",
+            "answer": "Sử dụng fetch() để gửi request HTTP đến API, và sử dụng Promise để xử lý response."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Promise.all để chờ các Promise đồng thời?",
+            "answer": "Sử dụng Promise.all([promise1, promise2, ...]) để chờ tất cả các Promise hoàn thành, và trả về một array của kết quả."
+        },
+        {
+            "question": "Làm cách nào để sử dụng async/await để quản lý các hoạt động bất đồng bộ?",
+            "answer": "Định nghĩa phương thức async, và sử dụng await trước các Promise để chờ kết quả."
+        },
+        {
+            "question": "Làm cách nào để phát một sự kiện từ một component con đến component cha?",
+            "answer": "Component con phát một sự kiện tùy chỉnh sử dụng this.dispatchEvent(new CustomEvent('eventName', { detail: data })). Component cha đăng ký listener cho sự kiện đó."
+        },
+        {
+            "question": "Làm cách nào để ngừa sự lan truyền sự kiện (event propagation)?",
+            "answer": "Sử dụng event.stopPropagation() trong handler của sự kiện để ngừa sự kiện lan truyền tiếp."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh styling của component từ bên ngoài?",
+            "answer": "Sử dụng CSS variables (custom properties) để cho phép component cha tùy chỉnh styling của component con."
+        },
+        {
+            "question": "Làm cách nào để sử dụng class CSS từ Lightning Design System trong LWC?",
+            "answer": "Sử dụng các class CSS từ Lightning Design System (LDS) trong mẫu HTML của component."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi từ @wire?",
+            "answer": "Sử dụng thuộc tính error của kết quả wire, chẳng hạn nếu có lỗi, nó sẽ có trong record.error."
+        },
+        {
+            "question": "Làm cách nào để định nghĩa một thuộc tính trong LWC?",
+            "answer": "Sử dụng @api decorator trước khai báo thuộc tính trong module JavaScript, chẳng hạn @api recordId;"
+        },
+        {
+            "question": "Làm cách nào để sử dụng thuộc tính trong mẫu HTML?",
+            "answer": "Sử dụng {this.propertyName} để hiển thị giá trị của thuộc tính."
+        },
+        {
+            "question": "Làm cách nào để cập nhật thuộc tính và kích hoạt re-rendering?",
+            "answer": "Để cập nhật thuộc tính và kích hoạt re-rendering, sử dụng @track cho thuộc tính bạn muốn theo dõi thay đổi. Khi thuộc tính đó thay đổi, component sẽ tự động re-render."
+        },
+        {
+            "question": "Làm cách nào để cài đặt SalesForce CLI?",
+            "answer": "Tải về từ trang chính thức của SalesForce, hoặc sử dụng package manager như npm (npx @salesforce/sfdx-cli)."
+        },
+        {
+            "question": "Làm cách nào để tạo một dự án mới với SalesForce DX?",
+            "answer": "Chạy lệnh `sfdx force:project:create -n MyProject` để tạo dự án mới."
+        },
+        {
+            "question": "Làm cách nào để kết nối dự án với tổ chức SalesForce của bạn?",
+            "answer": "Sử dụng lệnh `sfdx force:auth:login` để đăng nhập và kết nối tổ chức."
+        },
+        {
+            "question": "Làm cách nào để thêm một component mới vào dự án LWC?",
+            "answer": "Chạy lệnh `sfdx lwc:create -n NewComponent` trong thư mục dự án."
+        },
+        {
+            "question": "Các tệp nào được tạo ra khi sử dụng lệnh lwc:create?",
+            "answer": "Thư mục NewComponent chứa newcomponent.js, newcomponent.html, newcomponent.css."
+        }
+    ],
+    "SFDC’s Trigger": [
+        {
+            "question": "Trigger trong SalesForce là gì?",
+            "answer": "Script Apex thực thi trước/sau sự kiện như chèn, cập nhật, xóa bản ghi, thực hiện hành động tùy chỉnh."
+        },
+        {
+            "question": "Những loại Trigger khác nhau là gì?",
+            "answer": "Before (trước khi lưu), After (sau khi lưu), dựa trên chèn, cập nhật, xóa, undelete."
+        },
+        {
+            "question": "Khi nào bạn nên sử dụng Trigger thay vì Validation Rules hoặc Flows?",
+            "answer": "Dùng cho logic phức tạp, hiệu suất cao, xử lý dữ liệu lớn, không dùng được với công cụ click-and-point."
+        },
+        {
+            "question": "Làm cách nào để tạo một Trigger?",
+            "answer": "Mở Developer Console, chọn 'File' > 'New' > 'Apex Trigger', chọn đối tượng, viết mã Apex."
+        },
+        {
+            "question": "Cú pháp của Trigger là gì?",
+            "answer": "trigger TriggerName on ObjectName (trigger_events) { // code }"
+        },
+        {
+            "question": "Làm cách nào để xử lý các hoạt động khối lượng lớn trong Trigger?",
+            "answer": "Kiểm tra Trigger.isBulk, xử lý bản ghi theo lô, tránh giới hạn governor."
+        },
+        {
+            "question": "Những trường hợp sử dụng phổ biến của Trigger là gì?",
+            "answer": "Kiểm tra phức tạp, cập nhật bản ghi liên quan, gửi thông báo, tính toán."
+        },
+        {
+            "question": "Làm cách nào để debug một Trigger?",
+            "answer": "Dùng debug log trong Developer Console, đặt mức log, phân tích lỗi."
+        },
+        {
+            "question": "Các biến ngữ cảnh Trigger là gì?",
+            "answer": "Cung cấp thông tin về ngữ cảnh thực thi, như before/after, loại hoạt động, bản ghi xử lý."
+        },
+        {
+            "question": "Làm cách nào để ngăn chặn Trigger đệ quy?",
+            "answer": "Dùng biến static theo dõi, tránh xử lý lại cùng bản ghi."
+        },
+        {
+            "question": "Các sự kiện trigger trong SalesForce là gì?",
+            "answer": "Before insert, before update, before delete, after insert, after update, after delete, after undelete."
+        },
+        {
+            "question": "Thứ tự thực thi của Trigger là gì?",
+            "answer": "Before trước khi lưu, After sau khi lưu, theo thứ tự định nghĩa."
+        },
+        {
+            "question": "Làm cách nào để truy cập giá trị cũ và mới của một trường trong Trigger?",
+            "answer": "Dùng Trigger.new cho giá trị mới, Trigger.old cho giá trị cũ, tùy thuộc before/after."
+        },
+        {
+            "question": "Sự khác biệt giữa Trigger.new và Trigger.newMap là gì?",
+            "answer": "Trigger.new là danh sách sObjects, Trigger.newMap là map ID đến sObjects."
+        },
+        {
+            "question": "Làm cách nào để xử lý xóa trong Trigger?",
+            "answer": "Dùng Trigger.old, Trigger.oldMap cho bản ghi bị xóa, thực hiện trước khi xóa khỏi cơ sở dữ liệu."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho viết Trigger hiệu quả là gì?",
+            "answer": "Giảm thao tác cơ sở dữ liệu, dùng SOQL hiệu quả, tránh DML trong vòng lặp, xử lý khối lượng lớn."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra một Trigger?",
+            "answer": "Viết lớp test Apex, thực hiện hoạt động kích hoạt Trigger, kiểm tra kết quả mong đợi."
+        },
+        {
+            "question": "Làm cách nào để xử lý ngoại lệ trong Trigger?",
+            "answer": "Dùng try-catch, log lỗi, quyết định tiếp tục hoặc dừng công việc."
+        },
+        {
+            "question": "Trigger có thể được kích hoạt bởi bao nhiêu bản ghi cùng lúc?",
+            "answer": "Có thể xử lý nhiều bản ghi, phụ thuộc vào giới hạn governor, thường xử lý theo lô."
+        },
+        {
+            "question": "Làm cách nào để đảm bảo Trigger không ảnh hưởng hiệu suất?",
+            "answer": "Tối ưu hóa mã, giảm truy vấn, xử lý lỗi, và kiểm tra hiệu suất trước khi triển khai."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger cho đối tượng Account?",
+            "answer": "Định nghĩa trigger trên Account, sử dụng Trigger.new và Trigger.old để xử lý các thay đổi như cập nhật trường, kiểm tra logic."
+        },
+        {
+            "question": "Làm cách nào để cập nhật bản ghi liên quan trong Trigger?",
+            "answer": "Sử dụng DML trong Trigger để cập nhật bản ghi liên quan, đảm bảo không vi phạm giới hạn governor."
+        },
+        {
+            "question": "Làm cách nào để sử dụng maps trong Trigger để cải thiện hiệu suất?",
+            "answer": "Sử dụng Trigger.newMap và Trigger.oldMap để truy cập nhanh bản ghi theo ID, giảm số lượng SOQL."
+        },
+        {
+            "question": "Làm cách nào để xử lý Trigger cho các bản ghi bị xóa mềm (soft delete)?",
+            "answer": "Sử dụng sự kiện after delete và Trigger.old để xử lý logic cho bản ghi bị xóa mềm, lưu vào bảng audit nếu cần."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để gửi email thông báo?",
+            "answer": "Sử dụng Messaging.SingleEmailMessage trong Trigger để gửi email, đảm bảo không vượt quá giới hạn email hàng ngày."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra Trigger.isInsert trong mã?",
+            "answer": "Sử dụng biến ngữ cảnh Trigger.isInsert để xác định xem Trigger được kích hoạt bởi sự kiện chèn hay không."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tính toán trường tùy chỉnh?",
+            "answer": "Trong Trigger, sử dụng logic Apex để tính toán giá trị và gán vào trường tùy chỉnh trước khi lưu."
+        },
+        {
+            "question": "Làm cách nào để xử lý Trigger cho các bản ghi được khôi phục (undelete)?",
+            "answer": "Sử dụng sự kiện after undelete và Trigger.new để xử lý logic cho bản ghi được khôi phục, như cập nhật trạng thái."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để kiểm tra dữ liệu trùng lặp?",
+            "answer": "Sử dụng SOQL trong Trigger để kiểm tra bản ghi hiện có, so sánh với Trigger.new, và thêm lỗi nếu phát hiện trùng lặp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gán chủ sở hữu cho bản ghi?",
+            "answer": "Trong Trigger, sử dụng DML để cập nhật trường OwnerId dựa trên logic, như gán theo vùng lãnh thổ hoặc đội nhóm."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để cập nhật trường trên bản ghi cha?",
+            "answer": "Sử dụng SOQL để truy vấn bản ghi cha, sau đó cập nhật thông qua DML, đảm bảo xử lý theo lô để tránh giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi con?",
+            "answer": "Trong Trigger, tạo danh sách bản ghi con mới, sau đó sử dụng DML insert để lưu, đảm bảo xử lý khối lượng lớn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để kiểm tra quyền truy cập của người dùng?",
+            "answer": "Sử dụng Schema.DescribeSObjectResult để kiểm tra quyền truy cập, hoặc sử dụng isAccessible() để đảm bảo an toàn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để ghi log hoạt động?",
+            "answer": "Tạo bản ghi trong một đối tượng tùy chỉnh để lưu log, sử dụng Trigger.old và Trigger.new để ghi thông tin thay đổi."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gửi thông báo Chatter?",
+            "answer": "Sử dụng ConnectApi trong Trigger để đăng bài trên Chatter, đảm bảo không vượt quá giới hạn API."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý trường picklist?",
+            "answer": "Kiểm tra giá trị picklist trong Trigger.new, sử dụng logic để xử lý hoặc cập nhật dựa trên giá trị chọn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý trường formula?",
+            "answer": "Không thể thay đổi trực tiếp trường formula, nhưng có thể sử dụng giá trị của nó trong logic để cập nhật các trường khác."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý trường lookup?",
+            "answer": "Sử dụng SOQL để truy vấn bản ghi liên quan qua lookup, sau đó cập nhật hoặc xử lý logic dựa trên mối quan hệ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý trường master-detail?",
+            "answer": "Sử dụng Trigger trên đối tượng chi tiết để cập nhật hoặc kiểm tra logic, đảm bảo tuân thủ mối quan hệ master-detail."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong nhiều ngôn ngữ?",
+            "answer": "Sử dụng UserInfo.getLocale() để xác định ngôn ngữ, sau đó áp dụng logic phù hợp cho từng ngôn ngữ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý tiền tệ đa dạng?",
+            "answer": "Sử dụng CurrencyIsoCode trong Trigger để xử lý chuyển đổi tiền tệ, đảm bảo tính toán chính xác."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gán lãnh thổ?",
+            "answer": "Sử dụng logic dựa trên trường địa lý hoặc quy tắc lãnh thổ để gán TerritoryId trong Trigger."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi bị khóa (locked records)?",
+            "answer": "Kiểm tra Approval.isLocked() để xác định bản ghi bị khóa, xử lý logic phù hợp hoặc thêm lỗi."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo task liên quan?",
+            "answer": "Trong Trigger, tạo danh sách Task mới, gán mối quan hệ với bản ghi hiện tại, sau đó sử dụng DML insert."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để kiểm tra giới hạn governor?",
+            "answer": "Sử dụng Limits.getCpuTime() và các phương thức khác để theo dõi, đảm bảo không vượt quá giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong sandbox?",
+            "answer": "Sử dụng UserInfo.isSandbox để xác định môi trường, áp dụng logic khác nhau nếu cần."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tích hợp với API bên ngoài?",
+            "answer": "Sử dụng HTTP callout trong Trigger để gọi API, nhưng cần sử dụng @future hoặc Queueable để xử lý bất đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý file attachments?",
+            "answer": "Sử dụng ContentVersion hoặc Attachment trong Trigger để xử lý file, đảm bảo không vượt giới hạn kích thước."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động cập nhật trường trên bản ghi liên quan?",
+            "answer": "Sử dụng SOQL để truy vấn bản ghi liên quan, sau đó cập nhật qua DML, xử lý theo lô để tối ưu hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để kiểm tra dữ liệu trước khi lưu?",
+            "answer": "Trong before trigger, sử dụng Trigger.new để kiểm tra dữ liệu, thêm lỗi nếu không hợp lệ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gửi thông báo SMS?",
+            "answer": "Sử dụng API bên ngoài như Twilio trong Trigger, đảm bảo xử lý bất đồng bộ để tránh giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Process Builder?",
+            "answer": "Trigger có thể được kích hoạt trước hoặc sau Process Builder, cần đảm bảo không gây đệ quy."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong đối tượng tùy chỉnh?",
+            "answer": "Trong Trigger, tạo danh sách bản ghi mới cho đối tượng tùy chỉnh, sau đó sử dụng DML insert."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Flow?",
+            "answer": "Trigger có thể khởi tạo Flow hoặc xử lý dữ liệu trước khi Flow chạy, cần kiểm tra thứ tự thực thi."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để kiểm tra quyền truy cập vào bản ghi?",
+            "answer": "Sử dụng isAccessible(), isUpdateable() để kiểm tra quyền, thêm lỗi nếu người dùng không có quyền."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Approval Process?",
+            "answer": "Sử dụng Trigger để kiểm tra trạng thái phê duyệt, cập nhật hoặc thêm logic trước/sau khi phê duyệt."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gán vai trò cho người dùng?",
+            "answer": "Sử dụng logic trong Trigger để cập nhật RoleId dựa trên điều kiện, như vị trí hoặc phòng ban."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Communities?",
+            "answer": "Sử dụng UserInfo.getUserType() để xác định người dùng cộng đồng, áp dụng logic phù hợp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Mobile?",
+            "answer": "Trigger hoạt động giống nhau trên mobile, nhưng cần tối ưu để xử lý nhanh, tránh ảnh hưởng trải nghiệm người dùng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo báo cáo?",
+            "answer": "Sử dụng Apex để tạo báo cáo tùy chỉnh, lưu vào đối tượng Report, sau đó kích hoạt qua Trigger."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Lightning?",
+            "answer": "Trigger hoạt động trong Lightning, cần đảm bảo tương thích với các thành phần Lightning Web Component."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động cập nhật dashboard?",
+            "answer": "Sử dụng Apex để cập nhật dữ liệu dashboard, sau đó kích hoạt qua Trigger, đảm bảo không vượt giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Analytics?",
+            "answer": "Sử dụng Trigger để cập nhật dữ liệu cho Tableau CRM, đảm bảo dữ liệu sẵn sàng cho phân tích."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Einstein?",
+            "answer": "Sử dụng Trigger để khởi tạo dự đoán Einstein, sau đó xử lý kết quả qua Apex."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Marketing Cloud?",
+            "answer": "Sử dụng API Marketing Cloud trong Trigger để đồng bộ dữ liệu, đảm bảo xử lý bất đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gán nhãn cho bản ghi?",
+            "answer": "Sử dụng logic trong Trigger để gán nhãn dựa trên điều kiện, lưu vào trường tùy chỉnh."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Service Cloud?",
+            "answer": "Sử dụng Trigger để tự động gán case, gửi thông báo, hoặc cập nhật trạng thái, đảm bảo hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Commerce Cloud?",
+            "answer": "Sử dụng Trigger để đồng bộ đơn hàng, cập nhật trạng thái, hoặc xử lý thanh toán, đảm bảo xử lý lô."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Field Service?",
+            "answer": "Sử dụng Trigger để tự động gán công việc, cập nhật lịch trình, hoặc gửi thông báo cho kỹ thuật viên."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Health Cloud?",
+            "answer": "Sử dụng Trigger để xử lý hồ sơ bệnh nhân, cập nhật trạng thái, hoặc gửi thông báo, đảm bảo tuân thủ HIPAA."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Financial Services Cloud?",
+            "answer": "Sử dụng Trigger để tự động gán tài khoản, cập nhật giao dịch, hoặc xử lý yêu cầu tài chính, đảm bảo tuân thủ quy định."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Nonprofit Cloud?",
+            "answer": "Sử dụng Trigger để xử lý quyên góp, cập nhật danh sách thành viên, hoặc gửi thông báo, đảm bảo hiệu quả."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Education Cloud?",
+            "answer": "Sử dụng Trigger để tự động gán sinh viên, cập nhật điểm số, hoặc xử lý đăng ký, đảm bảo chính xác."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Government Cloud?",
+            "answer": "Sử dụng Trigger để xử lý hồ sơ công dân, cập nhật trạng thái, hoặc gửi thông báo, đảm bảo tuân thủ quy định chính phủ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Industries?",
+            "answer": "Sử dụng Trigger để tự động hóa quy trình ngành cụ thể, như bảo hiểm, năng lượng, hoặc viễn thông, đảm bảo hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động gán quyền truy cập?",
+            "answer": "Sử dụng Trigger để cập nhật Sharing Rules hoặc Manual Sharing, đảm bảo người dùng có quyền truy cập phù hợp."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Platform Events?",
+            "answer": "Sử dụng Trigger để xử lý sự kiện platform, đảm bảo xử lý bất đồng bộ và không vượt giới hạn governor."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Streaming API?",
+            "answer": "Sử dụng Trigger để xử lý dữ liệu thời gian thực từ Streaming API, đảm bảo hiệu suất và xử lý lô."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Bulk API?",
+            "answer": "Sử dụng Trigger để xử lý dữ liệu khối lượng lớn từ Bulk API, đảm bảo tối ưu hóa và không vượt giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce REST API?",
+            "answer": "Sử dụng Trigger để xử lý yêu cầu REST, đảm bảo xử lý bất đồng bộ và tích hợp với hệ thống bên ngoài."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce SOAP API?",
+            "answer": "Sử dụng Trigger để xử lý yêu cầu SOAP, đảm bảo tương thích và không vượt giới hạn governor."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Metadata API?",
+            "answer": "Sử dụng Trigger để xử lý metadata, đảm bảo tự động hóa cấu hình và không vượt giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Tooling API?",
+            "answer": "Sử dụng Trigger để xử lý công cụ phát triển, đảm bảo tự động hóa và tối ưu hóa hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Apex REST?",
+            "answer": "Sử dụng Trigger để xử lý yêu cầu Apex REST, đảm bảo tích hợp và xử lý bất đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Apex SOAP?",
+            "answer": "Sử dụng Trigger để xử lý yêu cầu Apex SOAP, đảm bảo tương thích và không vượt giới hạn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Lightning Connect?",
+            "answer": "Sử dụng Trigger để xử lý dữ liệu từ nguồn bên ngoài qua Lightning Connect, đảm bảo đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Platform Encryption?",
+            "answer": "Sử dụng Trigger để xử lý dữ liệu mã hóa, đảm bảo an toàn và tuân thủ quy định."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Field Audit Trail?",
+            "answer": "Sử dụng Trigger để ghi log thay đổi trường, đảm bảo tuân thủ và theo dõi lịch sử."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Duplicate Management?",
+            "answer": "Sử dụng Trigger để phát hiện và xử lý bản ghi trùng lặp, đảm bảo dữ liệu sạch."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Territory Management?",
+            "answer": "Sử dụng Trigger để gán lãnh thổ, đảm bảo phân bổ đúng và tự động hóa."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Partner Relationship Management?",
+            "answer": "Sử dụng Trigger để quản lý đối tác, đảm bảo tự động hóa quy trình và hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Commerce Cloud?",
+            "answer": "Sử dụng Trigger để xử lý đơn hàng, đảm bảo đồng bộ và tự động hóa quy trình."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Service Cloud Voice?",
+            "answer": "Sử dụng Trigger để xử lý cuộc gọi, đảm bảo tự động hóa và tích hợp với hệ thống."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để tự động tạo bản ghi trong Salesforce Einstein Voice?",
+            "answer": "Sử dụng Trigger để xử lý dữ liệu giọng nói, đảm bảo tích hợp AI và tự động hóa."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Industries?",
+            "answer": "Sử dụng Trigger để tự động hóa quy trình ngành cụ thể, đảm bảo hiệu suất và tuân thủ."
+        }
+    ],
+    "SFDC’s Batch": [
+        {
+            "question": "Batch Apex trong SalesForce là gì?",
+            "answer": "Công cụ xử lý dữ liệu lớn theo lô, tránh giới hạn, chạy bất đồng bộ, phù hợp cho hàng ngàn/mil bản ghi."
+        },
+        {
+            "question": "Khi nào bạn nên sử dụng Batch Apex?",
+            "answer": "Dùng khi xử lý nhiều bản ghi, vượt giới hạn governor, hoặc chạy công việc bất đồng bộ."
+        },
+        {
+            "question": "Lợi ích của việc sử dụng Batch Apex là gì?",
+            "answer": "Xử lý dữ liệu lớn hiệu quả, mỗi lô có giới hạn riêng, chạy nền, dễ giám sát."
+        },
+        {
+            "question": "Làm cách nào để tạo một lớp Batch Apex?",
+            "answer": "Thực hiện interface Database.Batchable, định nghĩa start, execute, finish."
+        },
+        {
+            "question": "Các phương thức trong interface Database.Batchable là gì?",
+            "answer": "start (trả QueryLocator), execute (xử lý bản ghi), finish (hoàn tất sau tất cả lô)."
+        },
+        {
+            "question": "Làm cách nào để lên lịch một công việc Batch Apex?",
+            "answer": "Dùng System.scheduleBatch, chỉ định lớp, tên công việc, và tần suất."
+        },
+        {
+            "question": "Làm cách nào để giám sát công việc Batch Apex?",
+            "answer": "Xem trong 'Apex Jobs' từ Setup, kiểm tra trạng thái, tiến độ, và lỗi."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho viết mã Batch Apex là gì?",
+            "answer": "Xử lý theo lô, dùng SOQL hiệu quả, xử lý ngoại lệ, kiểm tra với dữ liệu nhỏ trước."
+        },
+        {
+            "question": "Batch Apex xử lý giao dịch như thế nào?",
+            "answer": "Mỗi lô là giao dịch riêng, nếu lô lỗi, không ảnh hưởng lô khác, đảm bảo xử lý từng phần."
+        },
+        {
+            "question": "Batch Apex có thể dùng với callout bên ngoài không?",
+            "answer": "Có, nhưng cần quản lý hiệu quả để tránh giới hạn, đảm bảo callout không vượt quá."
+        },
+        {
+            "question": "Sự khác biệt giữa Batch Apex và Queueable Apex là gì?",
+            "answer": "Batch Apex xử lý dữ liệu lớn theo lô; Queueable chạy bất đồng bộ, phù hợp công việc nhỏ."
+        },
+        {
+            "question": "Làm cách nào để xử lý trạng thái trong Batch Apex?",
+            "answer": "Dùng biến instance, nhưng cẩn thận với dữ liệu lớn để tránh giới hạn bộ nhớ."
+        },
+        {
+            "question": "Giới hạn governor cho Batch Apex là gì?",
+            "answer": "Mỗi lô có giới hạn riêng, kích thước lô mặc định 200, tối đa 50,000 bản ghi."
+        },
+        {
+            "question": "Làm cách nào để lên lịch Batch Apex chạy vào thời gian cụ thể?",
+            "answer": "Dùng System.scheduleBatch với biểu thức cron."
+        },
+        {
+            "question": "Vai trò của phương thức Database.executeBatch là gì?",
+            "answer": "Khởi chạy công việc Batch Apex ngay lập tức, không lên lịch."
+        },
+        {
+            "question": "Điều gì xảy ra nếu công việc Batch Apex thất bại?",
+            "answer": "Công việc được đánh dấu thất bại, lô chưa xử lý không chạy, xem log để sửa lỗi."
+        },
+        {
+            "question": "Làm cách nào để xử lý ngoại lệ trong Batch Apex?",
+            "answer": "Dùng try-catch trong execute, log lỗi, quyết định tiếp tục hoặc dừng."
+        },
+        {
+            "question": "Số lượng công việc Batch Apex chạy đồng thời tối đa là bao nhiêu?",
+            "answer": "Phụ thuộc giấy phép tổ chức, thường giới hạn nhỏ, cần quản lý lịch trình."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của công việc Batch Apex?",
+            "answer": "Xử lý lô hiệu quả, giảm truy vấn, tránh tính toán không cần, tối ưu SOQL."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra một công việc Batch Apex?",
+            "answer": "Viết lớp test Apex, chạy công việc, kiểm tra kết quả và log."
+        }
+    ],
+    "SFDC’s TestClass": [
+        {
+            "question": "Mục đích của test class trong SalesForce là gì?",
+            "answer": "Test class trong SalesForce là để kiểm tra và xác minh rằng các phần mềm tùy chỉnh (Apex code) hoạt động đúng theo yêu cầu và kỳ vọng."
+        },
+        {
+            "question": "Làm cách nào để định nghĩa một test class trong Apex?",
+            "answer": "Sử dụng annotation @isTest trước class hoặc phương thức để đánh dấu nó là test class hoặc test method."
+        },
+        {
+            "question": "Vai trò của annotation @isTest là gì?",
+            "answer": "Annotation @isTest cho phép class hoặc method chạy trong môi trường test, giúp phân biệt giữa code production và code test."
+        },
+        {
+            "question": "Làm cách nào để tạo dữ liệu test trong test class?",
+            "answer": "Sử dụng phương thức insert, update, delete để tạo và quản lý dữ liệu test. Cũng có thể sử dụng TestDataFactory để tạo dữ liệu mô phỏng."
+        },
+        {
+            "question": "Sự khác biệt giữa Test.startTest() và Test.stopTest() là gì?",
+            "answer": "Test.startTest() và Test.stopTest() được sử dụng để đánh dấu phần code đang được test, đặc biệt hữu ích cho việc test các tác vụ bất đồng bộ hoặc có giới hạn governor."
+        },
+        {
+            "question": "Làm cách nào để test code bất đồng bộ trong Apex?",
+            "answer": "Sử dụng Test.startTest() và Test.stopTest() để chờ cho các tác vụ bất đồng bộ hoàn tất trước khi kiểm tra kết quả."
+        },
+        {
+            "question": "Test coverage là gì và tại sao nó quan trọng?",
+            "answer": "Test coverage là phần trăm của code được test. Nó quan trọng để đảm bảo rằng code của bạn hoạt động đúng và giảm thiểu lỗi trong môi trường production."
+        },
+        {
+            "question": "Làm cách nào để chạy một test class trong SalesForce?",
+            "answer": "Sử dụng Developer Console hoặc Apex Test Execution để chạy test class."
+        },
+        {
+            "question": "Những assertion phổ biến trong test class là gì?",
+            "answer": "Assertions như System.assertEquals, System.assertNotEquals, System.assert, System.fail, v.v."
+        },
+        {
+            "question": "Làm cách nào để xử lý ngoại lệ trong test class?",
+            "answer": "Sử dụng try-catch để bắt và xử lý ngoại lệ, hoặc sử dụng System.assertException để kiểm tra xem ngoại lệ được kỳ vọng có xảy ra hay không."
+        },
+        {
+            "question": "Làm cách nào để test một trigger trong SalesForce?",
+            "answer": "Tạo dữ liệu test để kích hoạt trigger, sau đó kiểm tra kết quả bằng assertions."
+        },
+        {
+            "question": "Vai trò của TestDataFactory trong test class là gì?",
+            "answer": "TestDataFactory giúp tạo dữ liệu test một cách nhất quán và tái sử dụng, giảm thiểu code trùng lặp."
+        },
+        {
+            "question": "Làm cách nào để đảm bảo test class không ảnh hưởng đến dữ liệu production?",
+            "answer": "Sử dụng @isTest để chạy trong môi trường test, và không thực sự thay đổi dữ liệu production."
+        },
+        {
+            "question": "Làm cách nào để test một batch Apex trong test class?",
+            "answer": "Sử dụng Test.startTest() và Test.stopTest() để chạy batch, sau đó kiểm tra kết quả bằng assertions."
+        },
+        {
+            "question": "Giới hạn governor trong test class là gì?",
+            "answer": "Governor limits trong test class được reset giữa Test.startTest() và Test.stopTest(), cho phép test các tác vụ nặng hơn."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra coverage của test class?",
+            "answer": "Sử dụng Developer Console hoặc Setup > Apex Test Execution để xem phần trăm coverage."
+        },
+        {
+            "question": "Làm cách nào để test một controller trong VisualForce page?",
+            "answer": "Tạo dữ liệu test, gọi phương thức controller, và kiểm tra kết quả bằng assertions."
+        },
+        {
+            "question": "Những best practices khi viết test class là gì?",
+            "answer": "Viết test độc lập, sử dụng TestDataFactory, đảm bảo coverage cao, và test cả trường hợp thành công và thất bại."
+        },
+        {
+            "question": "Làm cách nào để test một scheduled Apex trong test class?",
+            "answer": "Sử dụng System.schedule để lên lịch, sau đó kiểm tra kết quả trong Test.stopTest()."
+        },
+        {
+            "question": "Làm cách nào để debug một test class?",
+            "answer": "Sử dụng debug logs trong Developer Console để theo dõi và phân tích lỗi trong quá trình test."
+        }
+    ],
+    "SFDC’s .Net": [
+        {
+            "question": "Các cách tích hợp SalesForce với ứng dụng .Net là gì?",
+            "answer": "Sử dụng SalesForce APIs như REST API hoặc SOAP API để tích hợp với ứng dụng .Net."
+        },
+        {
+            "question": "API của SalesForce nào thường được sử dụng cho tích hợp .Net?",
+            "answer": "REST API là phổ biến nhất do nó đơn giản và dễ sử dụng hơn so với SOAP API."
+        },
+        {
+            "question": "Làm cách nào để thiết lập xác thực cho các cuộc gọi API từ .Net đến SalesForce?",
+            "answer": "Sử dụng Oauth 2.0 để lấy access token thông qua SalesForce Connected App."
+        },
+        {
+            "question": "Vai trò của SalesForce Connected App trong tích hợp .Net là gì?",
+            "answer": "SalesForce Connected App cung cấp client ID và client secret để xác thực và lấy access token cho các API calls."
+        },
+        {
+            "question": "Làm cách nào để thực hiện một cuộc gọi REST API đến SalesForce từ .Net?",
+            "answer": "Sử dụng các thư viện HTTP của .Net như HttpClient để gửi yêu cầu HTTP đến SalesForce API endpoint."
+        },
+        {
+            "question": "Làm cách nào để xử lý phân trang khi lấy dữ liệu từ SalesForce?",
+            "answer": "SalesForce API hỗ trợ phân trang thông qua các tham số như limit và nextRecordsUrl. Bạn cần xử lý các cuộc gọi tiếp theo để lấy toàn bộ dữ liệu."
+        },
+        {
+            "question": "Những lỗi phổ biến có thể gặp phải trong các cuộc gọi API và cách xử lý chúng?",
+            "answer": "Lỗi như 401 (không được xác thực), 404 (không tìm thấy), 500 (lỗi server). Xử lý bằng cách kiểm tra mã trạng thái HTTP và xử lý phù hợp."
+        },
+        {
+            "question": "Làm cách nào để cập nhật một bản ghi trong SalesForce sử dụng API từ .Net?",
+            "answer": "Gửi yêu cầu HTTP PUT hoặc PATCH đến endpoint của bản ghi với dữ liệu mới."
+        },
+        {
+            "question": "Sự khác biệt giữa SOAP API và REST API của SalesForce là gì?",
+            "answer": "SOAP API sử dụng XML và có giao thức phức tạp hơn, trong khi REST API sử dụng JSON và có giao thức đơn giản hơn, phù hợp cho các ứng dụng web hiện đại."
+        },
+        {
+            "question": "Làm cách nào để quản lý sessions và tokens trong .Net cho các cuộc gọi API SalesForce?",
+            "answer": "Lưu access token sau khi lấy được từ quá trình xác thực và sử dụng nó trong các header của các cuộc gọi API. Khi token hết hạn, cần lấy token mới."
+        },
+        {
+            "question": "Làm cách nào để lấy danh sách các đối tượng từ SalesForce bằng .Net?",
+            "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy danh sách các đối tượng."
+        },
+        {
+            "question": "Làm cách nào để xử lý dữ liệu lớn khi tích hợp với SalesForce từ .Net?",
+            "answer": "Sử dụng Bulk API để xử lý dữ liệu lớn, hỗ trợ tải lên và tải xuống dữ liệu theo lô."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi xác thực trong các cuộc gọi API?",
+            "answer": "Kiểm tra mã lỗi 401, sau đó làm mới access token hoặc yêu cầu người dùng xác thực lại."
+        },
+        {
+            "question": "Làm cách nào để đồng bộ dữ liệu giữa .Net và SalesForce?",
+            "answer": "Sử dụng các công cụ như Data Loader hoặc viết logic tùy chỉnh để đồng bộ dữ liệu qua API."
+        },
+        {
+            "question": "Làm cách nào để debug các cuộc gọi API từ .Net đến SalesForce?",
+            "answer": "Sử dụng công cụ như Fiddler hoặc Postman để theo dõi và phân tích các yêu cầu và phản hồi."
+        },
+        {
+            "question": "Làm cách nào để xử lý các cuộc gọi API bất đồng bộ trong .Net?",
+            "answer": "Sử dụng async/await trong .Net để thực hiện các cuộc gọi API bất đồng bộ, cải thiện hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để bảo mật các cuộc gọi API từ .Net đến SalesForce?",
+            "answer": "Sử dụng HTTPS, quản lý token an toàn, và tuân thủ các chính sách bảo mật của SalesForce."
+        },
+        {
+            "question": "Làm cách nào để lấy metadata của SalesForce từ .Net?",
+            "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy metadata của các đối tượng."
+        },
+        {
+            "question": "Làm cách nào để xử lý các cuộc gọi API với nhiều tổ chức SalesForce?",
+            "answer": "Quản lý nhiều access token, mỗi token cho một tổ chức, và chuyển đổi giữa các tổ chức khi cần."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của các cuộc gọi API từ .Net?",
+            "answer": "Sử dụng caching cho dữ liệu tĩnh, giảm số lượng cuộc gọi, và sử dụng Bulk API cho dữ liệu lớn."
+        }
+    ],
+    "SFDC’s PDF": [
+        {
+            "question": "Làm cách nào để tạo một PDF từ một VisualForce page?",
+            "answer": "Sử dụng thuộc tính renderAs='pdf' trong thẻ <apex:page> của VisualForce page."
+        },
+        {
+            "question": "Thuộc tính renderAs attribute trong VisualForce page dùng cho mục đích gì?",
+            "answer": "Thuộc tính renderAs cho phép chỉ định định dạng của trang, như 'pdf' để tạo PDF."
+        },
+        {
+            "question": "Làm cách nào để gửi một PDF như là attachment qua email từ SalesForce?",
+            "answer": "Sử dụng Apex để tạo PDF từ VisualForce page, sau đó sử dụng lớp Messaging để gửi email với attachment là PDF."
+        },
+        {
+            "question": "PDF templates trong SalesForce là gì và cách sử dụng chúng?",
+            "answer": "PDF templates là các mẫu tiên định để tạo các tài liệu PDF từ dữ liệu của SalesForce. Chúng có thể được sử dụng để tạo các hóa đơn, báo giá, v.v."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh layout của một PDF tạo từ VisualForce page?",
+            "answer": "Sử dụng CSS để tùy chỉnh giao diện của VisualForce page, và đảm bảo rằng các phần tử được đặt theo cách phù hợp cho định dạng PDF."
+        },
+        {
+            "question": "Có thể embed images trong PDF tạo từ SalesForce hay không?",
+            "answer": "Có, bạn có thể sử dụng thẻ <img> trong VisualForce page để hiển thị hình ảnh, và chúng sẽ được bao gồm trong PDF."
+        },
+        {
+            "question": "Làm cách nào để xử lý dữ liệu động trong PDF template?",
+            "answer": "Sử dụng merge fields hoặc các biến trong VisualForce page để hiển thị dữ liệu động từ SalesForce."
+        },
+        {
+            "question": "Những best practices cho việc tạo báo cáo PDF trong SalesForce là gì?",
+            "answer": "Giữ cho VisualForce page đơn giản, sử dụng CSS để tùy chỉnh, kiểm tra trang trước khi render thành PDF, và sử dụng các thư viện như jsPDF nếu cần tùy chỉnh hơn."
+        },
+        {
+            "question": "Làm cách nào để bảo mật PDF files trong SalesForce?",
+            "answer": "Sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến các bản ghi có attachments là PDF."
+        },
+        {
+            "question": "Có cách nào để tạo PDF sử dụng Apex code mà không cần VisualForce pages hay không?",
+            "answer": "Có, bạn có thể sử dụng lớp PDF của SalesForce hoặc các thư viện bên thứ ba để tạo PDF trực tiếp từ Apex code."
+        },
+        {
+            "question": "Làm cách nào để thêm header và footer vào PDF tạo từ VisualForce?",
+            "answer": "Sử dụng các thẻ như <apex:pageBlock> hoặc CSS để định nghĩa header và footer trong VisualForce page."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra lỗi khi tạo PDF từ VisualForce?",
+            "answer": "Sử dụng debug logs để theo dõi lỗi, kiểm tra xem các merge fields có đúng không, và đảm bảo dữ liệu đầu vào hợp lệ."
+        },
+        {
+            "question": "Làm cách nào để tạo PDF từ dữ liệu lớn trong SalesForce?",
+            "answer": "Sử dụng Batch Apex để xử lý dữ liệu lớn, sau đó tạo PDF từng phần hoặc sử dụng VisualForce với pagination."
+        },
+        {
+            "question": "Làm cách nào để gửi PDF tự động qua email dựa trên một trigger?",
+            "answer": "Viết trigger để gọi Apex code, tạo PDF từ VisualForce, sau đó sử dụng Messaging.SingleEmailMessage để gửi email."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh font trong PDF tạo từ SalesForce?",
+            "answer": "Sử dụng CSS để định nghĩa font, nhưng cần đảm bảo font được hỗ trợ trong môi trường PDF rendering của SalesForce."
+        },
+        {
+            "question": "Làm cách nào để tạo PDF với nhiều trang từ VisualForce?",
+            "answer": "Sử dụng pagination hoặc lặp qua dữ liệu trong VisualForce page để tạo nhiều trang PDF."
+        },
+        {
+            "question": "Làm cách nào để lưu PDF vào một bản ghi trong SalesForce?",
+            "answer": "Tạo PDF, sau đó lưu nó như một attachment hoặc file trong ContentDocument liên kết với bản ghi."
+        },
+        {
+            "question": "Làm cách nào để kiểm tra định dạng PDF trước khi gửi?",
+            "answer": "Xem trước PDF trong VisualForce page bằng cách renderAs='pdf' và kiểm tra giao diện."
+        },
+        {
+            "question": "Làm cách nào để tạo PDF với chữ ký điện tử?",
+            "answer": "Sử dụng các thư viện bên thứ ba như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất khi tạo PDF từ SalesForce?",
+            "answer": "Giảm số lượng dữ liệu xử lý, sử dụng caching, và tránh các truy vấn phức tạp trong VisualForce page."
+        }
+    ],
+    "Dynamics: Dynamics365 Environment Preparation": [
+        {
+            "question": "Những bước để tạo một tổ chức mới trong Dynamics 365 là gì?",
+            "answer": "Đăng nhập vào Dynamics 365, chọn 'Create New Organization', nhập thông tin tổ chức, chọn khu vực, ngôn ngữ, và các tùy chọn khác."
+        },
+        {
+            "question": "Làm cách nào để cấu hình bảo mật trong Dynamics 365?",
+            "answer": "Cấu hình bảo mật bao gồm tạo các vai trò, phân quyền cho các vai trò, và gán các vai trò cho các người dùng."
+        },
+        {
+            "question": "Sự khác biệt giữa deployment cloud và on-premises của Dynamics 365 là gì?",
+            "answer": "Cloud deployment là dịch vụ trên web, quản lý bởi Microsoft, trong khi on-premises deployment là cài đặt trên máy chủ của khách hàng, cho phép kiểm soát đầy đủ hơn nhưng yêu cầu quản lý IT phức tạp hơn."
+        },
+        {
+            "question": "Làm cách nào để thiết lập vai trò và quyền cho người dùng trong Dynamics 365?",
+            "answer": "Tạo các vai trò, định nghĩa quyền cho mỗi vai trò, sau đó gán các vai trò cho người dùng tương ứng."
+        },
+        {
+            "question": "Vai trò của Azure trong việc thiết lập môi trường Dynamics 365 là gì?",
+            "answer": "Azure cung cấp các dịch vụ đám mây như lưu trữ, tính toán, và database, có thể được sử dụng để hỗ trợ Dynamics 365, đặc biệt là trong deployment on-premises hoặc hybrid."
+        },
+        {
+            "question": "Làm cách nào để tích hợp Dynamics 365 với các dịch vụ khác của Microsoft?",
+            "answer": "Sử dụng các APIs và connectors có sẵn để tích hợp với các dịch vụ như Office 365, Power BI, Azure, v.v."
+        },
+        {
+            "question": "Những xem xét quan trọng cho việc di chuyển dữ liệu trong Dynamics 365 là gì?",
+            "answer": "Kế hoạch cho việc di chuyển dữ liệu từ hệ thống cũ, đảm bảo tính toàn vẹn dữ liệu, và kiểm tra dữ liệu sau khi di chuyển."
+        },
+        {
+            "question": "Làm cách nào để quản lý licenses và subscriptions cho Dynamics 365?",
+            "answer": "Qua trang quản lý của Microsoft, đăng ký và quản lý licenses cho người dùng, đảm bảo rằng mọi người dùng có license phù hợp."
+        },
+        {
+            "question": "Những edition khác nhau của Dynamics 365 và sự khác biệt giữa chúng là gì?",
+            "answer": "Dynamics 365 có các edition như Enterprise, Premium, và Team, mỗi có các tính năng và giá khác nhau. Ví dụ, Enterprise có tính năng đầy đủ nhất, trong khi Team dành cho các doanh nghiệp nhỏ hơn."
+        },
+        {
+            "question": "Làm cách nào để giám sát và tối ưu hóa hiệu suất của môi trường Dynamics 365?",
+            "answer": "Sử dụng các công cụ giám sát của Microsoft, theo dõi các metrics như thời gian phản hồi, tài nguyên sử dụng, và xử lý các vấn đề hiệu suất kịp thời."
+        },
+        {
+            "question": "Làm cách nào để tạo một backup cho môi trường Dynamics 365?",
+            "answer": "Sử dụng các công cụ backup của Microsoft hoặc Azure để sao lưu dữ liệu và cấu hình."
+        },
+        {
+            "question": "Làm cách nào để cấu hình multi-factor authentication (MFA) trong Dynamics 365?",
+            "answer": "Kích hoạt MFA qua Azure AD, yêu cầu người dùng sử dụng thêm một phương thức xác thực như ứng dụng xác thực hoặc SMS."
+        },
+        {
+            "question": "Làm cách nào để thiết lập một sandbox environment trong Dynamics 365?",
+            "answer": "Tạo một tổ chức sandbox qua Admin Center, sao chép dữ liệu từ production để test và phát triển."
+        },
+        {
+            "question": "Làm cách nào để quản lý các bản cập nhật trong Dynamics 365?",
+            "answer": "Sử dụng Admin Center để lên lịch và áp dụng các bản cập nhật, kiểm tra trước trên sandbox."
+        },
+        {
+            "question": "Làm cách nào để tích hợp Dynamics 365 với hệ thống ERP bên ngoài?",
+            "answer": "Sử dụng APIs hoặc connectors như Common Data Service để tích hợp với các hệ thống ERP như SAP hoặc Oracle."
+        },
+        {
+            "question": "Làm cách nào để cấu hình email trong Dynamics 365?",
+            "answer": "Cấu hình server email qua Exchange hoặc Office 365, thiết lập các quy tắc email cho các bản ghi như lead hoặc opportunity."
+        },
+        {
+            "question": "Làm cách nào để đảm bảo tuân thủ GDPR trong Dynamics 365?",
+            "answer": "Sử dụng các tính năng như Data Subject Request (DSR) và Data Export Service để quản lý dữ liệu cá nhân theo GDPR."
+        },
+        {
+            "question": "Làm cách nào để giám sát các lỗi trong môi trường Dynamics 365?",
+            "answer": "Sử dụng Health Center hoặc các công cụ logging của Microsoft để theo dõi và phân tích lỗi."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa chi phí cho môi trường Dynamics 365?",
+            "answer": "Quản lý licenses hiệu quả, sử dụng sandbox thay vì production cho test, và tối ưu hóa tài nguyên Azure."
+        },
+        {
+            "question": "Làm cách nào để đào tạo người dùng mới cho môi trường Dynamics 365?",
+            "answer": "Sử dụng các tài liệu hướng dẫn của Microsoft, tổ chức các buổi training, và cung cấp access đến sandbox để thực hành."
+        }
+    ],
+    "Dynamics: Power Apps (model driven app and canvas app)": [
+        {
+            "question": "Sự khác biệt giữa model-driven app và canvas app trong Power Apps là gì?",
+            "answer": "Model-driven app là các ứng dụng dựa trên mô hình dữ liệu, có cấu trúc định sẵn, trong khi canvas app là các ứng dụng tùy chỉnh, cho phép thiết kế giao diện từ đầu với drag-and-drop."
+        },
+        {
+            "question": "Làm cách nào để tạo một model-driven app trong Power Apps?",
+            "answer": "Sử dụng Power Apps Maker, chọn 'Create from scratch' hoặc 'Create from template', sau đó định nghĩa các entity, form, view, và các tính năng khác."
+        },
+        {
+            "question": "Những component của một model-driven app là gì?",
+            "answer": "Bao gồm các entity, form, view, dashboard, và các tính năng như workflow, business rules, v.v."
+        },
+        {
+            "question": "Làm cách nào để kết nối một model-driven app với nguồn dữ liệu?",
+            "answer": "Model-driven app thường kết nối trực tiếp với Dynamics 365 database hoặc các nguồn dữ liệu khác thông qua connectors."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh giao diện của một model-driven app?",
+            "answer": "Sử dụng các tính năng customization của Power Apps, như thiết kế form, tạo các view tùy chỉnh, và sử dụng các widget."
+        },
+        {
+            "question": "Canvas app trong Power Apps là gì?",
+            "answer": "Canvas app là các ứng dụng tùy chỉnh, cho phép người dùng thiết kế giao diện từ đầu với drag-and-drop, kết nối với các nguồn dữ liệu khác nhau."
+        },
+        {
+            "question": "Làm cách nào để tạo một canvas app từ đầu?",
+            "answer": "Sử dụng Power Apps Studio, chọn 'Blank app', sau đó thiết kế giao diện bằng cách kéo thả các control và kết nối với dữ liệu."
+        },
+        {
+            "question": "Những nguồn dữ liệu mà canvas app có thể kết nối là gì?",
+            "answer": "Canvas app có thể kết nối với các nguồn dữ liệu như Dynamics 365, SharePoint, Excel, SQL Server, và các nguồn khác thông qua connectors."
+        },
+        {
+            "question": "Làm cách nào để triển khai một Power App?",
+            "answer": "Sau khi hoàn thành thiết kế, bạn có thể xuất bản app để chia sẻ với người dùng khác, hoặc triển khai trên các thiết bị di động hoặc web."
+        },
+        {
+            "question": "Những best practices cho việc phát triển Power Apps là gì?",
+            "answer": "Giữ cho app đơn giản, tập trung vào trải nghiệm người dùng, sử dụng các mẫu và thành phần có sẵn, và kiểm tra kỹ trước khi triển khai."
+        },
+        {
+            "question": "Làm cách nào để thêm logic vào một canvas app?",
+            "answer": "Sử dụng Power Fx, một ngôn ngữ lập trình giống Excel, để thêm logic vào các control và hành động."
+        },
+        {
+            "question": "Làm cách nào để bảo mật một Power App?",
+            "answer": "Sử dụng các quy tắc security của Power Apps, như phân quyền người dùng, và tích hợp với Azure AD để xác thực."
+        },
+        {
+            "question": "Làm cách nào để kết nối canvas app với Dynamics 365?",
+            "answer": "Sử dụng connector Dynamics 365 trong Power Apps Studio để kết nối và truy cập dữ liệu."
+        },
+        {
+            "question": "Làm cách nào để tạo một form tùy chỉnh trong model-driven app?",
+            "answer": "Sử dụng App Designer để thêm hoặc chỉnh sửa form, thêm các field, section, và business rules."
+        },
+        {
+            "question": "Làm cách nào để test một Power App trước khi triển khai?",
+            "answer": "Sử dụng chế độ preview trong Power Apps Studio để test, hoặc tạo một environment test để kiểm tra."
+        },
+        {
+            "question": "Làm cách nào để tích hợp Power App với Power Automate?",
+            "answer": "Sử dụng các trigger và actions trong Power Automate để tự động hóa các tác vụ từ Power App."
+        },
+        {
+            "question": "Làm cách nào để tùy chỉnh dashboard trong model-driven app?",
+            "answer": "Sử dụng Dashboard Designer để thêm các chart, grid, và các thành phần khác, sau đó lưu và áp dụng cho app."
+        },
+        {
+            "question": "Làm cách nào để xử lý dữ liệu ngoại tuyến trong canvas app?",
+            "answer": "Sử dụng tính năng offline của Power Apps, lưu dữ liệu cục bộ, và đồng bộ khi có kết nối."
+        },
+        {
+            "question": "Làm cách nào để chia sẻ một Power App với người dùng khác?",
+            "answer": "Xuất bản app và chia sẻ qua Power Apps portal, hoặc gán quyền cho người dùng qua Azure AD."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa hiệu suất của một Power App?",
+            "answer": "Giảm số lượng control, tối ưu hóa các truy vấn dữ liệu, và sử dụng caching cho dữ liệu tĩnh."
+        }
+    ],
+    "Dynamics: Power Automate": [
+        {
+            "question": "Power Automate là gì?",
+            "answer": "Power Automate là dịch vụ tự động hóa quy trình của Microsoft, trước đây gọi là Microsoft Flow."
+        },
+        {
+            "question": "Power Automate tích hợp với Dynamics 365 như thế nào?",
+            "answer": "Sử dụng connector Dynamics 365 để tạo flow tương tác với dữ liệu và quy trình."
+        },
+        {
+            "question": "Các loại flow trong Power Automate là gì?",
+            "answer": "Có flow tự động, flow tức thì, và flow theo lịch."
+        },
+        {
+            "question": "Làm cách nào để tạo flow kích hoạt khi tạo bản ghi mới trong Dynamics 365?",
+            "answer": "Dùng trigger 'When a record is created' từ connector Dynamics 365."
+        },
+        {
+            "question": "Làm cách nào để xử lý xác thực cho Dynamics 365 trong Power Automate?",
+            "answer": "Cung cấp thông tin đăng nhập Dynamics 365 khi thiết lập connector."
+        },
+        {
+            "question": "Sự khác biệt giữa flow và workflow cổ điển trong Dynamics 365 là gì?",
+            "answer": "Flow tích hợp nhiều hệ thống, workflow cổ điển chỉ hoạt động với Dynamics 365."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu giữa các bước trong flow?",
+            "answer": "Sử dụng biến để lưu và truyền dữ liệu."
+        },
+        {
+            "question": "Expressions trong Power Automate là gì và dùng như thế nào?",
+            "answer": "Expressions thực hiện tính toán, xử lý dữ liệu, đánh dấu bằng [@...]."
+        },
+        {
+            "question": "Làm cách nào để debug flow trong Power Automate?",
+            "answer": "Dùng 'Test' để mô phỏng, kiểm tra 'Run history' để xem lỗi."
+        },
+        {
+            "question": "Giới hạn governor trong Power Automate ảnh hưởng thiết kế flow như thế nào?",
+            "answer": "Giới hạn số lần chạy, hành động, cần tránh vượt để không gây lỗi."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong flow?",
+            "answer": "Dùng 'Condition' kiểm tra lỗi, hoặc 'Catch' trong flow nâng cao."
+        },
+        {
+            "question": "Scope trong Power Automate là gì và khi nào dùng?",
+            "answer": "Scope là nhóm hành động, dùng cho xử lý lỗi hoặc tổ chức flow phức tạp."
+        },
+        {
+            "question": "Làm cách nào để kết nối với API bên ngoài trong Power Automate?",
+            "answer": "Dùng connector 'HTTP' để gửi yêu cầu đến API bên ngoài."
+        },
+        {
+            "question": "Vai trò của connectors trong Power Automate là gì?",
+            "answer": "Connectors cho phép flow kết nối với ứng dụng, cung cấp hành động và trigger."
+        },
+        {
+            "question": "Làm cách nào để tạo connector tùy chỉnh trong Power Automate?",
+            "answer": "Dùng trang web Power Automate, định nghĩa endpoint API và hoạt động."
+        },
+        {
+            "question": "Sự khác biệt giữa flow và logic app trong Azure là gì?",
+            "answer": "Flow là phần của Power Platform, logic app là của Azure, khác tính năng và giá."
+        },
+        {
+            "question": "Làm cách nào để version control flow trong Power Automate?",
+            "answer": "Tạo phiên bản flow, quản lý và quay lại nếu cần."
+        },
+        {
+            "question": "Best practices cho đặt tên trong Power Automate là gì?",
+            "answer": "Dùng tên miêu tả, nhất quán cho flow, trigger, hành động, biến."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hiệu suất flow?",
+            "answer": "Giảm hành động, dùng hoạt động dữ liệu hiệu quả, tránh bước không cần."
+        },
+        {
+            "question": "Những ứng dụng phổ biến của Power Automate trong Dynamics 365 là gì?",
+            "answer": "Tự động hóa đánh giá lead, cập nhật khách hàng, gửi thông báo, tích hợp email."
+        }
+    ],
+    "Dynamics: Batch": [
+        {
+            "question": "Batch job trong Dynamics 365 là gì?",
+            "answer": "Batch job là quy trình chạy nền, thực hiện công việc tiêu tốn thời gian hoặc lên lịch."
+        },
+        {
+            "question": "Làm cách nào để tạo batch job trong Dynamics 365?",
+            "answer": "Truy cập System administration > Batch jobs, click 'New' để tạo."
+        },
+        {
+            "question": "Các trạng thái của batch job là gì?",
+            "answer": "Pending, Running, Succeeded, Failed, Canceled, v.v."
+        },
+        {
+            "question": "Làm cách nào để lên lịch batch job chạy tại thời gian cụ thể?",
+            "answer": "Thiết lập 'Start time' và chọn tùy chọn lặp lại khi tạo job."
+        },
+        {
+            "question": "Làm cách nào để giám sát tiến trình batch job?",
+            "answer": "Kiểm tra trạng thái trong danh sách Batch jobs, xem logs chi tiết."
+        },
+        {
+            "question": "Sự khác biệt giữa batch job và real-time job là gì?",
+            "answer": "Batch job chạy nền, lên lịch; real-time job chạy ngay, dùng cho quy trình tương tác."
+        },
+        {
+            "question": "Làm cách nào để hủy batch job đang chạy?",
+            "answer": "Chọn job trong danh sách, click 'Cancel'."
+        },
+        {
+            "question": "Batch job có thể được ưu tiên, và như thế nào?",
+            "answer": "Có, gán ưu tiên để quyết định thứ tự thực thi."
+        },
+        {
+            "question": "Batch job parameters là gì và dùng như thế nào?",
+            "answer": "Đầu vào tùy chỉnh khi chạy job, cho phép điều chỉnh quy trình."
+        },
+        {
+            "question": "Làm cách nào để tạo batch job tùy chỉnh?",
+            "answer": "Phát triển lớp triển khai interface, đăng ký trong Dynamics 365."
+        },
+        {
+            "question": "Best practices cho thiết kế batch jobs là gì?",
+            "answer": "Giữ đơn giản, tránh logic phức tạp, đảm bảo hiệu quả."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong batch jobs?",
+            "answer": "Cấu hình thử lại bước thất bại hoặc dừng job khi có lỗi."
+        },
+        {
+            "question": "Vai trò của batch job logs là gì?",
+            "answer": "Cung cấp thông tin chi tiết về thực thi, bao gồm lỗi và cảnh báo."
+        },
+        {
+            "question": "Làm cách nào để xuất batch job logs?",
+            "answer": "Xem và xuất từ danh sách Batch jobs."
+        },
+        {
+            "question": "Tác động của batch jobs đến hiệu suất hệ thống là gì?",
+            "answer": "Tiêu thụ tài nguyên, nên lên lịch giờ nghỉ và giám sát."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hiệu suất batch jobs?",
+            "answer": "Giảm dữ liệu xử lý, dùng thuật toán hiệu quả, tránh hoạt động không cần."
+        },
+        {
+            "question": "Những ứng dụng phổ biến của batch jobs trong Dynamics 365 là gì?",
+            "answer": "Đăng ký giao dịch, cập nhật bản ghi theo lô, tạo báo cáo, bảo trì dữ liệu."
+        },
+        {
+            "question": "Làm cách nào để test batch job trước khi lên lịch?",
+            "answer": "Chạy với tập dữ liệu nhỏ, kiểm tra tính chính xác."
+        },
+        {
+            "question": "Sự khác biệt giữa batch jobs đồng bộ và bất đồng bộ là gì?",
+            "answer": "Đồng bộ chờ hoàn tất, bất đồng bộ chạy nền, không ngưng quy trình khác."
+        },
+        {
+            "question": "Làm cách nào để tích hợp batch jobs với hệ thống khác?",
+            "answer": "Kích hoạt bởi sự kiện bên ngoài, lên lịch, dùng đầu ra cho quy trình khác."
+        }
+    ],
+    "Dynamics: Plugin": [
+        {
+            "question": "Plugin trong Dynamics 365 là gì?",
+            "answer": "Plugin là mã code chạy khi có sự kiện, như tạo, cập nhật, xóa bản ghi."
+        },
+        {
+            "question": "Các bước để tạo plugin là gì?",
+            "answer": "Phát triển mã C#, biên dịch thành DLL, đăng ký trong Dynamics 365."
+        },
+        {
+            "question": "Ngôn ngữ lập trình nào được dùng để phát triển plugin?",
+            "answer": "C# là ngôn ngữ chính."
+        },
+        {
+            "question": "Làm cách nào để đăng ký plugin trong Dynamics 365?",
+            "answer": "Dùng Plugin Registration Tool (PRT) để đăng ký, chỉ định sự kiện và entity."
+        },
+        {
+            "question": "Các loại tin nhắn nào có thể kích hoạt plugin?",
+            "answer": "Create, Update, Delete, Retrieve, v.v."
+        },
+        {
+            "question": "Sự khác biệt giữa pre-operation và post-operation plugin là gì?",
+            "answer": "Pre-operation chạy trước khi lưu vào database, post-operation chạy sau khi lưu."
+        },
+        {
+            "question": "Làm cách nào để xử lý ngoại lệ trong plugin?",
+            "answer": "Dùng try-catch, quyết định ném lỗi hoặc tiếp tục."
+        },
+        {
+            "question": "Service context trong plugin là gì và dùng như thế nào?",
+            "answer": "IOrganizationService dùng để tương tác với database, như lấy hoặc cập nhật bản ghi."
+        },
+        {
+            "question": "Làm cách nào để truyền dữ liệu giữa các phần của plugin?",
+            "answer": "Dùng Plugin Execution Context để truy cập tham số đầu vào và đầu ra."
+        },
+        {
+            "question": "Early-bound và late-bound types trong lập trình Dynamics 365 là gì?",
+            "answer": "Early-bound là lớp tạo sẵn, kiểm tra thời biên dịch; late-bound dùng đối tượng chung."
+        },
+        {
+            "question": "Làm cách nào để debug plugin trong Dynamics 365?",
+            "answer": "Dùng PRT để bật logging, kiểm tra logs sự kiện."
+        },
+        {
+            "question": "Giới hạn governor cho plugin ảnh hưởng hiệu suất như thế nào?",
+            "answer": "Giới hạn số thao tác database, vượt quá sẽ gây lỗi, cần giảm gọi database."
+        },
+        {
+            "question": "Vai trò của Plugin Registration Tool là gì?",
+            "answer": "Dùng để đăng ký, cập nhật, quản lý plugin, bật debug và logging."
+        },
+        {
+            "question": "Làm cách nào để version control mã plugin?",
+            "answer": "Dùng Git để quản lý các phiên bản mã plugin."
+        },
+        {
+            "question": "Best practices cho viết plugin hiệu quả là gì?",
+            "answer": "Giảm thao tác database, tránh gọi đồng bộ, đảm bảo hiệu quả."
+        },
+        {
+            "question": "Làm cách nào để test plugin trước khi triển khai?",
+            "answer": "Dùng PRT test với dữ liệu mẫu, kiểm tra hành vi."
+        },
+        {
+            "question": "Sự khác biệt giữa plugin và workflow trong Dynamics 365 là gì?",
+            "answer": "Plugin là mã tùy chỉnh, workflow là tập hợp bước định sẵn, không cần code."
+        },
+        {
+            "question": "Làm cách nào để xử lý concurrency trong plugin?",
+            "answer": "Dynamics 365 xử lý concurrency ở database, plugin cần thiết kế cho nhiều thực thi đồng thời."
+        },
+        {
+            "question": "IPublicService interface trong plugin dùng để làm gì?",
+            "answer": "Dùng cho plugin cần truy cập từ bên ngoài tổ chức, ít phổ biến."
+        },
+        {
+            "question": "Làm cách nào để triển khai plugin vào môi trường production?",
+            "answer": "Đóng gói DLL và thông tin đăng ký, nhập vào production qua PRT hoặc PowerShell."
+        }
+    ],
+    "Dynamics: Web Resource": [
+        {
+            "question": "Web resource trong Dynamics 365 là gì?",
+            "answer": "Web resource là file chứa nội dung tĩnh, như HTML, JavaScript, CSS, dùng trong form, view."
+        },
+        {
+            "question": "Làm cách nào để tạo web resource?",
+            "answer": "Truy cập Settings > Customizations > Web Resources, click 'New', tải file lên."
+        },
+        {
+            "question": "Các loại file được hỗ trợ cho web resource là gì?",
+            "answer": "HTML, JavaScript, CSS, PNG, JPEG, GIF, v.v."
+        },
+        {
+            "question": "Làm cách nào để tham chiếu web resource trong form?",
+            "answer": "Dùng tên web resource trong thuộc tính form, như Events hoặc Data."
+        },
+        {
+            "question": "Làm cách nào để version control web resources?",
+            "answer": "Dynamics 365 cho phép quản lý phiên bản, tạo mới và chọn phiên bản dùng."
+        },
+        {
+            "question": "Sự khác biệt giữa web resource và solution component là gì?",
+            "answer": "Web resource là loại solution component chứa nội dung tĩnh."
+        },
+        {
+            "question": "Làm cách nào để cập nhật web resource?",
+            "answer": "Chỉnh sửa file, lưu, thay đổi sẽ phản ánh sau khi làm mới."
+        },
+        {
+            "question": "Làm cách nào để xử lý dependencies giữa web resources?",
+            "answer": "Đảm bảo tham chiếu đúng, tải theo thứ tự phù hợp."
+        },
+        {
+            "question": "Best practices cho đặt tên web resources là gì?",
+            "answer": "Dùng tên miêu tả, nhất quán, chỉ mục đích hoặc vị trí."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hiệu suất web resources?",
+            "answer": "Minify, nén file, dùng caching, tránh yêu cầu không cần."
+        },
+        {
+            "question": "Kích thước tối đa của web resource là bao nhiêu?",
+            "answer": "Khoảng 2 MB, nên giữ nhỏ nhất có thể."
+        },
+        {
+            "question": "Làm cách nào để test web resource trước khi triển khai?",
+            "answer": "Tải lên môi trường test, kiểm tra chức năng."
+        },
+        {
+            "question": "Vai trò của web resources trong tùy chỉnh giao diện là gì?",
+            "answer": "Thêm script, style, nội dung tùy chỉnh, không sửa ứng dụng cốt lõi."
+        },
+        {
+            "question": "Làm cách nào để bảo mật web resources?",
+            "answer": "Dùng quy tắc security, kiểm soát quyền qua vai trò và quyền."
+        },
+        {
+            "question": "Web resources có dùng được trong cả Dynamics 365 và Power Apps không?",
+            "answer": "Có, có thể chia sẻ giữa Dynamics 365 và Power Apps."
+        },
+        {
+            "question": "Sự khác biệt giữa web resource và client-side extension là gì?",
+            "answer": "Web resource là file tĩnh, client-side extension là cách tùy chỉnh nâng cao dùng PCF."
+        },
+        {
+            "question": "Làm cách nào để troubleshoot vấn đề với web resources?",
+            "answer": "Dùng công cụ developer của trình duyệt, kiểm tra lỗi tải."
+        },
+        {
+            "question": "Những ứng dụng phổ biến của web resources là gì?",
+            "answer": "Thêm validation tùy chỉnh, nâng cao form, hiển thị trực quan, tích hợp thư viện bên thứ ba."
+        },
+        {
+            "question": "Làm cách nào để quản lý môi trường khác nhau với web resources?",
+            "answer": "Web resources là phần của solution, xuất nhập giữa môi trường."
+        },
+        {
+            "question": "Quy trình di chuyển web resources từ phiên bản này sang phiên bản khác của Dynamics 365 là gì?",
+            "answer": "Khi nâng cấp, web resources thường được giữ, nhưng cần test tính tương thích."
+        }
+    ],
+    "Dynamics: PCF": [
+        {
+            "question": "Power Apps Component Framework (PCF) là gì?",
+            "answer": "PCF là khung cho phép tạo control tùy chỉnh cho Dynamics 365 và Power Apps, dùng React, CSS, JavaScript."
+        },
+        {
+            "question": "Lợi ích của PCF controls so với control cũ là gì?",
+            "answer": "Linh hoạt hơn, hiệu suất cao, dễ bảo trì, hỗ trợ UI hiện đại, tương thích cả Dynamics 365 và Power Apps."
+        },
+        {
+            "question": "Các bước để tạo PCF control là gì?",
+            "answer": "Cài đặt môi trường, dùng PCF CLI tạo dự án, phát triển, test cục bộ, triển khai vào Dynamics 365."
+        },
+        {
+            "question": "Ngôn ngữ và công nghệ nào được dùng trong PCF?",
+            "answer": "JavaScript, React, CSS, HTML."
+        },
+        {
+            "question": "Làm cách nào để thiết lập môi trường phát triển cho PCF?",
+            "answer": "Cài Node.js, PCF CLI, và công cụ như Visual Studio Code."
+        },
+        {
+            "question": "Làm cách nào để test PCF control cục bộ trước khi triển khai?",
+            "answer": "Dùng PCF CLI chạy cục bộ, test với dữ liệu mẫu."
+        },
+        {
+            "question": "Vai trò của manifest file trong PCF control là gì?",
+            "answer": "Manifest file (manifest.json) chứa metadata, như tên, mô tả, và thuộc tính của control."
+        },
+        {
+            "question": "Làm cách nào để định nghĩa properties cho PCF control?",
+            "answer": "Trong manifest file, định nghĩa properties, bao gồm loại và giá trị mặc định."
+        },
+        {
+            "question": "Làm cách nào để xử lý events trong PCF control?",
+            "answer": "PCF control xử lý events từ ứng dụng host và kích hoạt events riêng."
+        },
+        {
+            "question": "Sự khác biệt giữa PCF control và web resource là gì?",
+            "answer": "PCF control là thành phần động, tương tác dữ liệu; web resource là nội dung tĩnh."
+        },
+        {
+            "question": "Làm cách nào để triển khai PCF control vào Dynamics 365?",
+            "answer": "Đóng gói control và dependencies, nhập vào Dynamics 365 như solution component."
+        },
+        {
+            "question": "Best practices cho phát triển PCF controls là gì?",
+            "answer": "Giữ modular, dùng React best practices, xử lý lỗi, tối ưu hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để debug PCF control?",
+            "answer": "Dùng công cụ developer của trình duyệt để kiểm tra và debug khi chạy."
+        },
+        {
+            "question": "Các loại control nào có thể tạo với PCF?",
+            "answer": "Control cho form, view, dashboard, và các phần khác của ứng dụng."
+        },
+        {
+            "question": "PCF xử lý internationalization như thế nào?",
+            "answer": "Cung cấp file resource cho các ngôn ngữ khác nhau để localized."
+        },
+        {
+            "question": "Vai trò của PCF CLI là gì?",
+            "answer": "PCF CLI là công cụ dòng lệnh giúp tạo, test, và đóng gói PCF controls."
+        },
+        {
+            "question": "Làm cách nào để cập nhật PCF control hiện có?",
+            "answer": "Chỉnh sửa mã, cập nhật manifest nếu cần, và triển khai lại."
+        },
+        {
+            "question": "Những thách thức phổ biến khi phát triển PCF controls là gì?",
+            "answer": "Đảm bảo tương thích trình duyệt, xử lý loại dữ liệu, quản lý dependencies."
+        },
+        {
+            "question": "Làm cách nào để version control mã PCF control?",
+            "answer": "Dùng Git để quản lý các phiên bản mã control."
+        },
+        {
+            "question": "Những tài nguyên nào để học thêm về PCF?",
+            "answer": "Tài liệu chính thức Microsoft, tutorial, và diễn đàn cộng đồng."
+        }
+    ]
+}
