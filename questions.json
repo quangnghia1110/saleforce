@@ -2188,168 +2188,624 @@
     }
     ],
     "SFDC’s .Net": [
-        {
-            "question": "Các cách tích hợp SalesForce với ứng dụng .Net là gì?",
-            "answer": "Sử dụng SalesForce APIs như REST API hoặc SOAP API để tích hợp với ứng dụng .Net."
-        },
-        {
-            "question": "API của SalesForce nào thường được sử dụng cho tích hợp .Net?",
-            "answer": "REST API là phổ biến nhất do nó đơn giản và dễ sử dụng hơn so với SOAP API."
-        },
-        {
-            "question": "Làm cách nào để thiết lập xác thực cho các cuộc gọi API từ .Net đến SalesForce?",
-            "answer": "Sử dụng Oauth 2.0 để lấy access token thông qua SalesForce Connected App."
-        },
-        {
-            "question": "Vai trò của SalesForce Connected App trong tích hợp .Net là gì?",
-            "answer": "SalesForce Connected App cung cấp client ID và client secret để xác thực và lấy access token cho các API calls."
-        },
-        {
-            "question": "Làm cách nào để thực hiện một cuộc gọi REST API đến SalesForce từ .Net?",
-            "answer": "Sử dụng các thư viện HTTP của .Net như HttpClient để gửi yêu cầu HTTP đến SalesForce API endpoint."
-        },
-        {
-            "question": "Làm cách nào để xử lý phân trang khi lấy dữ liệu từ SalesForce?",
-            "answer": "SalesForce API hỗ trợ phân trang thông qua các tham số như limit và nextRecordsUrl. Bạn cần xử lý các cuộc gọi tiếp theo để lấy toàn bộ dữ liệu."
-        },
-        {
-            "question": "Những lỗi phổ biến có thể gặp phải trong các cuộc gọi API và cách xử lý chúng?",
-            "answer": "Lỗi như 401 (không được xác thực), 404 (không tìm thấy), 500 (lỗi server). Xử lý bằng cách kiểm tra mã trạng thái HTTP và xử lý phù hợp."
-        },
-        {
-            "question": "Làm cách nào để cập nhật một bản ghi trong SalesForce sử dụng API từ .Net?",
-            "answer": "Gửi yêu cầu HTTP PUT hoặc PATCH đến endpoint của bản ghi với dữ liệu mới."
-        },
-        {
-            "question": "Sự khác biệt giữa SOAP API và REST API của SalesForce là gì?",
-            "answer": "SOAP API sử dụng XML và có giao thức phức tạp hơn, trong khi REST API sử dụng JSON và có giao thức đơn giản hơn, phù hợp cho các ứng dụng web hiện đại."
-        },
-        {
-            "question": "Làm cách nào để quản lý sessions và tokens trong .Net cho các cuộc gọi API SalesForce?",
-            "answer": "Lưu access token sau khi lấy được từ quá trình xác thực và sử dụng nó trong các header của các cuộc gọi API. Khi token hết hạn, cần lấy token mới."
-        },
-        {
-            "question": "Làm cách nào để lấy danh sách các đối tượng từ SalesForce bằng .Net?",
-            "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy danh sách các đối tượng."
-        },
-        {
-            "question": "Làm cách nào để xử lý dữ liệu lớn khi tích hợp với SalesForce từ .Net?",
-            "answer": "Sử dụng Bulk API để xử lý dữ liệu lớn, hỗ trợ tải lên và tải xuống dữ liệu theo lô."
-        },
-        {
-            "question": "Làm cách nào để xử lý lỗi xác thực trong các cuộc gọi API?",
-            "answer": "Kiểm tra mã lỗi 401, sau đó làm mới access token hoặc yêu cầu người dùng xác thực lại."
-        },
-        {
-            "question": "Làm cách nào để đồng bộ dữ liệu giữa .Net và SalesForce?",
-            "answer": "Sử dụng các công cụ như Data Loader hoặc viết logic tùy chỉnh để đồng bộ dữ liệu qua API."
-        },
-        {
-            "question": "Làm cách nào để debug các cuộc gọi API từ .Net đến SalesForce?",
-            "answer": "Sử dụng công cụ như Fiddler hoặc Postman để theo dõi và phân tích các yêu cầu và phản hồi."
-        },
-        {
-            "question": "Làm cách nào để xử lý các cuộc gọi API bất đồng bộ trong .Net?",
-            "answer": "Sử dụng async/await trong .Net để thực hiện các cuộc gọi API bất đồng bộ, cải thiện hiệu suất."
-        },
-        {
-            "question": "Làm cách nào để bảo mật các cuộc gọi API từ .Net đến SalesForce?",
-            "answer": "Sử dụng HTTPS, quản lý token an toàn, và tuân thủ các chính sách bảo mật của SalesForce."
-        },
-        {
-            "question": "Làm cách nào để lấy metadata của SalesForce từ .Net?",
-            "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy metadata của các đối tượng."
-        },
-        {
-            "question": "Làm cách nào để xử lý các cuộc gọi API với nhiều tổ chức SalesForce?",
-            "answer": "Quản lý nhiều access token, mỗi token cho một tổ chức, và chuyển đổi giữa các tổ chức khi cần."
-        },
-        {
-            "question": "Làm cách nào để tối ưu hóa hiệu suất của các cuộc gọi API từ .Net?",
-            "answer": "Sử dụng caching cho dữ liệu tĩnh, giảm số lượng cuộc gọi, và sử dụng Bulk API cho dữ liệu lớn."
-        }
-    ],
+    {
+        "question": "Các cách tích hợp SalesForce với ứng dụng .Net là gì?",
+        "answer": "Sử dụng SalesForce APIs như REST API hoặc SOAP API để tích hợp với ứng dụng .Net."
+    },
+    {
+        "question": "API của SalesForce nào thường được sử dụng cho tích hợp .Net?",
+        "answer": "REST API là phổ biến nhất do nó đơn giản và dễ sử dụng hơn so với SOAP API."
+    },
+    {
+        "question": "Làm cách nào để thiết lập xác thực cho các cuộc gọi API từ .Net đến SalesForce?",
+        "answer": "Sử dụng Oauth 2.0 để lấy access token thông qua SalesForce Connected App."
+    },
+    {
+        "question": "Vai trò của SalesForce Connected App trong tích hợp .Net là gì?",
+        "answer": "SalesForce Connected App cung cấp client ID và client secret để xác thực và lấy access token cho các API calls."
+    },
+    {
+        "question": "Làm cách nào để thực hiện một cuộc gọi REST API đến SalesForce từ .Net?",
+        "answer": "Sử dụng các thư viện HTTP của .Net như HttpClient để gửi yêu cầu HTTP đến SalesForce API endpoint."
+    },
+    {
+        "question": "Làm cách nào để xử lý phân trang khi lấy dữ liệu từ SalesForce?",
+        "answer": "SalesForce API hỗ trợ phân trang thông qua các tham số như limit và nextRecordsUrl. Bạn cần xử lý các cuộc gọi tiếp theo để lấy toàn bộ dữ liệu."
+    },
+    {
+        "question": "Những lỗi phổ biến có thể gặp phải trong các cuộc gọi API và cách xử lý chúng?",
+        "answer": "Lỗi như 401 (không được xác thực), 404 (không tìm thấy), 500 (lỗi server). Xử lý bằng cách kiểm tra mã trạng thái HTTP và xử lý phù hợp."
+    },
+    {
+        "question": "Làm cách nào để cập nhật một bản ghi trong SalesForce sử dụng API từ .Net?",
+        "answer": "Gửi yêu cầu HTTP PUT hoặc PATCH đến endpoint của bản ghi với dữ liệu mới."
+    },
+    {
+        "question": "Sự khác biệt giữa SOAP API và REST API của SalesForce là gì?",
+        "answer": "SOAP API sử dụng XML và có giao thức phức tạp hơn, trong khi REST API sử dụng JSON và có giao thức đơn giản hơn, phù hợp cho các ứng dụng web hiện đại."
+    },
+    {
+        "question": "Làm cách nào để quản lý sessions và tokens trong .Net cho các cuộc gọi API SalesForce?",
+        "answer": "Lưu access token sau khi lấy được từ quá trình xác thực và sử dụng nó trong các header của các cuộc gọi API. Khi token hết hạn, cần lấy token mới."
+    },
+    {
+        "question": "Làm cách nào để lấy danh sách các đối tượng từ SalesForce bằng .Net?",
+        "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy danh sách các đối tượng."
+    },
+    {
+        "question": "Làm cách nào để xử lý dữ liệu lớn khi tích hợp với SalesForce từ .Net?",
+        "answer": "Sử dụng Bulk API để xử lý dữ liệu lớn, hỗ trợ tải lên và tải xuống dữ liệu theo lô."
+    },
+    {
+        "question": "Làm cách nào để xử lý lỗi xác thực trong các cuộc gọi API?",
+        "answer": "Kiểm tra mã lỗi 401, sau đó làm mới access token hoặc yêu cầu người dùng xác thực lại."
+    },
+    {
+        "question": "Làm cách nào để đồng bộ dữ liệu giữa .Net và SalesForce?",
+        "answer": "Sử dụng các công cụ như Data Loader hoặc viết logic tùy chỉnh để đồng bộ dữ liệu qua API."
+    },
+    {
+        "question": "Làm cách nào để debug các cuộc gọi API từ .Net đến SalesForce?",
+        "answer": "Sử dụng công cụ như Fiddler hoặc Postman để theo dõi và phân tích các yêu cầu và phản hồi."
+    },
+    {
+        "question": "Làm cách nào để xử lý các cuộc gọi API bất đồng bộ trong .Net?",
+        "answer": "Sử dụng async/await trong .Net để thực hiện các cuộc gọi API bất đồng bộ, cải thiện hiệu suất."
+    },
+    {
+        "question": "Làm cách nào để bảo mật các cuộc gọi API từ .Net đến SalesForce?",
+        "answer": "Sử dụng HTTPS, quản lý token an toàn, và tuân thủ các chính sách bảo mật của SalesForce."
+    },
+    {
+        "question": "Làm cách nào để lấy metadata của SalesForce từ .Net?",
+        "answer": "Sử dụng REST API với endpoint /services/data/vXX.X/sobjects/ để lấy metadata của các đối tượng."
+    },
+    {
+        "question": "Làm cách nào để xử lý các cuộc gọi API với nhiều tổ chức SalesForce?",
+        "answer": "Quản lý nhiều access token, mỗi token cho một tổ chức, và chuyển đổi giữa các tổ chức khi cần."
+    },
+    {
+        "question": "Làm cách nào để tối ưu hóa hiệu suất của các cuộc gọi API từ .Net?",
+        "answer": "Sử dụng caching cho dữ liệu tĩnh, giảm số lượng cuộc gọi, và sử dụng Bulk API cho dữ liệu lớn."
+    },
+    {
+        "question": "Làm cách nào để xử lý việc làm mới token khi access token hết hạn trong ứng dụng .Net?",
+        "answer": "Sử dụng refresh token để lấy access token mới khi access token hiện tại hết hạn, kiểm tra lỗi 401 và thực hiện lại cuộc gọi API."
+    },
+    {
+        "question": "Sự khác biệt giữa password flow và JWT flow trong xác thực SalesForce là gì?",
+        "answer": "Password flow yêu cầu tên đăng nhập và mật khẩu, có thể không an toàn; JWT flow sử dụng private key, an toàn hơn cho ứng dụng server-side."
+    },
+    {
+        "question": "Làm thế nào để quản lý nhiều phiên người dùng trong ứng dụng .Net cho các người dùng SalesForce khác nhau?",
+        "answer": "Lưu access token và refresh token cho mỗi người dùng trong session hoặc database, đảm bảo giữ riêng biệt và an toàn."
+    },
+    {
+        "question": "Làm cách nào để hủy bỏ một access token trong SalesForce từ ứng dụng .Net?",
+        "answer": "Gửi yêu cầu POST đến endpoint /services/Oauth2/revoke với access token và token_type_hint là 'access_token'."
+    },
+    {
+        "question": "Những thực hành tốt nhất để lưu trữ và bảo mật thông tin xác thực SalesForce trong ứng dụng .Net là gì?",
+        "answer": "Không lưu mật khẩu người dùng, sử dụng JWT flow, lưu client ID/secret an toàn trong biến môi trường, và sử dụng HTTPS."
+    },
+    {
+        "question": "Làm thế nào để tạo một bản ghi mới trong SalesForce bằng yêu cầu POST từ .Net?",
+        "answer": "Sử dụng HttpClient gửi yêu cầu POST đến endpoint /sobjects/ObjectName với dữ liệu JSON, thêm header Authorization với access token."
+    },
+    {
+        "question": "Làm cách nào để xử lý tham số truy vấn trong yêu cầu GET để lọc bản ghi?",
+        "answer": "Sử dụng SOQL trong URL, ví dụ /query/?q=SELECT+Id,Name+FROM+Account, và encode truy vấn trước khi gửi."
+    },
+    {
+        "question": "Làm thế nào để cập nhật nhiều trường của một bản ghi trong SalesForce bằng một cuộc gọi API từ .Net?",
+        "answer": "Gửi yêu cầu PATCH hoặc PUT đến endpoint của bản ghi với dữ liệu JSON chứa các trường cần cập nhật."
+    },
+    {
+        "question": "Làm cách nào để xóa một bản ghi trong SalesForce sử dụng .Net?",
+        "answer": "Sử dụng HttpClient gửi yêu cầu DELETE đến endpoint /sobjects/ObjectName/Id với header Authorization."
+    },
+    {
+        "question": "Số lượng bản ghi tối đa có thể lấy trong một cuộc gọi API là bao nhiêu, và làm thế nào để xử lý dữ liệu lớn hơn?",
+        "answer": "Giới hạn mặc định là 2000, tối đa 20000 với tham số limit; sử dụng phân trang với nextRecordsUrl hoặc LIMIT/OFFSET."
+    },
+    {
+        "question": "Làm thế nào để xử lý trường picklist trong SalesForce khi lấy hoặc cập nhật bản ghi từ .Net?",
+        "answer": "Lấy giá trị văn bản từ picklist, sử dụng metadata để lấy danh sách giá trị hợp lệ, và đảm bảo giá trị gửi đi hợp lệ."
+    },
+    {
+        "question": "Làm cách nào để định dạng trường ngày giờ đúng khi gửi dữ liệu đến SalesForce?",
+        "answer": "Sử dụng định dạng ISO 8601 (YYYY-MM-DDTHH:MM:SS.SSSZ), ví dụ '2023-04-01T12:00:00.000Z'."
+    },
+    {
+        "question": "Làm thế nào để xử lý trường tiền tệ, xem xét các mã tiền tệ và định dạng khác nhau?",
+        "answer": "Lưu giá trị số, lấy currencyCode để hiển thị, và định dạng theo yêu cầu, ví dụ sử dụng ToString('C2')."
+    },
+    {
+        "question": "Làm cách nào để làm việc với trường lookup để tham chiếu đến các bản ghi khác?",
+        "answer": "Lưu và sử dụng Id của bản ghi liên kết, có thể lấy thông tin bổ sung qua API nếu cần, và sử dụng caching."
+    },
+    {
+        "question": "Làm thế nào để xử lý các trường công thức hoặc chỉ đọc trong ứng dụng .Net?",
+        "answer": "Không gửi giá trị cho trường chỉ đọc, và lấy giá trị công thức từ API để hiển thị, không cập nhật."
+    },
+    {
+        "question": "Làm thế nào để sử dụng Bulk API để chèn một số lượng lớn bản ghi vào SalesForce từ .Net?",
+        "answer": "Gửi yêu cầu POST đến /services/async/XX.X/job với dữ liệu JSON theo lô, theo dõi trạng thái công việc."
+    },
+    {
+        "question": "Làm cách nào để theo dõi trạng thái của một công việc Bulk API từ ứng dụng .Net?",
+        "answer": "Sử dụng endpoint /services/async/XX.X/job/JobId để kiểm tra trạng thái, xử lý khi hoàn thành hoặc lỗi."
+    },
+    {
+        "question": "Làm thế nào để xử lý lỗi trong các hoạt động Bulk API?",
+        "answer": "Kiểm tra phản hồi từ API, xử lý các lỗi cụ thể như định dạng không đúng, và lặp lại nếu cần."
+    },
+    {
+        "question": "Sự khác biệt giữa Bulk API và REST API tiêu chuẩn cho các hoạt động dữ liệu là gì?",
+        "answer": "Bulk API xử lý dữ liệu lớn theo lô, phù hợp cho hàng nghìn bản ghi; REST API phù hợp cho các yêu cầu nhỏ, từng bản ghi."
+    },
+    {
+        "question": "Làm thế nào để sử dụng Bulk API để cập nhật hoặc xóa bản ghi?",
+        "answer": "Gửi dữ liệu theo lô với operation là 'update' hoặc 'delete', theo dõi trạng thái công việc như chèn."
+    },
+    {
+        "question": "Làm thế nào để lấy schema của một đối tượng SalesForce cụ thể sử dụng .Net?",
+        "answer": "Sử dụng endpoint /services/data/vXX.X/sobjects/ObjectName/describe/ để lấy thông tin schema."
+    },
+    {
+        "question": "Làm cách nào để lấy danh sách tất cả các trường cho một đối tượng cụ thể?",
+        "answer": "Từ phản hồi describe, truy cập mảng 'fields' để lấy danh sách tên và thuộc tính của trường."
+    },
+    {
+        "question": "Làm thế nào để kiểm tra xem một trường có bắt buộc hoặc chỉ đọc không?",
+        "answer": "Kiểm tra thuộc tính 'nillable' (false là bắt buộc) và 'updateable' (false là chỉ đọc) trong metadata."
+    },
+    {
+        "question": "Làm thế nào để xử lý các trường tùy chỉnh trong ứng dụng .Net?",
+        "answer": "Xử lý như các trường tiêu chuẩn, nhưng cần lấy metadata để biết tên và thuộc tính, ví dụ '__c' cho trường tùy chỉnh."
+    },
+    {
+        "question": "Làm cách nào để lấy nhãn của một trường hoặc đối tượng để hiển thị thân thiện với người dùng?",
+        "answer": "Từ metadata, lấy thuộc tính 'label' cho trường hoặc 'label' cho đối tượng."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo tất cả các cuộc gọi API được thực hiện qua HTTPS để ngăn chặn nghe lén?",
+        "answer": "Sử dụng HttpClient với URL bắt đầu bằng 'https://', và kiểm tra chứng chỉ SSL trong ứng dụng."
+    },
+    {
+        "question": "Những biện pháp nào có thể thực hiện để ngăn chặn rò rỉ token hoặc lạm dụng trong ứng dụng .Net?",
+        "answer": "Lưu token an toàn trong session hoặc database mã hóa, giới hạn quyền của Ứng dụng Kết nối, và giám sát hoạt động."
+    },
+    {
+        "question": "Làm thế nào để triển khai kiểm soát truy cập dựa trên vai trò trong ứng dụng .Net tích hợp với SalesForce?",
+        "answer": "Sử dụng thông tin vai trò từ SalesForce, kiểm tra quyền trong ứng dụng, và giới hạn truy cập dựa trên vai trò người dùng."
+    },
+    {
+        "question": "Làm thế nào để xử lý dữ liệu nhạy cảm lấy từ SalesForce trong ứng dụng .Net?",
+        "answer": "Mã hóa dữ liệu khi lưu trữ, hạn chế truy cập, và tuân thủ chính sách bảo mật như GDPR hoặc CCPA."
+    },
+    {
+        "question": "Những thực hành tốt nhất để ghi log và kiểm toán các cuộc gọi API trong ứng dụng .Net là gì?",
+        "answer": "Ghi log các cuộc gọi API với timestamp, mã trạng thái, và dữ liệu đầu vào/đầu ra, lưu trữ an toàn và định kỳ kiểm tra."
+    },
+    {
+        "question": "Làm thế nào để sử dụng bộ nhớ cache để cải thiện hiệu suất của ứng dụng .Net tích hợp với SalesForce?",
+        "answer": "Lưu trữ dữ liệu tĩnh như metadata hoặc danh sách picklist trong bộ nhớ cache, sử dụng thư viện như MemoryCache."
+    },
+    {
+        "question": "Những chiến lược nào có thể sử dụng để giảm số lượng cuộc gọi API?",
+        "answer": "Kết hợp nhiều truy vấn trong một SOQL, sử dụng caching, và giảm tần suất gọi không cần thiết."
+    },
+    {
+        "question": "Làm thế nào để xử lý phân trang hiệu quả để lấy dữ liệu lớn?",
+        "answer": "Sử dụng nextRecordsUrl hoặc LIMIT/OFFSET, và xử lý bất đồng bộ để không chặn luồng chính."
+    },
+    {
+        "question": "Làm thế nào để sử dụng lập trình bất đồng bộ trong .Net để gọi API mà không chặn luồng chính?",
+        "answer": "Sử dụng async/await với HttpClient, ví dụ await client.GetAsync(url), để thực hiện gọi API không chặn."
+    },
+    {
+        "question": "Những công cụ hoặc kỹ thuật nào có thể sử dụng để đo lường và tối ưu hóa hiệu suất của các cuộc gọi API?",
+        "answer": "Sử dụng Fiddler, Postman để phân tích, và đo thời gian phản hồi, tối ưu bằng caching và giảm số lượng gọi."
+    },
+    {
+        "question": "Làm thế nào để tích hợp SalesForce với một ứng dụng ASP.NET MVC?",
+        "answer": "Sử dụng HttpClient trong controller, gọi API SalesForce, và hiển thị dữ liệu trong view, quản lý token trong session."
+    },
+    {
+        "question": "Làm thế nào để sử dụng dữ liệu SalesForce trong một ứng dụng Blazor?",
+        "answer": "Gọi API SalesForce từ service, sử dụng HttpClientFactory, và hiển thị dữ liệu trong component Blazor."
+    },
+    {
+        "question": "Làm thế nào để hiển thị dữ liệu SalesForce trong một ứng dụng desktop WPF?",
+        "answer": "Sử dụng HttpClient để gọi API, bind dữ liệu vào UI với DataGrid hoặc ListView, và quản lý token trong ứng dụng."
+    },
+    {
+        "question": "Sự khác biệt giữa sử dụng .Net Framework và .Net Core cho tích hợp SalesForce là gì?",
+        "answer": ".Net Core hiện đại hơn, hỗ trợ cross-platform, trong khi .Net Framework phù hợp cho ứng dụng legacy, cả hai đều hỗ trợ HttpClient."
+    },
+    {
+        "question": "Làm thế nào để xử lý ngoại lệ và lỗi trong ứng dụng .Net khi gọi API SalesForce?",
+        "answer": "Sử dụng try-catch để bắt ngoại lệ HttpRequestException, kiểm tra mã trạng thái, và xử lý lỗi như 401, 404."
+    },
+    {
+        "question": "Làm thế nào để sử dụng API Streaming để nhận thông báo thời gian thực từ SalesForce trong ứng dụng .Net?",
+        "answer": "Sử dụng Bayeux protocol với thư viện như SignalR, kết nối đến endpoint streaming, và xử lý sự kiện thời gian thực."
+    },
+    {
+        "question": "Làm thế nào để gọi API Apex REST từ ứng dụng .Net?",
+        "answer": "Gửi yêu cầu HTTP đến endpoint Apex, ví dụ /services/apexrest/YourEndpoint, với dữ liệu JSON và header Authorization."
+    },
+    {
+        "question": "Những thư viện bên thứ ba nào có sẵn cho tích hợp SalesForce trong .Net, và làm thế nào để sử dụng chúng?",
+        "answer": "Sử dụng NetCoreForce hoặc Force.com Toolkit, cài đặt qua NuGet, và theo hướng dẫn trên [GitHub NetCoreForce](https://github.com/developerforce/Force.com-Toolkit-for-NET)."
+    },
+    {
+        "question": "Làm thế nào để xử lý tệp đính kèm trong SalesForce sử dụng .Net?",
+        "answer": "Sử dụng endpoint /sobjects/Attachment để tải lên/tải xuống, gửi yêu cầu POST với tệp nhị phân và header Content-Type."
+    },
+    {
+        "question": "Làm thế nào để sử dụng CDN của SalesForce để phục vụ tệp từ ứng dụng .Net?",
+        "answer": "Lấy URL từ trường Body của Attachment, và sử dụng HttpClient để tải tệp, đảm bảo quyền truy cập."
+    },
+    {
+        "question": "Làm thế nào để làm việc với đối tượng Account trong SalesForce sử dụng .Net?",
+        "answer": "Sử dụng endpoint /sobjects/Account để CRUD, ví dụ GET để lấy, POST để tạo, với dữ liệu JSON."
+    },
+    {
+        "question": "Làm thế nào để lấy và cập nhật bản ghi Contact?",
+        "answer": "Gửi yêu cầu GET đến /sobjects/Contact/Id để lấy, PATCH để cập nhật, với dữ liệu JSON."
+    },
+    {
+        "question": "Làm thế nào để quản lý Opportunities, bao gồm các giai đoạn và xác suất?",
+        "answer": "Sử dụng endpoint /sobjects/Opportunity, cập nhật trường StageName và Probability, theo dõi trạng thái qua API."
+    },
+    {
+        "question": "Làm thế nào để xử lý Leads và chuyển đổi chúng sang các đối tượng khác?",
+        "answer": "Sử dụng endpoint /sobjects/Lead, gọi phương thức convert để chuyển đổi, cần quyền phù hợp."
+    },
+    {
+        "question": "Làm thế nào để tạo và quản lý đối tượng tùy chỉnh trong SalesForce từ ứng dụng .Net?",
+        "answer": "Tạo endpoint /sobjects/CustomObject__c, gửi yêu cầu POST với dữ liệu JSON, và lấy metadata để biết trường."
+    },
+    {
+        "question": "Làm thế nào để tải lên một tệp đến bản ghi SalesForce sử dụng .Net?",
+        "answer": "Sử dụng endpoint /sobjects/Attachment, gửi yêu cầu POST với tệp nhị phân, và liên kết với bản ghi cha."
+    },
+    {
+        "question": "Làm thế nào để tải xuống một tệp đính kèm với bản ghi SalesForce?",
+        "answer": "Gửi yêu cầu GET đến URL của Attachment, với header Authorization, và lưu tệp vào ổ đĩa."
+    },
+    {
+        "question": "Làm thế nào để xóa một tệp đính kèm từ bản ghi SalesForce?",
+        "answer": "Sử dụng yêu cầu DELETE đến endpoint /sobjects/Attachment/Id, với header Authorization."
+    },
+    {
+        "question": "Làm thế nào để xử lý tệp lớn hoặc nhiều tệp trong ứng dụng .Net?",
+        "answer": "Sử dụng Bulk API cho nhiều tệp, hoặc xử lý từng tệp với HttpClient, đảm bảo không vượt giới hạn API."
+    },
+    {
+        "question": "Làm thế nào để sử dụng CDN của SalesForce để tối ưu hóa việc phân phối tệp?",
+        "answer": "Lấy URL từ trường Body của Attachment, và sử dụng CDN để phục vụ, giảm tải server."
+    },
+    {
+        "question": "Làm thế nào để xử lý trường tiền tệ trong SalesForce, xem xét các mã tiền tệ khác nhau?",
+        "answer": "Lấy giá trị số và currencyCode, định dạng theo yêu cầu, ví dụ USD 100.50."
+    },
+    {
+        "question": "Làm thế nào để chuyển đổi số tiền giữa các loại tiền tệ trong ứng dụng .Net?",
+        "answer": "Sử dụng thư viện như CurrencyConverter, lấy tỷ giá từ API bên thứ ba, và tính toán."
+    },
+    {
+        "question": "Làm thế nào để định dạng giá trị tiền tệ đúng để hiển thị trong ứng dụng?",
+        "answer": "Sử dụng ToString('C2') trong .Net, và thêm currencyCode, ví dụ '100.50 USD'."
+    },
+    {
+        "question": "Làm thế nào để xử lý tùy chọn hiển thị tiền tệ của người dùng?",
+        "answer": "Lấy cài đặt từ người dùng, áp dụng định dạng tiền tệ tương ứng, ví dụ EUR hoặc JPY."
+    },
+    {
+        "question": "Những thực hành tốt nhất để xử lý giá trị tiền tệ nhằm tránh vấn đề chính xác là gì?",
+        "answer": "Sử dụng kiểu decimal thay vì float, làm tròn đúng, và kiểm tra tỷ giá thường xuyên."
+    },
+    {
+        "question": "Làm thế nào để viết bài kiểm tra tích hợp cho ứng dụng .Net tương tác với SalesForce?",
+        "answer": "Sử dụng framework như xUnit, mock API với Moq, và kiểm tra các kịch bản như lỗi 401, 404."
+    },
+    {
+        "question": "Làm thế nào để mô phỏng phản hồi API SalesForce trong bài kiểm tra đơn vị?",
+        "answer": "Sử dụng HttpClientFactory với mock handler, trả về JSON giả lập, và kiểm tra logic ứng dụng."
+    },
+    {
+        "question": "Làm thế nào để sử dụng Developer Console của SalesForce để kiểm tra các cuộc gọi API?",
+        "answer": "Chuyển đến Setup > Developer Console, chạy truy vấn SOQL, và kiểm tra log API."
+    },
+    {
+        "question": "Những công cụ nào có thể sử dụng để debug các cuộc gọi API trong ứng dụng .Net?",
+        "answer": "Sử dụng Fiddler, Postman, hoặc Visual Studio Debugger để theo dõi và phân tích yêu cầu."
+    },
+    {
+        "question": "Làm thế nào để xử lý các môi trường khác nhau (sandbox vs. production) trong chiến lược kiểm tra?",
+        "answer": "Sử dụng cấu hình khác nhau cho URL và token, kiểm tra sandbox trước, sau đó triển khai production."
+    },
+    {
+        "question": "Làm thế nào để tổ chức mã nguồn cho tích hợp SalesForce trong ứng dụng .Net?",
+        "answer": "Tách logic API vào service layer, sử dụng dependency injection, và tổ chức theo mô hình MVC."
+    },
+    {
+        "question": "Làm thế nào để sử dụng tiêm phụ thuộc để quản lý dịch vụ SalesForce trong ứng dụng?",
+        "answer": "Đăng ký HttpClient trong DI container, inject vào service, ví dụ IServiceCollection.AddHttpClient."
+    },
+    {
+        "question": "Làm thế nào để xử lý phiên bản hóa các cuộc gọi API SalesForce trong mã .Net?",
+        "answer": "Sử dụng endpoint với phiên bản cụ thể, ví dụ /vXX.X/, và cập nhật khi cần, kiểm tra tài liệu API."
+    },
+    {
+        "question": "Những thực hành tốt nhất để xử lý lỗi và ghi log trong mã tích hợp SalesForce là gì?",
+        "answer": "Sử dụng try-catch, ghi log với Serilog hoặc NLog, và theo dõi lỗi 401, 404 trong log."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo ứng dụng có khả năng phục hồi trước các thay đổi hoặc downtime của API?",
+        "answer": "Thực hiện retry logic, sử dụng circuit breaker pattern, và giám sát trạng thái API với health check."
+    }
+        ],
     "SFDC’s PDF": [
-        {
-            "question": "Làm cách nào để tạo một PDF từ một VisualForce page?",
-            "answer": "Sử dụng thuộc tính renderAs='pdf' trong thẻ <apex:page> của VisualForce page."
-        },
-        {
-            "question": "Thuộc tính renderAs attribute trong VisualForce page dùng cho mục đích gì?",
-            "answer": "Thuộc tính renderAs cho phép chỉ định định dạng của trang, như 'pdf' để tạo PDF."
-        },
-        {
-            "question": "Làm cách nào để gửi một PDF như là attachment qua email từ SalesForce?",
-            "answer": "Sử dụng Apex để tạo PDF từ VisualForce page, sau đó sử dụng lớp Messaging để gửi email với attachment là PDF."
-        },
-        {
-            "question": "PDF templates trong SalesForce là gì và cách sử dụng chúng?",
-            "answer": "PDF templates là các mẫu tiên định để tạo các tài liệu PDF từ dữ liệu của SalesForce. Chúng có thể được sử dụng để tạo các hóa đơn, báo giá, v.v."
-        },
-        {
-            "question": "Làm cách nào để tùy chỉnh layout của một PDF tạo từ VisualForce page?",
-            "answer": "Sử dụng CSS để tùy chỉnh giao diện của VisualForce page, và đảm bảo rằng các phần tử được đặt theo cách phù hợp cho định dạng PDF."
-        },
-        {
-            "question": "Có thể embed images trong PDF tạo từ SalesForce hay không?",
-            "answer": "Có, bạn có thể sử dụng thẻ <img> trong VisualForce page để hiển thị hình ảnh, và chúng sẽ được bao gồm trong PDF."
-        },
-        {
-            "question": "Làm cách nào để xử lý dữ liệu động trong PDF template?",
-            "answer": "Sử dụng merge fields hoặc các biến trong VisualForce page để hiển thị dữ liệu động từ SalesForce."
-        },
-        {
-            "question": "Những best practices cho việc tạo báo cáo PDF trong SalesForce là gì?",
-            "answer": "Giữ cho VisualForce page đơn giản, sử dụng CSS để tùy chỉnh, kiểm tra trang trước khi render thành PDF, và sử dụng các thư viện như jsPDF nếu cần tùy chỉnh hơn."
-        },
-        {
-            "question": "Làm cách nào để bảo mật PDF files trong SalesForce?",
-            "answer": "Sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến các bản ghi có attachments là PDF."
-        },
-        {
-            "question": "Có cách nào để tạo PDF sử dụng Apex code mà không cần VisualForce pages hay không?",
-            "answer": "Có, bạn có thể sử dụng lớp PDF của SalesForce hoặc các thư viện bên thứ ba để tạo PDF trực tiếp từ Apex code."
-        },
-        {
-            "question": "Làm cách nào để thêm header và footer vào PDF tạo từ VisualForce?",
-            "answer": "Sử dụng các thẻ như <apex:pageBlock> hoặc CSS để định nghĩa header và footer trong VisualForce page."
-        },
-        {
-            "question": "Làm cách nào để kiểm tra lỗi khi tạo PDF từ VisualForce?",
-            "answer": "Sử dụng debug logs để theo dõi lỗi, kiểm tra xem các merge fields có đúng không, và đảm bảo dữ liệu đầu vào hợp lệ."
-        },
-        {
-            "question": "Làm cách nào để tạo PDF từ dữ liệu lớn trong SalesForce?",
-            "answer": "Sử dụng Batch Apex để xử lý dữ liệu lớn, sau đó tạo PDF từng phần hoặc sử dụng VisualForce với pagination."
-        },
-        {
-            "question": "Làm cách nào để gửi PDF tự động qua email dựa trên một trigger?",
-            "answer": "Viết trigger để gọi Apex code, tạo PDF từ VisualForce, sau đó sử dụng Messaging.SingleEmailMessage để gửi email."
-        },
-        {
-            "question": "Làm cách nào để tùy chỉnh font trong PDF tạo từ SalesForce?",
-            "answer": "Sử dụng CSS để định nghĩa font, nhưng cần đảm bảo font được hỗ trợ trong môi trường PDF rendering của SalesForce."
-        },
-        {
-            "question": "Làm cách nào để tạo PDF với nhiều trang từ VisualForce?",
-            "answer": "Sử dụng pagination hoặc lặp qua dữ liệu trong VisualForce page để tạo nhiều trang PDF."
-        },
-        {
-            "question": "Làm cách nào để lưu PDF vào một bản ghi trong SalesForce?",
-            "answer": "Tạo PDF, sau đó lưu nó như một attachment hoặc file trong ContentDocument liên kết với bản ghi."
-        },
-        {
-            "question": "Làm cách nào để kiểm tra định dạng PDF trước khi gửi?",
-            "answer": "Xem trước PDF trong VisualForce page bằng cách renderAs='pdf' và kiểm tra giao diện."
-        },
-        {
-            "question": "Làm cách nào để tạo PDF với chữ ký điện tử?",
-            "answer": "Sử dụng các thư viện bên thứ ba như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page."
-        },
-        {
-            "question": "Làm cách nào để tối ưu hóa hiệu suất khi tạo PDF từ SalesForce?",
-            "answer": "Giảm số lượng dữ liệu xử lý, sử dụng caching, và tránh các truy vấn phức tạp trong VisualForce page."
-        }
+    {
+        "question": "Làm cách nào để tạo một PDF từ một VisualForce page?",
+        "answer": "Sử dụng thuộc tính renderAs='pdf' trong thẻ <apex:page> của VisualForce page."
+    },
+    {
+        "question": "Thuộc tính renderAs attribute trong VisualForce page dùng cho mục đích gì?",
+        "answer": "Thuộc tính renderAs cho phép chỉ định định dạng của trang, như 'pdf' để tạo PDF."
+    },
+    {
+        "question": "Làm cách nào để gửi một PDF như là attachment qua email từ SalesForce?",
+        "answer": "Sử dụng Apex để tạo PDF từ VisualForce page, sau đó sử dụng lớp Messaging để gửi email với attachment là PDF."
+    },
+    {
+        "question": "PDF templates trong SalesForce là gì và cách sử dụng chúng?",
+        "answer": "PDF templates là các mẫu tiên định để tạo các tài liệu PDF từ dữ liệu của SalesForce. Chúng có thể được sử dụng để tạo các hóa đơn, báo giá, v.v."
+    },
+    {
+        "question": "Làm cách nào để tùy chỉnh layout của một PDF tạo từ VisualForce page?",
+        "answer": "Sử dụng CSS để tùy chỉnh giao diện của VisualForce page, và đảm bảo rằng các phần tử được đặt theo cách phù hợp cho định dạng PDF."
+    },
+    {
+        "question": "Có thể embed images trong PDF tạo từ SalesForce hay không?",
+        "answer": "Có, bạn có thể sử dụng thẻ <img> trong VisualForce page để hiển thị hình ảnh, và chúng sẽ được bao gồm trong PDF."
+    },
+    {
+        "question": "Làm cách nào để xử lý dữ liệu động trong PDF template?",
+        "answer": "Sử dụng merge fields hoặc các biến trong VisualForce page để hiển thị dữ liệu động từ SalesForce."
+    },
+    {
+        "question": "Những best practices cho việc tạo báo cáo PDF trong SalesForce là gì?",
+        "answer": "Giữ cho VisualForce page đơn giản, sử dụng CSS để tùy chỉnh, kiểm tra trang trước khi render thành PDF, và sử dụng các thư viện như jsPDF nếu cần tùy chỉnh hơn."
+    },
+    {
+        "question": "Làm cách nào để bảo mật PDF files trong SalesForce?",
+        "answer": "Sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến các bản ghi có attachments là PDF."
+    },
+    {
+        "question": "Có cách nào để tạo PDF sử dụng Apex code mà không cần VisualForce pages hay không?",
+        "answer": "Có, bạn có thể sử dụng lớp PDF của SalesForce hoặc các thư viện bên thứ ba để tạo PDF trực tiếp từ Apex code."
+    },
+    {
+        "question": "Làm cách nào để thêm header và footer vào PDF tạo từ VisualForce?",
+        "answer": "Sử dụng các thẻ như <apex:pageBlock> hoặc CSS để định nghĩa header và footer trong VisualForce page."
+    },
+    {
+        "question": "Làm cách nào để kiểm tra lỗi khi tạo PDF từ VisualForce?",
+        "answer": "Sử dụng debug logs để theo dõi lỗi, kiểm tra xem các merge fields có đúng không, và đảm bảo dữ liệu đầu vào hợp lệ."
+    },
+    {
+        "question": "Làm cách nào để tạo PDF từ dữ liệu lớn trong SalesForce?",
+        "answer": "Sử dụng Batch Apex để xử lý dữ liệu lớn, sau đó tạo PDF từng phần hoặc sử dụng VisualForce với pagination."
+    },
+    {
+        "question": "Làm cách nào để gửi PDF tự động qua email dựa trên một trigger?",
+        "answer": "Viết trigger để gọi Apex code, tạo PDF từ VisualForce, sau đó sử dụng Messaging.SingleEmailMessage để gửi email."
+    },
+    {
+        "question": "Làm cách nào để tùy chỉnh font trong PDF tạo từ SalesForce?",
+        "answer": "Sử dụng CSS để định nghĩa font, nhưng cần đảm bảo font được hỗ trợ trong môi trường PDF rendering của SalesForce."
+    },
+    {
+        "question": "Làm cách nào để tạo PDF với nhiều trang từ VisualForce?",
+        "answer": "Sử dụng pagination hoặc lặp qua dữ liệu trong VisualForce page để tạo nhiều trang PDF."
+    },
+    {
+        "question": "Làm cách nào để lưu PDF vào một bản ghi trong SalesForce?",
+        "answer": "Tạo PDF, sau đó lưu nó như một attachment hoặc file trong ContentDocument liên kết với bản ghi."
+    },
+    {
+        "question": "Làm cách nào để kiểm tra định dạng PDF trước khi gửi?",
+        "answer": "Xem trước PDF trong VisualForce page bằng cách renderAs='pdf' và kiểm tra giao diện."
+    },
+    {
+        "question": "Làm cách nào để tạo PDF với chữ ký điện tử?",
+        "answer": "Sử dụng các thư viện bên thứ ba như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page."
+    },
+    {
+        "question": "Làm cách nào để tối ưu hóa hiệu suất khi tạo PDF từ SalesForce?",
+        "answer": "Giảm số lượng dữ liệu xử lý, sử dụng caching, và tránh các truy vấn phức tạp trong VisualForce page."
+    },
+    {
+        "question": "Sự khác biệt giữa renderAs='pdf' và renderAs='html' trong các trang VisualForce là gì?",
+        "answer": "renderAs='pdf' cho phép trang VisualForce được render thành tài liệu PDF, trong khi renderAs='html' render nó thành một trang HTML thông thường. Khi sử dụng renderAs='pdf', trang sẽ được tạo thành định dạng PDF, có thể được tải xuống hoặc hiển thị trực tiếp tùy thuộc vào cài đặt trình duyệt."
+    },
+    {
+        "question": "SalesForce xử lý việc render PDF từ trang VisualForce như thế nào?",
+        "answer": "SalesForce sử dụng một engine render để chuyển đổi trang VisualForce thành PDF. Engine này sẽ chuyển đổi HTML và CSS của trang thành định dạng PDF. Tuy vậy, SalesForce có những giới hạn về CSS và JavaScript hỗ trợ cho việc render PDF, vì vậy bạn cần đảm bảo rằng trang của bạn tuân thủ các quy tắc và hạn chế này."
+    },
+    {
+        "question": "Những hạn chế và best practices nào cần lưu ý khi sử dụng renderAs='pdf'?",
+        "answer": "Một số hạn chế bao gồm: JavaScript thường bị vô hiệu hóa, CSS có những thuộc tính không được hỗ trợ, và có thể có vấn đề với việc hiển thị hình ảnh hoặc font chữ đặc biệt. Best practices bao gồm việc sử dụng CSS đơn giản, tránh sử dụng JavaScript, và kiểm tra trang trước khi render thành PDF để đảm bảo định dạng đúng."
+    },
+    {
+        "question": "Làm thế nào để đính kèm một PDF tạo từ trang VisualForce vào email sử dụng Apex?",
+        "answer": "Bạn có thể sử dụng Apex để tạo PDF từ trang VisualForce bằng cách sử dụng lớp PageReference và Blob để lấy nội dung PDF, sau đó sử dụng lớp Messaging.SingleEmailMessage để gửi email với PDF là attachment. Ví dụ: PageReference pdfPage = new PageReference('/apex/YourVisualForcePage'); pdfPage.setParameters(new Map<String, String>{ 'id' => recordId }); Blob pdfBlob = pdfPage.getContentAsPDF(); Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage(); mail.setSubject('Tiêu đề'); mail.setBody('Nội dung email', 'text/plain; charset UTF-8'); mail.setToAddresses(new String[] { 'người nhận@example.com' }); mail.setFileAttachments(new Messaging.EmailFileAttachment[] { new Messaging.EmailFileAttachment(pdfBlob, 'tên_tệp.pdf', 'application/pdf') }); Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });"
+    },
+    {
+        "question": "Có thể gửi PDF trực tiếp từ trang VisualForce mà không sử dụng Apex hay không?",
+        "answer": "Không, để gửi PDF qua email, bạn cần sử dụng Apex để tạo PDF và sau đó gửi email với attachment là PDF. Trang VisualForce chỉ có thể hiển thị hoặc tải xuống PDF, nhưng không thể gửi email trực tiếp."
+    },
+    {
+        "question": "Những bước để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi?",
+        "answer": "Để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi, bạn có thể làm theo các bước sau: 1. Tạo một trang VisualForce với renderAs='pdf' để tạo PDF từ dữ liệu của bản ghi. 2. Tạo một lớp Apex với phương thức để tạo PDF từ trang VisualForce và gửi email. 3. Trên trang chi tiết của bản ghi, thêm một button tùy chỉnh gọi phương thức Apex với ID của bản ghi làm tham số."
+    },
+    {
+        "question": "Làm thế nào để tạo một mẫu PDF tùy chỉnh trong SalesForce?",
+        "answer": "Để tạo một mẫu PDF tùy chỉnh trong SalesForce, bạn có hai tùy chọn chính: 1. Sử dụng trang VisualForce: Tạo một trang VisualForce với renderAs='pdf' và thiết kế layout theo yêu cầu của mình sử dụng HTML và CSS. 2. Sử dụng Document Templates: Tạo một mẫu tài liệu trong SalesForce, chọn định dạng là PDF, và thiết kế mẫu sử dụng các merge fields để hiển thị dữ liệu từ bản ghi."
+    },
+    {
+        "question": "Làm thế nào để liên kết một mẫu PDF với một đối tượng hoặc loại bản ghi cụ thể?",
+        "answer": "Nếu bạn sử dụng Document Templates, bạn có thể liên kết mẫu với một đối tượng cụ thể bằng cách chọn đối tượng đó trong phần cài đặt của mẫu. Ví dụ, bạn có thể tạo một mẫu PDF cho đối tượng Opportunity. Nếu bạn sử dụng trang VisualForce, bạn có thể thiết kế trang để hoạt động với một đối tượng cụ thể bằng cách sử dụng Apex controller hoặc extension liên kết với đối tượng đó."
+    },
+    {
+        "question": "Có thể sử dụng merge fields trong mẫu PDF, và nếu có, làm thế nào?",
+        "answer": "Trong Document Templates, bạn có thể sử dụng merge fields để hiển thị dữ liệu từ bản ghi. Merge fields có dạng {Field_Name}, và chúng sẽ được thay thế bằng giá trị của trường từ bản ghi tương ứng. Trong trang VisualForce, bạn có thể sử dụng biến Apex để hiển thị dữ liệu từ bản ghi. Ví dụ, nếu bạn có một controller liên kết với một bản ghi Opportunity, bạn có thể sử dụng { !opportunity.Name } để hiển thị tên của opportunity."
+    },
+    {
+        "question": "Làm thế nào để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page?",
+        "answer": "Để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page, bạn có thể sử dụng các thuộc tính CSS để định nghĩa chiều rộng, chiều cao và hướng của trang. Ví dụ, bạn có thể sử dụng @page rule trong CSS để định nghĩa kích thước trang. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF, vì vậy bạn cần kiểm tra tài liệu chính thức để biết những thuộc tính nào được hỗ trợ."
+    },
+    {
+        "question": "Làm thế nào để thiết lập margin và padding trong PDF?",
+        "answer": "Bạn có thể sử dụng các thuộc tính CSS như margin và padding để thiết lập khoảng cách và đệm cho các phần tử trên trang VisualForce. Tuy vậy, do những giới hạn của render PDF, bạn cần đảm bảo rằng các thuộc tính CSS bạn sử dụng được hỗ trợ."
+    },
+    {
+        "question": "Có thể sử dụng CSS để style PDF, và có những xem xét đặc biệt nào cho việc render PDF?",
+        "answer": "Vâng, bạn có thể sử dụng CSS để style PDF. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF. Ví dụ, JavaScript thường bị vô hiệu hóa, và một số thuộc tính CSS có thể không được hỗ trợ hoặc hoạt động khác biệt. Bạn cần kiểm tra tài liệu chính thức của SalesForce để biết những thuộc tính CSS nào được hỗ trợ và cách chúng hoạt động trong render PDF."
+    },
+    {
+        "question": "Làm thế nào để truyền parameters đến trang VisualForce để tạo PDF động?",
+        "answer": "Bạn có thể truyền parameters đến trang VisualForce bằng cách sử dụng query string parameters hoặc thông qua Apex controller. Ví dụ, nếu bạn có một button trên trang chi tiết của bản ghi, bạn có thể thiết lập URL của button để truyền ID của bản ghi đến trang VisualForce. Sau đó, trong controller, bạn có thể lấy parameter này và sử dụng để lấy dữ liệu từ bản ghi."
+    },
+    {
+        "question": "Làm thế nào để truy vấn và hiển thị dữ liệu từ các đối tượng liên quan trong PDF?",
+        "answer": "Trong Apex controller của trang VisualForce, bạn có thể sử dụng SOQL để truy vấn dữ liệu từ các đối tượng liên quan. Sau đó, bạn có thể hiển thị dữ liệu này trên trang VisualForce sử dụng biến Apex. Ví dụ, nếu bạn đang tạo PDF cho một Opportunity, bạn có thể truy vấn các bản ghi Contact liên quan và hiển thị thông tin của chúng trong PDF."
+    },
+    {
+        "question": "Những cách tốt nhất để xử lý lượng dữ liệu lớn trong PDF mà không gây ra vấn đề về hiệu suất?",
+        "answer": "Để xử lý lượng dữ liệu lớn trong PDF, bạn có thể sử dụng phân trang hoặc lọc dữ liệu để chỉ hiển thị những phần quan trọng nhất. Ngoài ra, bạn có thể sử dụng caching để lưu trữ dữ liệu đã truy vấn và tránh truy vấn lặp lại. Trong trang VisualForce, bạn có thể sử dụng các thẻ như <apex:repeat> để hiển thị danh sách dữ liệu, nhưng cần đảm bảo rằng danh sách không quá lớn để tránh vấn đề về hiệu suất."
+    },
+    {
+        "question": "Những sai lầm phổ biến cần tránh khi tạo PDF từ trang VisualForce?",
+        "answer": "Một số sai lầm phổ biến bao gồm: Sử dụng JavaScript, vì nó thường bị vô hiệu hóa trong render PDF. Sử dụng các thuộc tính CSS không được hỗ trợ, dẫn đến định dạng sai. Không kiểm tra trang trước khi render thành PDF, dẫn đến kết quả không như mong đợi. Tải quá nhiều hình ảnh hoặc dữ liệu lớn, gây ra vấn đề về hiệu suất. Không đảm bảo rằng font chữ được sử dụng là font hỗ trợ."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau?",
+        "answer": "Để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau, bạn nên: Sử dụng các font chữ phổ biến và chuẩn. Đảm bảo rằng kích thước và định dạng văn bản là phù hợp. Kiểm tra PDF trên các trình duyệt và thiết bị khác nhau để đảm bảo tính tương thích. Sử dụng các thuộc tính CSS chuẩn để định dạng."
+    },
+    {
+        "question": "Những xem xét về hiệu suất nào cần có cho việc tạo PDF trong SalesForce?",
+        "answer": "Một số xem xét về hiệu suất bao gồm: Giảm số lượng truy vấn database bằng cách sử dụng caching hoặc lấy dữ liệu hiệu quả. Tránh sử dụng các thành phần nặng hoặc phức tạp trên trang VisualForce. Tối ưu hóa hình ảnh để giảm kích thước file. Sử dụng các kỹ thuật để giảm thời gian render, như sử dụng layout đơn giản."
+    },
+    {
+        "question": "Làm thế nào để hạn chế quyền truy cập đến những PDF cụ thể dựa trên quy tắc của SalesForce?",
+        "answer": "SalesForce cung cấp các quy tắc sharing và security để kiểm soát quyền truy cập đến các bản ghi. Nếu bạn lưu PDF như là attachment của một bản ghi, quy tắc sharing của bản ghi đó sẽ áp dụng để quy định ai có thể xem attachment. Ngoài ra, nếu bạn tạo PDF và gửi qua email, bạn cần đảm bảo rằng người nhận có quy tắc truy cập phù hợp để xem nội dung của PDF."
+    },
+    {
+        "question": "Có thể bảo mật PDF bằng mật khẩu hoặc các biện pháp khác hay không?",
+        "answer": "SalesForce không cung cấp tính năng bảo mật PDF bằng mật khẩu trực tiếp. Nếu bạn muốn bảo mật PDF, bạn có thể sử dụng các thư viện bên thứ ba hoặc Apex code để thêm mật khẩu cho PDF. Tuy vậy, việc sử dụng thư viện bên thứ ba trong SalesForce có những hạn chế, và bạn cần đảm bảo rằng thư viện đó được hỗ trợ và có thể được sử dụng trong môi trường của bạn."
+    },
+    {
+        "question": "Những biện pháp nào có thể thực hiện để ngừa truy cập không ủy quyền hoặc phân phối sai của PDF nhạy cảm?",
+        "answer": "Để ngừa truy cập không ủy quyến hoặc phân phối sai của PDF nhạy cảm, bạn có thể: Lưu PDF như là attachment của bản ghi và sử dụng quy tắc sharing và security của SalesForce để hạn chế quy tắc truy cập. Sử dụng các quy tắc validation và authorization trong Apex để đảm bảo rằng chỉ những người có quy tắc thích hợp mới có thể tạo hoặc xem PDF. Sử dụng các biện pháp bảo mật bổ sung như encryption hoặc watermarking để bảo vệ nội dung của PDF."
+    },
+    {
+        "question": "Sự khác biệt giữa việc tạo PDF sử dụng Apex và sử dụng trang VisualForce là gì?",
+        "answer": "Khi sử dụng trang VisualForce, bạn tạo một trang web và sử dụng renderAs='pdf' để chuyển đổi nó thành PDF. Điều này phù hợp cho các trường hợp bạn muốn có một giao diện đẹp và dễ tùy chỉnh. Khi sử dụng Apex, bạn có thể sử dụng các lớp của SalesForce hoặc thư viện bên thứ ba để tạo PDF trực tiếp từ code. Điều này có thể cho bạn sự kiểm soát tốt hơn về định dạng và hiệu suất, nhưng có thể phức tạp hơn."
+    },
+    {
+        "question": "Làm thế nào để sử dụng lớp PDF của SalesForce trong Apex để tạo PDF?",
+        "answer": "SalesForce không cung cấp một lớp PDF built-in để tạo PDF trực tiếp từ Apex. Tuy vậy, bạn có thể sử dụng lớp PageReference để lấy nội dung PDF từ một trang VisualForce. Nếu bạn muốn tạo PDF mà không sử dụng trang VisualForce, bạn có thể cần sử dụng các thư viện bên thứ ba hoặc viết code tùy chỉnh để tạo PDF."
+    },
+    {
+        "question": "Có những ứng dụng bên thứ ba nào có thể được tích hợp với SalesForce để tạo PDF?",
+        "answer": "Có rất nhiều ứng dụng bên thứ ba trên AppExchange của SalesForce chuyên về việc tạo và quản lý tài liệu, bao gồm tạo PDF. Ví dụ, DocuSign, PandaDoc, và Adobe Sign là những ứng dụng phổ biến cho việc tạo và ký kết tài liệu, bao gồm PDF."
+    },
+    {
+        "question": "Làm thế nào để thêm một mục lục hoặc chỉ mục vào PDF?",
+        "answer": "Để thêm một mục lục hoặc chỉ mục vào PDF tạo từ VisualForce, bạn có thể sử dụng các thẻ HTML và CSS để tạo mục lục trên trang. Tuy vậy, việc tạo mục lục tự động có thể phức tạp, và bạn có thể cần sử dụng JavaScript để tạo mục lục dựa trên tiêu đề của trang. Tuy vậy, do JavaScript thường bị vô hiệu hóa trong render PDF, bạn có thể cần tạo mục lục thủ công hoặc sử dụng các kỹ thuật khác."
+    },
+    {
+        "question": "Làm thế nào để tạo PDF có bookmark với các phần có thể navigable?",
+        "answer": "Để tạo PDF có bookmark, bạn có thể sử dụng các thư viện bên thứ ba để thêm bookmark vào PDF sau khi tạo. Trong VisualForce, việc này có thể khó khăn vì không có sự hỗ trợ trực tiếp."
+    },
+    {
+        "question": "Có thể thêm các phần tử tương tác như link hoặc form fields vào PDF hay không?",
+        "answer": "Trong PDF tạo từ VisualForce, các link HTML có thể được hiển thị như link trong PDF, nhưng chức năng của chúng có thể khác tùy thuộc vào trình xem PDF. Tuy vậy, form fields và các phần tử tương tác khác có thể không hoạt động đúng do giới hạn của render PDF."
+    },
+    {
+        "question": "Làm thế nào để debug các vấn đề khi tạo PDF từ trang VisualForce?",
+        "answer": "Để debug các vấn đề khi tạo PDF từ trang VisualForce, bạn có thể: Xem trang VisualForce trong trình duyệt để kiểm tra xem nó hiển thị đúng trước khi render thành PDF. Kiểm tra các log của SalesForce để tìm các lỗi hoặc warning liên quan đến trang hoặc Apex code. Sử dụng các công cụ như Firebug hoặc Chrome DevTools để kiểm tra HTML và CSS của trang."
+    },
+    {
+        "question": "Những thông báo lỗi phổ biến và cách giải quyết chúng?",
+        "answer": "Một số thông báo lỗi phổ biến bao gồm: 'Failed to load PDF': có thể do trang VisualForce có lỗi hoặc không thể được render thành PDF. 'CSS not applied': có thể do các thuộc tính CSS không được hỗ trợ hoặc được định nghĩa sai. 'Image not displayed': có thể do URL của hình ảnh sai hoặc hình ảnh không thể tải được. Để giải quyết, bạn cần kiểm tra trang VisualForce, kiểm tra các log, và đảm bảo rằng tất cả các phần tử và thuộc tính là hợp lệ và được hỗ trợ."
+    },
+    {
+        "question": "Làm thế nào để xử lý các trường hợp mà việc tạo PDF thất bại do thiếu dữ liệu hoặc các vấn đề khác?",
+        "answer": "Để xử lý các trường hợp mà việc tạo PDF thất bại, bạn có thể sử dụng try-catch trong Apex để bắt các ngoại lệ và xử lý chúng phù hợp. Ví dụ, nếu dữ liệu không tồn tại, bạn có thể hiển thị một thông báo lỗi hoặc tạo PDF với thông tin mặc định."
+    },
+    {
+        "question": "Làm thế nào để phân trang các dữ liệu lớn trong PDF để tránh vấn đề về hiệu suất?",
+        "answer": "Để phân trang các dữ liệu lớn, bạn có thể sử dụng các thẻ HTML như <div> hoặc <table> để tổ chức dữ liệu thành các phần riêng biệt, và sử dụng CSS để định nghĩa các phần tách ra trang mới."
+    },
+    {
+        "question": "Kích thước tối đa của PDF có thể tạo từ trang VisualForce là bao nhiêu?",
+        "answer": "SalesForce không có một giới hạn rõ ràng về kích thước của PDF tạo từ trang VisualForce. Tuy vậy, do các hạn chế về hiệu suất và bộ nhớ, bạn nên giữ cho PDF có kích thước hợp lý để tránh vấn đề."
+    },
+    {
+        "question": "Những cách tối ưu hóa nào có thể sử dụng để tăng tốc độ tạo PDF từ SalesForce?",
+        "answer": "Để tối ưu hóa tốc độ tạo PDF, bạn có thể: Giảm số lượng dữ liệu truy vấn và hiển thị. Sử dụng caching để lưu trữ dữ liệu đã truy vấn. Sử dụng layout đơn giản và tránh các thành phần phức tạp. Tối ưu hóa hình ảnh để giảm kích thước file."
+    },
+    {
+        "question": "Làm thế nào để thiết lập một trigger để tự động tạo và gửi PDF khi có những điều kiện nhất định?",
+        "answer": "Để thiết lập một trigger để tự động tạo và gửi PDF, bạn có thể viết một Apex trigger trên đối tượng cần thiết và gọi một phương thức Apex để tạo PDF và gửi email."
+    },
+    {
+        "question": "Có thể lên lịch tạo PDF sử dụng các tính năng scheduling của SalesForce hay không?",
+        "answer": "Vâng, bạn có thể sử dụng Batch Apex hoặc Scheduled Apex để lên lịch tạo PDF tại một thời gian cụ thể hoặc định kỳ."
+    },
+    {
+        "question": "Làm thế nào để xử lý việc tạo nhiều PDF một lúc?",
+        "answer": "Để tạo nhiều PDF một lúc, bạn có thể sử dụng Batch Apex để xử lý các bản ghi theo lô và tạo PDF cho mỗi bản ghi."
+    },
+    {
+        "question": "Làm thế nào để sử dụng font tùy chỉnh trong PDF tạo từ SalesForce?",
+        "answer": "Để sử dụng font tùy chỉnh trong PDF, bạn có thể upload font đó như là một static resource trong SalesForce và sau đó sử dụng nó trong CSS của trang VisualForce."
+    },
+    {
+        "question": "Những loại font nào được hỗ trợ và làm thế nào để upload chúng?",
+        "answer": "SalesForce hỗ trợ các font chuẩn như Arial, Helvetica, Times New Roman, v.v. Nếu bạn muốn sử dụng font tùy chỉnh, bạn có thể upload chúng như là static resources."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo rằng font rendering là nhất quán trên các trình xem PDF khác nhau?",
+        "answer": "Để đảm bảo font rendering nhất quán, bạn nên sử dụng các font phổ biến và chuẩn. Ngoài ra, bạn có thể nhúng font vào PDF để đảm bảo rằng font được hiển thị đúng."
+    },
+    {
+        "question": "Làm thế nào để tạo PDF có nhiều phần hoặc chương?",
+        "answer": "Để tạo PDF có nhiều phần hoặc chương, bạn có thể sử dụng các thẻ HTML để tổ chức nội dung thành các phần riêng biệt, và sử dụng CSS để định nghĩa các tiêu đề và định dạng cho mỗi phần."
+    },
+    {
+        "question": "Làm thế nào để xử lý page breaks dựa trên nội dung?",
+        "answer": "Để xử lý page breaks dựa trên nội dung, bạn có thể sử dụng thuộc tính CSS page-break-before hoặc page-break-after để định nghĩa nơi mà trang mới nên bắt đầu."
+    },
+    {
+        "question": "Có thể có header hoặc footer khác nhau trên các trang hoặc phần khác nhau hay không?",
+        "answer": "Vâng, bạn có thể sử dụng CSS để định nghĩa header và footer khác nhau cho các phần khác nhau."
+    },
+    {
+        "question": "Làm thế nào để lưu PDF vào một bản ghi trong SalesForce?",
+        "answer": "Để lưu PDF vào một bản ghi, bạn có thể sử dụng Apex để tạo PDF và sau đó lưu nó như là attachment của bản ghi."
+    },
+    {
+        "question": "Có thể làm cho PDF có thể truy cập cho một số người dùng hoặc nhóm cụ thể hay không?",
+        "answer": "Vâng, bạn có thể sử dụng quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến PDF, đảm bảo rằng chỉ những người dùng hoặc nhóm cụ thể mới có thể xem."
+    }
     ],
     "Dynamics: Dynamics365 Environment Preparation": [
         {
