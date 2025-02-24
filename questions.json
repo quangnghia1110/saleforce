@@ -1858,86 +1858,334 @@
         }
     ],
     "SFDC’s TestClass": [
-        {
-            "question": "Mục đích của test class trong SalesForce là gì?",
-            "answer": "Test class trong SalesForce là để kiểm tra và xác minh rằng các phần mềm tùy chỉnh (Apex code) hoạt động đúng theo yêu cầu và kỳ vọng."
-        },
-        {
-            "question": "Làm cách nào để định nghĩa một test class trong Apex?",
-            "answer": "Sử dụng annotation @isTest trước class hoặc phương thức để đánh dấu nó là test class hoặc test method."
-        },
-        {
-            "question": "Vai trò của annotation @isTest là gì?",
-            "answer": "Annotation @isTest cho phép class hoặc method chạy trong môi trường test, giúp phân biệt giữa code production và code test."
-        },
-        {
-            "question": "Làm cách nào để tạo dữ liệu test trong test class?",
-            "answer": "Sử dụng phương thức insert, update, delete để tạo và quản lý dữ liệu test. Cũng có thể sử dụng TestDataFactory để tạo dữ liệu mô phỏng."
-        },
-        {
-            "question": "Sự khác biệt giữa Test.startTest() và Test.stopTest() là gì?",
-            "answer": "Test.startTest() và Test.stopTest() được sử dụng để đánh dấu phần code đang được test, đặc biệt hữu ích cho việc test các tác vụ bất đồng bộ hoặc có giới hạn governor."
-        },
-        {
-            "question": "Làm cách nào để test code bất đồng bộ trong Apex?",
-            "answer": "Sử dụng Test.startTest() và Test.stopTest() để chờ cho các tác vụ bất đồng bộ hoàn tất trước khi kiểm tra kết quả."
-        },
-        {
-            "question": "Test coverage là gì và tại sao nó quan trọng?",
-            "answer": "Test coverage là phần trăm của code được test. Nó quan trọng để đảm bảo rằng code của bạn hoạt động đúng và giảm thiểu lỗi trong môi trường production."
-        },
-        {
-            "question": "Làm cách nào để chạy một test class trong SalesForce?",
-            "answer": "Sử dụng Developer Console hoặc Apex Test Execution để chạy test class."
-        },
-        {
-            "question": "Những assertion phổ biến trong test class là gì?",
-            "answer": "Assertions như System.assertEquals, System.assertNotEquals, System.assert, System.fail, v.v."
-        },
-        {
-            "question": "Làm cách nào để xử lý ngoại lệ trong test class?",
-            "answer": "Sử dụng try-catch để bắt và xử lý ngoại lệ, hoặc sử dụng System.assertException để kiểm tra xem ngoại lệ được kỳ vọng có xảy ra hay không."
-        },
-        {
-            "question": "Làm cách nào để test một trigger trong SalesForce?",
-            "answer": "Tạo dữ liệu test để kích hoạt trigger, sau đó kiểm tra kết quả bằng assertions."
-        },
-        {
-            "question": "Vai trò của TestDataFactory trong test class là gì?",
-            "answer": "TestDataFactory giúp tạo dữ liệu test một cách nhất quán và tái sử dụng, giảm thiểu code trùng lặp."
-        },
-        {
-            "question": "Làm cách nào để đảm bảo test class không ảnh hưởng đến dữ liệu production?",
-            "answer": "Sử dụng @isTest để chạy trong môi trường test, và không thực sự thay đổi dữ liệu production."
-        },
-        {
-            "question": "Làm cách nào để test một batch Apex trong test class?",
-            "answer": "Sử dụng Test.startTest() và Test.stopTest() để chạy batch, sau đó kiểm tra kết quả bằng assertions."
-        },
-        {
-            "question": "Giới hạn governor trong test class là gì?",
-            "answer": "Governor limits trong test class được reset giữa Test.startTest() và Test.stopTest(), cho phép test các tác vụ nặng hơn."
-        },
-        {
-            "question": "Làm cách nào để kiểm tra coverage của test class?",
-            "answer": "Sử dụng Developer Console hoặc Setup > Apex Test Execution để xem phần trăm coverage."
-        },
-        {
-            "question": "Làm cách nào để test một controller trong VisualForce page?",
-            "answer": "Tạo dữ liệu test, gọi phương thức controller, và kiểm tra kết quả bằng assertions."
-        },
-        {
-            "question": "Những best practices khi viết test class là gì?",
-            "answer": "Viết test độc lập, sử dụng TestDataFactory, đảm bảo coverage cao, và test cả trường hợp thành công và thất bại."
-        },
-        {
-            "question": "Làm cách nào để test một scheduled Apex trong test class?",
-            "answer": "Sử dụng System.schedule để lên lịch, sau đó kiểm tra kết quả trong Test.stopTest()."
-        },
-        {
-            "question": "Làm cách nào để debug một test class?",
-            "answer": "Sử dụng debug logs trong Developer Console để theo dõi và phân tích lỗi trong quá trình test."
-        }
+    {
+        "question": "Mục đích của test class trong SalesForce là gì?",
+        "answer": "Test class trong SalesForce là để kiểm tra và xác minh rằng các phần mềm tùy chỉnh (Apex code) hoạt động đúng theo yêu cầu và kỳ vọng."
+    },
+    {
+        "question": "Làm cách nào để định nghĩa một test class trong Apex?",
+        "answer": "Sử dụng annotation @isTest trước class hoặc phương thức để đánh dấu nó là test class hoặc test method."
+    },
+    {
+        "question": "Vai trò của annotation @isTest là gì?",
+        "answer": "Annotation @isTest cho phép class hoặc method chạy trong môi trường test, giúp phân biệt giữa code production và code test."
+    },
+    {
+        "question": "Làm cách nào để tạo dữ liệu test trong test class?",
+        "answer": "Sử dụng phương thức insert, update, delete để tạo và quản lý dữ liệu test. Cũng có thể sử dụng TestDataFactory để tạo dữ liệu mô phỏng."
+    },
+    {
+        "question": "Sự khác biệt giữa Test.startTest() và Test.stopTest() là gì?",
+        "answer": "Test.startTest() và Test.stopTest() được sử dụng để đánh dấu phần code đang được test, đặc biệt hữu ích cho việc test các tác vụ bất đồng bộ hoặc có giới hạn governor."
+    },
+    {
+        "question": "Làm cách nào để test code bất đồng bộ trong Apex?",
+        "answer": "Sử dụng Test.startTest() và Test.stopTest() để chờ cho các tác vụ bất đồng bộ hoàn tất trước khi kiểm tra kết quả."
+    },
+    {
+        "question": "Test coverage là gì và tại sao nó quan trọng?",
+        "answer": "Test coverage là phần trăm của code được test. Nó quan trọng để đảm bảo rằng code của bạn hoạt động đúng và giảm thiểu lỗi trong môi trường production."
+    },
+    {
+        "question": "Làm cách nào để chạy một test class trong SalesForce?",
+        "answer": "Sử dụng Developer Console hoặc Apex Test Execution để chạy test class."
+    },
+    {
+        "question": "Những assertion phổ biến trong test class là gì?",
+        "answer": "Assertions như System.assertEquals, System.assertNotEquals, System.assert, System.fail, v.v."
+    },
+    {
+        "question": "Làm cách nào để xử lý ngoại lệ trong test class?",
+        "answer": "Sử dụng try-catch để bắt và xử lý ngoại lệ, hoặc sử dụng System.assertException để kiểm tra xem ngoại lệ được kỳ vọng có xảy ra hay không."
+    },
+    {
+        "question": "Làm cách nào để test một trigger trong SalesForce?",
+        "answer": "Tạo dữ liệu test để kích hoạt trigger, sau đó kiểm tra kết quả bằng assertions."
+    },
+    {
+        "question": "Vai trò của TestDataFactory trong test class là gì?",
+        "answer": "TestDataFactory giúp tạo dữ liệu test một cách nhất quán và tái sử dụng, giảm thiểu code trùng lặp."
+    },
+    {
+        "question": "Làm cách nào để đảm bảo test class không ảnh hưởng đến dữ liệu production?",
+        "answer": "Sử dụng @isTest để chạy trong môi trường test, và không thực sự thay đổi dữ liệu production."
+    },
+    {
+        "question": "Làm cách nào để test một batch Apex trong test class?",
+        "answer": "Sử dụng Test.startTest() và Test.stopTest() để chạy batch, sau đó kiểm tra kết quả bằng assertions."
+    },
+    {
+        "question": "Giới hạn governor trong test class là gì?",
+        "answer": "Governor limits trong test class được reset giữa Test.startTest() và Test.stopTest(), cho phép test các tác vụ nặng hơn."
+    },
+    {
+        "question": "Làm cách nào để kiểm tra coverage của test class?",
+        "answer": "Sử dụng Developer Console hoặc Setup > Apex Test Execution để xem phần trăm coverage."
+    },
+    {
+        "question": "Làm cách nào để test một controller trong VisualForce page?",
+        "answer": "Tạo dữ liệu test, gọi phương thức controller, và kiểm tra kết quả bằng assertions."
+    },
+    {
+        "question": "Những best practices khi viết test class là gì?",
+        "answer": "Viết test độc lập, sử dụng TestDataFactory, đảm bảo coverage cao, và test cả trường hợp thành công và thất bại."
+    },
+    {
+        "question": "Làm cách nào để test một scheduled Apex trong test class?",
+        "answer": "Sử dụng System.schedule để lên lịch, sau đó kiểm tra kết quả trong Test.stopTest()."
+    },
+    {
+        "question": "Làm cách nào để debug một test class?",
+        "answer": "Sử dụng debug logs trong Developer Console để theo dõi và phân tích lỗi trong quá trình test."
+    },
+    {
+        "question": "Tại sao việc không dựa vào dữ liệu tồn tại của org là quan trọng trong các test class?",
+        "answer": "Việc không dựa vào dữ liệu tồn tại của org là quan trọng vì các test class nên tự chứa và độc lập với trạng thái hiện tại của org, đảm bảo test nhất quán và có thể phát sinh lại trên các môi trường khác nhau và theo thời gian."
+    },
+    {
+        "question": "Test Data Factory class là gì và nó mang lại lợi ích gì cho test class?",
+        "answer": "Test Data Factory class là một lớp tiện ích cung cấp phương thức để tạo dữ liệu test theo cách chuẩn hóa, giúp giảm trùng lặp mã, dễ bảo trì và đảm bảo dữ liệu test nhất quán giữa các test class."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo tất cả logic điều kiện trong mã Apex được test?",
+        "answer": "Để đảm bảo tất cả logic điều kiện được test, cần viết các phương thức test bao quát mọi đường dẫn có thể, bao gồm các điều kiện if-else, switch, và các trường hợp biên, cũng như test đầu vào không hợp lệ."
+    },
+    {
+        "question": "Vai trò của Test.startTest và Test.stopTest trong test class, đặc biệt với code bất đồng bộ, là gì?",
+        "answer": "Test.startTest và Test.stopTest được dùng để định nghĩa khối code trong đó các tác vụ bất đồng bộ được thực thi. Các tác vụ bất đồng bộ bắt đầu trong khối startTest sẽ được thực thi đồng bộ khi gọi stopTest, giúp test kết quả của code bất đồng bộ dễ dàng hơn."
+    },
+    {
+        "question": "Tại sao việc đạt độ bao phủ mã cao hơn yêu cầu tối thiểu là quan trọng?",
+        "answer": "Đạt độ bao phủ mã cao hơn 75% (tối thiểu) giúp giảm rủi ro lỗi, đảm bảo chất lượng mã và dễ phát hiện các vấn đề khi mã được sửa đổi, với mục tiêu lý tưởng là 90% hoặc hơn."
+    },
+    {
+        "question": "Một số phương thức assertion phổ biến trong test class của SalesForce là gì và cách sử dụng chúng?",
+        "answer": "Các phương thức assertion phổ biến bao gồm System.assertEquals, System.assertNotEquals, System.assert, System.fail, dùng để kiểm tra kết quả mong đợi, ví dụ System.assertEquals kiểm tra hai giá trị có bằng nhau."
+    },
+    {
+        "question": "Tại sao test với dữ liệu số lượng lớn (bulk) là quan trọng trong test class của SalesForce?",
+        "answer": "Test với dữ liệu số lượng lớn giúp phát hiện vấn đề hiệu suất và giới hạn governor, đảm bảo mã xử lý được khối lượng lớn dữ liệu mà không vượt quá giới hạn."
+    },
+    {
+        "question": "Mục đích của việc sử dụng System.runAs trong test class là gì?",
+        "answer": "System.runAs được dùng để chạy khối code như một người dùng cụ thể, giúp test quy tắc chia sẻ và quyền truy cập, tránh lỗi mixed DML và đảm bảo mã tôn trọng quyền của người dùng."
+    },
+    {
+        "question": "Tại sao nên test class riêng lẻ thay vì chạy tất cả test cùng lúc?",
+        "answer": "Test riêng lẻ giúp cô lập và debug vấn đề dễ dàng hơn, tránh khó khăn trong việc xác định nguyên nhân thất bại khi chạy tất cả test, đặc biệt với nhiều test class."
+    },
+    {
+        "question": "Cấu trúc điển hình của một test class trong SalesForce là gì?",
+        "answer": "Một test class điển hình được đánh dấu bằng @isTest, chứa các phương thức test là static và void, có thể bao gồm phương thức TestSetup để tạo dữ liệu chung cho các test method."
+    },
+    {
+        "question": "Những quy ước đặt tên được khuyến nghị cho test class và phương thức test trong SalesForce là gì?",
+        "answer": "Nên đặt tên test class với hậu tố 'Test', ví dụ 'MyClassTest', và đặt tên phương thức test rõ ràng như 'testCreateAccount', 'testUpdateContact', để dễ hiểu."
+    },
+    {
+        "question": "Những import phổ biến cần thiết trong test class là gì?",
+        "answer": "Các import phổ biến bao gồm 'System.Test' để sử dụng các phương thức như startTest, stopTest, và các assertion, cùng với các loại đối tượng hoặc lớp tiện ích khác tùy theo nhu cầu test."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo cô lập dữ liệu giữa các phương thức test trong một test class?",
+        "answer": "Mỗi phương thức test nên tạo dữ liệu riêng và dọn dẹp sau khi hoàn tất, hoặc dùng TestSetup để tạo dữ liệu chung nhưng quản lý cẩn thận để tránh ảnh hưởng lẫn nhau."
+    },
+    {
+        "question": "Những best practices khi quản lý dữ liệu test trong test class là gì?",
+        "answer": "Sử dụng Test Data Factory để chuẩn hóa, tạo và xóa dữ liệu trong phạm vi phương thức test, tránh dùng dữ liệu org hiện tại, và dùng giá trị duy nhất để tránh xung đột."
+    },
+    {
+        "question": "Sự khác biệt giữa unit test và integration test trong bối cảnh SalesForce là gì?",
+        "answer": "Unit test tập trung test từng thành phần riêng lẻ, đảm bảo chúng hoạt động đúng, trong khi integration test kiểm tra cách các thành phần làm việc cùng nhau trong một quy trình cụ thể."
+    },
+    {
+        "question": "Làm thế nào để test các ngoại lệ mong đợi trong mã của bạn trong test class?",
+        "answer": "Sử dụng try-catch để bắt ngoại lệ và dùng assertion để kiểm tra, hoặc dùng System.assertException để xác minh ngoại lệ mong đợi có xảy ra."
+    },
+    {
+        "question": "Quy trình test một trigger trong SalesForce là gì?",
+        "answer": "Tạo dữ liệu test để kích hoạt trigger, ví dụ insert, update, delete bản ghi, sau đó dùng assertion để kiểm tra trigger thực hiện đúng như kỳ vọng."
+    },
+    {
+        "question": "Làm thế nào để test một batch Apex job trong test class?",
+        "answer": "Dùng Test.startTest và Test.stopTest, gọi Database.executeBatch để chạy batch, sau đó dùng assertion để kiểm tra kết quả hoàn thành và đầu ra mong đợi."
+    },
+    {
+        "question": "Làm thế nào để test một scheduled Apex job trong test class?",
+        "answer": "Sử dụng System.schedule để lên lịch job, sau đó dùng Test.startTest và Test.stopTest để chạy và kiểm tra kết quả."
+    },
+    {
+        "question": "Làm thế nào để test một controller trong VisualForce page?",
+        "answer": "Khởi tạo controller trong phương thức test, mô phỏng tương tác người dùng như nhấn nút, chọn tùy chọn, sau đó kiểm tra thuộc tính và phương thức bằng assertion."
+    },
+    {
+        "question": "Làm thế nào để chạy một test class hoặc phương thức cụ thể từ Developer Console?",
+        "answer": "Trong Developer Console, vào tab 'Test', chọn test class và chạy tất cả phương thức hoặc phương thức cụ thể, thay vì dùng 'Run All Tests' cho nhiều test."
+    },
+    {
+        "question": "Thông tin nào được cung cấp trong kết quả test, và làm thế nào để diễn giải chúng?",
+        "answer": "Kết quả test cung cấp trạng thái pass/fail, thời gian thực thi, và thông báo lỗi nếu thất bại, cùng với báo cáo độ bao phủ. Diễn giải bằng cách kiểm tra lỗi, độ bao phủ để xác định vấn đề."
+    },
+    {
+        "question": "Những công cụ hoặc kỹ thuật nào có thể dùng để debug test class thất bại?",
+        "answer": "Sử dụng debug logs trong Developer Console hoặc bật logging qua Setup để theo dõi quá trình thực thi, thêm System.debug để in giá trị biến hoặc thông điệp."
+    },
+    {
+        "question": "Sự khác biệt giữa code coverage và test coverage trong SalesForce là gì?",
+        "answer": "Code coverage là phần trăm mã được thực thi trong test, trong khi test coverage là mức độ bao quát các kịch bản và yêu cầu chức năng, hai khái niệm liên quan nhưng khác nhau."
+    },
+    {
+        "question": "Làm thế nào để tăng code coverage trong test class?",
+        "answer": "Viết phương thức test bao quát mọi đường dẫn mã, bao gồm các nhánh điều kiện, ngoại lệ, và trường hợp biên, dùng báo cáo 'Code Coverage' để xác định phần chưa được test."
+    },
+    {
+        "question": "Yêu cầu cụ thể về code coverage khi triển khai mã lên production là gì?",
+        "answer": "SalesForce yêu cầu ít nhất 75% mã được test trước khi triển khai lên production, để đảm bảo mã đã được kiểm tra kỹ lưỡng."
+    },
+    {
+        "question": "Làm thế nào để test code bất đồng bộ, như future methods hoặc queueable jobs, trong test class?",
+        "answer": "Dùng Test.startTest và Test.stopTest để đảm bảo các tác vụ bất đồng bộ được thực thi đồng bộ, giúp kiểm tra kết quả dễ dàng hơn."
+    },
+    {
+        "question": "Vai trò của mocking trong test class của SalesForce là gì, và làm thế nào để sử dụng?",
+        "answer": "Mocking mô phỏng hành vi của các phụ thuộc bên ngoài, như callout, giúp cô lập mã test. SalesForce cung cấp @Mock và TestMock để tạo phản hồi giả lập."
+    },
+    {
+        "question": "Làm thế nào để xử lý các cân nhắc hiệu suất trong test class để tránh vượt giới hạn governor?",
+        "answer": "Test với dữ liệu số lượng lớn, dùng Test.startTest và Test.stopTest để quản lý giới hạn, tối ưu hóa mã để giảm số lượng thao tác cơ sở dữ liệu."
+    },
+    {
+        "question": "Tại sao việc không dựa vào dữ liệu org hiện tại trong test class là quan trọng?",
+        "answer": "Việc này đảm bảo test độc lập, nhất quán, và có thể phát sinh lại, tránh thất bại do dữ liệu org thay đổi hoặc bị xóa."
+    },
+    {
+        "question": "Làm thế nào để đảm bảo cô lập dữ liệu giữa các phương thức test?",
+        "answer": "Mỗi phương thức test nên tạo dữ liệu riêng và dọn dẹp sau khi hoàn tất, dùng TestSetup cho dữ liệu chung nhưng quản lý cẩn thận."
+    },
+    {
+        "question": "Làm thế nào để test các phương thức có tham số tùy chọn hoặc giá trị mặc định?",
+        "answer": "Gọi phương thức với và không có tham số tùy chọn, dùng các phương thức test hoặc assertion riêng để kiểm tra xử lý giá trị mặc định."
+    },
+    {
+        "question": "Mục đích của Test.isRunningTest() là gì?",
+        "answer": "Test.isRunningTest() cho phép mã hành xử khác trong môi trường test, ví dụ bỏ qua thao tác tốn kém hoặc dùng dữ liệu giả lập, nhưng cần dùng cẩn thận."
+    },
+    {
+        "question": "Làm thế nào để test một Lightning Web Component (LWC) trong test class?",
+        "answer": "Test các phương thức controller server-side của LWC, vì mã client-side không test trực tiếp từ Apex, tập trung vào logic server-side."
+    },
+    {
+        "question": "Quy trình test một custom Apex REST service là gì?",
+        "answer": "Mô phỏng yêu cầu HTTP bằng System.Http hoặc công cụ bên ngoài, tạo phản hồi giả lập trong test class để kiểm tra đầu ra mong đợi."
+    },
+    {
+        "question": "Làm thế nào để xử lý test timeout trong SalesForce?",
+        "answer": "Tối ưu hóa phương thức test, tránh vòng lặp không cần thiết, có thể tăng thời gian timeout nhưng không khuyến khích để tránh làm chậm quá trình test."
+    },
+    {
+        "question": "Sự khác biệt giữa 'Passed' và 'Completed' trong kết quả test là gì?",
+        "answer": "'Passed' nghĩa là test thành công không có assertion thất bại, 'Completed' nghĩa là test hoàn tất nhưng có thể thất bại, test pass thì cả hai đều đúng."
+    },
+    {
+        "question": "Làm thế nào để test callouts đến dịch vụ bên ngoài trong test class?",
+        "answer": "Dùng mocking để mô phỏng phản hồi từ dịch vụ bên ngoài, SalesForce cung cấp @Mock và TestMock để test mà không thực sự gọi ra ngoài."
+    },
+    {
+        "question": "Những giới hạn governor phổ biến mà test class cần lưu ý là gì?",
+        "answer": "Bao gồm số lượng SOQL, DML, số bản ghi xử lý, và thời gian CPU, test class có giới hạn riêng, dùng Test.startTest và Test.stopTest để quản lý."
+    },
+    {
+        "question": "Làm thế nào để test cho hành vi transactional trong mã Apex?",
+        "answer": "Viết test với nhiều thao tác cơ sở dữ liệu trong một giao dịch, kiểm tra commit hoặc rollback, và test các kịch bản ngoại lệ gây rollback."
+    },
+    {
+        "question": "Vai trò của Test.getEventBus trong test class là gì?",
+        "answer": "Test.getEventBus cho phép truy cập event bus trong môi trường test, dùng để test mã dựa trên sự kiện, như platform events, mô phỏng sự kiện."
+    },
+    {
+        "question": "Làm thế nào để test cho các lỗ hổng bảo mật trong mã Apex?",
+        "answer": "Kiểm tra các vấn đề như SQL injection, XSS, đảm bảo đầu vào người dùng được làm sạch, mã không lộ thông tin nhạy cảm."
+    },
+    {
+        "question": "Quy trình test mã Apex dùng Chatter API là gì?",
+        "answer": "Tạo dữ liệu test bao gồm bài đăng, bình luận Chatter, gọi phương thức liên quan và kiểm tra kết quả như đăng bài hoặc lấy tin nhắn."
+    },
+    {
+        "question": "Làm thế nào để test cho các vấn đề localization trong mã Apex?",
+        "answer": "Đặt locale của người dùng trong test method, kiểm tra mã xử lý đúng ngôn ngữ, định dạng ngày, số cho locale đó."
+    },
+    {
+        "question": "Mục đích của phương thức TestSetup trong test class là gì?",
+        "answer": "TestSetup là phương thức được thực thi trước mỗi test method, dùng để tạo dữ liệu chung, giảm trùng lặp mã và tăng tính bảo trì."
+    },
+    {
+        "question": "Làm thế nào để xử lý dữ liệu test cần chia sẻ giữa nhiều test class?",
+        "answer": "Tạo một lớp tiện ích riêng để quản lý dữ liệu test, dùng chung cho các test class, đảm bảo nhất quán và giảm trùng lặp."
+    },
+    {
+        "question": "Cách tốt nhất để xử lý các trường auto-number trong dữ liệu test là gì?",
+        "answer": "Trường auto-number được gán tự động khi insert, không cần đặt trong test data, có thể query sau khi insert để lấy giá trị nếu cần."
+    },
+    {
+        "question": "Làm thế nào để tạo dữ liệu test cho các đối tượng có ràng buộc duy nhất, như email?",
+        "answer": "Đảm bảo giá trị duy nhất cho các trường như email bằng cách thêm timestamp hoặc số ngẫu nhiên, tránh xung đột trong test."
+    },
+    {
+        "question": "Làm thế nào để test các phương thức thực hiện bulk operations?",
+        "answer": "Tạo tập dữ liệu lớn, gọi phương thức với dữ liệu đó, kiểm tra xử lý đúng và không vượt giới hạn governor, test cả trường hợp biên."
+    },
+    {
+        "question": "Vai trò của Test.isRunningTest() trong mã production là gì?",
+        "answer": "Dùng để điều kiện thực thi mã khác trong môi trường test, như bỏ qua thao tác tốn kém, nhưng cần dùng cẩn thận để không ảnh hưởng production."
+    },
+    {
+        "question": "Làm thế nào để test một custom Apex class dùng Batchable interface?",
+        "answer": "Dùng Database.executeBatch trong test method, sau đó kiểm tra kết quả bằng assertion, dùng Test.startTest và Test.stopTest để quản lý."
+    },
+    {
+        "question": "Quy trình test một class dùng Schedulable interface là gì?",
+        "answer": "Dùng System.schedule để lên lịch, sau đó dùng Test.startTest và Test.stopTest để chạy và kiểm tra kết quả."
+    },
+    {
+        "question": "Làm thế nào để xử lý thất bại test do tác vụ bất đồng bộ?",
+        "answer": "Dùng Test.startTest và Test.stopTest để đảm bảo tác vụ bất đồng bộ hoàn tất trước khi kết thúc test, giúp kiểm tra kết quả."
+    },
+    {
+        "question": "Sự khác biệt giữa 'Test Level' và 'Test Coverage' trong SalesForce là gì?",
+        "answer": "'Test Level' là mức độ test như unit test, integration test, còn 'Test Coverage' là phần trăm mã được thực thi, hai khái niệm liên quan nhưng khác nhau."
+    },
+    {
+        "question": "SalesForce xử lý code coverage cho các dòng có comment hoặc dòng trống như thế nào?",
+        "answer": "Code coverage chỉ tính các dòng mã thực thi, không tính comment hoặc dòng trống, nên không cần test chúng."
+    },
+    {
+        "question": "Tác động của việc dùng 'without sharing' trong phương thức test là gì?",
+        "answer": "Cho phép chạy test không xét quy tắc chia sẻ, hữu ích để tạo dữ liệu test, nhưng cần đảm bảo phản ánh đúng hành vi production."
+    },
+    {
+        "question": "Làm thế nào để test cho ngoại lệ giới hạn governor trong mã?",
+        "answer": "Viết test cố tình vượt giới hạn, bắt ngoại lệ và kiểm tra, nhưng cần thiết kế test phù hợp với giới hạn của test class."
+    },
+    {
+        "question": "Vai trò của Test.setMock trong test class là gì?",
+        "answer": "Test.setMock dùng để thiết lập triển khai giả lập cho interface hoặc class, mô phỏng hành vi phụ thuộc, hữu ích cho test callout hoặc thành phần khó kiểm soát."
+    },
+    {
+        "question": "Làm thế nào để test cho vấn đề concurrency trong SalesForce?",
+        "answer": "Mô phỏng nhiều người dùng hoặc tiến trình truy cập đồng thời, dùng Test.startTest và Test.stopTest để kiểm tra race condition hoặc khóa."
+    },
+    {
+        "question": "Làm thế nào để test một custom Apex class dùng dynamic SOQL hoặc DML?",
+        "answer": "Tạo dữ liệu test phù hợp với truy vấn dynamic, đảm bảo mã xây dựng đúng và xử lý các kịch bản khác nhau như loại đối tượng hoặc tên trường."
+    },
+    {
+        "question": "Quy trình test một class dùng Streaming API hoặc CometD là gì?",
+        "answer": "Mô phỏng sự kiện streaming hoặc dùng mocking để test logic xử lý sự kiện, vì kết nối thực tế với API có thể phức tạp."
+    },
+    {
+        "question": "Làm thế nào để schedule và chạy test tự động trong SalesForce?",
+        "answer": "Dùng tính năng 'Schedule Apex' để lên lịch chạy test class hoặc tất cả test, hữu ích cho tích hợp liên tục và đảm bảo mã ổn định."
+    }
     ],
     "SFDC’s .Net": [
         {
