@@ -1603,6 +1603,258 @@
         {
             "question": "Làm cách nào để kiểm tra một công việc Batch Apex?",
             "answer": "Viết lớp test Apex, chạy công việc, kiểm tra kết quả và log."
+        },
+        {
+            "question": "Batch Apex là một phần của Apex Code hay là một tính năng riêng biệt?",
+            "answer": "Batch Apex là một tính năng của Apex Code, cho phép xử lý dữ liệu lớn theo lô."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu nào?",
+            "answer": "Batch Apex có thể xử lý bất kỳ dữ liệu nào mà bạn có thể truy vấn thông qua SOQL, bao gồm các bản ghi của các đối tượng tiêu chuẩn hoặc tùy chỉnh."
+        },
+        {
+            "question": "Giới hạn governor là gì và tại sao Batch Apex giúp vượt qua chúng?",
+            "answer": "Giới hạn governor là các giới hạn mà SalesForce đặt ra để ngăn ngừa việc lạm dụng tài nguyên, như số lượng truy vấn SOQL hoặc DML trong một giao dịch. Batch Apex xử lý dữ liệu theo lô, mỗi lô là một giao dịch riêng, do đó, nó có thể xử lý nhiều lô mà không vượt quá giới hạn của một giao dịch đơn."
+        },
+        {
+            "question": "Phương thức start trong Batch Apex trả về gì?",
+            "answer": "Phương thức start trả về một QueryLocator, là kết quả của một truy vấn SOQL để xác định những bản ghi cần xử lý."
+        },
+        {
+            "question": "Làm cách nào để xác định kích thước của mỗi lô trong Batch Apex?",
+            "answer": "Kích thước lô mặc định là 200 bản ghi, nhưng bạn có thể đặt kích thước lô tùy chỉnh bằng phương thức setBatchSize."
+        },
+        {
+            "question": "Trong phương thức execute, làm cách nào để truy cập các bản ghi của lô hiện tại?",
+            "answer": "Phương thức execute nhận một tham số là danh sách các bản ghi (sObject[]) của lô hiện tại, do đó, bạn có thể truy cập chúng trực tiếp qua tham số này."
+        },
+        {
+            "question": "Làm cách nào để lên lịch một Batch Apex job chạy hàng ngày vào một thời gian cụ thể?",
+            "answer": "Sử dụng System.scheduleBatch, với tham số là lớp Batch Apex, tên job, và một biểu thức cron để xác định thời gian chạy."
+        },
+        {
+            "question": "Có thể chạy Batch Apex job ngay lập tức không, chứ không phải lên lịch?",
+            "answer": "Có, sử dụng Database.executeBatch để khởi chạy job ngay lập tức."
+        },
+        {
+            "question": "Nếu tôi muốn chạy Batch Apex job sau một khoảng thời gian nhất định, chẳng hạn như 5 phút sau, làm cách nào?",
+            "answer": "Bạn có thể sử dụng System.scheduleBatch với một biểu thức cron tương ứng. Ví dụ, để chạy sau 5 phút, bạn có thể tính toán thời gian và tạo biểu thức cron phù hợp."
+        },
+        {
+            "question": "Làm cách nào để xem log của một Batch Apex job?",
+            "answer": "Bạn có thể xem log của job trong phần 'Apex Jobs' từ Setup, chọn job, và xem 'Logs'."
+        },
+        {
+            "question": "Nếu một lô trong Batch Apex job thất bại, có thể tiếp tục các lô sau đó không?",
+            "answer": "Có, mỗi lô là một giao dịch riêng, do đó, nếu một lô thất bại, các lô sau đó vẫn có thể chạy, miễn là job chưa bị dừng."
+        },
+        {
+            "question": "Làm cách nào để xử lý lỗi trong phương thức execute của Batch Apex?",
+            "answer": "Sử dụng try-catch để bắt và xử lý ngoại lệ, có thể log lỗi hoặc thực hiện hành động khác để quản lý lỗi."
+        },
+        {
+            "question": "Tại sao kích thước lô quan trọng trong Batch Apex?",
+            "answer": "Kích thước lô ảnh hưởng đến số lượng bản ghi được xử lý trong mỗi giao dịch, tác động đến hiệu suất và số lượng giao dịch cần thiết. Một kích thước lô phù hợp giúp cân bằng giữa hiệu quả và tránh giới hạn governor."
+        },
+        {
+            "question": "Làm cách nào để tối ưu hóa truy vấn SOQL trong Batch Apex?",
+            "answer": "Sử dụng truy vấn hiệu quả, tránh các truy vấn phức tạp hoặc truy vấn lồng nhau, và sử dụng các kỹ thuật như truy vấn tất cả các trường cần thiết trong một lần truy vấn."
+        },
+        {
+            "question": "Có thể sử dụng caching để tăng hiệu suất trong Batch Apex không?",
+            "answer": "Có, bạn có thể sử dụng caching để lưu trữ kết quả của các truy vấn hoặc tính toán, giảm thời gian xử lý cho các lô sau."
+        },
+        {
+            "question": "Làm cách nào để kích hoạt một Batch Apex job từ một trigger?",
+            "answer": "Triggers là synchronous, do đó, chúng không thể trực tiếp khởi chạy Batch Apex job, là asynchronous. Tuy nhiên, bạn có thể sử dụng @future methods hoặc Queueable Apex từ trigger để khởi chạy Batch Apex job."
+        },
+        {
+            "question": "Batch Apex có thể sử dụng để gọi API bên ngoài không?",
+            "answer": "Có, Batch Apex có thể gọi API bên ngoài, nhưng cần quản lý hiệu quả để tránh giới hạn callout."
+        },
+        {
+            "question": "Một ví dụ về việc sử dụng Batch Apex để di chuyển dữ liệu từ một đối tượng sang đối tượng khác.",
+            "answer": "Bạn có thể sử dụng Batch Apex để truy vấn các bản ghi từ đối tượng nguồn, tạo các bản ghi tương ứng ở đối tượng đích, và sao chép dữ liệu từ nguồn sang đích."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để cập nhật mass các trường trên các bản ghi không?",
+            "answer": "Có, Batch Apex là một công cụ tuyệt vời để cập nhật mass các trường trên các bản ghi, đặc biệt là khi số lượng bản ghi lớn."
+        },
+        {
+            "question": "Sự khác biệt giữa Batch Apex và Schedulable Apex là gì?",
+            "answer": "Batch Apex là một loại Apex chuyên biệt để xử lý dữ liệu lớn theo lô, trong khi Schedulable Apex là một giao diện cho phép lên lịch bất kỳ Apex code nào để chạy vào một thời gian tương lai. Batch Apex có thể được lên lịch sử dụng System.scheduleBatch, kết hợp cả xử lý dữ liệu và lên lịch."
+        },
+        {
+            "question": "Những thực hành tốt nhất cho việc viết Batch Apex code là gì?",
+            "answer": "- Xử lý theo lô hiệu quả.\n- Sử dụng SOQL hiệu quả, tránh truy vấn lồng nhau.\n- Quản lý ngoại lệ và log lỗi.\n- Test với dữ liệu nhỏ trước.\n- Tối ưu hóa kích thước lô."
+        },
+        {
+            "question": "Những sai lầm phổ biến mà người phát triển thường mắc phải với Batch Apex là gì?",
+            "answer": "- Không đặt kích thước lô phù hợp, dẫn đến hiệu suất kém hoặc giới hạn governor.\n- Không xử lý ngoại lệ, dẫn đến job thất bại mà không có thông tin chi tiết.\n- Sử dụng truy vấn SOQL không hiệu quả, dẫn đến thời gian xử lý dài.\n- Không test đủ trước khi chạy trên dữ liệu lớn."
+        },
+        {
+            "question": "Batch Apex có thể xử lý các giao dịch phức tạp như thế nào?",
+            "answer": "Mỗi lô là một giao dịch riêng, do đó, bạn có thể quản lý giao dịch cho mỗi lô riêng biệt. Tuy nhiên, nếu bạn cần một giao dịch duy nhất cho toàn bộ job, Batch Apex không phải là lựa chọn tốt, vì mỗi lô là một giao dịch riêng."
+        },
+        {
+            "question": "Có thể tùy chỉnh kích thước lô trong Batch Apex không?",
+            "answer": "Có, sử dụng phương thức setBatchSize của Database.executeBatch hoặc System.scheduleBatch."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xóa dữ liệu lớn không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để xóa các bản ghi theo lô, giúp tránh giới hạn governor liên quan đến xóa dữ liệu."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để tạo dữ liệu mới không?",
+            "answer": "Có, bạn có thể sử dụng Batch Apex để tạo các bản ghi mới theo lô, chẳng hạn như tạo các bản ghi từ một tệp dữ liệu lớn."
+        },
+        {
+            "question": "Phương thức finish trong Batch Apex được gọi khi nào?",
+            "answer": "Phương thức finish được gọi sau khi tất cả các lô đã được xử lý, hoặc nếu job bị hủy."
+        },
+        {
+            "question": "Trong phương thức finish, có thể làm gì?",
+            "answer": "Trong phương thức finish, bạn có thể thực hiện các tác vụ cuối cùng, như gửi thông báo hoặc tổng hợp kết quả."
+        },
+        {
+            "question": "Làm cách nào để hủy một Batch Apex job đang chạy?",
+            "answer": "Bạn có thể hủy một job đang chạy bằng cách sử dụng phương thức abortJob của ApexJob."
+        },
+        {
+            "question": "Có thể lên lịch một Batch Apex job để chạy hàng tuần vào một ngày và giờ cụ thể không?",
+            "answer": "Có, sử dụng biểu thức cron phù hợp để đặt lịch trình hàng tuần."
+        },
+        {
+            "question": "Làm cách nào để xem số lượng lô đã xử lý và số lượng bản ghi trong mỗi lô?",
+            "answer": "Trong phần 'Apex Jobs', bạn có thể xem chi tiết của job, bao gồm số lượng lô và số lượng bản ghi trong mỗi lô."
+        },
+        {
+            "question": "Nếu có lỗi trong một lô, có thể xem chi tiết lỗi ở đâu?",
+            "answer": "Chi tiết lỗi có thể được tìm thấy trong log của job, trong phần 'Apex Jobs'."
+        },
+        {
+            "question": "Tại sao quan trọng phải giảm số lượng truy vấn SOQL trong Batch Apex?",
+            "answer": "Mỗi truy vấn SOQL tiêu tốn tài nguyên, và giới hạn số lượng truy vấn SOQL trong một giao dịch. Bằng cách giảm số lượng truy vấn, bạn có thể tăng hiệu suất và tránh giới hạn governor."
+        },
+        {
+            "question": "Có thể sử dụng biến static để lưu trữ dữ liệu giữa các lô không?",
+            "answer": "Có, nhưng cần đảm bảo rằng biến static không gây ra vấn đề về bộ nhớ hoặc trạng thái giữa các lô khác nhau."
+        },
+        {
+            "question": "Flow hoặc Process Builder có thể khởi chạy Batch Apex không?",
+            "answer": "Flow hoặc Process Builder có thể khởi chạy một Apex class, nhưng để khởi chạy Batch Apex, bạn cần sử dụng @future methods hoặc Queueable Apex để khởi chạy Batch Apex job."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để tích hợp với các hệ thống bên ngoài qua API không?",
+            "answer": "Có, Batch Apex có thể gọi API bên ngoài trong phương thức execute, nhưng cần quản lý số lượng callout để tránh giới hạn."
+        },
+        {
+            "question": "Một ví dụ về việc sử dụng Batch Apex để cập nhật trường tính toán trên các bản ghi.",
+            "answer": "Bạn có thể sử dụng Batch Apex để truy vấn các bản ghi, tính toán giá trị cho một trường tùy chỉnh, và cập nhật trường đó trên mỗi bản ghi."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để tạo báo cáo hoặc phân tích dữ liệu lớn không?",
+            "answer": "Có, bạn có thể sử dụng Batch Apex để truy vấn và tổng hợp dữ liệu từ một số lượng lớn bản ghi, sau đó lưu kết quả vào một bảng tổng hợp hoặc gửi qua email."
+        },
+        {
+            "question": "Sự khác biệt giữa Batch Apex và Queueable Apex là gì?",
+            "answer": "Batch Apex là chuyên biệt cho xử lý dữ liệu lớn theo lô, trong khi Queueable Apex là một giao diện cho phép chạy Apex code bất đồng bộ, phù hợp cho các tác vụ nhỏ hơn hoặc tác vụ không liên quan đến dữ liệu lớn."
+        },
+        {
+            "question": "Khi nào nên sử dụng Batch Apex thay vì viết một script bên ngoài để xử lý dữ liệu?",
+            "answer": "Sử dụng Batch Apex là tốt hơn vì nó tích hợp trực tiếp với SalesForce, không cần phải lo về authentication hoặc API limits, và nó có thể được giám sát và quản lý trực tiếp từ giao diện SalesForce."
+        },
+        {
+            "question": "Những cách để tối ưu hóa kích thước lô trong Batch Apex là gì?",
+            "answer": "- Thử nghiệm với các kích thước lô khác nhau để tìm kích thước tối ưu.\n- Cân bằng giữa số lượng bản ghi trong mỗi lô và số lượng lô cần xử lý.\n- Xem xét giới hạn governor và tài nguyên sử dụng trong mỗi lô."
+        },
+        {
+            "question": "Tại sao quan trọng phải test Batch Apex job với dữ liệu nhỏ trước khi chạy trên dữ liệu lớn?",
+            "answer": "Test với dữ liệu nhỏ giúp đảm bảo rằng code hoạt động đúng, và bạn có thể phát hiện và sửa lỗi trước khi chạy trên dữ liệu lớn, tránh gây ra những hậu quả nghiêm trọng."
+        },
+        {
+            "question": "Batch Apex có thể xử lý dữ liệu trong các đối tượng con hoặc các mối quan hệ phức tạp không?",
+            "answer": "Có, bạn có thể sử dụng Batch Apex để truy vấn và xử lý dữ liệu từ các đối tượng liên quan, sử dụng các truy vấn SOQL để lấy dữ liệu từ các đối tượng con hoặc cha."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong các đối tượng tùy chỉnh có mối quan hệ master-slave không?",
+            "answer": "Có, Batch Apex có thể xử lý các đối tượng tùy chỉnh với mối quan hệ master-slave, nhưng cần đảm bảo rằng bạn tuân thủ các quy tắc của mối quan hệ đó, chẳng hạn như xóa các bản ghi con trước khi xóa bản ghi master."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu trong sandbox không?",
+            "answer": "Có, Batch Apex hoạt động trong sandbox giống như trong production, nhưng cần test kỹ để đảm bảo không ảnh hưởng đến dữ liệu thử nghiệm."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để gửi email thông báo sau khi hoàn tất?",
+            "answer": "Trong phương thức finish, sử dụng Messaging.SingleEmailMessage để gửi email, đảm bảo không vượt giới hạn email hàng ngày."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để tạo các bản ghi trong đối tượng tùy chỉnh không?",
+            "answer": "Có, bạn có thể sử dụng Batch Apex để tạo các bản ghi trong đối tượng tùy chỉnh, xử lý theo lô để đảm bảo hiệu suất."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để cập nhật mass các trường trên các bản ghi liên quan?",
+            "answer": "Sử dụng Batch Apex để truy vấn các bản ghi liên quan, sau đó cập nhật các trường cần thiết, đảm bảo xử lý theo lô."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu từ các nguồn bên ngoài không?",
+            "answer": "Có, bạn có thể sử dụng Batch Apex để xử lý dữ liệu từ các nguồn bên ngoài, chẳng hạn như thông qua API callout, nhưng cần quản lý giới hạn callout."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để tổng hợp dữ liệu cho báo cáo?",
+            "answer": "Sử dụng Batch Apex để truy vấn và tổng hợp dữ liệu từ nhiều bản ghi, sau đó lưu kết quả vào một đối tượng tổng hợp hoặc gửi qua email."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong Lightning Web Component không?",
+            "answer": "Có, Batch Apex có thể được gọi từ Lightning Web Component thông qua Apex, nhưng cần đảm bảo xử lý bất đồng bộ để không ảnh hưởng đến giao diện người dùng."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Flow?",
+            "answer": "Flow có thể khởi chạy Batch Apex thông qua Apex action, nhưng cần đảm bảo xử lý bất đồng bộ để tránh giới hạn governor."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu trong Process Builder không?",
+            "answer": "Có, Process Builder có thể khởi chạy Batch Apex thông qua Apex action, nhưng cần đảm bảo xử lý bất đồng bộ."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Analytics?",
+            "answer": "Sử dụng Batch Apex để cập nhật dữ liệu cho Tableau CRM, đảm bảo dữ liệu sẵn sàng cho phân tích."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Marketing Cloud không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để đồng bộ dữ liệu với Marketing Cloud thông qua API, nhưng cần quản lý giới hạn callout."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Service Cloud?",
+            "answer": "Sử dụng Batch Apex để tự động hóa quy trình, như cập nhật case hoặc gửi thông báo, đảm bảo hiệu suất."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu trong Salesforce Field Service không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để tự động gán công việc hoặc cập nhật lịch trình, đảm bảo xử lý khối lượng lớn."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Health Cloud?",
+            "answer": "Sử dụng Batch Apex để xử lý hồ sơ bệnh nhân, cập nhật trạng thái, hoặc gửi thông báo, đảm bảo tuân thủ HIPAA."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Financial Services Cloud không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để tự động hóa quy trình tài chính, như cập nhật giao dịch, đảm bảo tuân thủ quy định."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Nonprofit Cloud?",
+            "answer": "Sử dụng Batch Apex để xử lý quyên góp, cập nhật danh sách thành viên, hoặc gửi thông báo, đảm bảo hiệu quả."
+        },
+        {
+            "question": "Batch Apex có thể được sử dụng để xử lý dữ liệu trong Salesforce Education Cloud không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để tự động hóa quy trình giáo dục, như cập nhật điểm số hoặc xử lý đăng ký."
+        },
+        {
+            "question": "Làm cách nào để sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Government Cloud?",
+            "answer": "Sử dụng Batch Apex để xử lý hồ sơ công dân, cập nhật trạng thái, hoặc gửi thông báo, đảm bảo tuân thủ quy định chính phủ."
+        },
+        {
+            "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Industries không?",
+            "answer": "Có, Batch Apex có thể được sử dụng để tự động hóa quy trình ngành cụ thể, như bảo hiểm, năng lượng, hoặc viễn thông, đảm bảo hiệu suất."
         }
     ],
     "SFDC’s TestClass": [
