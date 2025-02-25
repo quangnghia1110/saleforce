@@ -2409,10 +2409,6 @@
     {
       "question": "Làm cách nào để test các tác vụ bất đồng bộ trong Apex?",
       "answer": "Sử dụng Test.startTest() và Test.stopTest() để đảm bảo các tác vụ bất đồng bộ hoàn tất trước khi kết thúc test, giúp kiểm tra kết quả đúng như mong đợi."
-    },
-    {
-      "question": "Làm cách nào để đánh giá chất lượng của test class trong Salesforce?",
-      "answer": "Sử dụng báo cáo code coverage và test result summary từ Developer Console hoặc Apex Test Execution để đảm bảo rằng test class bao phủ đủ các trường hợp và logic của mã Apex."
     }
   ],
   "SFDC’s .Net": [
