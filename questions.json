@@ -379,6 +379,26 @@
     {
       "question": "Làm thế nào để xử lý tệp đính kèm trong VisualForce?",
       "answer": "Dùng <apex:inputFile> để cho phép tải lên tệp, và trong controller, tạo đối tượng Attachment và chèn vào cơ sở dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để tích hợp VisualForce page vào Lightning Experience?",
+      "answer": "VisualForce page có thể được nhúng vào Lightning Experience thông qua Lightning Component, ví dụ sử dụng <lightning:container> hoặc thêm vào tab Visualforce trong Lightning App."
+    },
+    {
+      "question": "Làm cách nào để chuyển đổi VisualForce page sang Lightning Web Component?",
+      "answer": "Không có công cụ chuyển đổi tự động, bạn cần tái thiết kế giao diện và logic của VisualForce page trong Lightning Web Component để tận dụng lợi thế của framework Lightning."
+    },
+    {
+      "question": "Làm cách nào để sử dụng VisualForce page cho việc báo cáo và phân tích dữ liệu?",
+      "answer": "Sử dụng Apex controller để truy xuất dữ liệu qua SOQL, sau đó hiển thị dữ liệu dưới dạng bảng hoặc biểu đồ bằng HTML, JavaScript và các thư viện chart để tạo báo cáo tùy chỉnh."
+    },
+    {
+      "question": "Làm thế nào để đảm bảo VisualForce page luôn cập nhật dữ liệu mới mà không cần tải lại trang?",
+      "answer": "Áp dụng AJAX và JavaScript remoting để tự động gọi các phương thức Apex, cập nhật dữ liệu hiển thị mà không cần reload toàn bộ trang."
+    },
+    {
+      "question": "Làm cách nào để tạo một báo cáo động sử dụng VisualForce page?",
+      "answer": "Kết hợp Apex controller với các thành phần VisualForce và JavaScript để truy xuất, xử lý dữ liệu theo thời gian thực và hiển thị báo cáo tương tác cho người dùng."
     }
   ],
   "SFDC’s Aura Component": [
@@ -1139,6 +1159,50 @@
     {
       "question": "Các tệp nào được tạo ra khi sử dụng lệnh lwc:create?",
       "answer": "Thư mục NewComponent chứa newcomponent.js, newcomponent.html, newcomponent.css."
+    },
+    {
+      "question": "Làm thế nào để sử dụng VisualForce với Lightning Out?",
+      "answer": "Lightning Out cho phép nhúng VisualForce page vào ứng dụng web bên ngoài SalesForce. Bạn cần cấu hình Lightning Out JavaScript library và sử dụng nó để hiển thị trang VisualForce ngoài org."
+    },
+    {
+      "question": "Làm cách nào để thiết kế VisualForce page với hiệu ứng động sử dụng JavaScript?",
+      "answer": "Bạn có thể tích hợp các thư viện JavaScript như jQuery hoặc sử dụng Vanilla JS để thêm hiệu ứng động, chuyển đổi và animation cho các thành phần trên trang."
+    },
+    {
+      "question": "Làm cách nào để tùy chỉnh VisualForce page dựa trên ngữ cảnh của người dùng?",
+      "answer": "Sử dụng Apex controller để lấy thông tin người dùng (như vai trò, ngôn ngữ) và hiển thị hoặc ẩn các thành phần trên trang dựa trên dữ liệu đó."
+    },
+    {
+      "question": "Làm cách nào để tích hợp VisualForce page với các widget bên ngoài như Google Maps?",
+      "answer": "Nhúng Google Maps qua thẻ <apex:includeScript> và sử dụng API của Google Maps để hiển thị bản đồ, cấu hình các tham số như vị trí dựa trên dữ liệu từ SalesForce."
+    },
+    {
+      "question": "Làm cách nào để xử lý tệp tin động trong VisualForce?",
+      "answer": "Sử dụng Apex controller để tạo nội dung tệp tin động (ví dụ: PDF, Excel) và cung cấp URL tải về, cho phép người dùng tải về tệp đã được tạo theo yêu cầu."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa SEO cho VisualForce page nếu trang đó được hiển thị công khai?",
+      "answer": "Sử dụng các thẻ meta, tiêu đề trang, tối ưu nội dung và mã HTML theo chuẩn, cũng như cải thiện tốc độ tải trang để tăng khả năng hiển thị trên công cụ tìm kiếm."
+    },
+    {
+      "question": "Làm cách nào để sử dụng VisualForce để tạo form phức tạp với xác thực đầu vào nâng cao?",
+      "answer": "Kết hợp VisualForce với Apex controller và JavaScript để thực hiện xác thực đầu vào nâng cao, sử dụng các thuộc tính HTML5 validation và custom logic kiểm tra dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để đảm bảo rằng VisualForce page hoạt động tốt trên các trình duyệt cũ?",
+      "answer": "Sử dụng các polyfill, kiểm tra tính tương thích trên các trình duyệt cũ và tối ưu hóa mã HTML, CSS để đảm bảo trang hoạt động ổn định trên nhiều trình duyệt."
+    },
+    {
+      "question": "Làm cách nào để kết hợp VisualForce page với custom branding của doanh nghiệp?",
+      "answer": "Tùy chỉnh giao diện bằng CSS và tệp static resource, thay đổi logo, màu sắc và font chữ theo nhận diện thương hiệu của doanh nghiệp."
+    },
+    {
+      "question": "Làm cách nào để xử lý tính năng download file từ VisualForce page?",
+      "answer": "Sử dụng thuộc tính renderAs='pdf' để tạo file PDF hoặc sử dụng Apex để tạo file Blob và cung cấp link download, cho phép người dùng tải về file theo yêu cầu."
+    },
+    {
+      "question": "Làm cách nào để tích hợp VisualForce page với các công cụ phân tích web để theo dõi tương tác người dùng?",
+      "answer": "Nhúng mã theo dõi của Google Analytics hoặc các công cụ phân tích khác vào VisualForce page để thu thập dữ liệu tương tác và phân tích hành vi người dùng."
     }
   ],
   "SFDC’s Trigger": [
@@ -1521,6 +1585,26 @@
     {
       "question": "Làm cách nào để sử dụng Trigger để xử lý bản ghi trong Salesforce Industries?",
       "answer": "Sử dụng Trigger để tự động hóa quy trình ngành cụ thể, đảm bảo hiệu suất và tuân thủ."
+    },
+    {
+      "question": "Làm cách nào để quản lý và duy trì trigger khi có nhiều trigger hoạt động trên cùng một đối tượng?",
+      "answer": "Áp dụng trigger framework (trigger handler pattern) để gom tất cả logic xử lý của các trigger vào một lớp chung, giúp kiểm soát luồng và tránh đệ quy cũng như xung đột."
+    },
+    {
+      "question": "Làm cách nào để kiểm soát thứ tự thực thi của các trigger trên cùng một đối tượng?",
+      "answer": "Salesforce không cho phép chỉ định thứ tự trực tiếp; do đó, hãy sử dụng trigger handler pattern để sắp xếp logic theo thứ tự mong muốn trong một lớp xử lý chung."
+    },
+    {
+      "question": "Làm cách nào để đảm bảo trigger không gây ra lỗi do dữ liệu null?",
+      "answer": "Thực hiện kiểm tra dữ liệu null trong trigger bằng cách kiểm tra các giá trị trong Trigger.new và Trigger.old trước khi thao tác, tránh thao tác trên dữ liệu không tồn tại."
+    },
+    {
+      "question": "Làm cách nào để ghi log chi tiết trong trigger để hỗ trợ quá trình debug?",
+      "answer": "Sử dụng System.debug() để in thông tin chi tiết và, nếu cần, tạo lớp helper ghi log vào một đối tượng tùy chỉnh để lưu trữ thông tin về các hoạt động của trigger."
+    },
+    {
+      "question": "Làm cách nào để triển khai trigger mà không ảnh hưởng đến hiệu suất của hệ thống?",
+      "answer": "Tối ưu hóa mã trigger, xử lý dữ liệu theo lô, tránh vòng lặp trong trigger và kiểm tra hiệu suất qua debug logs và Apex Jobs Dashboard để đảm bảo trigger chạy nhanh và hiệu quả."
     }
   ],
   "SFDC’s Batch": [
@@ -1857,73 +1941,73 @@
       "answer": "Có, Batch Apex có thể được sử dụng để tự động hóa quy trình ngành cụ thể, như bảo hiểm, năng lượng, hoặc viễn thông, đảm bảo hiệu suất."
     },
     {
-    "question": "Làm cách nào để giám sát và phân tích hiệu suất Batch Apex qua debug logs?",
-    "answer": "Sử dụng debug logs và Developer Console để theo dõi thời gian chạy, số lượng bản ghi xử lý và lỗi của từng lô, từ đó tối ưu hóa hiệu suất."
-  },
-  {
-    "question": "Có giới hạn số lượng Batch Apex job có thể chạy đồng thời không?",
-    "answer": "Có, số lượng job đồng thời bị giới hạn theo cấu hình tổ chức và giấy phép, do đó cần lập kế hoạch và phân bổ tài nguyên hợp lý."
-  },
-  {
-    "question": "Làm cách nào để đảm bảo Batch Apex không làm ảnh hưởng đến hiệu suất của hệ thống production?",
-    "answer": "Chạy job vào giờ thấp điểm, tối ưu hóa kích thước lô và truy vấn SOQL, đồng thời giám sát tài nguyên hệ thống qua debug logs."
-  },
-  {
-    "question": "Có cách nào để phân chia và xử lý một Batch Apex job theo nhiều bước phụ (sub-batches)?",
-    "answer": "Bạn có thể chia nhỏ công việc thành các sub-batches bằng cách sử dụng logic phân chia trong phương thức execute và sử dụng biến để quản lý trạng thái từng sub-batch."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex xử lý dữ liệu khi gặp trường hợp 'Mixed DML'?",
-    "answer": "Sử dụng kỹ thuật @future hoặc Queueable Apex để tách các thao tác DML không thể thực hiện cùng nhau thành các giao dịch riêng biệt."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa truy vấn SOQL trong Batch Apex để giảm thời gian chạy?",
-    "answer": "Viết truy vấn SOQL hiệu quả, chỉ lấy các trường cần thiết và sử dụng điều kiện lọc chặt chẽ để giảm số lượng bản ghi trả về."
-  },
-  {
-    "question": "Làm cách nào để sử dụng QueryLocator trong Batch Apex và lợi ích của nó là gì?",
-    "answer": "QueryLocator cho phép truy xuất tập hợp bản ghi lớn mà không bị giới hạn số lượng, giúp Batch Apex xử lý dữ liệu lớn hiệu quả hơn."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex xử lý các tác vụ liên quan đến báo cáo tự động?",
-    "answer": "Batch Apex có thể truy vấn, tổng hợp và lưu trữ dữ liệu vào các đối tượng báo cáo, sau đó tự động gửi báo cáo qua email hoặc cập nhật dashboard."
-  },
-  {
-    "question": "Có thể sử dụng Batch Apex để tự động xóa dữ liệu cũ không?",
-    "answer": "Có, Batch Apex có thể xóa hàng loạt bản ghi cũ dựa trên điều kiện nhất định, giúp duy trì dữ liệu sạch và tối ưu hiệu suất."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex tích hợp với các công cụ giám sát của Salesforce?",
-    "answer": "Kết hợp debug logs, Developer Console và Apex Jobs Dashboard để theo dõi hoạt động, hiệu suất và lỗi của Batch Apex."
-  },
-  {
-    "question": "Làm cách nào để kiểm soát mức độ sử dụng tài nguyên khi chạy Batch Apex?",
-    "answer": "Sử dụng kích thước lô phù hợp, tối ưu hóa SOQL và đặt giới hạn cho số lượng bản ghi xử lý trong mỗi lô để không vượt quá giới hạn governor."
-  },
-  {
-    "question": "Làm cách nào để xử lý lỗi phức tạp khi Batch Apex không thể hoàn thành một lô do ngoại lệ?",
-    "answer": "Áp dụng cấu hình retry, sử dụng try-catch để ghi log và tách riêng các lô lỗi để có thể chạy lại mà không ảnh hưởng đến các lô khác."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex xử lý các dữ liệu cập nhật liên tục từ hệ thống bên ngoài?",
-    "answer": "Thiết kế job để kiểm tra định kỳ, truy vấn các bản ghi cần cập nhật và đồng bộ hóa dữ liệu thông qua các cơ chế asynchronous."
-  },
-  {
-    "question": "Có thể sử dụng Batch Apex để đồng bộ hóa dữ liệu giữa các đối tượng không liên quan trực tiếp không?",
-    "answer": "Có, Batch Apex có thể đồng bộ hóa dữ liệu giữa các đối tượng thông qua truy vấn SOQL phức tạp và logic cập nhật tùy chỉnh."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex làm việc với các đối tượng có lượng dữ liệu cực lớn như 1 triệu bản ghi?",
-    "answer": "Sử dụng QueryLocator để truy xuất dữ liệu, chia nhỏ lô phù hợp và xử lý bất đồng bộ để đảm bảo hiệu suất cao."
-  },
-  {
-    "question": "Làm cách nào để Batch Apex kết hợp với các kỹ thuật asynchronous khác để tối ưu hóa quá trình xử lý?",
-    "answer": "Kết hợp Batch Apex với Queueable Apex hoặc future methods để chia nhỏ tác vụ và xử lý bất đồng bộ, giảm tải hệ thống."
-  },
-  {
-    "question": "Làm cách nào để theo dõi và báo cáo các thông số quan trọng của Batch Apex job như thời gian chạy, số bản ghi xử lý, và lỗi?",
-    "answer": "Sử dụng debug logs và Apex Jobs Dashboard để thu thập thông tin về thời gian chạy, số bản ghi xử lý và lỗi, từ đó tạo báo cáo và tối ưu hóa hiệu suất."
-  }
+      "question": "Làm cách nào để giám sát và phân tích hiệu suất Batch Apex qua debug logs?",
+      "answer": "Sử dụng debug logs và Developer Console để theo dõi thời gian chạy, số lượng bản ghi xử lý và lỗi của từng lô, từ đó tối ưu hóa hiệu suất."
+    },
+    {
+      "question": "Có giới hạn số lượng Batch Apex job có thể chạy đồng thời không?",
+      "answer": "Có, số lượng job đồng thời bị giới hạn theo cấu hình tổ chức và giấy phép, do đó cần lập kế hoạch và phân bổ tài nguyên hợp lý."
+    },
+    {
+      "question": "Làm cách nào để đảm bảo Batch Apex không làm ảnh hưởng đến hiệu suất của hệ thống production?",
+      "answer": "Chạy job vào giờ thấp điểm, tối ưu hóa kích thước lô và truy vấn SOQL, đồng thời giám sát tài nguyên hệ thống qua debug logs."
+    },
+    {
+      "question": "Có cách nào để phân chia và xử lý một Batch Apex job theo nhiều bước phụ (sub-batches)?",
+      "answer": "Bạn có thể chia nhỏ công việc thành các sub-batches bằng cách sử dụng logic phân chia trong phương thức execute và sử dụng biến để quản lý trạng thái từng sub-batch."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex xử lý dữ liệu khi gặp trường hợp 'Mixed DML'?",
+      "answer": "Sử dụng kỹ thuật @future hoặc Queueable Apex để tách các thao tác DML không thể thực hiện cùng nhau thành các giao dịch riêng biệt."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa truy vấn SOQL trong Batch Apex để giảm thời gian chạy?",
+      "answer": "Viết truy vấn SOQL hiệu quả, chỉ lấy các trường cần thiết và sử dụng điều kiện lọc chặt chẽ để giảm số lượng bản ghi trả về."
+    },
+    {
+      "question": "Làm cách nào để sử dụng QueryLocator trong Batch Apex và lợi ích của nó là gì?",
+      "answer": "QueryLocator cho phép truy xuất tập hợp bản ghi lớn mà không bị giới hạn số lượng, giúp Batch Apex xử lý dữ liệu lớn hiệu quả hơn."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex xử lý các tác vụ liên quan đến báo cáo tự động?",
+      "answer": "Batch Apex có thể truy vấn, tổng hợp và lưu trữ dữ liệu vào các đối tượng báo cáo, sau đó tự động gửi báo cáo qua email hoặc cập nhật dashboard."
+    },
+    {
+      "question": "Có thể sử dụng Batch Apex để tự động xóa dữ liệu cũ không?",
+      "answer": "Có, Batch Apex có thể xóa hàng loạt bản ghi cũ dựa trên điều kiện nhất định, giúp duy trì dữ liệu sạch và tối ưu hiệu suất."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex tích hợp với các công cụ giám sát của Salesforce?",
+      "answer": "Kết hợp debug logs, Developer Console và Apex Jobs Dashboard để theo dõi hoạt động, hiệu suất và lỗi của Batch Apex."
+    },
+    {
+      "question": "Làm cách nào để kiểm soát mức độ sử dụng tài nguyên khi chạy Batch Apex?",
+      "answer": "Sử dụng kích thước lô phù hợp, tối ưu hóa SOQL và đặt giới hạn cho số lượng bản ghi xử lý trong mỗi lô để không vượt quá giới hạn governor."
+    },
+    {
+      "question": "Làm cách nào để xử lý lỗi phức tạp khi Batch Apex không thể hoàn thành một lô do ngoại lệ?",
+      "answer": "Áp dụng cấu hình retry, sử dụng try-catch để ghi log và tách riêng các lô lỗi để có thể chạy lại mà không ảnh hưởng đến các lô khác."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex xử lý các dữ liệu cập nhật liên tục từ hệ thống bên ngoài?",
+      "answer": "Thiết kế job để kiểm tra định kỳ, truy vấn các bản ghi cần cập nhật và đồng bộ hóa dữ liệu thông qua các cơ chế asynchronous."
+    },
+    {
+      "question": "Có thể sử dụng Batch Apex để đồng bộ hóa dữ liệu giữa các đối tượng không liên quan trực tiếp không?",
+      "answer": "Có, Batch Apex có thể đồng bộ hóa dữ liệu giữa các đối tượng thông qua truy vấn SOQL phức tạp và logic cập nhật tùy chỉnh."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex làm việc với các đối tượng có lượng dữ liệu cực lớn như 1 triệu bản ghi?",
+      "answer": "Sử dụng QueryLocator để truy xuất dữ liệu, chia nhỏ lô phù hợp và xử lý bất đồng bộ để đảm bảo hiệu suất cao."
+    },
+    {
+      "question": "Làm cách nào để Batch Apex kết hợp với các kỹ thuật asynchronous khác để tối ưu hóa quá trình xử lý?",
+      "answer": "Kết hợp Batch Apex với Queueable Apex hoặc future methods để chia nhỏ tác vụ và xử lý bất đồng bộ, giảm tải hệ thống."
+    },
+    {
+      "question": "Làm cách nào để theo dõi và báo cáo các thông số quan trọng của Batch Apex job như thời gian chạy, số bản ghi xử lý, và lỗi?",
+      "answer": "Sử dụng debug logs và Apex Jobs Dashboard để thu thập thông tin về thời gian chạy, số bản ghi xử lý và lỗi, từ đó tạo báo cáo và tối ưu hóa hiệu suất."
+    }
   ],
   "SFDC’s TestClass": [
     {
@@ -2253,6 +2337,82 @@
     {
       "question": "Làm thế nào để schedule và chạy test tự động trong SalesForce?",
       "answer": "Dùng tính năng 'Schedule Apex' để lên lịch chạy test class hoặc tất cả test, hữu ích cho tích hợp liên tục và đảm bảo mã ổn định."
+    },
+    {
+      "question": "Làm cách nào để test future methods trong test class?",
+      "answer": "Sử dụng Test.startTest() và Test.stopTest() để đảm bảo các tác vụ future được thực thi, sau đó sử dụng assertions để kiểm tra kết quả."
+    },
+    {
+      "question": "Làm cách nào để test callouts từ Apex?",
+      "answer": "Sử dụng Test.setMock() để thiết lập dữ liệu giả lập cho các callout, đảm bảo rằng test không thực sự gọi ra ngoài."
+    },
+    {
+      "question": "Làm cách nào để kiểm tra debug logs khi chạy test class?",
+      "answer": "Sử dụng Developer Console để xem debug logs khi chạy test, giúp xác định các thông báo và lỗi trong quá trình thực thi."
+    },
+    {
+      "question": "Làm cách nào để đo hiệu suất mã Apex qua test class?",
+      "answer": "Sử dụng Test.getTotalTestTime() để đo thời gian chạy của test và đánh giá hiệu suất của mã Apex."
+    },
+    {
+      "question": "Làm cách nào để test dữ liệu nhập bất hợp lệ?",
+      "answer": "Tạo dữ liệu test bất hợp lệ và sử dụng System.assertException hoặc assertions để kiểm tra rằng ngoại lệ mong đợi được ném ra."
+    },
+    {
+      "question": "Làm cách nào để test các logic phụ thuộc vào dữ liệu?",
+      "answer": "Tạo dữ liệu test đầy đủ các trường hợp, sau đó kiểm tra kết quả của các phương thức xử lý dựa trên dữ liệu đó bằng assertions."
+    },
+    {
+      "question": "Làm cách nào để test custom exception trong Apex?",
+      "answer": "Viết test method gọi code gây ra ngoại lệ và sử dụng System.assertException để xác nhận rằng ngoại lệ được ném ra đúng cách."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Test.setCreatedDate() trong test class?",
+      "answer": "Sử dụng Test.setCreatedDate() để đặt thời gian tạo của bản ghi test, hữu ích cho các test liên quan đến ngày tháng."
+    },
+    {
+      "question": "Làm cách nào để kiểm tra logic phân quyền trong Apex test?",
+      "answer": "Sử dụng System.runAs() để chạy code dưới vai trò người dùng khác nhau và kiểm tra xem quyền truy cập được thực thi đúng không."
+    },
+    {
+      "question": "Làm cách nào để test code sử dụng dynamic SOQL?",
+      "answer": "Tạo dữ liệu test phù hợp và chạy dynamic SOQL, sau đó sử dụng assertions để xác nhận kết quả trả về đúng như mong đợi."
+    },
+    {
+      "question": "Làm cách nào để test vòng lặp xử lý danh sách bản ghi?",
+      "answer": "Tạo danh sách test với nhiều bản ghi, chạy vòng lặp và sử dụng assertions để xác nhận rằng logic xử lý đúng trên tất cả các bản ghi."
+    },
+    {
+      "question": "Làm cách nào để test các tác vụ callout bất đồng bộ?",
+      "answer": "Sử dụng Test.startTest() và Test.stopTest() cùng với Test.setMock() để đảm bảo các tác vụ callout được thực hiện và kiểm tra kết quả."
+    },
+    {
+      "question": "Làm cách nào để đảm bảo test class không phụ thuộc vào dữ liệu org hiện tại?",
+      "answer": "Luôn tạo dữ liệu test mới trong test class và không sử dụng dữ liệu có sẵn, đảm bảo tính độc lập và nhất quán của test."
+    },
+    {
+      "question": "Làm cách nào để kiểm tra rollback khi gặp lỗi trong giao dịch?",
+      "answer": "Tạo tình huống test gây lỗi, sau đó kiểm tra rằng dữ liệu không bị thay đổi, xác nhận rằng rollback đã được thực hiện."
+    },
+    {
+      "question": "Làm cách nào để test logic trong trigger thông qua test class?",
+      "answer": "Tạo dữ liệu test kích hoạt trigger, sau đó dùng assertions để kiểm tra các thay đổi trên bản ghi được thực hiện bởi trigger."
+    },
+    {
+      "question": "Làm cách nào để test một Apex class sử dụng Batchable interface?",
+      "answer": "Sử dụng Database.executeBatch trong test method, kết hợp với Test.startTest() và Test.stopTest(), sau đó kiểm tra kết quả xử lý qua assertions."
+    },
+    {
+      "question": "Làm cách nào để test một Apex class sử dụng Schedulable interface?",
+      "answer": "Sử dụng System.schedule để lên lịch job trong test method, kết hợp với Test.startTest() và Test.stopTest() để đảm bảo job được chạy và kiểm tra kết quả."
+    },
+    {
+      "question": "Làm cách nào để test các tác vụ bất đồng bộ trong Apex?",
+      "answer": "Sử dụng Test.startTest() và Test.stopTest() để đảm bảo các tác vụ bất đồng bộ hoàn tất trước khi kết thúc test, giúp kiểm tra kết quả đúng như mong đợi."
+    },
+    {
+      "question": "Làm cách nào để đánh giá chất lượng của test class trong Salesforce?",
+      "answer": "Sử dụng báo cáo code coverage và test result summary từ Developer Console hoặc Apex Test Execution để đảm bảo rằng test class bao phủ đủ các trường hợp và logic của mã Apex."
     }
   ],
   "SFDC’s .Net": [
@@ -2615,6 +2775,46 @@
     {
       "question": "Làm thế nào để đảm bảo ứng dụng có khả năng phục hồi trước các thay đổi hoặc downtime của API?",
       "answer": "Thực hiện retry logic, sử dụng circuit breaker pattern, và giám sát trạng thái API với health check."
+    },
+    {
+      "question": "Làm cách nào để tích hợp SalesForce với .NET Core so với .NET Framework?",
+      "answer": "Sử dụng HttpClient trong .NET Core với cấu hình DI hiện đại, khác biệt với .NET Framework; đảm bảo endpoint và phiên bản API được cấu hình chính xác cho từng nền tảng."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa việc sử dụng HttpClient trong ứng dụng .NET tích hợp với SalesForce?",
+      "answer": "Sử dụng HttpClientFactory để quản lý vòng đời của HttpClient, tránh tạo nhiều instance và giảm thiểu rò rỉ tài nguyên."
+    },
+    {
+      "question": "Làm cách nào để xử lý các cuộc gọi API đồng thời (concurrent) trong ứng dụng .NET?",
+      "answer": "Sử dụng async/await cùng với các kỹ thuật Task Parallel Library (TPL) để thực hiện các cuộc gọi API đồng thời mà không gây chặn luồng chính."
+    },
+    {
+      "question": "Làm cách nào để xây dựng một microservice .NET để đồng bộ hóa dữ liệu với SalesForce?",
+      "answer": "Thiết kế microservice sử dụng kiến trúc RESTful, dùng HttpClient để gọi SalesForce API, tích hợp với message queue để xử lý bất đồng bộ và đồng bộ hóa dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để xử lý vấn đề rate limiting khi gọi API SalesForce từ .NET?",
+      "answer": "Áp dụng cơ chế retry logic, sử dụng circuit breaker pattern và caching để giảm số lượng cuộc gọi API khi gặp giới hạn tốc độ từ SalesForce."
+    },
+    {
+      "question": "Làm cách nào để tích hợp SalesForce với ứng dụng .NET sử dụng kiến trúc RESTful?",
+      "answer": "Xây dựng các controller trong ứng dụng .NET gọi đến SalesForce REST API, đảm bảo quản lý token và xử lý dữ liệu trả về bằng JSON."
+    },
+    {
+      "question": "Làm cách nào để sử dụng logging và monitoring trong ứng dụng .NET để giám sát tích hợp với SalesForce?",
+      "answer": "Sử dụng các thư viện logging như Serilog hoặc NLog, kết hợp với Application Insights để theo dõi các cuộc gọi API và ghi nhận lỗi, thời gian phản hồi."
+    },
+    {
+      "question": "Làm cách nào để thiết lập CI/CD cho dự án .NET tích hợp với SalesForce?",
+      "answer": "Sử dụng các công cụ như Azure DevOps hoặc GitHub Actions để tự động build, test và deploy ứng dụng .NET, tích hợp bước chạy kiểm thử API SalesForce trong pipeline."
+    },
+    {
+      "question": "Làm cách nào để xử lý tình huống mất kết nối với SalesForce trong ứng dụng .NET?",
+      "answer": "Áp dụng cơ chế fallback, lưu trữ dữ liệu tạm thời (offline caching) và tự động retry khi kết nối được khôi phục, đảm bảo trải nghiệm liên tục cho người dùng."
+    },
+    {
+      "question": "Làm cách nào để đảm bảo tính nhất quán của dữ liệu khi đồng bộ giữa ứng dụng .NET và SalesForce?",
+      "answer": "Sử dụng giao thức giao dịch (transactional) hoặc kiểm tra checksum, kết hợp với retry logic và kiểm tra phản hồi từ API để đảm bảo dữ liệu được đồng bộ chính xác."
     }
   ],
   "SFDC’s PDF": [
@@ -3422,811 +3622,809 @@
     }
   ],
   "Dynamics: Power Apps (model driven app and canvas app)": [
-  {
-    "question": "Sự khác biệt giữa model-driven app và canvas app trong Power Apps là gì?",
-    "answer": "Model-driven app là các ứng dụng dựa trên mô hình dữ liệu, có cấu trúc định sẵn, trong khi canvas app là các ứng dụng tùy chỉnh, cho phép thiết kế giao diện từ đầu với drag-and-drop."
-  },
-  {
-    "question": "Làm cách nào để tạo một model-driven app trong Power Apps?",
-    "answer": "Sử dụng Power Apps Maker, chọn 'Create from scratch' hoặc 'Create from template', sau đó định nghĩa các entity, form, view và các tính năng khác."
-  },
-  {
-    "question": "Những component của một model-driven app là gì?",
-    "answer": "Bao gồm các entity, form, view, dashboard và các tính năng như workflow, business rules, v.v."
-  },
-  {
-    "question": "Làm cách nào để kết nối một model-driven app với nguồn dữ liệu?",
-    "answer": "Model-driven app thường kết nối trực tiếp với Dynamics 365 database hoặc các nguồn dữ liệu khác thông qua connectors."
-  },
-  {
-    "question": "Làm cách nào để tùy chỉnh giao diện của một model-driven app?",
-    "answer": "Sử dụng các tính năng customization của Power Apps, như thiết kế form, tạo các view tùy chỉnh và sử dụng các widget."
-  },
-  {
-    "question": "Canvas app trong Power Apps là gì?",
-    "answer": "Canvas app là các ứng dụng tùy chỉnh, cho phép người dùng thiết kế giao diện từ đầu với drag-and-drop, kết nối với các nguồn dữ liệu khác nhau."
-  },
-  {
-    "question": "Làm cách nào để tạo một canvas app từ đầu?",
-    "answer": "Sử dụng Power Apps Studio, chọn 'Blank app', sau đó thiết kế giao diện bằng cách kéo thả các control và kết nối với dữ liệu."
-  },
-  {
-    "question": "Những nguồn dữ liệu mà canvas app có thể kết nối là gì?",
-    "answer": "Canvas app có thể kết nối với các nguồn dữ liệu như Dynamics 365, SharePoint, Excel, SQL Server và nhiều nguồn khác thông qua connectors."
-  },
-  {
-    "question": "Làm cách nào để triển khai một Power App?",
-    "answer": "Sau khi hoàn thành thiết kế, bạn có thể xuất bản app để chia sẻ với người dùng khác hoặc triển khai trên các thiết bị di động và web."
-  },
-  {
-    "question": "Những best practices cho việc phát triển Power Apps là gì?",
-    "answer": "Giữ cho app đơn giản, tập trung vào trải nghiệm người dùng, sử dụng các mẫu và thành phần có sẵn, và kiểm tra kỹ trước khi triển khai."
-  },
-  {
-    "question": "Làm cách nào để thêm logic vào một canvas app?",
-    "answer": "Sử dụng Power Fx – một ngôn ngữ lập trình giống Excel – để thêm logic cho các control và hành động trong app."
-  },
-  {
-    "question": "Làm cách nào để bảo mật một Power App?",
-    "answer": "Sử dụng các quy tắc bảo mật của Power Apps như phân quyền người dùng và tích hợp với Azure AD để xác thực truy cập."
-  },
-  {
-    "question": "Làm cách nào để kết nối canvas app với Dynamics 365?",
-    "answer": "Sử dụng connector Dynamics 365 trong Power Apps Studio để kết nối và truy cập dữ liệu từ Dynamics 365."
-  },
-  {
-    "question": "Làm cách nào để tạo một form tùy chỉnh trong model-driven app?",
-    "answer": "Sử dụng App Designer để thêm hoặc chỉnh sửa form, thêm các field, section và business rules theo yêu cầu."
-  },
-  {
-    "question": "Làm cách nào để test một Power App trước khi triển khai?",
-    "answer": "Sử dụng chế độ preview trong Power Apps Studio hoặc tạo environment test để kiểm tra toàn bộ chức năng của app."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power App với Power Automate?",
-    "answer": "Sử dụng các trigger và action có sẵn trong Power Automate để tự động hóa quy trình từ Power App."
-  },
-  {
-    "question": "Làm cách nào để tùy chỉnh dashboard trong model-driven app?",
-    "answer": "Sử dụng Dashboard Designer để thêm các chart, grid và các thành phần hiển thị dữ liệu, sau đó lưu và áp dụng cho app."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu ngoại tuyến trong canvas app?",
-    "answer": "Sử dụng tính năng offline của Power Apps để lưu trữ dữ liệu cục bộ và đồng bộ hóa lại khi có kết nối."
-  },
-  {
-    "question": "Làm cách nào để chia sẻ một Power App với người dùng khác?",
-    "answer": "Xuất bản app và chia sẻ qua Power Apps portal hoặc gán quyền truy cập cho người dùng thông qua Azure AD."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa hiệu suất của một Power App?",
-    "answer": "Giảm số lượng control, tối ưu hóa truy vấn dữ liệu, sử dụng caching cho dữ liệu tĩnh và kiểm tra performance thường xuyên."
-  },
-  {
-    "question": "Làm cách nào để tạo custom component trong Power Apps?",
-    "answer": "Sử dụng Power Apps Component Framework (PCF) để phát triển và triển khai các thành phần tùy chỉnh có thể tái sử dụng."
-  },
-  {
-    "question": "Các kỹ thuật debug nào hỗ trợ trong Power Apps?",
-    "answer": "Sử dụng tính năng Monitor trong Power Apps Studio, theo dõi error messages và sử dụng Power Fx formula checker để phát hiện lỗi."
-  },
-  {
-    "question": "Làm cách nào để triển khai version control cho Power Apps?",
-    "answer": "Xuất file app ra dưới dạng package, sử dụng Git hoặc các công cụ quản lý source code để theo dõi phiên bản và cập nhật thay đổi."
-  },
-  {
-    "question": "Những lợi ích của việc sử dụng Common Data Service (Dataverse) trong Power Apps là gì?",
-    "answer": "Dataverse cung cấp một nền tảng dữ liệu tập trung, giúp dễ dàng chia sẻ, quản lý và bảo mật dữ liệu giữa các ứng dụng Power Platform."
-  },
-  {
-    "question": "Làm cách nào để tạo mối liên hệ giữa các entity trong model-driven app?",
-    "answer": "Sử dụng tính năng relationship trong Dataverse để định nghĩa các mối liên hệ 1-1, 1-n hoặc n-n giữa các entity."
-  },
-  {
-    "question": "Làm thế nào để thêm business rules trong model-driven app?",
-    "answer": "Sử dụng Business Rules Designer trong Power Apps để tạo các quy tắc tự động điều chỉnh dữ liệu và hiển thị form."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Fx cho các tính năng nâng cao trong canvas app?",
-    "answer": "Viết công thức Power Fx để xử lý logic, tính toán, xử lý lỗi và điều khiển giao diện người dùng động trong canvas app."
-  },
-  {
-    "question": "Làm thế nào để tích hợp AI Builder vào Power Apps?",
-    "answer": "Sử dụng AI Builder để tạo các model dự đoán, nhận dạng hình ảnh hoặc phân tích văn bản và tích hợp trực tiếp vào Power Apps qua connector."
-  },
-  {
-    "question": "Các bước để tạo một app responsive trên Power Apps là gì?",
-    "answer": "Sử dụng các thuộc tính Responsive Layout, thiết kế giao diện dựa trên relative positioning và test trên nhiều kích thước màn hình khác nhau."
-  },
-  {
-    "question": "Làm cách nào để thiết lập custom themes cho Power Apps?",
-    "answer": "Sử dụng Power Apps Theme Designer hoặc chỉnh sửa file JSON để định nghĩa màu sắc, font chữ và style phù hợp với thương hiệu."
-  },
-  {
-    "question": "Làm cách nào để quản lý permissions cho người dùng trong Power Apps?",
-    "answer": "Thiết lập phân quyền trong Power Apps thông qua Azure AD, gán roles và sử dụng các security roles trong Dataverse."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với Microsoft Teams?",
-    "answer": "Sử dụng connector Microsoft Teams để nhúng app vào Teams hoặc tạo tab trong Teams chứa Power App."
-  },
-  {
-    "question": "Làm cách nào để tạo các báo cáo tùy chỉnh từ dữ liệu trong Power Apps?",
-    "answer": "Kết nối Power Apps với Power BI, sau đó xây dựng báo cáo và dashboard dựa trên dữ liệu được thu thập từ app."
-  },
-  {
-    "question": "Làm cách nào để xử lý lỗi trong Power Fx?",
-    "answer": "Sử dụng hàm IfError, Try hoặc kiểm tra điều kiện trước khi thực thi công thức để xử lý lỗi trong Power Fx."
-  },
-  {
-    "question": "Làm thế nào để tạo các screens và navigation logic trong canvas app?",
-    "answer": "Sử dụng hàm Navigate trong Power Fx để chuyển đổi giữa các màn hình, thiết lập biến context để lưu trạng thái chuyển trang."
-  },
-  {
-    "question": "Làm cách nào để triển khai các custom connector trong Power Apps?",
-    "answer": "Đăng ký custom connector qua Power Apps portal, cấu hình endpoint và xác thực, sau đó sử dụng connector đó trong app."
-  },
-  {
-    "question": "Làm cách nào để tích hợp dữ liệu từ Excel vào canvas app?",
-    "answer": "Sử dụng connector Excel, upload file Excel lên OneDrive hoặc SharePoint và kết nối để lấy dữ liệu cho canvas app."
-  },
-  {
-    "question": "Làm cách nào để cấu hình tính năng auto-save trong Power Apps?",
-    "answer": "Sử dụng Power Fx để thiết lập timer tự động lưu dữ liệu vào nguồn dữ liệu sau mỗi khoảng thời gian nhất định."
-  },
-  {
-    "question": "Làm cách nào để tạo các biểu mẫu (forms) động trong canvas app?",
-    "answer": "Sử dụng các control như Edit Form và Display Form, kết hợp với Power Fx để hiển thị hoặc ẩn các trường dựa trên điều kiện."
-  },
-  {
-    "question": "Làm cách nào để tạo các custom validation cho dữ liệu nhập trong Power Apps?",
-    "answer": "Sử dụng Power Fx để kiểm tra điều kiện dữ liệu nhập, hiển thị thông báo lỗi nếu không thỏa mãn và ngăn lưu dữ liệu không hợp lệ."
-  },
-  {
-    "question": "Làm cách nào để sử dụng các mẫu (templates) có sẵn trong Power Apps?",
-    "answer": "Chọn mẫu có sẵn từ Power Apps Studio, sau đó chỉnh sửa giao diện và logic để phù hợp với yêu cầu của doanh nghiệp."
-  },
-  {
-    "question": "Làm thế nào để tích hợp Power Apps với các dịch vụ đám mây khác của Microsoft?",
-    "answer": "Sử dụng các connector có sẵn để tích hợp với SharePoint, OneDrive, Outlook và các dịch vụ khác, đảm bảo đồng bộ hóa dữ liệu giữa các nền tảng."
-  },
-  {
-    "question": "Làm cách nào để triển khai Power Apps trên thiết bị di động?",
-    "answer": "Sau khi xuất bản, người dùng có thể tải ứng dụng Power Apps từ cửa hàng ứng dụng (App Store/Google Play) và đăng nhập bằng tài khoản của mình để sử dụng."
-  },
-  {
-    "question": "Làm cách nào để quản lý môi trường (environment) trong Power Apps?",
-    "answer": "Sử dụng Power Platform Admin Center để tạo, xóa, chuyển đổi và cấu hình các environment (production, sandbox, trial) theo nhu cầu."
-  },
-  {
-    "question": "Làm cách nào để triển khai quy trình làm việc (workflow) trong Power Apps?",
-    "answer": "Sử dụng Power Automate kết hợp với Power Apps để tạo các workflow tự động dựa trên các trigger từ app."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với Dynamics 365 Customer Engagement?",
-    "answer": "Sử dụng connector Dynamics 365 để kết nối và truy xuất dữ liệu từ Customer Engagement, tích hợp trực tiếp vào app."
-  },
-  {
-    "question": "Làm cách nào để thiết lập các tùy chỉnh giao diện cho canvas app theo thiết bị sử dụng?",
-    "answer": "Sử dụng các công cụ responsive layout và Power Fx để điều chỉnh kích thước, vị trí control dựa trên kích thước màn hình của thiết bị."
-  },
-  {
-    "question": "Làm cách nào để lưu trữ và quản lý các file media trong Power Apps?",
-    "answer": "Kết nối với SharePoint hoặc OneDrive để lưu trữ file media và sử dụng connector tương ứng để truy xuất và hiển thị trong app."
-  },
-  {
-    "question": "Làm cách nào để tạo các alert hoặc thông báo trong Power Apps?",
-    "answer": "Sử dụng control Notification hoặc hàm Notify trong Power Fx để hiển thị thông báo cho người dùng khi có sự kiện xảy ra."
-  },
-  {
-    "question": "Làm cách nào để quản lý các phiên bản của app khi có cập nhật?",
-    "answer": "Xuất bản các phiên bản mới và sử dụng Power Platform Admin Center để theo dõi lịch sử thay đổi, cũng như khôi phục phiên bản cũ nếu cần."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Apps để tạo các ứng dụng theo quy trình nghiệp vụ phức tạp?",
-    "answer": "Kết hợp các tính năng của model-driven app và canvas app, sử dụng Power Automate, AI Builder và Dataverse để xây dựng quy trình nghiệp vụ tự động và linh hoạt."
-  },
-  {
-    "question": "Làm cách nào để triển khai các giải pháp tùy chỉnh mà không làm gián đoạn hoạt động của hệ thống?",
-    "answer": "Phát triển và test trên sandbox, sau đó sử dụng solution packaging để triển khai dần trên môi trường production có kế hoạch backup và rollback."
-  },
-  {
-    "question": "Làm cách nào để giám sát hiệu suất của Power Apps sau khi triển khai?",
-    "answer": "Sử dụng Monitor, Application Insights và Power Platform Admin Center để theo dõi các chỉ số hiệu suất và log lỗi trong quá trình hoạt động."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với dữ liệu thời gian thực?",
-    "answer": "Kết nối với các dịch vụ dữ liệu thời gian thực thông qua API, sử dụng connector phù hợp và thiết lập các luồng làm mới dữ liệu tự động."
-  },
-  {
-    "question": "Làm cách nào để xử lý các tình huống mất kết nối Internet trong canvas app?",
-    "answer": "Khai báo các trạng thái offline, lưu dữ liệu tạm thời cục bộ và đồng bộ lại khi có kết nối bằng cách sử dụng hàm SaveData và LoadData."
-  },
-  {
-    "question": "Làm cách nào để tạo giao diện người dùng thân thiện và trực quan trong Power Apps?",
-    "answer": "Sử dụng thiết kế hiện đại, bố cục rõ ràng, các control nhất quán và tuân theo các guideline về UX của Microsoft."
-  },
-  {
-    "question": "Làm cách nào để tích hợp chức năng tìm kiếm nâng cao trong Power Apps?",
-    "answer": "Sử dụng các hàm tìm kiếm của Power Fx, kết hợp với bộ lọc dữ liệu trong Dataverse để xây dựng chức năng tìm kiếm mạnh mẽ."
-  },
-  {
-    "question": "Làm cách nào để cấu hình các quyền truy cập dựa trên vai trò trong Power Apps?",
-    "answer": "Sử dụng quản lý người dùng qua Azure AD và thiết lập các security role trong Dataverse để phân quyền truy cập dữ liệu cho từng người dùng."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với các hệ thống bên ngoài thông qua API REST?",
-    "answer": "Tạo custom connector để kết nối với API REST của hệ thống bên ngoài, sau đó sử dụng connector này trong app để gọi dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để xây dựng các ứng dụng Power Apps có khả năng mở rộng cao?",
-    "answer": "Thiết kế app theo kiến trúc modular, sử dụng Dataverse làm nền tảng dữ liệu và tối ưu hóa logic với Power Fx để hỗ trợ lượng người dùng lớn."
-  },
-  {
-    "question": "Làm cách nào để xử lý các tác vụ tính toán phức tạp trong Power Apps?",
-    "answer": "Sử dụng Power Fx để thực hiện các tính toán, kết hợp với việc lưu trữ tạm thời dữ liệu trong các biến và collection để tối ưu hiệu suất."
-  },
-  {
-    "question": "Làm cách nào để tạo các biểu đồ và đồ thị trong Power Apps?",
-    "answer": "Sử dụng các control chart có sẵn hoặc tích hợp Power BI để hiển thị dữ liệu dưới dạng biểu đồ, đồ thị trực quan trong app."
-  },
-  {
-    "question": "Làm cách nào để quản lý dữ liệu nhập từ người dùng một cách an toàn trong Power Apps?",
-    "answer": "Thiết lập validation rules, sử dụng các hàm kiểm tra trong Power Fx và mã hóa dữ liệu nhạy cảm khi lưu trữ."
-  },
-  {
-    "question": "Làm cách nào để tích hợp chức năng định vị (geolocation) vào canvas app?",
-    "answer": "Sử dụng control Location và các hàm Power Fx để truy xuất vị trí của thiết bị, sau đó hiển thị trên bản đồ hoặc xử lý dữ liệu theo vị trí."
-  },
-  {
-    "question": "Làm cách nào để triển khai ứng dụng Power Apps qua các môi trường (Dev, Test, Production)?",
-    "answer": "Sử dụng Power Platform Admin Center để tạo nhiều environment, xuất bản solution từ môi trường Dev lên Test và cuối cùng triển khai trên Production."
-  },
-  {
-    "question": "Làm cách nào để cấu hình tích hợp Power Apps với Dynamics 365 Marketing?",
-    "answer": "Sử dụng connector Dynamics 365 Marketing và tích hợp dữ liệu từ Marketing vào app để theo dõi chiến dịch và tương tác khách hàng."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa thời gian load của Power Apps?",
-    "answer": "Giảm số lượng control, tối ưu hóa các truy vấn dữ liệu, sử dụng các collection để lưu trữ tạm thời và kiểm tra performance thường xuyên."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu phức tạp từ nhiều nguồn trong một Power App?",
-    "answer": "Sử dụng các hàm Power Fx để hợp nhất dữ liệu từ nhiều nguồn, kết hợp với Dataverse để lưu trữ và xử lý tập trung."
-  },
-  {
-    "question": "Làm cách nào để tạo và sử dụng reusable components trong Power Apps?",
-    "answer": "Phát triển các component tùy chỉnh bằng Power Apps Component Framework (PCF) và lưu trữ chúng để sử dụng lại trong nhiều app khác nhau."
-  },
-  {
-    "question": "Làm cách nào để tích hợp chức năng chat hoặc hỗ trợ trực tuyến trong Power Apps?",
-    "answer": "Sử dụng các connector của dịch vụ chat như Microsoft Bot Framework hoặc tích hợp qua Web API để cung cấp tính năng chat trong app."
-  },
-  {
-    "question": "Làm cách nào để theo dõi và báo cáo các hoạt động của người dùng trong Power Apps?",
-    "answer": "Sử dụng tính năng logging tích hợp và kết nối với Power BI để thu thập dữ liệu hoạt động của người dùng và tạo báo cáo phân tích."
-  },
-  {
-    "question": "Làm cách nào để cấu hình chuyển hướng (redirect) trong Power Apps sau khi thực hiện một hành động?",
-    "answer": "Sử dụng hàm Navigate trong Power Fx để chuyển hướng người dùng sang màn hình khác sau khi hoàn thành tác vụ."
-  },
-  {
-    "question": "Làm cách nào để tích hợp chức năng quét mã vạch (barcode) vào canvas app?",
-    "answer": "Sử dụng camera control và tích hợp API quét mã vạch để đọc dữ liệu từ mã QR hoặc mã vạch trong app."
-  },
-  {
-    "question": "Làm cách nào để tạo một ứng dụng Power Apps cho quản lý dự án?",
-    "answer": "Kết hợp các control danh sách, form và dashboard để theo dõi tiến độ dự án, phân công công việc và báo cáo tình hình dự án."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với hệ thống ERP hiện có?",
-    "answer": "Sử dụng custom connector hoặc các connector có sẵn để kết nối Power Apps với hệ thống ERP, đảm bảo chuyển đổi dữ liệu hợp lý."
-  },
-  {
-    "question": "Làm cách nào để xử lý các tình huống xung đột dữ liệu trong Power Apps?",
-    "answer": "Sử dụng cơ chế lock hoặc kiểm tra dữ liệu trước khi ghi, đồng thời áp dụng quy trình xử lý lỗi để đảm bảo tính nhất quán của dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để triển khai các cập nhật thường xuyên cho Power Apps mà không ảnh hưởng đến người dùng?",
-    "answer": "Triển khai trên môi trường sandbox trước, sau đó lên lịch cập nhật trên production vào thời điểm ít người dùng truy cập và thông báo trước."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với Microsoft Dataverse?",
-    "answer": "Sử dụng connector Dataverse để quản lý, đồng bộ và truy xuất dữ liệu tập trung giữa các ứng dụng Power Platform."
-  },
-  {
-    "question": "Làm cách nào để bảo mật dữ liệu trong Power Apps khi truy cập từ thiết bị di động?",
-    "answer": "Sử dụng Azure AD, Multi-Factor Authentication và cấu hình chính sách bảo mật cho ứng dụng mobile để bảo vệ dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để tạo ứng dụng Power Apps có khả năng mở rộng toàn cầu?",
-    "answer": "Thiết kế ứng dụng với localization, responsive design và tối ưu hiệu suất để phục vụ người dùng trên toàn thế giới."
-  },
-  {
-    "question": "Làm cách nào để tích hợp các báo cáo từ Power BI vào Power Apps?",
-    "answer": "Sử dụng control Power BI tile để nhúng báo cáo trực tiếp vào ứng dụng Power Apps, cung cấp dữ liệu tương tác cho người dùng."
-  },
-  {
-    "question": "Làm cách nào để xử lý sự khác biệt về múi giờ trong Power Apps?",
-    "answer": "Sử dụng hàm DateTimeValue và TimeZoneOffset trong Power Fx để chuyển đổi và định dạng thời gian theo múi giờ của người dùng."
-  },
-  {
-    "question": "Làm cách nào để đồng bộ dữ liệu giữa Power Apps và các hệ thống bên ngoài?",
-    "answer": "Sử dụng Power Automate và custom connectors để tự động đồng bộ hóa dữ liệu giữa các hệ thống, đảm bảo tính nhất quán."
-  },
-  {
-    "question": "Làm cách nào để tích hợp các biểu mẫu tùy chỉnh từ Power Apps vào Dynamics 365?",
-    "answer": "Sử dụng model-driven app để nhúng các form tùy chỉnh được tạo từ Power Apps vào Dynamics 365, giúp tích hợp liền mạch giữa các hệ thống."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa tốc độ tải dữ liệu trong Power Apps?",
-    "answer": "Tối ưu hóa truy vấn, sử dụng delegation và caching để giảm thiểu thời gian tải và xử lý dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Fx cho các phép tính toán phức tạp trong Power Apps?",
-    "answer": "Sử dụng các hàm toán học và logic của Power Fx để thực hiện các phép tính phức tạp, kết hợp với biến và collection để lưu trữ kết quả tạm thời."
-  },
-  {
-    "question": "Làm cách nào để kiểm soát quyền truy cập dữ liệu trong Power Apps?",
-    "answer": "Sử dụng các security role trong Dataverse và thiết lập quyền truy cập qua Azure AD để đảm bảo chỉ người dùng được ủy quyền mới có thể truy cập dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với Dynamics 365 Finance?",
-    "answer": "Sử dụng connector Dynamics 365 Finance để kết nối và truy xuất dữ liệu tài chính, giúp đồng bộ hóa thông tin giữa các hệ thống."
-  },
-  {
-    "question": "Làm cách nào để tạo trải nghiệm người dùng cá nhân hóa trong Power Apps?",
-    "answer": "Sử dụng context, user settings và custom themes để hiển thị giao diện tùy chỉnh phù hợp với từng người dùng."
-  },
-  {
-    "question": "Làm cách nào để triển khai kiểm thử tự động cho Power Apps?",
-    "answer": "Sử dụng Power Apps Test Studio và các công cụ kiểm thử tự động để tạo kịch bản test và đảm bảo tính ổn định của ứng dụng."
-  },
-  {
-    "question": "Làm cách nào để xử lý lỗi và exception trong Power Apps?",
-    "answer": "Sử dụng hàm IfError và kiểm tra điều kiện trong Power Fx để xử lý lỗi một cách mượt mà, hiển thị thông báo lỗi cho người dùng."
-  },
-  {
-    "question": "Làm cách nào để sử dụng các biến toàn cục trong Power Apps?",
-    "answer": "Sử dụng hàm Set để tạo biến toàn cục và UpdateContext cho biến cục bộ nhằm chia sẻ dữ liệu giữa các màn hình trong ứng dụng."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Apps với Microsoft Flow (Power Automate) để tự động hóa quy trình?",
-    "answer": "Kết nối Power Apps với Power Automate qua các trigger và action, tự động hóa các tác vụ như gửi email, cập nhật dữ liệu và báo cáo."
-  },
-  {
-    "question": "Làm cách nào để sử dụng custom connectors trong Power Apps?",
-    "answer": "Tạo custom connector qua Power Platform Admin Center để kết nối với API bên ngoài, sau đó sử dụng nó trong ứng dụng của bạn."
-  },
-  {
-    "question": "Làm cách nào để quản lý các phiên bản của app khi có thay đổi thường xuyên?",
-    "answer": "Sử dụng hệ thống versioning của Power Platform để lưu lại các phiên bản khác nhau và triển khai cập nhật một cách có kiểm soát."
-  },
-  {
-    "question": "Làm cách nào để sử dụng control Collection trong Power Apps?",
-    "answer": "Sử dụng hàm Collect và ClearCollect để tạo và quản lý collection, lưu trữ tạm thời dữ liệu trong ứng dụng."
-  },
-  {
-    "question": "Làm cách nào để tích hợp các dịch vụ AI Builder vào Power Apps?",
-    "answer": "Sử dụng AI Builder để tạo các model dự đoán, nhận dạng hình ảnh hoặc xử lý ngôn ngữ, sau đó tích hợp qua connector vào Power Apps."
-  },
-  {
-    "question": "Làm cách nào để tạo ứng dụng Power Apps với giao diện dark mode?",
-    "answer": "Sử dụng custom themes và CSS để tạo giao diện dark mode, cho phép người dùng chuyển đổi giữa dark và light mode."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu liên quan đến ngày tháng trong Power Apps?",
-    "answer": "Sử dụng các hàm DateValue, TimeValue và DateDiff trong Power Fx để xử lý và định dạng ngày tháng theo yêu cầu."
-  },
-  {
-    "question": "Làm cách nào để tích hợp các thành phần tùy chỉnh từ PCF vào Power Apps?",
-    "answer": "Sử dụng Power Apps Component Framework (PCF) để phát triển các control tùy chỉnh và tích hợp chúng vào ứng dụng model-driven hoặc canvas."
-  }
-],
-
+    {
+      "question": "Sự khác biệt giữa model-driven app và canvas app trong Power Apps là gì?",
+      "answer": "Model-driven app là các ứng dụng dựa trên mô hình dữ liệu, có cấu trúc định sẵn, trong khi canvas app là các ứng dụng tùy chỉnh, cho phép thiết kế giao diện từ đầu với drag-and-drop."
+    },
+    {
+      "question": "Làm cách nào để tạo một model-driven app trong Power Apps?",
+      "answer": "Sử dụng Power Apps Maker, chọn 'Create from scratch' hoặc 'Create from template', sau đó định nghĩa các entity, form, view và các tính năng khác."
+    },
+    {
+      "question": "Những component của một model-driven app là gì?",
+      "answer": "Bao gồm các entity, form, view, dashboard và các tính năng như workflow, business rules, v.v."
+    },
+    {
+      "question": "Làm cách nào để kết nối một model-driven app với nguồn dữ liệu?",
+      "answer": "Model-driven app thường kết nối trực tiếp với Dynamics 365 database hoặc các nguồn dữ liệu khác thông qua connectors."
+    },
+    {
+      "question": "Làm cách nào để tùy chỉnh giao diện của một model-driven app?",
+      "answer": "Sử dụng các tính năng customization của Power Apps, như thiết kế form, tạo các view tùy chỉnh và sử dụng các widget."
+    },
+    {
+      "question": "Canvas app trong Power Apps là gì?",
+      "answer": "Canvas app là các ứng dụng tùy chỉnh, cho phép người dùng thiết kế giao diện từ đầu với drag-and-drop, kết nối với các nguồn dữ liệu khác nhau."
+    },
+    {
+      "question": "Làm cách nào để tạo một canvas app từ đầu?",
+      "answer": "Sử dụng Power Apps Studio, chọn 'Blank app', sau đó thiết kế giao diện bằng cách kéo thả các control và kết nối với dữ liệu."
+    },
+    {
+      "question": "Những nguồn dữ liệu mà canvas app có thể kết nối là gì?",
+      "answer": "Canvas app có thể kết nối với các nguồn dữ liệu như Dynamics 365, SharePoint, Excel, SQL Server và nhiều nguồn khác thông qua connectors."
+    },
+    {
+      "question": "Làm cách nào để triển khai một Power App?",
+      "answer": "Sau khi hoàn thành thiết kế, bạn có thể xuất bản app để chia sẻ với người dùng khác hoặc triển khai trên các thiết bị di động và web."
+    },
+    {
+      "question": "Những best practices cho việc phát triển Power Apps là gì?",
+      "answer": "Giữ cho app đơn giản, tập trung vào trải nghiệm người dùng, sử dụng các mẫu và thành phần có sẵn, và kiểm tra kỹ trước khi triển khai."
+    },
+    {
+      "question": "Làm cách nào để thêm logic vào một canvas app?",
+      "answer": "Sử dụng Power Fx – một ngôn ngữ lập trình giống Excel – để thêm logic cho các control và hành động trong app."
+    },
+    {
+      "question": "Làm cách nào để bảo mật một Power App?",
+      "answer": "Sử dụng các quy tắc bảo mật của Power Apps như phân quyền người dùng và tích hợp với Azure AD để xác thực truy cập."
+    },
+    {
+      "question": "Làm cách nào để kết nối canvas app với Dynamics 365?",
+      "answer": "Sử dụng connector Dynamics 365 trong Power Apps Studio để kết nối và truy cập dữ liệu từ Dynamics 365."
+    },
+    {
+      "question": "Làm cách nào để tạo một form tùy chỉnh trong model-driven app?",
+      "answer": "Sử dụng App Designer để thêm hoặc chỉnh sửa form, thêm các field, section và business rules theo yêu cầu."
+    },
+    {
+      "question": "Làm cách nào để test một Power App trước khi triển khai?",
+      "answer": "Sử dụng chế độ preview trong Power Apps Studio hoặc tạo environment test để kiểm tra toàn bộ chức năng của app."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power App với Power Automate?",
+      "answer": "Sử dụng các trigger và action có sẵn trong Power Automate để tự động hóa quy trình từ Power App."
+    },
+    {
+      "question": "Làm cách nào để tùy chỉnh dashboard trong model-driven app?",
+      "answer": "Sử dụng Dashboard Designer để thêm các chart, grid và các thành phần hiển thị dữ liệu, sau đó lưu và áp dụng cho app."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu ngoại tuyến trong canvas app?",
+      "answer": "Sử dụng tính năng offline của Power Apps để lưu trữ dữ liệu cục bộ và đồng bộ hóa lại khi có kết nối."
+    },
+    {
+      "question": "Làm cách nào để chia sẻ một Power App với người dùng khác?",
+      "answer": "Xuất bản app và chia sẻ qua Power Apps portal hoặc gán quyền truy cập cho người dùng thông qua Azure AD."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa hiệu suất của một Power App?",
+      "answer": "Giảm số lượng control, tối ưu hóa truy vấn dữ liệu, sử dụng caching cho dữ liệu tĩnh và kiểm tra performance thường xuyên."
+    },
+    {
+      "question": "Làm cách nào để tạo custom component trong Power Apps?",
+      "answer": "Sử dụng Power Apps Component Framework (PCF) để phát triển và triển khai các thành phần tùy chỉnh có thể tái sử dụng."
+    },
+    {
+      "question": "Các kỹ thuật debug nào hỗ trợ trong Power Apps?",
+      "answer": "Sử dụng tính năng Monitor trong Power Apps Studio, theo dõi error messages và sử dụng Power Fx formula checker để phát hiện lỗi."
+    },
+    {
+      "question": "Làm cách nào để triển khai version control cho Power Apps?",
+      "answer": "Xuất file app ra dưới dạng package, sử dụng Git hoặc các công cụ quản lý source code để theo dõi phiên bản và cập nhật thay đổi."
+    },
+    {
+      "question": "Những lợi ích của việc sử dụng Common Data Service (Dataverse) trong Power Apps là gì?",
+      "answer": "Dataverse cung cấp một nền tảng dữ liệu tập trung, giúp dễ dàng chia sẻ, quản lý và bảo mật dữ liệu giữa các ứng dụng Power Platform."
+    },
+    {
+      "question": "Làm cách nào để tạo mối liên hệ giữa các entity trong model-driven app?",
+      "answer": "Sử dụng tính năng relationship trong Dataverse để định nghĩa các mối liên hệ 1-1, 1-n hoặc n-n giữa các entity."
+    },
+    {
+      "question": "Làm thế nào để thêm business rules trong model-driven app?",
+      "answer": "Sử dụng Business Rules Designer trong Power Apps để tạo các quy tắc tự động điều chỉnh dữ liệu và hiển thị form."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Fx cho các tính năng nâng cao trong canvas app?",
+      "answer": "Viết công thức Power Fx để xử lý logic, tính toán, xử lý lỗi và điều khiển giao diện người dùng động trong canvas app."
+    },
+    {
+      "question": "Làm thế nào để tích hợp AI Builder vào Power Apps?",
+      "answer": "Sử dụng AI Builder để tạo các model dự đoán, nhận dạng hình ảnh hoặc phân tích văn bản và tích hợp trực tiếp vào Power Apps qua connector."
+    },
+    {
+      "question": "Các bước để tạo một app responsive trên Power Apps là gì?",
+      "answer": "Sử dụng các thuộc tính Responsive Layout, thiết kế giao diện dựa trên relative positioning và test trên nhiều kích thước màn hình khác nhau."
+    },
+    {
+      "question": "Làm cách nào để thiết lập custom themes cho Power Apps?",
+      "answer": "Sử dụng Power Apps Theme Designer hoặc chỉnh sửa file JSON để định nghĩa màu sắc, font chữ và style phù hợp với thương hiệu."
+    },
+    {
+      "question": "Làm cách nào để quản lý permissions cho người dùng trong Power Apps?",
+      "answer": "Thiết lập phân quyền trong Power Apps thông qua Azure AD, gán roles và sử dụng các security roles trong Dataverse."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với Microsoft Teams?",
+      "answer": "Sử dụng connector Microsoft Teams để nhúng app vào Teams hoặc tạo tab trong Teams chứa Power App."
+    },
+    {
+      "question": "Làm cách nào để tạo các báo cáo tùy chỉnh từ dữ liệu trong Power Apps?",
+      "answer": "Kết nối Power Apps với Power BI, sau đó xây dựng báo cáo và dashboard dựa trên dữ liệu được thu thập từ app."
+    },
+    {
+      "question": "Làm cách nào để xử lý lỗi trong Power Fx?",
+      "answer": "Sử dụng hàm IfError, Try hoặc kiểm tra điều kiện trước khi thực thi công thức để xử lý lỗi trong Power Fx."
+    },
+    {
+      "question": "Làm thế nào để tạo các screens và navigation logic trong canvas app?",
+      "answer": "Sử dụng hàm Navigate trong Power Fx để chuyển đổi giữa các màn hình, thiết lập biến context để lưu trạng thái chuyển trang."
+    },
+    {
+      "question": "Làm cách nào để triển khai các custom connector trong Power Apps?",
+      "answer": "Đăng ký custom connector qua Power Apps portal, cấu hình endpoint và xác thực, sau đó sử dụng connector đó trong app."
+    },
+    {
+      "question": "Làm cách nào để tích hợp dữ liệu từ Excel vào canvas app?",
+      "answer": "Sử dụng connector Excel, upload file Excel lên OneDrive hoặc SharePoint và kết nối để lấy dữ liệu cho canvas app."
+    },
+    {
+      "question": "Làm cách nào để cấu hình tính năng auto-save trong Power Apps?",
+      "answer": "Sử dụng Power Fx để thiết lập timer tự động lưu dữ liệu vào nguồn dữ liệu sau mỗi khoảng thời gian nhất định."
+    },
+    {
+      "question": "Làm cách nào để tạo các biểu mẫu (forms) động trong canvas app?",
+      "answer": "Sử dụng các control như Edit Form và Display Form, kết hợp với Power Fx để hiển thị hoặc ẩn các trường dựa trên điều kiện."
+    },
+    {
+      "question": "Làm cách nào để tạo các custom validation cho dữ liệu nhập trong Power Apps?",
+      "answer": "Sử dụng Power Fx để kiểm tra điều kiện dữ liệu nhập, hiển thị thông báo lỗi nếu không thỏa mãn và ngăn lưu dữ liệu không hợp lệ."
+    },
+    {
+      "question": "Làm cách nào để sử dụng các mẫu (templates) có sẵn trong Power Apps?",
+      "answer": "Chọn mẫu có sẵn từ Power Apps Studio, sau đó chỉnh sửa giao diện và logic để phù hợp với yêu cầu của doanh nghiệp."
+    },
+    {
+      "question": "Làm thế nào để tích hợp Power Apps với các dịch vụ đám mây khác của Microsoft?",
+      "answer": "Sử dụng các connector có sẵn để tích hợp với SharePoint, OneDrive, Outlook và các dịch vụ khác, đảm bảo đồng bộ hóa dữ liệu giữa các nền tảng."
+    },
+    {
+      "question": "Làm cách nào để triển khai Power Apps trên thiết bị di động?",
+      "answer": "Sau khi xuất bản, người dùng có thể tải ứng dụng Power Apps từ cửa hàng ứng dụng (App Store/Google Play) và đăng nhập bằng tài khoản của mình để sử dụng."
+    },
+    {
+      "question": "Làm cách nào để quản lý môi trường (environment) trong Power Apps?",
+      "answer": "Sử dụng Power Platform Admin Center để tạo, xóa, chuyển đổi và cấu hình các environment (production, sandbox, trial) theo nhu cầu."
+    },
+    {
+      "question": "Làm cách nào để triển khai quy trình làm việc (workflow) trong Power Apps?",
+      "answer": "Sử dụng Power Automate kết hợp với Power Apps để tạo các workflow tự động dựa trên các trigger từ app."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với Dynamics 365 Customer Engagement?",
+      "answer": "Sử dụng connector Dynamics 365 để kết nối và truy xuất dữ liệu từ Customer Engagement, tích hợp trực tiếp vào app."
+    },
+    {
+      "question": "Làm cách nào để thiết lập các tùy chỉnh giao diện cho canvas app theo thiết bị sử dụng?",
+      "answer": "Sử dụng các công cụ responsive layout và Power Fx để điều chỉnh kích thước, vị trí control dựa trên kích thước màn hình của thiết bị."
+    },
+    {
+      "question": "Làm cách nào để lưu trữ và quản lý các file media trong Power Apps?",
+      "answer": "Kết nối với SharePoint hoặc OneDrive để lưu trữ file media và sử dụng connector tương ứng để truy xuất và hiển thị trong app."
+    },
+    {
+      "question": "Làm cách nào để tạo các alert hoặc thông báo trong Power Apps?",
+      "answer": "Sử dụng control Notification hoặc hàm Notify trong Power Fx để hiển thị thông báo cho người dùng khi có sự kiện xảy ra."
+    },
+    {
+      "question": "Làm cách nào để quản lý các phiên bản của app khi có cập nhật?",
+      "answer": "Xuất bản các phiên bản mới và sử dụng Power Platform Admin Center để theo dõi lịch sử thay đổi, cũng như khôi phục phiên bản cũ nếu cần."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Apps để tạo các ứng dụng theo quy trình nghiệp vụ phức tạp?",
+      "answer": "Kết hợp các tính năng của model-driven app và canvas app, sử dụng Power Automate, AI Builder và Dataverse để xây dựng quy trình nghiệp vụ tự động và linh hoạt."
+    },
+    {
+      "question": "Làm cách nào để triển khai các giải pháp tùy chỉnh mà không làm gián đoạn hoạt động của hệ thống?",
+      "answer": "Phát triển và test trên sandbox, sau đó sử dụng solution packaging để triển khai dần trên môi trường production có kế hoạch backup và rollback."
+    },
+    {
+      "question": "Làm cách nào để giám sát hiệu suất của Power Apps sau khi triển khai?",
+      "answer": "Sử dụng Monitor, Application Insights và Power Platform Admin Center để theo dõi các chỉ số hiệu suất và log lỗi trong quá trình hoạt động."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với dữ liệu thời gian thực?",
+      "answer": "Kết nối với các dịch vụ dữ liệu thời gian thực thông qua API, sử dụng connector phù hợp và thiết lập các luồng làm mới dữ liệu tự động."
+    },
+    {
+      "question": "Làm cách nào để xử lý các tình huống mất kết nối Internet trong canvas app?",
+      "answer": "Khai báo các trạng thái offline, lưu dữ liệu tạm thời cục bộ và đồng bộ lại khi có kết nối bằng cách sử dụng hàm SaveData và LoadData."
+    },
+    {
+      "question": "Làm cách nào để tạo giao diện người dùng thân thiện và trực quan trong Power Apps?",
+      "answer": "Sử dụng thiết kế hiện đại, bố cục rõ ràng, các control nhất quán và tuân theo các guideline về UX của Microsoft."
+    },
+    {
+      "question": "Làm cách nào để tích hợp chức năng tìm kiếm nâng cao trong Power Apps?",
+      "answer": "Sử dụng các hàm tìm kiếm của Power Fx, kết hợp với bộ lọc dữ liệu trong Dataverse để xây dựng chức năng tìm kiếm mạnh mẽ."
+    },
+    {
+      "question": "Làm cách nào để cấu hình các quyền truy cập dựa trên vai trò trong Power Apps?",
+      "answer": "Sử dụng quản lý người dùng qua Azure AD và thiết lập các security role trong Dataverse để phân quyền truy cập dữ liệu cho từng người dùng."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với các hệ thống bên ngoài thông qua API REST?",
+      "answer": "Tạo custom connector để kết nối với API REST của hệ thống bên ngoài, sau đó sử dụng connector này trong app để gọi dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để xây dựng các ứng dụng Power Apps có khả năng mở rộng cao?",
+      "answer": "Thiết kế app theo kiến trúc modular, sử dụng Dataverse làm nền tảng dữ liệu và tối ưu hóa logic với Power Fx để hỗ trợ lượng người dùng lớn."
+    },
+    {
+      "question": "Làm cách nào để xử lý các tác vụ tính toán phức tạp trong Power Apps?",
+      "answer": "Sử dụng Power Fx để thực hiện các tính toán, kết hợp với việc lưu trữ tạm thời dữ liệu trong các biến và collection để tối ưu hiệu suất."
+    },
+    {
+      "question": "Làm cách nào để tạo các biểu đồ và đồ thị trong Power Apps?",
+      "answer": "Sử dụng các control chart có sẵn hoặc tích hợp Power BI để hiển thị dữ liệu dưới dạng biểu đồ, đồ thị trực quan trong app."
+    },
+    {
+      "question": "Làm cách nào để quản lý dữ liệu nhập từ người dùng một cách an toàn trong Power Apps?",
+      "answer": "Thiết lập validation rules, sử dụng các hàm kiểm tra trong Power Fx và mã hóa dữ liệu nhạy cảm khi lưu trữ."
+    },
+    {
+      "question": "Làm cách nào để tích hợp chức năng định vị (geolocation) vào canvas app?",
+      "answer": "Sử dụng control Location và các hàm Power Fx để truy xuất vị trí của thiết bị, sau đó hiển thị trên bản đồ hoặc xử lý dữ liệu theo vị trí."
+    },
+    {
+      "question": "Làm cách nào để triển khai ứng dụng Power Apps qua các môi trường (Dev, Test, Production)?",
+      "answer": "Sử dụng Power Platform Admin Center để tạo nhiều environment, xuất bản solution từ môi trường Dev lên Test và cuối cùng triển khai trên Production."
+    },
+    {
+      "question": "Làm cách nào để cấu hình tích hợp Power Apps với Dynamics 365 Marketing?",
+      "answer": "Sử dụng connector Dynamics 365 Marketing và tích hợp dữ liệu từ Marketing vào app để theo dõi chiến dịch và tương tác khách hàng."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa thời gian load của Power Apps?",
+      "answer": "Giảm số lượng control, tối ưu hóa các truy vấn dữ liệu, sử dụng các collection để lưu trữ tạm thời và kiểm tra performance thường xuyên."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu phức tạp từ nhiều nguồn trong một Power App?",
+      "answer": "Sử dụng các hàm Power Fx để hợp nhất dữ liệu từ nhiều nguồn, kết hợp với Dataverse để lưu trữ và xử lý tập trung."
+    },
+    {
+      "question": "Làm cách nào để tạo và sử dụng reusable components trong Power Apps?",
+      "answer": "Phát triển các component tùy chỉnh bằng Power Apps Component Framework (PCF) và lưu trữ chúng để sử dụng lại trong nhiều app khác nhau."
+    },
+    {
+      "question": "Làm cách nào để tích hợp chức năng chat hoặc hỗ trợ trực tuyến trong Power Apps?",
+      "answer": "Sử dụng các connector của dịch vụ chat như Microsoft Bot Framework hoặc tích hợp qua Web API để cung cấp tính năng chat trong app."
+    },
+    {
+      "question": "Làm cách nào để theo dõi và báo cáo các hoạt động của người dùng trong Power Apps?",
+      "answer": "Sử dụng tính năng logging tích hợp và kết nối với Power BI để thu thập dữ liệu hoạt động của người dùng và tạo báo cáo phân tích."
+    },
+    {
+      "question": "Làm cách nào để cấu hình chuyển hướng (redirect) trong Power Apps sau khi thực hiện một hành động?",
+      "answer": "Sử dụng hàm Navigate trong Power Fx để chuyển hướng người dùng sang màn hình khác sau khi hoàn thành tác vụ."
+    },
+    {
+      "question": "Làm cách nào để tích hợp chức năng quét mã vạch (barcode) vào canvas app?",
+      "answer": "Sử dụng camera control và tích hợp API quét mã vạch để đọc dữ liệu từ mã QR hoặc mã vạch trong app."
+    },
+    {
+      "question": "Làm cách nào để tạo một ứng dụng Power Apps cho quản lý dự án?",
+      "answer": "Kết hợp các control danh sách, form và dashboard để theo dõi tiến độ dự án, phân công công việc và báo cáo tình hình dự án."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với hệ thống ERP hiện có?",
+      "answer": "Sử dụng custom connector hoặc các connector có sẵn để kết nối Power Apps với hệ thống ERP, đảm bảo chuyển đổi dữ liệu hợp lý."
+    },
+    {
+      "question": "Làm cách nào để xử lý các tình huống xung đột dữ liệu trong Power Apps?",
+      "answer": "Sử dụng cơ chế lock hoặc kiểm tra dữ liệu trước khi ghi, đồng thời áp dụng quy trình xử lý lỗi để đảm bảo tính nhất quán của dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để triển khai các cập nhật thường xuyên cho Power Apps mà không ảnh hưởng đến người dùng?",
+      "answer": "Triển khai trên môi trường sandbox trước, sau đó lên lịch cập nhật trên production vào thời điểm ít người dùng truy cập và thông báo trước."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với Microsoft Dataverse?",
+      "answer": "Sử dụng connector Dataverse để quản lý, đồng bộ và truy xuất dữ liệu tập trung giữa các ứng dụng Power Platform."
+    },
+    {
+      "question": "Làm cách nào để bảo mật dữ liệu trong Power Apps khi truy cập từ thiết bị di động?",
+      "answer": "Sử dụng Azure AD, Multi-Factor Authentication và cấu hình chính sách bảo mật cho ứng dụng mobile để bảo vệ dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để tạo ứng dụng Power Apps có khả năng mở rộng toàn cầu?",
+      "answer": "Thiết kế ứng dụng với localization, responsive design và tối ưu hiệu suất để phục vụ người dùng trên toàn thế giới."
+    },
+    {
+      "question": "Làm cách nào để tích hợp các báo cáo từ Power BI vào Power Apps?",
+      "answer": "Sử dụng control Power BI tile để nhúng báo cáo trực tiếp vào ứng dụng Power Apps, cung cấp dữ liệu tương tác cho người dùng."
+    },
+    {
+      "question": "Làm cách nào để xử lý sự khác biệt về múi giờ trong Power Apps?",
+      "answer": "Sử dụng hàm DateTimeValue và TimeZoneOffset trong Power Fx để chuyển đổi và định dạng thời gian theo múi giờ của người dùng."
+    },
+    {
+      "question": "Làm cách nào để đồng bộ dữ liệu giữa Power Apps và các hệ thống bên ngoài?",
+      "answer": "Sử dụng Power Automate và custom connectors để tự động đồng bộ hóa dữ liệu giữa các hệ thống, đảm bảo tính nhất quán."
+    },
+    {
+      "question": "Làm cách nào để tích hợp các biểu mẫu tùy chỉnh từ Power Apps vào Dynamics 365?",
+      "answer": "Sử dụng model-driven app để nhúng các form tùy chỉnh được tạo từ Power Apps vào Dynamics 365, giúp tích hợp liền mạch giữa các hệ thống."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa tốc độ tải dữ liệu trong Power Apps?",
+      "answer": "Tối ưu hóa truy vấn, sử dụng delegation và caching để giảm thiểu thời gian tải và xử lý dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Fx cho các phép tính toán phức tạp trong Power Apps?",
+      "answer": "Sử dụng các hàm toán học và logic của Power Fx để thực hiện các phép tính phức tạp, kết hợp với biến và collection để lưu trữ kết quả tạm thời."
+    },
+    {
+      "question": "Làm cách nào để kiểm soát quyền truy cập dữ liệu trong Power Apps?",
+      "answer": "Sử dụng các security role trong Dataverse và thiết lập quyền truy cập qua Azure AD để đảm bảo chỉ người dùng được ủy quyền mới có thể truy cập dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với Dynamics 365 Finance?",
+      "answer": "Sử dụng connector Dynamics 365 Finance để kết nối và truy xuất dữ liệu tài chính, giúp đồng bộ hóa thông tin giữa các hệ thống."
+    },
+    {
+      "question": "Làm cách nào để tạo trải nghiệm người dùng cá nhân hóa trong Power Apps?",
+      "answer": "Sử dụng context, user settings và custom themes để hiển thị giao diện tùy chỉnh phù hợp với từng người dùng."
+    },
+    {
+      "question": "Làm cách nào để triển khai kiểm thử tự động cho Power Apps?",
+      "answer": "Sử dụng Power Apps Test Studio và các công cụ kiểm thử tự động để tạo kịch bản test và đảm bảo tính ổn định của ứng dụng."
+    },
+    {
+      "question": "Làm cách nào để xử lý lỗi và exception trong Power Apps?",
+      "answer": "Sử dụng hàm IfError và kiểm tra điều kiện trong Power Fx để xử lý lỗi một cách mượt mà, hiển thị thông báo lỗi cho người dùng."
+    },
+    {
+      "question": "Làm cách nào để sử dụng các biến toàn cục trong Power Apps?",
+      "answer": "Sử dụng hàm Set để tạo biến toàn cục và UpdateContext cho biến cục bộ nhằm chia sẻ dữ liệu giữa các màn hình trong ứng dụng."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Apps với Microsoft Flow (Power Automate) để tự động hóa quy trình?",
+      "answer": "Kết nối Power Apps với Power Automate qua các trigger và action, tự động hóa các tác vụ như gửi email, cập nhật dữ liệu và báo cáo."
+    },
+    {
+      "question": "Làm cách nào để sử dụng custom connectors trong Power Apps?",
+      "answer": "Tạo custom connector qua Power Platform Admin Center để kết nối với API bên ngoài, sau đó sử dụng nó trong ứng dụng của bạn."
+    },
+    {
+      "question": "Làm cách nào để quản lý các phiên bản của app khi có thay đổi thường xuyên?",
+      "answer": "Sử dụng hệ thống versioning của Power Platform để lưu lại các phiên bản khác nhau và triển khai cập nhật một cách có kiểm soát."
+    },
+    {
+      "question": "Làm cách nào để sử dụng control Collection trong Power Apps?",
+      "answer": "Sử dụng hàm Collect và ClearCollect để tạo và quản lý collection, lưu trữ tạm thời dữ liệu trong ứng dụng."
+    },
+    {
+      "question": "Làm cách nào để tích hợp các dịch vụ AI Builder vào Power Apps?",
+      "answer": "Sử dụng AI Builder để tạo các model dự đoán, nhận dạng hình ảnh hoặc xử lý ngôn ngữ, sau đó tích hợp qua connector vào Power Apps."
+    },
+    {
+      "question": "Làm cách nào để tạo ứng dụng Power Apps với giao diện dark mode?",
+      "answer": "Sử dụng custom themes và CSS để tạo giao diện dark mode, cho phép người dùng chuyển đổi giữa dark và light mode."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu liên quan đến ngày tháng trong Power Apps?",
+      "answer": "Sử dụng các hàm DateValue, TimeValue và DateDiff trong Power Fx để xử lý và định dạng ngày tháng theo yêu cầu."
+    },
+    {
+      "question": "Làm cách nào để tích hợp các thành phần tùy chỉnh từ PCF vào Power Apps?",
+      "answer": "Sử dụng Power Apps Component Framework (PCF) để phát triển các control tùy chỉnh và tích hợp chúng vào ứng dụng model-driven hoặc canvas."
+    }
+  ],
   "Dynamics: Power Automate": [
-  {
-    "question": "Power Automate là gì?",
-    "answer": "Power Automate là dịch vụ tự động hóa quy trình của Microsoft, trước đây gọi là Microsoft Flow."
-  },
-  {
-    "question": "Power Automate tích hợp với Dynamics 365 như thế nào?",
-    "answer": "Sử dụng connector Dynamics 365 để tạo flow tương tác với dữ liệu và quy trình trong Dynamics 365."
-  },
-  {
-    "question": "Các loại flow trong Power Automate là gì?",
-    "answer": "Power Automate hỗ trợ các loại flow như flow tự động, flow tức thì và flow theo lịch."
-  },
-  {
-    "question": "Làm cách nào để tạo flow kích hoạt khi tạo bản ghi mới trong Dynamics 365?",
-    "answer": "Dùng trigger 'When a record is created' từ connector Dynamics 365 để kích hoạt flow."
-  },
-  {
-    "question": "Làm cách nào để xử lý xác thực cho Dynamics 365 trong Power Automate?",
-    "answer": "Cung cấp thông tin đăng nhập Dynamics 365 khi thiết lập connector để xác thực kết nối."
-  },
-  {
-    "question": "Sự khác biệt giữa flow và workflow cổ điển trong Dynamics 365 là gì?",
-    "answer": "Flow có khả năng tích hợp nhiều hệ thống khác nhau trong khi workflow cổ điển chỉ hoạt động trong Dynamics 365."
-  },
-  {
-    "question": "Làm cách nào để truyền dữ liệu giữa các bước trong flow?",
-    "answer": "Sử dụng biến (variables) để lưu trữ và truyền dữ liệu giữa các bước trong flow."
-  },
-  {
-    "question": "Expressions trong Power Automate là gì và dùng như thế nào?",
-    "answer": "Expressions là các công thức tính toán và xử lý dữ liệu dùng cú pháp đặc trưng (ví dụ: bắt đầu bằng @) để chuyển đổi hoặc định dạng dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để debug flow trong Power Automate?",
-    "answer": "Sử dụng chế độ 'Test' để chạy thử và xem chi tiết 'Run history' nhằm xác định lỗi trong flow."
-  },
-  {
-    "question": "Giới hạn governor trong Power Automate ảnh hưởng thiết kế flow như thế nào?",
-    "answer": "Giới hạn governor quy định số lượng hành động, thời gian chạy và tài nguyên, do đó cần tối ưu flow tránh vượt quá giới hạn này."
-  },
-  {
-    "question": "Làm cách nào để xử lý lỗi trong flow?",
-    "answer": "Sử dụng các nhánh điều kiện (Condition), 'Configure run after' hoặc block Scope với hành động Catch để xử lý lỗi."
-  },
-  {
-    "question": "Scope trong Power Automate là gì và khi nào dùng?",
-    "answer": "Scope là nhóm hành động được gom lại nhằm tổ chức flow phức tạp hoặc để xử lý lỗi theo nhóm."
-  },
-  {
-    "question": "Làm cách nào để kết nối với API bên ngoài trong Power Automate?",
-    "answer": "Sử dụng connector 'HTTP' để gửi yêu cầu và nhận dữ liệu từ API bên ngoài."
-  },
-  {
-    "question": "Vai trò của connectors trong Power Automate là gì?",
-    "answer": "Connectors cho phép flow kết nối với các ứng dụng, dịch vụ và hệ thống khác nhau, cung cấp trigger và hành động tương ứng."
-  },
-  {
-    "question": "Làm cách nào để tạo connector tùy chỉnh trong Power Automate?",
-    "answer": "Sử dụng công cụ tạo custom connector trên Power Automate portal, định nghĩa endpoint, xác thực và các hành động API."
-  },
-  {
-    "question": "Sự khác biệt giữa flow và Logic App trong Azure là gì?",
-    "answer": "Flow là một phần của Power Platform hướng đến người dùng doanh nghiệp, trong khi Logic App của Azure có khả năng mở rộng và tích hợp sâu vào hạ tầng đám mây Azure."
-  },
-  {
-    "question": "Làm cách nào để version control flow trong Power Automate?",
-    "answer": "Bằng cách tạo phiên bản mới cho flow, lưu trữ và ghi chú các thay đổi để có thể quay lại phiên bản trước nếu cần."
-  },
-  {
-    "question": "Best practices cho đặt tên trong Power Automate là gì?",
-    "answer": "Sử dụng tên miêu tả, nhất quán cho flow, trigger, hành động và biến để dễ dàng quản lý và tìm kiếm."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hiệu suất flow?",
-    "answer": "Giảm số lượng hành động không cần thiết, sử dụng các hành động dữ liệu hiệu quả và tối ưu hóa truy vấn để cải thiện tốc độ chạy."
-  },
-  {
-    "question": "Những ứng dụng phổ biến của Power Automate trong Dynamics 365 là gì?",
-    "answer": "Power Automate được sử dụng để tự động hóa quy trình như đánh giá lead, cập nhật khách hàng, gửi thông báo và tích hợp email."
-  },
-  {
-    "question": "Làm cách nào để thêm trigger theo lịch (recurrence) trong flow?",
-    "answer": "Chọn trigger 'Recurrence' và thiết lập tần suất chạy theo giờ, ngày hoặc tuần."
-  },
-  {
-    "question": "Làm cách nào để tạo flow yêu cầu phê duyệt (approval) trong Power Automate?",
-    "answer": "Sử dụng action 'Start and wait for an approval' để gửi yêu cầu phê duyệt và xử lý phản hồi của người dùng."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với Office 365 Outlook?",
-    "answer": "Sử dụng connector Office 365 Outlook để gửi email, đọc thư hoặc quản lý lịch từ bên trong flow."
-  },
-  {
-    "question": "Làm cách nào để sử dụng điều kiện (condition) trong flow?",
-    "answer": "Thêm hành động Condition để so sánh giá trị và xác định nhánh xử lý tiếp theo dựa trên kết quả so sánh."
-  },
-  {
-    "question": "Làm cách nào để tạo vòng lặp (loop) trong Power Automate?",
-    "answer": "Sử dụng hành động 'Apply to each' để lặp qua các phần tử trong một mảng hoặc danh sách dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu theo nhóm trong flow?",
-    "answer": "Sử dụng hành động 'Group by' hoặc kết hợp các bước xử lý trong 'Apply to each' để nhóm và tổng hợp dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để lưu trữ tạm thời dữ liệu trong flow?",
-    "answer": "Sử dụng các biến (variables) như 'Initialize variable' và 'Set variable' để lưu trữ tạm dữ liệu trong quá trình chạy."
-  },
-  {
-    "question": "Làm cách nào để gọi một flow khác từ trong flow hiện tại?",
-    "answer": "Sử dụng hành động 'Run a Child Flow' để gọi và chạy một flow khác, giúp tái sử dụng quy trình đã xây dựng."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu JSON trong Power Automate?",
-    "answer": "Sử dụng hành động 'Parse JSON' để chuyển đổi dữ liệu JSON thành định dạng có thể xử lý trong flow."
-  },
-  {
-    "question": "Làm cách nào để chuyển đổi dữ liệu với hành động Compose?",
-    "answer": "Sử dụng action Compose để định dạng lại hoặc tính toán giá trị dựa trên các expressions và dữ liệu đầu vào."
-  },
-  {
-    "question": "Làm cách nào để lọc mảng dữ liệu trong flow?",
-    "answer": "Sử dụng hành động 'Filter array' để lọc các phần tử dựa trên điều kiện xác định."
-  },
-  {
-    "question": "Làm cách nào để xử lý phân trang (pagination) trong các connector?",
-    "answer": "Cấu hình các thông số phân trang trong connector hoặc sử dụng các tham số như 'skip' và 'top' trong expressions để xử lý dữ liệu phân trang."
-  },
-  {
-    "question": "Làm cách nào để thiết lập kiểm soát song song (concurrency control) trong vòng lặp?",
-    "answer": "Cấu hình tùy chọn Concurrency Control trong hành động 'Apply to each' để giới hạn số lượng phiên bản chạy đồng thời."
-  },
-  {
-    "question": "Làm cách nào để sử dụng action 'Delay' trong flow?",
-    "answer": "Thêm hành động Delay và cấu hình thời gian chờ trước khi chuyển sang bước tiếp theo trong flow."
-  },
-  {
-    "question": "Làm cách nào để thiết lập thông báo khi flow hoàn thành hoặc gặp lỗi?",
-    "answer": "Sử dụng hành động gửi email, thông báo trên Teams hoặc các hệ thống cảnh báo khác dựa trên kết quả chạy của flow."
-  },
-  {
-    "question": "Làm cách nào để chia sẻ flow với các thành viên trong tổ chức?",
-    "answer": "Sử dụng tính năng chia sẻ trên Power Automate để cấp quyền truy cập và chỉnh sửa flow cho các thành viên hoặc nhóm cụ thể."
-  },
-  {
-    "question": "Làm cách nào để xuất và nhập (export/import) flow?",
-    "answer": "Sử dụng tính năng export dưới dạng package trên Power Automate và sau đó import vào environment khác để triển khai flow."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với SharePoint?",
-    "answer": "Sử dụng connector SharePoint để tạo, cập nhật hoặc lấy dữ liệu từ các danh sách và thư mục SharePoint trong flow."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với Microsoft Teams?",
-    "answer": "Sử dụng connector Microsoft Teams để gửi tin nhắn, tạo cuộc họp hoặc cập nhật thông báo trong Teams từ flow."
-  },
-  {
-    "question": "Làm cách nào để sử dụng các template có sẵn trong Power Automate?",
-    "answer": "Chọn từ thư viện mẫu của Power Automate, sau đó tùy chỉnh flow theo yêu cầu cụ thể của doanh nghiệp."
-  },
-  {
-    "question": "Làm cách nào để tạo flow tự động theo lịch (Scheduled Flow)?",
-    "answer": "Chọn trigger 'Recurrence' và cấu hình thời gian chạy định kỳ cho flow, ví dụ như hàng ngày hoặc hàng tuần."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với OneDrive?",
-    "answer": "Sử dụng connector OneDrive để tải lên, tải xuống hoặc quản lý tệp tin trong OneDrive qua flow."
-  },
-  {
-    "question": "Làm cách nào để gọi API REST từ Power Automate?",
-    "answer": "Sử dụng hành động HTTP để gửi yêu cầu GET, POST, PUT hoặc DELETE đến API REST và xử lý kết quả trả về."
-  },
-  {
-    "question": "Làm cách nào để chạy flow theo yêu cầu (on-demand)?",
-    "answer": "Sử dụng trigger 'Manually trigger a flow' cho phép người dùng khởi chạy flow theo yêu cầu từ giao diện Power Automate hoặc ứng dụng di động."
-  },
-  {
-    "question": "Làm cách nào để tạo flow tự động khi có email mới?",
-    "answer": "Sử dụng trigger của connector Outlook như 'When a new email arrives' để khởi chạy flow xử lý email."
-  },
-  {
-    "question": "Làm cách nào để sử dụng điều kiện switch-case trong flow?",
-    "answer": "Thêm hành động Switch để kiểm tra giá trị của biến và xác định nhánh xử lý phù hợp dựa trên từng trường hợp."
-  },
-  {
-    "question": "Làm cách nào để lưu trữ log của flow trong Power Automate?",
-    "answer": "Sử dụng hành động ghi log (ví dụ: ghi vào SharePoint, Excel hoặc một hệ thống logging bên ngoài) để lưu lại thông tin chạy của flow."
-  },
-  {
-    "question": "Làm cách nào để xử lý các trường hợp bất thường (exception) trong flow?",
-    "answer": "Sử dụng cấu hình 'Configure run after' để chỉ định nhánh xử lý khi một hành động thất bại hoặc bị bỏ qua."
-  },
-  {
-    "question": "Làm cách nào để gọi một flow con (child flow) từ flow chính?",
-    "answer": "Sử dụng hành động 'Run a Child Flow' để gọi và chạy một flow đã được đóng gói sẵn từ flow chính."
-  },
-  {
-    "question": "Làm cách nào để chuyển đổi dữ liệu giữa các định dạng trong flow?",
-    "answer": "Sử dụng các action như Compose, Parse JSON hoặc Data Operations để chuyển đổi và định dạng lại dữ liệu theo yêu cầu."
-  },
-  {
-    "question": "Làm cách nào để sử dụng action 'Apply to each' một cách hiệu quả?",
-    "answer": "Tối ưu hóa mảng dữ liệu đầu vào và cấu hình Concurrency Control nếu cần để giảm thời gian xử lý trong vòng lặp."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu dạng mảng và đối tượng trong Power Automate?",
-    "answer": "Sử dụng các hành động như Select, Filter array và Join để chuyển đổi, lọc và hợp nhất dữ liệu từ mảng hoặc đối tượng."
-  },
-  {
-    "question": "Làm cách nào để tích hợp AI Builder vào flow?",
-    "answer": "Sử dụng các action của AI Builder để thực hiện nhận dạng hình ảnh, phân tích văn bản hoặc dự đoán xu hướng dựa trên dữ liệu đầu vào."
-  },
-  {
-    "question": "Làm cách nào để quản lý biến môi trường (environment variables) trong flow?",
-    "answer": "Sử dụng các tham số và biến môi trường được cấu hình trong Power Platform Admin Center để tái sử dụng cấu hình trên nhiều flow."
-  },
-  {
-    "question": "Làm cách nào để thiết lập thông số timeout cho các hành động trong flow?",
-    "answer": "Cấu hình tùy chọn timeout trong các hành động HTTP hoặc các connector hỗ trợ để đảm bảo flow không treo khi chờ đợi phản hồi lâu."
-  },
-  {
-    "question": "Làm cách nào để xử lý các tác vụ tính toán phức tạp trong flow?",
-    "answer": "Sử dụng Expressions và hành động Compose để thực hiện các phép tính toán phức tạp dựa trên dữ liệu đầu vào."
-  },
-  {
-    "question": "Làm cách nào để tạo các nhánh xử lý song song (parallel branches) trong flow?",
-    "answer": "Sử dụng tính năng Parallel Branches để thực hiện các hành động độc lập cùng lúc, giảm thời gian chạy tổng thể của flow."
-  },
-  {
-    "question": "Làm cách nào để chuyển đổi flow sang giải pháp (solution) trong Power Platform?",
-    "answer": "Xuất flow dưới dạng solution package để dễ dàng quản lý, triển khai và chuyển giao giữa các environment khác nhau."
-  },
-  {
-    "question": "Làm cách nào để theo dõi và phân tích lịch sử chạy của flow?",
-    "answer": "Sử dụng phần 'Run history' trên Power Automate để xem chi tiết các lần chạy, thời gian chạy và lỗi (nếu có) của flow."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với Dynamics 365 Customer Engagement?",
-    "answer": "Sử dụng connector Dynamics 365 để kích hoạt flow dựa trên các sự kiện hoặc thay đổi trong Customer Engagement."
-  },
-  {
-    "question": "Làm cách nào để tạo flow xử lý dữ liệu từ các nguồn khác nhau cùng lúc?",
-    "answer": "Kết hợp nhiều trigger hoặc sử dụng các action Data Operations để hợp nhất dữ liệu từ các nguồn khác nhau vào một flow."
-  },
-  {
-    "question": "Làm cách nào để thiết lập cảnh báo tự động khi flow gặp lỗi?",
-    "answer": "Cấu hình thông báo qua email, Microsoft Teams hoặc các hệ thống cảnh báo khác dựa trên kết quả của 'Run history' khi flow bị lỗi."
-  },
-  {
-    "question": "Làm cách nào để sử dụng action 'Terminate' trong flow?",
-    "answer": "Sử dụng action Terminate để dừng flow ngay lập tức, có thể cấu hình trạng thái (Succeeded, Failed, Cancelled) khi dừng."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa tốc độ xử lý của flow với dữ liệu lớn?",
-    "answer": "Chia nhỏ dữ liệu, sử dụng vòng lặp 'Apply to each' với Concurrency Control và giới hạn số lượng hành động trong mỗi bước để giảm tải."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các hệ thống ERP khác?",
-    "answer": "Sử dụng custom connector hoặc các connector có sẵn để kết nối Power Automate với hệ thống ERP như SAP, Oracle thông qua API."
-  },
-  {
-    "question": "Làm cách nào để xây dựng quy trình tự động kiểm tra dữ liệu sau khi di chuyển?",
-    "answer": "Tạo flow so sánh dữ liệu giữa nguồn cũ và mới, sử dụng điều kiện và hành động kiểm tra tính toàn vẹn của dữ liệu."
-  },
-  {
-    "question": "Làm cách nào để triển khai quy trình phê duyệt tài liệu qua Power Automate?",
-    "answer": "Sử dụng action 'Start and wait for an approval' kết hợp với các trigger từ SharePoint hoặc OneDrive để tự động hóa quy trình phê duyệt tài liệu."
-  },
-  {
-    "question": "Làm cách nào để xử lý dữ liệu đầu ra từ flow để báo cáo?",
-    "answer": "Kết nối Power Automate với Power BI hoặc lưu dữ liệu vào Excel/SharePoint để sử dụng cho mục đích báo cáo sau này."
-  },
-  {
-    "question": "Làm cách nào để tạo báo cáo tự động về hiệu suất flow?",
-    "answer": "Sử dụng API Power Automate để trích xuất dữ liệu run history và kết nối với Power BI để tạo báo cáo trực quan về hiệu suất."
-  },
-  {
-    "question": "Làm cách nào để áp dụng chính sách quản trị (governance) cho các flow trong tổ chức?",
-    "answer": "Sử dụng Power Platform Admin Center để quản lý, giám sát và áp dụng các chính sách về bảo mật, quyền truy cập cũng như giới hạn tài nguyên cho flow."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các ứng dụng CRM ngoài Dynamics 365?",
-    "answer": "Sử dụng các connector hoặc custom connector để kết nối Power Automate với các ứng dụng CRM khác như Salesforce hoặc Zoho CRM."
-  },
-  {
-    "question": "Làm cách nào để tạo flow giám sát hộp thư đến trong Office 365?",
-    "answer": "Sử dụng trigger 'When a new email arrives' của connector Office 365 Outlook để khởi chạy flow xử lý email mới."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với hệ thống lưu trữ đám mây khác như Google Drive?",
-    "answer": "Sử dụng connector Google Drive để tạo, cập nhật và quản lý tệp tin qua flow tương tự như với OneDrive."
-  },
-  {
-    "question": "Làm cách nào để xử lý các tình huống mất kết nối khi chạy flow?",
-    "answer": "Sử dụng cấu hình 'Configure run after' để thiết lập hành động xử lý khi một bước thất bại do mất kết nối hoặc lỗi tạm thời."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với hệ thống chatbot?",
-    "answer": "Sử dụng connector Microsoft Bot Framework hoặc custom connector để gửi và nhận dữ liệu từ hệ thống chatbot trong flow."
-  },
-  {
-    "question": "Làm cách nào để tạo các nhánh điều kiện phức tạp với nhiều cấp độ trong flow?",
-    "answer": "Kết hợp nhiều hành động Condition hoặc Switch để xây dựng các nhánh xử lý đa cấp dựa trên các điều kiện khác nhau."
-  },
-  {
-    "question": "Làm cách nào để xử lý các trường hợp xung đột dữ liệu khi nhiều flow cùng thao tác trên cùng một dữ liệu?",
-    "answer": "Sử dụng cơ chế khóa (locking) hoặc kiểm tra dữ liệu trước khi ghi, kết hợp với việc cấu hình thời gian chờ để tránh xung đột."
-  },
-  {
-    "question": "Làm cách nào để kiểm tra và đảm bảo tính nhất quán của dữ liệu sau khi flow chạy?",
-    "answer": "Sử dụng các bước kiểm tra dữ liệu (validation) trong flow và so sánh kết quả với dữ liệu gốc để đảm bảo tính nhất quán."
-  },
-  {
-    "question": "Làm cách nào để thiết lập flow chạy vào giờ thấp điểm nhằm tối ưu tài nguyên?",
-    "answer": "Sử dụng trigger Recurrence và cấu hình thời gian chạy vào ban đêm hoặc giờ thấp điểm để giảm tải cho hệ thống."
-  },
-  {
-    "question": "Làm cách nào để tích hợp các hành động điều khiển phiên (session management) trong flow?",
-    "answer": "Sử dụng các biến lưu trữ thông tin phiên và gọi các flow con để quản lý trạng thái phiên khi xử lý dữ liệu liên tục."
-  },
-  {
-    "question": "Làm cách nào để sử dụng các hàm xử lý chuỗi (string functions) trong flow?",
-    "answer": "Sử dụng Expressions như concat, substring, replace để xử lý và định dạng chuỗi trong các hành động Compose hoặc điều kiện."
-  },
-  {
-    "question": "Làm cách nào để tích hợp adaptive cards vào flow gửi thông báo trên Teams?",
-    "answer": "Sử dụng connector Microsoft Teams để gửi adaptive card, cấu hình nội dung thông báo dựa trên định dạng JSON của adaptive card."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các hệ thống báo cáo nội bộ?",
-    "answer": "Kết nối Power Automate với cơ sở dữ liệu hoặc hệ thống lưu trữ báo cáo (ví dụ: SQL Server, SharePoint) để truyền dữ liệu cho báo cáo tự động."
-  },
-  {
-    "question": "Làm cách nào để áp dụng các kỹ thuật caching trong flow nhằm tăng tốc độ xử lý?",
-    "answer": "Lưu trữ tạm thời dữ liệu không thay đổi bằng biến hoặc lưu vào hệ thống bên ngoài để giảm số lần truy xuất dữ liệu từ nguồn gốc."
-  },
-  {
-    "question": "Làm cách nào để tạo các flow có thể tái sử dụng (reusable flows)?",
-    "answer": "Thiết kế flow dưới dạng Child Flow và sử dụng hành động 'Run a Child Flow' để gọi lại, giúp tái sử dụng logic ở nhiều nơi."
-  },
-  {
-    "question": "Làm cách nào để thiết lập thông báo qua SMS trong Power Automate?",
-    "answer": "Sử dụng connector của dịch vụ SMS (ví dụ: Twilio) để gửi thông báo qua tin nhắn khi flow hoàn thành hoặc gặp lỗi."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các hệ thống IoT?",
-    "answer": "Sử dụng connector Azure IoT Hub hoặc custom connector để nhận và xử lý dữ liệu từ các thiết bị IoT qua flow."
-  },
-  {
-    "question": "Làm cách nào để tự động hóa quy trình xử lý hợp đồng trong Dynamics 365 qua Power Automate?",
-    "answer": "Tạo flow với trigger từ Dynamics 365 khi hợp đồng mới được tạo, sau đó gửi thông báo phê duyệt và cập nhật trạng thái hợp đồng."
-  },
-  {
-    "question": "Làm cách nào để tối ưu hóa chi phí khi sử dụng Power Automate trong tổ chức?",
-    "answer": "Theo dõi số lần chạy flow, sử dụng flow có khả năng chia sẻ và lựa chọn loại flow phù hợp với nhu cầu nghiệp vụ để tối ưu hóa chi phí."
-  },
-  {
-    "question": "Làm cách nào để kiểm soát truy cập và bảo mật cho các flow trong Power Automate?",
-    "answer": "Sử dụng các chính sách bảo mật và quản lý quyền truy cập qua Power Platform Admin Center, kết hợp với Azure AD để kiểm soát ai có thể xem và chỉnh sửa flow."
-  },
-  {
-    "question": "Làm cách nào để theo dõi hiệu suất và thời gian chạy của flow qua API?",
-    "answer": "Sử dụng API của Power Automate để truy xuất thông tin run history và kết nối với Power BI hoặc Azure Monitor để phân tích hiệu suất của flow."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với hệ thống ERP khác ngoài Dynamics 365?",
-    "answer": "Tạo custom connector hoặc sử dụng các connector sẵn có để kết nối Power Automate với hệ thống ERP như SAP hoặc Oracle qua API."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Automate để tự động hóa quy trình quản lý dữ liệu lớn?",
-    "answer": "Thiết kế flow với khả năng xử lý theo lô, sử dụng vòng lặp và tối ưu hóa truy vấn để tự động hóa xử lý và phân tích dữ liệu lớn."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các hệ thống CRM khác như Salesforce?",
-    "answer": "Sử dụng custom connector hoặc connector có sẵn của Salesforce để kết nối và đồng bộ dữ liệu giữa Power Automate và hệ thống CRM đó."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Automate cho các tác vụ bất đồng bộ có thời gian chạy dài?",
-    "answer": "Sử dụng flow bất đồng bộ, thiết lập cấu hình retry và sử dụng các hành động timeout để xử lý các tác vụ có thời gian chạy lâu mà không ảnh hưởng đến flow chính."
-  },
-  {
-    "question": "Làm cách nào để tạo flow đa ngôn ngữ trong Power Automate?",
-    "answer": "Tùy chỉnh thông qua các biểu thức và sử dụng biến chứa giá trị dựa trên ngôn ngữ của người dùng để tạo flow hỗ trợ nhiều ngôn ngữ."
-  },
-  {
-    "question": "Làm cách nào để sử dụng Power Automate để tự động cập nhật báo cáo và dashboard?",
-    "answer": "Thiết kế flow để trích xuất dữ liệu định kỳ và gửi vào Power BI hoặc hệ thống báo cáo khác, tự động cập nhật dashboard dựa trên dữ liệu mới."
-  },
-  {
-    "question": "Làm cách nào để quản lý log và audit các hoạt động của flow trong Power Automate?",
-    "answer": "Sử dụng API của Power Automate để trích xuất log, lưu trữ vào cơ sở dữ liệu hoặc hệ thống báo cáo, và thiết lập cơ chế audit thông qua Power Platform Admin Center."
-  },
-  {
-    "question": "Làm cách nào để tích hợp Power Automate với các công cụ phân tích dữ liệu nâng cao như Azure Monitor?",
-    "answer": "Sử dụng connector Azure Monitor và API để gửi thông tin hiệu suất và log của flow đến Azure Monitor, từ đó phân tích và tối ưu hóa hiệu suất."
-  },
-  {
-    "question": "Làm cách nào để thiết lập chính sách và quản trị flow tự động trong tổ chức thông qua Power Platform Admin Center?",
-    "answer": "Sử dụng Power Platform Admin Center để cấu hình chính sách bảo mật, phân quyền và giới hạn tài nguyên cho các flow, đồng thời giám sát và báo cáo hoạt động của flow trong toàn tổ chức."
-  }
-],
-
+    {
+      "question": "Power Automate là gì?",
+      "answer": "Power Automate là dịch vụ tự động hóa quy trình của Microsoft, trước đây gọi là Microsoft Flow."
+    },
+    {
+      "question": "Power Automate tích hợp với Dynamics 365 như thế nào?",
+      "answer": "Sử dụng connector Dynamics 365 để tạo flow tương tác với dữ liệu và quy trình trong Dynamics 365."
+    },
+    {
+      "question": "Các loại flow trong Power Automate là gì?",
+      "answer": "Power Automate hỗ trợ các loại flow như flow tự động, flow tức thì và flow theo lịch."
+    },
+    {
+      "question": "Làm cách nào để tạo flow kích hoạt khi tạo bản ghi mới trong Dynamics 365?",
+      "answer": "Dùng trigger 'When a record is created' từ connector Dynamics 365 để kích hoạt flow."
+    },
+    {
+      "question": "Làm cách nào để xử lý xác thực cho Dynamics 365 trong Power Automate?",
+      "answer": "Cung cấp thông tin đăng nhập Dynamics 365 khi thiết lập connector để xác thực kết nối."
+    },
+    {
+      "question": "Sự khác biệt giữa flow và workflow cổ điển trong Dynamics 365 là gì?",
+      "answer": "Flow có khả năng tích hợp nhiều hệ thống khác nhau trong khi workflow cổ điển chỉ hoạt động trong Dynamics 365."
+    },
+    {
+      "question": "Làm cách nào để truyền dữ liệu giữa các bước trong flow?",
+      "answer": "Sử dụng biến (variables) để lưu trữ và truyền dữ liệu giữa các bước trong flow."
+    },
+    {
+      "question": "Expressions trong Power Automate là gì và dùng như thế nào?",
+      "answer": "Expressions là các công thức tính toán và xử lý dữ liệu dùng cú pháp đặc trưng (ví dụ: bắt đầu bằng @) để chuyển đổi hoặc định dạng dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để debug flow trong Power Automate?",
+      "answer": "Sử dụng chế độ 'Test' để chạy thử và xem chi tiết 'Run history' nhằm xác định lỗi trong flow."
+    },
+    {
+      "question": "Giới hạn governor trong Power Automate ảnh hưởng thiết kế flow như thế nào?",
+      "answer": "Giới hạn governor quy định số lượng hành động, thời gian chạy và tài nguyên, do đó cần tối ưu flow tránh vượt quá giới hạn này."
+    },
+    {
+      "question": "Làm cách nào để xử lý lỗi trong flow?",
+      "answer": "Sử dụng các nhánh điều kiện (Condition), 'Configure run after' hoặc block Scope với hành động Catch để xử lý lỗi."
+    },
+    {
+      "question": "Scope trong Power Automate là gì và khi nào dùng?",
+      "answer": "Scope là nhóm hành động được gom lại nhằm tổ chức flow phức tạp hoặc để xử lý lỗi theo nhóm."
+    },
+    {
+      "question": "Làm cách nào để kết nối với API bên ngoài trong Power Automate?",
+      "answer": "Sử dụng connector 'HTTP' để gửi yêu cầu và nhận dữ liệu từ API bên ngoài."
+    },
+    {
+      "question": "Vai trò của connectors trong Power Automate là gì?",
+      "answer": "Connectors cho phép flow kết nối với các ứng dụng, dịch vụ và hệ thống khác nhau, cung cấp trigger và hành động tương ứng."
+    },
+    {
+      "question": "Làm cách nào để tạo connector tùy chỉnh trong Power Automate?",
+      "answer": "Sử dụng công cụ tạo custom connector trên Power Automate portal, định nghĩa endpoint, xác thực và các hành động API."
+    },
+    {
+      "question": "Sự khác biệt giữa flow và Logic App trong Azure là gì?",
+      "answer": "Flow là một phần của Power Platform hướng đến người dùng doanh nghiệp, trong khi Logic App của Azure có khả năng mở rộng và tích hợp sâu vào hạ tầng đám mây Azure."
+    },
+    {
+      "question": "Làm cách nào để version control flow trong Power Automate?",
+      "answer": "Bằng cách tạo phiên bản mới cho flow, lưu trữ và ghi chú các thay đổi để có thể quay lại phiên bản trước nếu cần."
+    },
+    {
+      "question": "Best practices cho đặt tên trong Power Automate là gì?",
+      "answer": "Sử dụng tên miêu tả, nhất quán cho flow, trigger, hành động và biến để dễ dàng quản lý và tìm kiếm."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hiệu suất flow?",
+      "answer": "Giảm số lượng hành động không cần thiết, sử dụng các hành động dữ liệu hiệu quả và tối ưu hóa truy vấn để cải thiện tốc độ chạy."
+    },
+    {
+      "question": "Những ứng dụng phổ biến của Power Automate trong Dynamics 365 là gì?",
+      "answer": "Power Automate được sử dụng để tự động hóa quy trình như đánh giá lead, cập nhật khách hàng, gửi thông báo và tích hợp email."
+    },
+    {
+      "question": "Làm cách nào để thêm trigger theo lịch (recurrence) trong flow?",
+      "answer": "Chọn trigger 'Recurrence' và thiết lập tần suất chạy theo giờ, ngày hoặc tuần."
+    },
+    {
+      "question": "Làm cách nào để tạo flow yêu cầu phê duyệt (approval) trong Power Automate?",
+      "answer": "Sử dụng action 'Start and wait for an approval' để gửi yêu cầu phê duyệt và xử lý phản hồi của người dùng."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với Office 365 Outlook?",
+      "answer": "Sử dụng connector Office 365 Outlook để gửi email, đọc thư hoặc quản lý lịch từ bên trong flow."
+    },
+    {
+      "question": "Làm cách nào để sử dụng điều kiện (condition) trong flow?",
+      "answer": "Thêm hành động Condition để so sánh giá trị và xác định nhánh xử lý tiếp theo dựa trên kết quả so sánh."
+    },
+    {
+      "question": "Làm cách nào để tạo vòng lặp (loop) trong Power Automate?",
+      "answer": "Sử dụng hành động 'Apply to each' để lặp qua các phần tử trong một mảng hoặc danh sách dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu theo nhóm trong flow?",
+      "answer": "Sử dụng hành động 'Group by' hoặc kết hợp các bước xử lý trong 'Apply to each' để nhóm và tổng hợp dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để lưu trữ tạm thời dữ liệu trong flow?",
+      "answer": "Sử dụng các biến (variables) như 'Initialize variable' và 'Set variable' để lưu trữ tạm dữ liệu trong quá trình chạy."
+    },
+    {
+      "question": "Làm cách nào để gọi một flow khác từ trong flow hiện tại?",
+      "answer": "Sử dụng hành động 'Run a Child Flow' để gọi và chạy một flow khác, giúp tái sử dụng quy trình đã xây dựng."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu JSON trong Power Automate?",
+      "answer": "Sử dụng hành động 'Parse JSON' để chuyển đổi dữ liệu JSON thành định dạng có thể xử lý trong flow."
+    },
+    {
+      "question": "Làm cách nào để chuyển đổi dữ liệu với hành động Compose?",
+      "answer": "Sử dụng action Compose để định dạng lại hoặc tính toán giá trị dựa trên các expressions và dữ liệu đầu vào."
+    },
+    {
+      "question": "Làm cách nào để lọc mảng dữ liệu trong flow?",
+      "answer": "Sử dụng hành động 'Filter array' để lọc các phần tử dựa trên điều kiện xác định."
+    },
+    {
+      "question": "Làm cách nào để xử lý phân trang (pagination) trong các connector?",
+      "answer": "Cấu hình các thông số phân trang trong connector hoặc sử dụng các tham số như 'skip' và 'top' trong expressions để xử lý dữ liệu phân trang."
+    },
+    {
+      "question": "Làm cách nào để thiết lập kiểm soát song song (concurrency control) trong vòng lặp?",
+      "answer": "Cấu hình tùy chọn Concurrency Control trong hành động 'Apply to each' để giới hạn số lượng phiên bản chạy đồng thời."
+    },
+    {
+      "question": "Làm cách nào để sử dụng action 'Delay' trong flow?",
+      "answer": "Thêm hành động Delay và cấu hình thời gian chờ trước khi chuyển sang bước tiếp theo trong flow."
+    },
+    {
+      "question": "Làm cách nào để thiết lập thông báo khi flow hoàn thành hoặc gặp lỗi?",
+      "answer": "Sử dụng hành động gửi email, thông báo trên Teams hoặc các hệ thống cảnh báo khác dựa trên kết quả chạy của flow."
+    },
+    {
+      "question": "Làm cách nào để chia sẻ flow với các thành viên trong tổ chức?",
+      "answer": "Sử dụng tính năng chia sẻ trên Power Automate để cấp quyền truy cập và chỉnh sửa flow cho các thành viên hoặc nhóm cụ thể."
+    },
+    {
+      "question": "Làm cách nào để xuất và nhập (export/import) flow?",
+      "answer": "Sử dụng tính năng export dưới dạng package trên Power Automate và sau đó import vào environment khác để triển khai flow."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với SharePoint?",
+      "answer": "Sử dụng connector SharePoint để tạo, cập nhật hoặc lấy dữ liệu từ các danh sách và thư mục SharePoint trong flow."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với Microsoft Teams?",
+      "answer": "Sử dụng connector Microsoft Teams để gửi tin nhắn, tạo cuộc họp hoặc cập nhật thông báo trong Teams từ flow."
+    },
+    {
+      "question": "Làm cách nào để sử dụng các template có sẵn trong Power Automate?",
+      "answer": "Chọn từ thư viện mẫu của Power Automate, sau đó tùy chỉnh flow theo yêu cầu cụ thể của doanh nghiệp."
+    },
+    {
+      "question": "Làm cách nào để tạo flow tự động theo lịch (Scheduled Flow)?",
+      "answer": "Chọn trigger 'Recurrence' và cấu hình thời gian chạy định kỳ cho flow, ví dụ như hàng ngày hoặc hàng tuần."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với OneDrive?",
+      "answer": "Sử dụng connector OneDrive để tải lên, tải xuống hoặc quản lý tệp tin trong OneDrive qua flow."
+    },
+    {
+      "question": "Làm cách nào để gọi API REST từ Power Automate?",
+      "answer": "Sử dụng hành động HTTP để gửi yêu cầu GET, POST, PUT hoặc DELETE đến API REST và xử lý kết quả trả về."
+    },
+    {
+      "question": "Làm cách nào để chạy flow theo yêu cầu (on-demand)?",
+      "answer": "Sử dụng trigger 'Manually trigger a flow' cho phép người dùng khởi chạy flow theo yêu cầu từ giao diện Power Automate hoặc ứng dụng di động."
+    },
+    {
+      "question": "Làm cách nào để tạo flow tự động khi có email mới?",
+      "answer": "Sử dụng trigger của connector Outlook như 'When a new email arrives' để khởi chạy flow xử lý email."
+    },
+    {
+      "question": "Làm cách nào để sử dụng điều kiện switch-case trong flow?",
+      "answer": "Thêm hành động Switch để kiểm tra giá trị của biến và xác định nhánh xử lý phù hợp dựa trên từng trường hợp."
+    },
+    {
+      "question": "Làm cách nào để lưu trữ log của flow trong Power Automate?",
+      "answer": "Sử dụng hành động ghi log (ví dụ: ghi vào SharePoint, Excel hoặc một hệ thống logging bên ngoài) để lưu lại thông tin chạy của flow."
+    },
+    {
+      "question": "Làm cách nào để xử lý các trường hợp bất thường (exception) trong flow?",
+      "answer": "Sử dụng cấu hình 'Configure run after' để chỉ định nhánh xử lý khi một hành động thất bại hoặc bị bỏ qua."
+    },
+    {
+      "question": "Làm cách nào để gọi một flow con (child flow) từ flow chính?",
+      "answer": "Sử dụng hành động 'Run a Child Flow' để gọi và chạy một flow đã được đóng gói sẵn từ flow chính."
+    },
+    {
+      "question": "Làm cách nào để chuyển đổi dữ liệu giữa các định dạng trong flow?",
+      "answer": "Sử dụng các action như Compose, Parse JSON hoặc Data Operations để chuyển đổi và định dạng lại dữ liệu theo yêu cầu."
+    },
+    {
+      "question": "Làm cách nào để sử dụng action 'Apply to each' một cách hiệu quả?",
+      "answer": "Tối ưu hóa mảng dữ liệu đầu vào và cấu hình Concurrency Control nếu cần để giảm thời gian xử lý trong vòng lặp."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu dạng mảng và đối tượng trong Power Automate?",
+      "answer": "Sử dụng các hành động như Select, Filter array và Join để chuyển đổi, lọc và hợp nhất dữ liệu từ mảng hoặc đối tượng."
+    },
+    {
+      "question": "Làm cách nào để tích hợp AI Builder vào flow?",
+      "answer": "Sử dụng các action của AI Builder để thực hiện nhận dạng hình ảnh, phân tích văn bản hoặc dự đoán xu hướng dựa trên dữ liệu đầu vào."
+    },
+    {
+      "question": "Làm cách nào để quản lý biến môi trường (environment variables) trong flow?",
+      "answer": "Sử dụng các tham số và biến môi trường được cấu hình trong Power Platform Admin Center để tái sử dụng cấu hình trên nhiều flow."
+    },
+    {
+      "question": "Làm cách nào để thiết lập thông số timeout cho các hành động trong flow?",
+      "answer": "Cấu hình tùy chọn timeout trong các hành động HTTP hoặc các connector hỗ trợ để đảm bảo flow không treo khi chờ đợi phản hồi lâu."
+    },
+    {
+      "question": "Làm cách nào để xử lý các tác vụ tính toán phức tạp trong flow?",
+      "answer": "Sử dụng Expressions và hành động Compose để thực hiện các phép tính toán phức tạp dựa trên dữ liệu đầu vào."
+    },
+    {
+      "question": "Làm cách nào để tạo các nhánh xử lý song song (parallel branches) trong flow?",
+      "answer": "Sử dụng tính năng Parallel Branches để thực hiện các hành động độc lập cùng lúc, giảm thời gian chạy tổng thể của flow."
+    },
+    {
+      "question": "Làm cách nào để chuyển đổi flow sang giải pháp (solution) trong Power Platform?",
+      "answer": "Xuất flow dưới dạng solution package để dễ dàng quản lý, triển khai và chuyển giao giữa các environment khác nhau."
+    },
+    {
+      "question": "Làm cách nào để theo dõi và phân tích lịch sử chạy của flow?",
+      "answer": "Sử dụng phần 'Run history' trên Power Automate để xem chi tiết các lần chạy, thời gian chạy và lỗi (nếu có) của flow."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với Dynamics 365 Customer Engagement?",
+      "answer": "Sử dụng connector Dynamics 365 để kích hoạt flow dựa trên các sự kiện hoặc thay đổi trong Customer Engagement."
+    },
+    {
+      "question": "Làm cách nào để tạo flow xử lý dữ liệu từ các nguồn khác nhau cùng lúc?",
+      "answer": "Kết hợp nhiều trigger hoặc sử dụng các action Data Operations để hợp nhất dữ liệu từ các nguồn khác nhau vào một flow."
+    },
+    {
+      "question": "Làm cách nào để thiết lập cảnh báo tự động khi flow gặp lỗi?",
+      "answer": "Cấu hình thông báo qua email, Microsoft Teams hoặc các hệ thống cảnh báo khác dựa trên kết quả của 'Run history' khi flow bị lỗi."
+    },
+    {
+      "question": "Làm cách nào để sử dụng action 'Terminate' trong flow?",
+      "answer": "Sử dụng action Terminate để dừng flow ngay lập tức, có thể cấu hình trạng thái (Succeeded, Failed, Cancelled) khi dừng."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa tốc độ xử lý của flow với dữ liệu lớn?",
+      "answer": "Chia nhỏ dữ liệu, sử dụng vòng lặp 'Apply to each' với Concurrency Control và giới hạn số lượng hành động trong mỗi bước để giảm tải."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các hệ thống ERP khác?",
+      "answer": "Sử dụng custom connector hoặc các connector có sẵn để kết nối Power Automate với hệ thống ERP như SAP, Oracle thông qua API."
+    },
+    {
+      "question": "Làm cách nào để xây dựng quy trình tự động kiểm tra dữ liệu sau khi di chuyển?",
+      "answer": "Tạo flow so sánh dữ liệu giữa nguồn cũ và mới, sử dụng điều kiện và hành động kiểm tra tính toàn vẹn của dữ liệu."
+    },
+    {
+      "question": "Làm cách nào để triển khai quy trình phê duyệt tài liệu qua Power Automate?",
+      "answer": "Sử dụng action 'Start and wait for an approval' kết hợp với các trigger từ SharePoint hoặc OneDrive để tự động hóa quy trình phê duyệt tài liệu."
+    },
+    {
+      "question": "Làm cách nào để xử lý dữ liệu đầu ra từ flow để báo cáo?",
+      "answer": "Kết nối Power Automate với Power BI hoặc lưu dữ liệu vào Excel/SharePoint để sử dụng cho mục đích báo cáo sau này."
+    },
+    {
+      "question": "Làm cách nào để tạo báo cáo tự động về hiệu suất flow?",
+      "answer": "Sử dụng API Power Automate để trích xuất dữ liệu run history và kết nối với Power BI để tạo báo cáo trực quan về hiệu suất."
+    },
+    {
+      "question": "Làm cách nào để áp dụng chính sách quản trị (governance) cho các flow trong tổ chức?",
+      "answer": "Sử dụng Power Platform Admin Center để quản lý, giám sát và áp dụng các chính sách về bảo mật, quyền truy cập cũng như giới hạn tài nguyên cho flow."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các ứng dụng CRM ngoài Dynamics 365?",
+      "answer": "Sử dụng các connector hoặc custom connector để kết nối Power Automate với các ứng dụng CRM khác như Salesforce hoặc Zoho CRM."
+    },
+    {
+      "question": "Làm cách nào để tạo flow giám sát hộp thư đến trong Office 365?",
+      "answer": "Sử dụng trigger 'When a new email arrives' của connector Office 365 Outlook để khởi chạy flow xử lý email mới."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với hệ thống lưu trữ đám mây khác như Google Drive?",
+      "answer": "Sử dụng connector Google Drive để tạo, cập nhật và quản lý tệp tin qua flow tương tự như với OneDrive."
+    },
+    {
+      "question": "Làm cách nào để xử lý các tình huống mất kết nối khi chạy flow?",
+      "answer": "Sử dụng cấu hình 'Configure run after' để thiết lập hành động xử lý khi một bước thất bại do mất kết nối hoặc lỗi tạm thời."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với hệ thống chatbot?",
+      "answer": "Sử dụng connector Microsoft Bot Framework hoặc custom connector để gửi và nhận dữ liệu từ hệ thống chatbot trong flow."
+    },
+    {
+      "question": "Làm cách nào để tạo các nhánh điều kiện phức tạp với nhiều cấp độ trong flow?",
+      "answer": "Kết hợp nhiều hành động Condition hoặc Switch để xây dựng các nhánh xử lý đa cấp dựa trên các điều kiện khác nhau."
+    },
+    {
+      "question": "Làm cách nào để xử lý các trường hợp xung đột dữ liệu khi nhiều flow cùng thao tác trên cùng một dữ liệu?",
+      "answer": "Sử dụng cơ chế khóa (locking) hoặc kiểm tra dữ liệu trước khi ghi, kết hợp với việc cấu hình thời gian chờ để tránh xung đột."
+    },
+    {
+      "question": "Làm cách nào để kiểm tra và đảm bảo tính nhất quán của dữ liệu sau khi flow chạy?",
+      "answer": "Sử dụng các bước kiểm tra dữ liệu (validation) trong flow và so sánh kết quả với dữ liệu gốc để đảm bảo tính nhất quán."
+    },
+    {
+      "question": "Làm cách nào để thiết lập flow chạy vào giờ thấp điểm nhằm tối ưu tài nguyên?",
+      "answer": "Sử dụng trigger Recurrence và cấu hình thời gian chạy vào ban đêm hoặc giờ thấp điểm để giảm tải cho hệ thống."
+    },
+    {
+      "question": "Làm cách nào để tích hợp các hành động điều khiển phiên (session management) trong flow?",
+      "answer": "Sử dụng các biến lưu trữ thông tin phiên và gọi các flow con để quản lý trạng thái phiên khi xử lý dữ liệu liên tục."
+    },
+    {
+      "question": "Làm cách nào để sử dụng các hàm xử lý chuỗi (string functions) trong flow?",
+      "answer": "Sử dụng Expressions như concat, substring, replace để xử lý và định dạng chuỗi trong các hành động Compose hoặc điều kiện."
+    },
+    {
+      "question": "Làm cách nào để tích hợp adaptive cards vào flow gửi thông báo trên Teams?",
+      "answer": "Sử dụng connector Microsoft Teams để gửi adaptive card, cấu hình nội dung thông báo dựa trên định dạng JSON của adaptive card."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các hệ thống báo cáo nội bộ?",
+      "answer": "Kết nối Power Automate với cơ sở dữ liệu hoặc hệ thống lưu trữ báo cáo (ví dụ: SQL Server, SharePoint) để truyền dữ liệu cho báo cáo tự động."
+    },
+    {
+      "question": "Làm cách nào để áp dụng các kỹ thuật caching trong flow nhằm tăng tốc độ xử lý?",
+      "answer": "Lưu trữ tạm thời dữ liệu không thay đổi bằng biến hoặc lưu vào hệ thống bên ngoài để giảm số lần truy xuất dữ liệu từ nguồn gốc."
+    },
+    {
+      "question": "Làm cách nào để tạo các flow có thể tái sử dụng (reusable flows)?",
+      "answer": "Thiết kế flow dưới dạng Child Flow và sử dụng hành động 'Run a Child Flow' để gọi lại, giúp tái sử dụng logic ở nhiều nơi."
+    },
+    {
+      "question": "Làm cách nào để thiết lập thông báo qua SMS trong Power Automate?",
+      "answer": "Sử dụng connector của dịch vụ SMS (ví dụ: Twilio) để gửi thông báo qua tin nhắn khi flow hoàn thành hoặc gặp lỗi."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các hệ thống IoT?",
+      "answer": "Sử dụng connector Azure IoT Hub hoặc custom connector để nhận và xử lý dữ liệu từ các thiết bị IoT qua flow."
+    },
+    {
+      "question": "Làm cách nào để tự động hóa quy trình xử lý hợp đồng trong Dynamics 365 qua Power Automate?",
+      "answer": "Tạo flow với trigger từ Dynamics 365 khi hợp đồng mới được tạo, sau đó gửi thông báo phê duyệt và cập nhật trạng thái hợp đồng."
+    },
+    {
+      "question": "Làm cách nào để tối ưu hóa chi phí khi sử dụng Power Automate trong tổ chức?",
+      "answer": "Theo dõi số lần chạy flow, sử dụng flow có khả năng chia sẻ và lựa chọn loại flow phù hợp với nhu cầu nghiệp vụ để tối ưu hóa chi phí."
+    },
+    {
+      "question": "Làm cách nào để kiểm soát truy cập và bảo mật cho các flow trong Power Automate?",
+      "answer": "Sử dụng các chính sách bảo mật và quản lý quyền truy cập qua Power Platform Admin Center, kết hợp với Azure AD để kiểm soát ai có thể xem và chỉnh sửa flow."
+    },
+    {
+      "question": "Làm cách nào để theo dõi hiệu suất và thời gian chạy của flow qua API?",
+      "answer": "Sử dụng API của Power Automate để truy xuất thông tin run history và kết nối với Power BI hoặc Azure Monitor để phân tích hiệu suất của flow."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với hệ thống ERP khác ngoài Dynamics 365?",
+      "answer": "Tạo custom connector hoặc sử dụng các connector sẵn có để kết nối Power Automate với hệ thống ERP như SAP hoặc Oracle qua API."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Automate để tự động hóa quy trình quản lý dữ liệu lớn?",
+      "answer": "Thiết kế flow với khả năng xử lý theo lô, sử dụng vòng lặp và tối ưu hóa truy vấn để tự động hóa xử lý và phân tích dữ liệu lớn."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các hệ thống CRM khác như Salesforce?",
+      "answer": "Sử dụng custom connector hoặc connector có sẵn của Salesforce để kết nối và đồng bộ dữ liệu giữa Power Automate và hệ thống CRM đó."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Automate cho các tác vụ bất đồng bộ có thời gian chạy dài?",
+      "answer": "Sử dụng flow bất đồng bộ, thiết lập cấu hình retry và sử dụng các hành động timeout để xử lý các tác vụ có thời gian chạy lâu mà không ảnh hưởng đến flow chính."
+    },
+    {
+      "question": "Làm cách nào để tạo flow đa ngôn ngữ trong Power Automate?",
+      "answer": "Tùy chỉnh thông qua các biểu thức và sử dụng biến chứa giá trị dựa trên ngôn ngữ của người dùng để tạo flow hỗ trợ nhiều ngôn ngữ."
+    },
+    {
+      "question": "Làm cách nào để sử dụng Power Automate để tự động cập nhật báo cáo và dashboard?",
+      "answer": "Thiết kế flow để trích xuất dữ liệu định kỳ và gửi vào Power BI hoặc hệ thống báo cáo khác, tự động cập nhật dashboard dựa trên dữ liệu mới."
+    },
+    {
+      "question": "Làm cách nào để quản lý log và audit các hoạt động của flow trong Power Automate?",
+      "answer": "Sử dụng API của Power Automate để trích xuất log, lưu trữ vào cơ sở dữ liệu hoặc hệ thống báo cáo, và thiết lập cơ chế audit thông qua Power Platform Admin Center."
+    },
+    {
+      "question": "Làm cách nào để tích hợp Power Automate với các công cụ phân tích dữ liệu nâng cao như Azure Monitor?",
+      "answer": "Sử dụng connector Azure Monitor và API để gửi thông tin hiệu suất và log của flow đến Azure Monitor, từ đó phân tích và tối ưu hóa hiệu suất."
+    },
+    {
+      "question": "Làm cách nào để thiết lập chính sách và quản trị flow tự động trong tổ chức thông qua Power Platform Admin Center?",
+      "answer": "Sử dụng Power Platform Admin Center để cấu hình chính sách bảo mật, phân quyền và giới hạn tài nguyên cho các flow, đồng thời giám sát và báo cáo hoạt động của flow trong toàn tổ chức."
+    }
+  ],
   "Dynamics: Batch": [
     {
       "question": "Batch job trong Dynamics 365 là gì?",
