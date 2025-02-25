@@ -2550,263 +2550,407 @@
     }
         ],
     "SFDC’s PDF": [
-    {
-        "question": "Làm cách nào để tạo một PDF từ một VisualForce page?",
-        "answer": "Sử dụng thuộc tính renderAs='pdf' trong thẻ <apex:page> của VisualForce page."
-    },
-    {
-        "question": "Thuộc tính renderAs attribute trong VisualForce page dùng cho mục đích gì?",
-        "answer": "Thuộc tính renderAs cho phép chỉ định định dạng của trang, như 'pdf' để tạo PDF."
-    },
-    {
-        "question": "Làm cách nào để gửi một PDF như là attachment qua email từ SalesForce?",
-        "answer": "Sử dụng Apex để tạo PDF từ VisualForce page, sau đó sử dụng lớp Messaging để gửi email với attachment là PDF."
-    },
-    {
-        "question": "PDF templates trong SalesForce là gì và cách sử dụng chúng?",
-        "answer": "PDF templates là các mẫu tiên định để tạo các tài liệu PDF từ dữ liệu của SalesForce. Chúng có thể được sử dụng để tạo các hóa đơn, báo giá, v.v."
-    },
-    {
-        "question": "Làm cách nào để tùy chỉnh layout của một PDF tạo từ VisualForce page?",
-        "answer": "Sử dụng CSS để tùy chỉnh giao diện của VisualForce page, và đảm bảo rằng các phần tử được đặt theo cách phù hợp cho định dạng PDF."
-    },
-    {
-        "question": "Có thể embed images trong PDF tạo từ SalesForce hay không?",
-        "answer": "Có, bạn có thể sử dụng thẻ <img> trong VisualForce page để hiển thị hình ảnh, và chúng sẽ được bao gồm trong PDF."
-    },
-    {
-        "question": "Làm cách nào để xử lý dữ liệu động trong PDF template?",
-        "answer": "Sử dụng merge fields hoặc các biến trong VisualForce page để hiển thị dữ liệu động từ SalesForce."
-    },
-    {
-        "question": "Những best practices cho việc tạo báo cáo PDF trong SalesForce là gì?",
-        "answer": "Giữ cho VisualForce page đơn giản, sử dụng CSS để tùy chỉnh, kiểm tra trang trước khi render thành PDF, và sử dụng các thư viện như jsPDF nếu cần tùy chỉnh hơn."
-    },
-    {
-        "question": "Làm cách nào để bảo mật PDF files trong SalesForce?",
-        "answer": "Sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến các bản ghi có attachments là PDF."
-    },
-    {
-        "question": "Có cách nào để tạo PDF sử dụng Apex code mà không cần VisualForce pages hay không?",
-        "answer": "Có, bạn có thể sử dụng lớp PDF của SalesForce hoặc các thư viện bên thứ ba để tạo PDF trực tiếp từ Apex code."
-    },
-    {
-        "question": "Làm cách nào để thêm header và footer vào PDF tạo từ VisualForce?",
-        "answer": "Sử dụng các thẻ như <apex:pageBlock> hoặc CSS để định nghĩa header và footer trong VisualForce page."
-    },
-    {
-        "question": "Làm cách nào để kiểm tra lỗi khi tạo PDF từ VisualForce?",
-        "answer": "Sử dụng debug logs để theo dõi lỗi, kiểm tra xem các merge fields có đúng không, và đảm bảo dữ liệu đầu vào hợp lệ."
-    },
-    {
-        "question": "Làm cách nào để tạo PDF từ dữ liệu lớn trong SalesForce?",
-        "answer": "Sử dụng Batch Apex để xử lý dữ liệu lớn, sau đó tạo PDF từng phần hoặc sử dụng VisualForce với pagination."
-    },
-    {
-        "question": "Làm cách nào để gửi PDF tự động qua email dựa trên một trigger?",
-        "answer": "Viết trigger để gọi Apex code, tạo PDF từ VisualForce, sau đó sử dụng Messaging.SingleEmailMessage để gửi email."
-    },
-    {
-        "question": "Làm cách nào để tùy chỉnh font trong PDF tạo từ SalesForce?",
-        "answer": "Sử dụng CSS để định nghĩa font, nhưng cần đảm bảo font được hỗ trợ trong môi trường PDF rendering của SalesForce."
-    },
-    {
-        "question": "Làm cách nào để tạo PDF với nhiều trang từ VisualForce?",
-        "answer": "Sử dụng pagination hoặc lặp qua dữ liệu trong VisualForce page để tạo nhiều trang PDF."
-    },
-    {
-        "question": "Làm cách nào để lưu PDF vào một bản ghi trong SalesForce?",
-        "answer": "Tạo PDF, sau đó lưu nó như một attachment hoặc file trong ContentDocument liên kết với bản ghi."
-    },
-    {
-        "question": "Làm cách nào để kiểm tra định dạng PDF trước khi gửi?",
-        "answer": "Xem trước PDF trong VisualForce page bằng cách renderAs='pdf' và kiểm tra giao diện."
-    },
-    {
-        "question": "Làm cách nào để tạo PDF với chữ ký điện tử?",
-        "answer": "Sử dụng các thư viện bên thứ ba như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page."
-    },
-    {
-        "question": "Làm cách nào để tối ưu hóa hiệu suất khi tạo PDF từ SalesForce?",
-        "answer": "Giảm số lượng dữ liệu xử lý, sử dụng caching, và tránh các truy vấn phức tạp trong VisualForce page."
-    },
-    {
-        "question": "Sự khác biệt giữa renderAs='pdf' và renderAs='html' trong các trang VisualForce là gì?",
-        "answer": "renderAs='pdf' cho phép trang VisualForce được render thành tài liệu PDF, trong khi renderAs='html' render nó thành một trang HTML thông thường. Khi sử dụng renderAs='pdf', trang sẽ được tạo thành định dạng PDF, có thể được tải xuống hoặc hiển thị trực tiếp tùy thuộc vào cài đặt trình duyệt."
-    },
-    {
-        "question": "SalesForce xử lý việc render PDF từ trang VisualForce như thế nào?",
-        "answer": "SalesForce sử dụng một engine render để chuyển đổi trang VisualForce thành PDF. Engine này sẽ chuyển đổi HTML và CSS của trang thành định dạng PDF. Tuy vậy, SalesForce có những giới hạn về CSS và JavaScript hỗ trợ cho việc render PDF, vì vậy bạn cần đảm bảo rằng trang của bạn tuân thủ các quy tắc và hạn chế này."
-    },
-    {
-        "question": "Những hạn chế và best practices nào cần lưu ý khi sử dụng renderAs='pdf'?",
-        "answer": "Một số hạn chế bao gồm: JavaScript thường bị vô hiệu hóa, CSS có những thuộc tính không được hỗ trợ, và có thể có vấn đề với việc hiển thị hình ảnh hoặc font chữ đặc biệt. Best practices bao gồm việc sử dụng CSS đơn giản, tránh sử dụng JavaScript, và kiểm tra trang trước khi render thành PDF để đảm bảo định dạng đúng."
-    },
-    {
-        "question": "Làm thế nào để đính kèm một PDF tạo từ trang VisualForce vào email sử dụng Apex?",
-        "answer": "Bạn có thể sử dụng Apex để tạo PDF từ trang VisualForce bằng cách sử dụng lớp PageReference và Blob để lấy nội dung PDF, sau đó sử dụng lớp Messaging.SingleEmailMessage để gửi email với PDF là attachment. Ví dụ: PageReference pdfPage = new PageReference('/apex/YourVisualForcePage'); pdfPage.setParameters(new Map<String, String>{ 'id' => recordId }); Blob pdfBlob = pdfPage.getContentAsPDF(); Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage(); mail.setSubject('Tiêu đề'); mail.setBody('Nội dung email', 'text/plain; charset UTF-8'); mail.setToAddresses(new String[] { 'người nhận@example.com' }); mail.setFileAttachments(new Messaging.EmailFileAttachment[] { new Messaging.EmailFileAttachment(pdfBlob, 'tên_tệp.pdf', 'application/pdf') }); Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });"
-    },
-    {
-        "question": "Có thể gửi PDF trực tiếp từ trang VisualForce mà không sử dụng Apex hay không?",
-        "answer": "Không, để gửi PDF qua email, bạn cần sử dụng Apex để tạo PDF và sau đó gửi email với attachment là PDF. Trang VisualForce chỉ có thể hiển thị hoặc tải xuống PDF, nhưng không thể gửi email trực tiếp."
-    },
-    {
-        "question": "Những bước để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi?",
-        "answer": "Để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi, bạn có thể làm theo các bước sau: 1. Tạo một trang VisualForce với renderAs='pdf' để tạo PDF từ dữ liệu của bản ghi. 2. Tạo một lớp Apex với phương thức để tạo PDF từ trang VisualForce và gửi email. 3. Trên trang chi tiết của bản ghi, thêm một button tùy chỉnh gọi phương thức Apex với ID của bản ghi làm tham số."
-    },
-    {
-        "question": "Làm thế nào để tạo một mẫu PDF tùy chỉnh trong SalesForce?",
-        "answer": "Để tạo một mẫu PDF tùy chỉnh trong SalesForce, bạn có hai tùy chọn chính: 1. Sử dụng trang VisualForce: Tạo một trang VisualForce với renderAs='pdf' và thiết kế layout theo yêu cầu của mình sử dụng HTML và CSS. 2. Sử dụng Document Templates: Tạo một mẫu tài liệu trong SalesForce, chọn định dạng là PDF, và thiết kế mẫu sử dụng các merge fields để hiển thị dữ liệu từ bản ghi."
-    },
-    {
-        "question": "Làm thế nào để liên kết một mẫu PDF với một đối tượng hoặc loại bản ghi cụ thể?",
-        "answer": "Nếu bạn sử dụng Document Templates, bạn có thể liên kết mẫu với một đối tượng cụ thể bằng cách chọn đối tượng đó trong phần cài đặt của mẫu. Ví dụ, bạn có thể tạo một mẫu PDF cho đối tượng Opportunity. Nếu bạn sử dụng trang VisualForce, bạn có thể thiết kế trang để hoạt động với một đối tượng cụ thể bằng cách sử dụng Apex controller hoặc extension liên kết với đối tượng đó."
-    },
-    {
-        "question": "Có thể sử dụng merge fields trong mẫu PDF, và nếu có, làm thế nào?",
-        "answer": "Trong Document Templates, bạn có thể sử dụng merge fields để hiển thị dữ liệu từ bản ghi. Merge fields có dạng {Field_Name}, và chúng sẽ được thay thế bằng giá trị của trường từ bản ghi tương ứng. Trong trang VisualForce, bạn có thể sử dụng biến Apex để hiển thị dữ liệu từ bản ghi. Ví dụ, nếu bạn có một controller liên kết với một bản ghi Opportunity, bạn có thể sử dụng { !opportunity.Name } để hiển thị tên của opportunity."
-    },
-    {
-        "question": "Làm thế nào để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page?",
-        "answer": "Để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page, bạn có thể sử dụng các thuộc tính CSS để định nghĩa chiều rộng, chiều cao và hướng của trang. Ví dụ, bạn có thể sử dụng @page rule trong CSS để định nghĩa kích thước trang. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF, vì vậy bạn cần kiểm tra tài liệu chính thức để biết những thuộc tính nào được hỗ trợ."
-    },
-    {
-        "question": "Làm thế nào để thiết lập margin và padding trong PDF?",
-        "answer": "Bạn có thể sử dụng các thuộc tính CSS như margin và padding để thiết lập khoảng cách và đệm cho các phần tử trên trang VisualForce. Tuy vậy, do những giới hạn của render PDF, bạn cần đảm bảo rằng các thuộc tính CSS bạn sử dụng được hỗ trợ."
-    },
-    {
-        "question": "Có thể sử dụng CSS để style PDF, và có những xem xét đặc biệt nào cho việc render PDF?",
-        "answer": "Vâng, bạn có thể sử dụng CSS để style PDF. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF. Ví dụ, JavaScript thường bị vô hiệu hóa, và một số thuộc tính CSS có thể không được hỗ trợ hoặc hoạt động khác biệt. Bạn cần kiểm tra tài liệu chính thức của SalesForce để biết những thuộc tính CSS nào được hỗ trợ và cách chúng hoạt động trong render PDF."
-    },
-    {
-        "question": "Làm thế nào để truyền parameters đến trang VisualForce để tạo PDF động?",
-        "answer": "Bạn có thể truyền parameters đến trang VisualForce bằng cách sử dụng query string parameters hoặc thông qua Apex controller. Ví dụ, nếu bạn có một button trên trang chi tiết của bản ghi, bạn có thể thiết lập URL của button để truyền ID của bản ghi đến trang VisualForce. Sau đó, trong controller, bạn có thể lấy parameter này và sử dụng để lấy dữ liệu từ bản ghi."
-    },
-    {
-        "question": "Làm thế nào để truy vấn và hiển thị dữ liệu từ các đối tượng liên quan trong PDF?",
-        "answer": "Trong Apex controller của trang VisualForce, bạn có thể sử dụng SOQL để truy vấn dữ liệu từ các đối tượng liên quan. Sau đó, bạn có thể hiển thị dữ liệu này trên trang VisualForce sử dụng biến Apex. Ví dụ, nếu bạn đang tạo PDF cho một Opportunity, bạn có thể truy vấn các bản ghi Contact liên quan và hiển thị thông tin của chúng trong PDF."
-    },
-    {
-        "question": "Những cách tốt nhất để xử lý lượng dữ liệu lớn trong PDF mà không gây ra vấn đề về hiệu suất?",
-        "answer": "Để xử lý lượng dữ liệu lớn trong PDF, bạn có thể sử dụng phân trang hoặc lọc dữ liệu để chỉ hiển thị những phần quan trọng nhất. Ngoài ra, bạn có thể sử dụng caching để lưu trữ dữ liệu đã truy vấn và tránh truy vấn lặp lại. Trong trang VisualForce, bạn có thể sử dụng các thẻ như <apex:repeat> để hiển thị danh sách dữ liệu, nhưng cần đảm bảo rằng danh sách không quá lớn để tránh vấn đề về hiệu suất."
-    },
-    {
-        "question": "Những sai lầm phổ biến cần tránh khi tạo PDF từ trang VisualForce?",
-        "answer": "Một số sai lầm phổ biến bao gồm: Sử dụng JavaScript, vì nó thường bị vô hiệu hóa trong render PDF. Sử dụng các thuộc tính CSS không được hỗ trợ, dẫn đến định dạng sai. Không kiểm tra trang trước khi render thành PDF, dẫn đến kết quả không như mong đợi. Tải quá nhiều hình ảnh hoặc dữ liệu lớn, gây ra vấn đề về hiệu suất. Không đảm bảo rằng font chữ được sử dụng là font hỗ trợ."
-    },
-    {
-        "question": "Làm thế nào để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau?",
-        "answer": "Để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau, bạn nên: Sử dụng các font chữ phổ biến và chuẩn. Đảm bảo rằng kích thước và định dạng văn bản là phù hợp. Kiểm tra PDF trên các trình duyệt và thiết bị khác nhau để đảm bảo tính tương thích. Sử dụng các thuộc tính CSS chuẩn để định dạng."
-    },
-    {
-        "question": "Những xem xét về hiệu suất nào cần có cho việc tạo PDF trong SalesForce?",
-        "answer": "Một số xem xét về hiệu suất bao gồm: Giảm số lượng truy vấn database bằng cách sử dụng caching hoặc lấy dữ liệu hiệu quả. Tránh sử dụng các thành phần nặng hoặc phức tạp trên trang VisualForce. Tối ưu hóa hình ảnh để giảm kích thước file. Sử dụng các kỹ thuật để giảm thời gian render, như sử dụng layout đơn giản."
-    },
-    {
-        "question": "Làm thế nào để hạn chế quyền truy cập đến những PDF cụ thể dựa trên quy tắc của SalesForce?",
-        "answer": "SalesForce cung cấp các quy tắc sharing và security để kiểm soát quyền truy cập đến các bản ghi. Nếu bạn lưu PDF như là attachment của một bản ghi, quy tắc sharing của bản ghi đó sẽ áp dụng để quy định ai có thể xem attachment. Ngoài ra, nếu bạn tạo PDF và gửi qua email, bạn cần đảm bảo rằng người nhận có quy tắc truy cập phù hợp để xem nội dung của PDF."
-    },
-    {
-        "question": "Có thể bảo mật PDF bằng mật khẩu hoặc các biện pháp khác hay không?",
-        "answer": "SalesForce không cung cấp tính năng bảo mật PDF bằng mật khẩu trực tiếp. Nếu bạn muốn bảo mật PDF, bạn có thể sử dụng các thư viện bên thứ ba hoặc Apex code để thêm mật khẩu cho PDF. Tuy vậy, việc sử dụng thư viện bên thứ ba trong SalesForce có những hạn chế, và bạn cần đảm bảo rằng thư viện đó được hỗ trợ và có thể được sử dụng trong môi trường của bạn."
-    },
-    {
-        "question": "Những biện pháp nào có thể thực hiện để ngừa truy cập không ủy quyền hoặc phân phối sai của PDF nhạy cảm?",
-        "answer": "Để ngừa truy cập không ủy quyến hoặc phân phối sai của PDF nhạy cảm, bạn có thể: Lưu PDF như là attachment của bản ghi và sử dụng quy tắc sharing và security của SalesForce để hạn chế quy tắc truy cập. Sử dụng các quy tắc validation và authorization trong Apex để đảm bảo rằng chỉ những người có quy tắc thích hợp mới có thể tạo hoặc xem PDF. Sử dụng các biện pháp bảo mật bổ sung như encryption hoặc watermarking để bảo vệ nội dung của PDF."
-    },
-    {
-        "question": "Sự khác biệt giữa việc tạo PDF sử dụng Apex và sử dụng trang VisualForce là gì?",
-        "answer": "Khi sử dụng trang VisualForce, bạn tạo một trang web và sử dụng renderAs='pdf' để chuyển đổi nó thành PDF. Điều này phù hợp cho các trường hợp bạn muốn có một giao diện đẹp và dễ tùy chỉnh. Khi sử dụng Apex, bạn có thể sử dụng các lớp của SalesForce hoặc thư viện bên thứ ba để tạo PDF trực tiếp từ code. Điều này có thể cho bạn sự kiểm soát tốt hơn về định dạng và hiệu suất, nhưng có thể phức tạp hơn."
-    },
-    {
-        "question": "Làm thế nào để sử dụng lớp PDF của SalesForce trong Apex để tạo PDF?",
-        "answer": "SalesForce không cung cấp một lớp PDF built-in để tạo PDF trực tiếp từ Apex. Tuy vậy, bạn có thể sử dụng lớp PageReference để lấy nội dung PDF từ một trang VisualForce. Nếu bạn muốn tạo PDF mà không sử dụng trang VisualForce, bạn có thể cần sử dụng các thư viện bên thứ ba hoặc viết code tùy chỉnh để tạo PDF."
-    },
-    {
-        "question": "Có những ứng dụng bên thứ ba nào có thể được tích hợp với SalesForce để tạo PDF?",
-        "answer": "Có rất nhiều ứng dụng bên thứ ba trên AppExchange của SalesForce chuyên về việc tạo và quản lý tài liệu, bao gồm tạo PDF. Ví dụ, DocuSign, PandaDoc, và Adobe Sign là những ứng dụng phổ biến cho việc tạo và ký kết tài liệu, bao gồm PDF."
-    },
-    {
-        "question": "Làm thế nào để thêm một mục lục hoặc chỉ mục vào PDF?",
-        "answer": "Để thêm một mục lục hoặc chỉ mục vào PDF tạo từ VisualForce, bạn có thể sử dụng các thẻ HTML và CSS để tạo mục lục trên trang. Tuy vậy, việc tạo mục lục tự động có thể phức tạp, và bạn có thể cần sử dụng JavaScript để tạo mục lục dựa trên tiêu đề của trang. Tuy vậy, do JavaScript thường bị vô hiệu hóa trong render PDF, bạn có thể cần tạo mục lục thủ công hoặc sử dụng các kỹ thuật khác."
-    },
-    {
-        "question": "Làm thế nào để tạo PDF có bookmark với các phần có thể navigable?",
-        "answer": "Để tạo PDF có bookmark, bạn có thể sử dụng các thư viện bên thứ ba để thêm bookmark vào PDF sau khi tạo. Trong VisualForce, việc này có thể khó khăn vì không có sự hỗ trợ trực tiếp."
-    },
-    {
-        "question": "Có thể thêm các phần tử tương tác như link hoặc form fields vào PDF hay không?",
-        "answer": "Trong PDF tạo từ VisualForce, các link HTML có thể được hiển thị như link trong PDF, nhưng chức năng của chúng có thể khác tùy thuộc vào trình xem PDF. Tuy vậy, form fields và các phần tử tương tác khác có thể không hoạt động đúng do giới hạn của render PDF."
-    },
-    {
-        "question": "Làm thế nào để debug các vấn đề khi tạo PDF từ trang VisualForce?",
-        "answer": "Để debug các vấn đề khi tạo PDF từ trang VisualForce, bạn có thể: Xem trang VisualForce trong trình duyệt để kiểm tra xem nó hiển thị đúng trước khi render thành PDF. Kiểm tra các log của SalesForce để tìm các lỗi hoặc warning liên quan đến trang hoặc Apex code. Sử dụng các công cụ như Firebug hoặc Chrome DevTools để kiểm tra HTML và CSS của trang."
-    },
-    {
-        "question": "Những thông báo lỗi phổ biến và cách giải quyết chúng?",
-        "answer": "Một số thông báo lỗi phổ biến bao gồm: 'Failed to load PDF': có thể do trang VisualForce có lỗi hoặc không thể được render thành PDF. 'CSS not applied': có thể do các thuộc tính CSS không được hỗ trợ hoặc được định nghĩa sai. 'Image not displayed': có thể do URL của hình ảnh sai hoặc hình ảnh không thể tải được. Để giải quyết, bạn cần kiểm tra trang VisualForce, kiểm tra các log, và đảm bảo rằng tất cả các phần tử và thuộc tính là hợp lệ và được hỗ trợ."
-    },
-    {
-        "question": "Làm thế nào để xử lý các trường hợp mà việc tạo PDF thất bại do thiếu dữ liệu hoặc các vấn đề khác?",
-        "answer": "Để xử lý các trường hợp mà việc tạo PDF thất bại, bạn có thể sử dụng try-catch trong Apex để bắt các ngoại lệ và xử lý chúng phù hợp. Ví dụ, nếu dữ liệu không tồn tại, bạn có thể hiển thị một thông báo lỗi hoặc tạo PDF với thông tin mặc định."
-    },
-    {
-        "question": "Làm thế nào để phân trang các dữ liệu lớn trong PDF để tránh vấn đề về hiệu suất?",
-        "answer": "Để phân trang các dữ liệu lớn, bạn có thể sử dụng các thẻ HTML như <div> hoặc <table> để tổ chức dữ liệu thành các phần riêng biệt, và sử dụng CSS để định nghĩa các phần tách ra trang mới."
-    },
-    {
-        "question": "Kích thước tối đa của PDF có thể tạo từ trang VisualForce là bao nhiêu?",
-        "answer": "SalesForce không có một giới hạn rõ ràng về kích thước của PDF tạo từ trang VisualForce. Tuy vậy, do các hạn chế về hiệu suất và bộ nhớ, bạn nên giữ cho PDF có kích thước hợp lý để tránh vấn đề."
-    },
-    {
-        "question": "Những cách tối ưu hóa nào có thể sử dụng để tăng tốc độ tạo PDF từ SalesForce?",
-        "answer": "Để tối ưu hóa tốc độ tạo PDF, bạn có thể: Giảm số lượng dữ liệu truy vấn và hiển thị. Sử dụng caching để lưu trữ dữ liệu đã truy vấn. Sử dụng layout đơn giản và tránh các thành phần phức tạp. Tối ưu hóa hình ảnh để giảm kích thước file."
-    },
-    {
-        "question": "Làm thế nào để thiết lập một trigger để tự động tạo và gửi PDF khi có những điều kiện nhất định?",
-        "answer": "Để thiết lập một trigger để tự động tạo và gửi PDF, bạn có thể viết một Apex trigger trên đối tượng cần thiết và gọi một phương thức Apex để tạo PDF và gửi email."
-    },
-    {
-        "question": "Có thể lên lịch tạo PDF sử dụng các tính năng scheduling của SalesForce hay không?",
-        "answer": "Vâng, bạn có thể sử dụng Batch Apex hoặc Scheduled Apex để lên lịch tạo PDF tại một thời gian cụ thể hoặc định kỳ."
-    },
-    {
-        "question": "Làm thế nào để xử lý việc tạo nhiều PDF một lúc?",
-        "answer": "Để tạo nhiều PDF một lúc, bạn có thể sử dụng Batch Apex để xử lý các bản ghi theo lô và tạo PDF cho mỗi bản ghi."
-    },
-    {
-        "question": "Làm thế nào để sử dụng font tùy chỉnh trong PDF tạo từ SalesForce?",
-        "answer": "Để sử dụng font tùy chỉnh trong PDF, bạn có thể upload font đó như là một static resource trong SalesForce và sau đó sử dụng nó trong CSS của trang VisualForce."
-    },
-    {
-        "question": "Những loại font nào được hỗ trợ và làm thế nào để upload chúng?",
-        "answer": "SalesForce hỗ trợ các font chuẩn như Arial, Helvetica, Times New Roman, v.v. Nếu bạn muốn sử dụng font tùy chỉnh, bạn có thể upload chúng như là static resources."
-    },
-    {
-        "question": "Làm thế nào để đảm bảo rằng font rendering là nhất quán trên các trình xem PDF khác nhau?",
-        "answer": "Để đảm bảo font rendering nhất quán, bạn nên sử dụng các font phổ biến và chuẩn. Ngoài ra, bạn có thể nhúng font vào PDF để đảm bảo rằng font được hiển thị đúng."
-    },
-    {
-        "question": "Làm thế nào để tạo PDF có nhiều phần hoặc chương?",
-        "answer": "Để tạo PDF có nhiều phần hoặc chương, bạn có thể sử dụng các thẻ HTML để tổ chức nội dung thành các phần riêng biệt, và sử dụng CSS để định nghĩa các tiêu đề và định dạng cho mỗi phần."
-    },
-    {
-        "question": "Làm thế nào để xử lý page breaks dựa trên nội dung?",
-        "answer": "Để xử lý page breaks dựa trên nội dung, bạn có thể sử dụng thuộc tính CSS page-break-before hoặc page-break-after để định nghĩa nơi mà trang mới nên bắt đầu."
-    },
-    {
-        "question": "Có thể có header hoặc footer khác nhau trên các trang hoặc phần khác nhau hay không?",
-        "answer": "Vâng, bạn có thể sử dụng CSS để định nghĩa header và footer khác nhau cho các phần khác nhau."
-    },
-    {
-        "question": "Làm thế nào để lưu PDF vào một bản ghi trong SalesForce?",
-        "answer": "Để lưu PDF vào một bản ghi, bạn có thể sử dụng Apex để tạo PDF và sau đó lưu nó như là attachment của bản ghi."
-    },
-    {
-        "question": "Có thể làm cho PDF có thể truy cập cho một số người dùng hoặc nhóm cụ thể hay không?",
-        "answer": "Vâng, bạn có thể sử dụng quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến PDF, đảm bảo rằng chỉ những người dùng hoặc nhóm cụ thể mới có thể xem."
-    }
-    ],
+  {
+    "question": "Làm cách nào để tạo một PDF từ một VisualForce page?",
+    "answer": "Sử dụng thuộc tính renderAs='pdf' trong thẻ <apex:page> của VisualForce page."
+  },
+  {
+    "question": "Thuộc tính renderAs attribute trong VisualForce page dùng cho mục đích gì?",
+    "answer": "Thuộc tính renderAs cho phép chỉ định định dạng của trang, như 'pdf' để tạo PDF."
+  },
+  {
+    "question": "Làm cách nào để gửi một PDF như là attachment qua email từ SalesForce?",
+    "answer": "Sử dụng Apex để tạo PDF từ VisualForce page, sau đó sử dụng lớp Messaging để gửi email với attachment là PDF."
+  },
+  {
+    "question": "PDF templates trong SalesForce là gì và cách sử dụng chúng?",
+    "answer": "PDF templates là các mẫu tiên định để tạo các tài liệu PDF từ dữ liệu của SalesForce. Chúng có thể được sử dụng để tạo các hóa đơn, báo giá, v.v."
+  },
+  {
+    "question": "Làm cách nào để tùy chỉnh layout của một PDF tạo từ VisualForce page?",
+    "answer": "Sử dụng CSS để tùy chỉnh giao diện của VisualForce page, và đảm bảo rằng các phần tử được đặt theo cách phù hợp cho định dạng PDF."
+  },
+  {
+    "question": "Có thể embed images trong PDF tạo từ SalesForce hay không?",
+    "answer": "Có, bạn có thể sử dụng thẻ <img> trong VisualForce page để hiển thị hình ảnh, và chúng sẽ được bao gồm trong PDF."
+  },
+  {
+    "question": "Làm cách nào để xử lý dữ liệu động trong PDF template?",
+    "answer": "Sử dụng merge fields hoặc các biến trong VisualForce page để hiển thị dữ liệu động từ SalesForce."
+  },
+  {
+    "question": "Những best practices cho việc tạo báo cáo PDF trong SalesForce là gì?",
+    "answer": "Giữ cho VisualForce page đơn giản, sử dụng CSS để tùy chỉnh, kiểm tra trang trước khi render thành PDF, và sử dụng các thư viện như jsPDF nếu cần tùy chỉnh hơn."
+  },
+  {
+    "question": "Làm cách nào để bảo mật PDF files trong SalesForce?",
+    "answer": "Sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập đến các bản ghi có attachments là PDF."
+  },
+  {
+    "question": "Có cách nào để tạo PDF sử dụng Apex code mà không cần VisualForce pages hay không?",
+    "answer": "Có, bạn có thể sử dụng lớp PDF của SalesForce hoặc các thư viện bên thứ ba để tạo PDF trực tiếp từ Apex code."
+  },
+  {
+    "question": "Làm cách nào để thêm header và footer vào PDF tạo từ VisualForce?",
+    "answer": "Sử dụng các thẻ như <apex:pageBlock> hoặc CSS để định nghĩa header và footer trong VisualForce page."
+  },
+  {
+    "question": "Làm cách nào để kiểm tra lỗi khi tạo PDF từ VisualForce?",
+    "answer": "Sử dụng debug logs để theo dõi lỗi, kiểm tra xem các merge fields có đúng không, và đảm bảo dữ liệu đầu vào hợp lệ."
+  },
+  {
+    "question": "Làm cách nào để tạo PDF từ dữ liệu lớn trong SalesForce?",
+    "answer": "Sử dụng Batch Apex để xử lý dữ liệu lớn, sau đó tạo PDF từng phần hoặc sử dụng VisualForce với pagination."
+  },
+  {
+    "question": "Làm cách nào để gửi PDF tự động qua email dựa trên một trigger?",
+    "answer": "Viết trigger để gọi Apex code, tạo PDF từ VisualForce, sau đó sử dụng Messaging.SingleEmailMessage để gửi email."
+  },
+  {
+    "question": "Làm cách nào để tùy chỉnh font trong PDF tạo từ SalesForce?",
+    "answer": "Sử dụng CSS để định nghĩa font, nhưng cần đảm bảo font được hỗ trợ trong môi trường PDF rendering của SalesForce."
+  },
+  {
+    "question": "Làm cách nào để tạo PDF với nhiều trang từ VisualForce?",
+    "answer": "Sử dụng pagination hoặc lặp qua dữ liệu trong VisualForce page để tạo nhiều trang PDF."
+  },
+  {
+    "question": "Làm cách nào để lưu PDF vào một bản ghi trong SalesForce?",
+    "answer": "Tạo PDF, sau đó lưu nó như một attachment hoặc file trong ContentDocument liên kết với bản ghi."
+  },
+  {
+    "question": "Làm cách nào để kiểm tra định dạng PDF trước khi gửi?",
+    "answer": "Xem trước PDF trong VisualForce page bằng cách renderAs='pdf' và kiểm tra giao diện."
+  },
+  {
+    "question": "Làm cách nào để tạo PDF với chữ ký điện tử?",
+    "answer": "Sử dụng các thư viện bên thứ ba như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page."
+  },
+  {
+    "question": "Làm cách nào để tối ưu hóa hiệu suất khi tạo PDF từ SalesForce?",
+    "answer": "Giảm số lượng dữ liệu xử lý, sử dụng caching, và tránh các truy vấn phức tạp trong VisualForce page."
+  },
+  {
+    "question": "Sự khác biệt giữa renderAs='pdf' và renderAs='html' trong các trang VisualForce là gì?",
+    "answer": "renderAs='pdf' cho phép trang VisualForce được render thành tài liệu PDF, trong khi renderAs='html' render nó thành một trang HTML thông thường. Khi sử dụng renderAs='pdf', trang sẽ được tạo thành định dạng PDF, có thể được tải xuống hoặc hiển thị trực tiếp tùy thuộc vào cài đặt trình duyệt."
+  },
+  {
+    "question": "SalesForce xử lý việc render PDF từ trang VisualForce như thế nào?",
+    "answer": "SalesForce sử dụng một engine render để chuyển đổi trang VisualForce thành PDF. Engine này sẽ chuyển đổi HTML và CSS của trang thành định dạng PDF. Tuy vậy, SalesForce có những giới hạn về CSS và JavaScript hỗ trợ cho việc render PDF, vì vậy bạn cần đảm bảo rằng trang của bạn tuân thủ các quy tắc và hạn chế này."
+  },
+  {
+    "question": "Những hạn chế và best practices nào cần lưu ý khi sử dụng renderAs='pdf'?",
+    "answer": "Một số hạn chế bao gồm: JavaScript thường bị vô hiệu hóa, CSS có những thuộc tính không được hỗ trợ, và có thể có vấn đề với việc hiển thị hình ảnh hoặc font chữ đặc biệt. Best practices bao gồm việc sử dụng CSS đơn giản, tránh sử dụng JavaScript, và kiểm tra trang trước khi render thành PDF để đảm bảo định dạng đúng."
+  },
+  {
+    "question": "Làm thế nào để đính kèm một PDF tạo từ trang VisualForce vào email sử dụng Apex?",
+    "answer": "Bạn có thể sử dụng Apex để tạo PDF từ trang VisualForce bằng cách sử dụng lớp PageReference và Blob để lấy nội dung PDF, sau đó sử dụng lớp Messaging.SingleEmailMessage để gửi email với PDF là attachment. Ví dụ: PageReference pdfPage = new PageReference('/apex/YourVisualForcePage'); pdfPage.setParameters(new Map<String, String>{ 'id' => recordId }); Blob pdfBlob = pdfPage.getContentAsPDF(); Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage(); mail.setSubject('Tiêu đề'); mail.setBody('Nội dung email', 'text/plain; charset UTF-8'); mail.setToAddresses(new String[] { 'người nhận@example.com' }); mail.setFileAttachments(new Messaging.EmailFileAttachment[] { new Messaging.EmailFileAttachment(pdfBlob, 'tên_tệp.pdf', 'application/pdf') }); Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });"
+  },
+  {
+    "question": "Có thể gửi PDF trực tiếp từ trang VisualForce mà không sử dụng Apex hay không?",
+    "answer": "Không, để gửi PDF qua email, bạn cần sử dụng Apex để tạo PDF và sau đó gửi email với attachment là PDF. Trang VisualForce chỉ có thể hiển thị hoặc tải xuống PDF, nhưng không thể gửi email trực tiếp."
+  },
+  {
+    "question": "Những bước để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi?",
+    "answer": "Để tạo và gửi PDF qua email sử dụng một button trên trang chi tiết của bản ghi, bạn có thể làm theo các bước sau: 1. Tạo một trang VisualForce với renderAs='pdf' để tạo PDF từ dữ liệu của bản ghi. 2. Tạo một lớp Apex với phương thức để tạo PDF từ trang VisualForce và gửi email. 3. Trên trang chi tiết của bản ghi, thêm một button tùy chỉnh gọi phương thức Apex với ID của bản ghi làm tham số."
+  },
+  {
+    "question": "Làm thế nào để tạo một mẫu PDF tùy chỉnh trong SalesForce?",
+    "answer": "Để tạo một mẫu PDF tùy chỉnh trong SalesForce, bạn có hai tùy chọn chính: 1. Sử dụng trang VisualForce: Tạo một trang VisualForce với renderAs='pdf' và thiết kế layout theo yêu cầu của mình sử dụng HTML và CSS. 2. Sử dụng Document Templates: Tạo một mẫu tài liệu trong SalesForce, chọn định dạng là PDF, và thiết kế mẫu sử dụng các merge fields để hiển thị dữ liệu từ bản ghi."
+  },
+  {
+    "question": "Làm thế nào để liên kết một mẫu PDF với một đối tượng hoặc loại bản ghi cụ thể?",
+    "answer": "Nếu bạn sử dụng Document Templates, bạn có thể liên kết mẫu với một đối tượng cụ thể bằng cách chọn đối tượng đó trong phần cài đặt của mẫu. Ví dụ, bạn có thể tạo một mẫu PDF cho đối tượng Opportunity. Nếu bạn sử dụng trang VisualForce, bạn có thể thiết kế trang để hoạt động với một đối tượng cụ thể bằng cách sử dụng Apex controller hoặc extension liên kết với đối tượng đó."
+  },
+  {
+    "question": "Có thể sử dụng merge fields trong mẫu PDF, và nếu có, làm thế nào?",
+    "answer": "Trong Document Templates, bạn có thể sử dụng merge fields để hiển thị dữ liệu từ bản ghi. Merge fields có dạng {Field_Name}, và chúng sẽ được thay thế bằng giá trị của trường từ bản ghi tương ứng. Trong trang VisualForce, bạn có thể sử dụng biến Apex để hiển thị dữ liệu từ bản ghi. Ví dụ, nếu bạn có một controller liên kết với một bản ghi Opportunity, bạn có thể sử dụng {!opportunity.Name} để hiển thị tên của opportunity."
+  },
+  {
+    "question": "Làm thế nào để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page?",
+    "answer": "Để kiểm soát kích thước và hướng của trang trong PDF tạo từ VisualForce page, bạn có thể sử dụng các thuộc tính CSS để định nghĩa chiều rộng, chiều cao và hướng của trang. Ví dụ, bạn có thể sử dụng @page rule trong CSS để định nghĩa kích thước trang. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF, vì vậy bạn cần kiểm tra tài liệu chính thức để biết những thuộc tính nào được hỗ trợ."
+  },
+  {
+    "question": "Làm thế nào để thiết lập margin và padding trong PDF?",
+    "answer": "Bạn có thể sử dụng các thuộc tính CSS như margin và padding để thiết lập khoảng cách và đệm cho các phần tử trên trang VisualForce. Tuy vậy, do những giới hạn của render PDF, bạn cần đảm bảo rằng các thuộc tính CSS bạn sử dụng được hỗ trợ."
+  },
+  {
+    "question": "Có thể sử dụng CSS để style PDF, và có những xem xét đặc biệt nào cho việc render PDF?",
+    "answer": "Vâng, bạn có thể sử dụng CSS để style PDF. Tuy vậy, SalesForce có những giới hạn về CSS hỗ trợ cho render PDF. Ví dụ, JavaScript thường bị vô hiệu hóa, và một số thuộc tính CSS có thể không được hỗ trợ hoặc hoạt động khác biệt. Bạn cần kiểm tra tài liệu chính thức của SalesForce để biết những thuộc tính CSS nào được hỗ trợ và cách chúng hoạt động trong render PDF."
+  },
+  {
+    "question": "Làm thế nào để truyền parameters đến trang VisualForce để tạo PDF động?",
+    "answer": "Bạn có thể truyền parameters đến trang VisualForce bằng cách sử dụng query string parameters hoặc thông qua Apex controller. Ví dụ, nếu bạn có một button trên trang chi tiết của bản ghi, bạn có thể thiết lập URL của button để truyền ID của bản ghi đến trang VisualForce. Sau đó, trong controller, bạn có thể lấy parameter này và sử dụng để lấy dữ liệu từ bản ghi."
+  },
+  {
+    "question": "Làm thế nào để truy vấn và hiển thị dữ liệu từ các đối tượng liên quan trong PDF?",
+    "answer": "Trong Apex controller của trang VisualForce, bạn có thể sử dụng SOQL để truy vấn dữ liệu từ các đối tượng liên quan. Sau đó, bạn có thể hiển thị dữ liệu này trên trang VisualForce sử dụng biến Apex. Ví dụ, nếu bạn đang tạo PDF cho một Opportunity, bạn có thể truy vấn các bản ghi Contact liên quan và hiển thị thông tin của chúng trong PDF."
+  },
+  {
+    "question": "Những cách tốt nhất để xử lý lượng dữ liệu lớn trong PDF mà không gây ra vấn đề về hiệu suất?",
+    "answer": "Để xử lý lượng dữ liệu lớn trong PDF, bạn có thể sử dụng phân trang hoặc lọc dữ liệu để chỉ hiển thị những phần quan trọng nhất. Ngoài ra, bạn có thể sử dụng caching để lưu trữ dữ liệu đã truy vấn và tránh truy vấn lặp lại. Trong trang VisualForce, bạn có thể sử dụng các thẻ như <apex:repeat> để hiển thị danh sách dữ liệu, nhưng cần đảm bảo rằng danh sách không quá lớn để tránh vấn đề về hiệu suất."
+  },
+  {
+    "question": "Những sai lầm phổ biến cần tránh khi tạo PDF từ trang VisualForce?",
+    "answer": "Một số sai lầm phổ biến bao gồm: Sử dụng JavaScript, vì nó thường bị vô hiệu hóa trong render PDF. Sử dụng các thuộc tính CSS không được hỗ trợ, dẫn đến định dạng sai. Không kiểm tra trang trước khi render thành PDF, dẫn đến kết quả không như mong đợi. Tải quá nhiều hình ảnh hoặc dữ liệu lớn, gây ra vấn đề về hiệu suất. Không đảm bảo rằng font chữ được sử dụng là font hỗ trợ."
+  },
+  {
+    "question": "Làm thế nào để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau?",
+    "answer": "Để đảm bảo rằng PDF có thể đọc và định dạng đúng trên các thiết bị và trình duyệt khác nhau, bạn nên: Sử dụng các font chữ phổ biến và chuẩn. Đảm bảo rằng kích thước và định dạng văn bản là phù hợp. Kiểm tra PDF trên các trình duyệt và thiết bị khác nhau để đảm bảo tính tương thích. Sử dụng các thuộc tính CSS chuẩn để định dạng."
+  },
+  {
+    "question": "Những xem xét về hiệu suất nào cần có cho việc tạo PDF trong SalesForce?",
+    "answer": "Một số xem xét về hiệu suất bao gồm: Giảm số lượng truy vấn database bằng cách sử dụng caching hoặc lấy dữ liệu hiệu quả. Tránh sử dụng các thành phần nặng hoặc phức tạp trên trang VisualForce. Tối ưu hóa hình ảnh để giảm kích thước file. Sử dụng các kỹ thuật để giảm thời gian render, như sử dụng layout đơn giản."
+  },
+  {
+    "question": "Làm thế nào để hạn chế quyền truy cập đến những PDF cụ thể dựa trên quy tắc của SalesForce?",
+    "answer": "SalesForce cung cấp các quy tắc sharing và security để kiểm soát quyền truy cập đến các bản ghi. Nếu bạn lưu PDF như là attachment của một bản ghi, quy tắc sharing của bản ghi đó sẽ áp dụng để quy định ai có thể xem attachment. Ngoài ra, nếu bạn tạo PDF và gửi qua email, bạn cần đảm bảo rằng người nhận có quy tắc truy cập phù hợp để xem nội dung của PDF."
+  },
+  {
+    "question": "Có thể bảo mật PDF bằng mật khẩu hoặc các biện pháp khác hay không?",
+    "answer": "SalesForce không cung cấp tính năng bảo mật PDF bằng mật khẩu trực tiếp. Nếu bạn muốn bảo mật PDF, bạn có thể sử dụng các thư viện bên thứ ba hoặc Apex code để thêm mật khẩu cho PDF. Tuy vậy, việc sử dụng thư viện bên thứ ba trong SalesForce có những hạn chế, và bạn cần đảm bảo rằng thư viện đó được hỗ trợ và có thể được sử dụng trong môi trường của bạn."
+  },
+  {
+    "question": "Những biện pháp nào có thể thực hiện để ngừa truy cập không ủy quyền hoặc phân phối sai của PDF nhạy cảm?",
+    "answer": "Để ngừa truy cập không ủy quyền hoặc phân phối sai của PDF nhạy cảm, bạn có thể: Lưu PDF như là attachment của bản ghi và sử dụng quy tắc sharing và security của SalesForce để hạn chế quyền truy cập. Sử dụng các quy tắc validation và authorization trong Apex để đảm bảo rằng chỉ những người có quyền thích hợp mới có thể tạo hoặc xem PDF. Sử dụng các biện pháp bảo mật bổ sung như encryption hoặc watermarking để bảo vệ nội dung của PDF."
+  },
+  {
+    "question": "Sự khác biệt giữa việc tạo PDF sử dụng Apex và sử dụng trang VisualForce là gì?",
+    "answer": "Khi sử dụng trang VisualForce, bạn tạo một trang web và sử dụng renderAs='pdf' để chuyển đổi nó thành PDF. Điều này phù hợp cho các trường hợp bạn muốn có một giao diện đẹp và dễ tùy chỉnh. Khi sử dụng Apex, bạn có thể sử dụng các lớp của SalesForce hoặc thư viện bên thứ ba để tạo PDF trực tiếp từ code. Điều này có thể cho bạn sự kiểm soát tốt hơn về định dạng và hiệu suất, nhưng có thể phức tạp hơn."
+  },
+  {
+    "question": "Làm thế nào để sử dụng lớp PDF của SalesForce trong Apex để tạo PDF?",
+    "answer": "SalesForce không cung cấp một lớp PDF built-in để tạo PDF trực tiếp từ Apex. Tuy vậy, bạn có thể sử dụng lớp PageReference để lấy nội dung PDF từ một trang VisualForce. Nếu bạn muốn tạo PDF mà không sử dụng trang VisualForce, bạn có thể cần sử dụng các thư viện bên thứ ba hoặc viết code tùy chỉnh để tạo PDF."
+  },
+  {
+    "question": "Có những ứng dụng bên thứ ba nào có thể được tích hợp với SalesForce để tạo PDF?",
+    "answer": "Có rất nhiều ứng dụng bên thứ ba trên AppExchange của SalesForce chuyên về việc tạo và quản lý tài liệu, bao gồm tạo PDF. Ví dụ, DocuSign, PandaDoc, và Adobe Sign là những ứng dụng phổ biến cho việc tạo và ký kết tài liệu, bao gồm PDF."
+  },
+  {
+    "question": "Làm thế nào để thêm một mục lục hoặc chỉ mục vào PDF?",
+    "answer": "Để thêm một mục lục hoặc chỉ mục vào PDF tạo từ VisualForce, bạn có thể sử dụng các thẻ HTML và CSS để tạo mục lục trên trang. Tuy vậy, việc tạo mục lục tự động có thể phức tạp, và bạn có thể cần sử dụng JavaScript để tạo mục lục dựa trên tiêu đề của trang. Vì JavaScript thường bị vô hiệu hóa trong render PDF, bạn có thể cần tạo mục lục thủ công hoặc sử dụng các kỹ thuật khác."
+  },
+  {
+    "question": "Làm thế nào để tạo PDF có bookmark với các phần có thể navigable?",
+    "answer": "Để tạo PDF có bookmark, bạn có thể sử dụng các thư viện bên thứ ba để thêm bookmark vào PDF sau khi tạo. Trong VisualForce, việc này có thể khó khăn vì không có sự hỗ trợ trực tiếp."
+  },
+  {
+    "question": "Có thể thêm các phần tử tương tác như link hoặc form fields vào PDF hay không?",
+    "answer": "Trong PDF tạo từ VisualForce, các link HTML có thể được hiển thị như link trong PDF, nhưng chức năng của chúng có thể khác tùy thuộc vào trình xem PDF. Tuy nhiên, form fields và các phần tử tương tác khác có thể không hoạt động đúng do giới hạn của render PDF."
+  },
+  {
+    "question": "Làm thế nào để debug các vấn đề khi tạo PDF từ trang VisualForce?",
+    "answer": "Để debug các vấn đề khi tạo PDF từ trang VisualForce, bạn có thể: Xem trang VisualForce trong trình duyệt để kiểm tra xem nó hiển thị đúng trước khi render thành PDF, kiểm tra log của SalesForce và sử dụng các công cụ phát triển web như Chrome DevTools để xem cấu trúc HTML/CSS."
+  },
+  {
+    "question": "Những thông báo lỗi phổ biến và cách giải quyết chúng?",
+    "answer": "Một số thông báo lỗi phổ biến bao gồm: 'Failed to load PDF', 'CSS not applied', 'Image not displayed'. Để giải quyết, bạn cần kiểm tra lại VisualForce page, xác định các lỗi trong debug logs, đảm bảo các merge fields và thuộc tính CSS được hỗ trợ và hiển thị đúng."
+  },
+  {
+    "question": "Làm thế nào để xử lý các trường hợp mà việc tạo PDF thất bại do thiếu dữ liệu hoặc các vấn đề khác?",
+    "answer": "Để xử lý trường hợp PDF thất bại, bạn có thể sử dụng try-catch trong Apex để bắt lỗi, kiểm tra dữ liệu đầu vào, hiển thị thông báo lỗi cho người dùng hoặc tạo PDF với nội dung mặc định nếu dữ liệu không đầy đủ."
+  },
+  {
+    "question": "Làm thế nào để phân trang các dữ liệu lớn trong PDF để tránh vấn đề về hiệu suất?",
+    "answer": "Để phân trang dữ liệu lớn, bạn có thể sử dụng các thẻ HTML như <div> hoặc <table> để chia dữ liệu thành các phần riêng biệt, kết hợp với CSS (ví dụ: sử dụng page-break-before hoặc page-break-after) để xác định điểm phân trang."
+  },
+  {
+    "question": "Kích thước tối đa của PDF có thể tạo từ trang VisualForce là bao nhiêu?",
+    "answer": "SalesForce không quy định rõ kích thước tối đa của PDF, nhưng bạn cần lưu ý giới hạn về hiệu suất và bộ nhớ. Do đó, nên tối ưu nội dung và hình ảnh để giữ kích thước file ở mức hợp lý."
+  },
+  {
+    "question": "Những cách tối ưu hóa nào có thể sử dụng để tăng tốc độ tạo PDF từ SalesForce?",
+    "answer": "Để tối ưu hóa tốc độ tạo PDF, bạn có thể: giảm số lượng dữ liệu truy vấn, sử dụng caching, tối giản CSS/HTML, phân trang dữ liệu và tối ưu hóa hình ảnh để giảm kích thước file."
+  },
+  {
+    "question": "Làm thế nào để thiết lập một trigger để tự động tạo và gửi PDF khi có những điều kiện nhất định?",
+    "answer": "Để thiết lập trigger tự động tạo và gửi PDF, bạn có thể viết Apex trigger trên đối tượng cần thiết và gọi một phương thức Apex tạo PDF từ VisualForce page, sau đó sử dụng Messaging để gửi email kèm file PDF."
+  },
+  {
+    "question": "Có thể lên lịch tạo PDF sử dụng các tính năng scheduling của SalesForce hay không?",
+    "answer": "Vâng, bạn có thể sử dụng Batch Apex hoặc Scheduled Apex để lên lịch tạo PDF tại một thời gian cụ thể hoặc định kỳ, tùy thuộc vào yêu cầu nghiệp vụ."
+  },
+  {
+    "question": "Làm thế nào để xử lý việc tạo nhiều PDF một lúc?",
+    "answer": "Để tạo nhiều PDF cùng lúc, bạn có thể sử dụng Batch Apex để xử lý các bản ghi theo lô và tạo PDF cho mỗi bản ghi, giúp giảm tải và tối ưu hiệu suất."
+  },
+  {
+    "question": "Làm thế nào để sử dụng font tùy chỉnh trong PDF tạo từ SalesForce?",
+    "answer": "Để sử dụng font tùy chỉnh, bạn có thể upload font đó dưới dạng static resource và tham chiếu nó trong CSS của VisualForce page, đảm bảo font được hỗ trợ trong môi trường render PDF."
+  },
+  {
+    "question": "Những loại font nào được hỗ trợ và làm thế nào để upload chúng?",
+    "answer": "SalesForce hỗ trợ các font chuẩn như Arial, Helvetica, Times New Roman, v.v. Nếu cần font tùy chỉnh, bạn có thể upload chúng như là static resource và tham chiếu trong CSS."
+  },
+  {
+    "question": "Làm thế nào để đảm bảo rằng font rendering là nhất quán trên các trình xem PDF khác nhau?",
+    "answer": "Để đảm bảo font rendering nhất quán, bạn nên sử dụng các font phổ biến, nhúng font vào PDF nếu cần và kiểm tra kỹ trên các trình xem PDF khác nhau."
+  },
+  {
+    "question": "Làm thế nào để tạo PDF có nhiều phần hoặc chương?",
+    "answer": "Để tạo PDF có nhiều phần hoặc chương, bạn có thể sử dụng các thẻ HTML để tổ chức nội dung thành các phần riêng biệt, sử dụng tiêu đề và CSS để định dạng, tạo sự phân chia rõ ràng giữa các chương."
+  },
+  {
+    "question": "Làm thế nào để xử lý page breaks dựa trên nội dung?",
+    "answer": "Bạn có thể sử dụng thuộc tính CSS như page-break-before hoặc page-break-after để xác định vị trí ngắt trang dựa trên nội dung, đảm bảo rằng các phần không bị cắt xén không đúng cách."
+  },
+  {
+    "question": "Có thể có header hoặc footer khác nhau trên các trang hoặc phần khác nhau hay không?",
+    "answer": "Vâng, bạn có thể sử dụng CSS và cấu trúc HTML để định nghĩa header và footer riêng cho từng phần hoặc trang trong PDF."
+  },
+  {
+    "question": "Làm thế nào để lưu PDF vào một bản ghi trong SalesForce?",
+    "answer": "Để lưu PDF vào một bản ghi, bạn có thể sử dụng Apex để tạo PDF và sau đó lưu file PDF như một attachment hoặc dưới dạng ContentDocument liên kết với bản ghi đó."
+  },
+  {
+    "question": "Có thể làm cho PDF có thể truy cập cho một số người dùng hoặc nhóm cụ thể hay không?",
+    "answer": "Vâng, bạn có thể sử dụng các quy tắc sharing và security của SalesForce để kiểm soát quyền truy cập, đảm bảo rằng chỉ những người dùng hoặc nhóm cụ thể mới có thể xem PDF."
+  },
+  {
+    "question": "Làm thế nào để tạo PDF từ VisualForce page khi dữ liệu thay đổi theo thời gian?",
+    "answer": "Sử dụng các merge fields và Apex controller để truy vấn dữ liệu thời gian thực, kết hợp với thuộc tính renderAs='pdf' nhằm tạo PDF với nội dung cập nhật liên tục."
+  },
+  {
+    "question": "Làm thế nào để đảm bảo PDF tương thích với các thiết bị di động?",
+    "answer": "Sử dụng thiết kế responsive với CSS, kiểm tra hiển thị trên nhiều thiết bị và tối ưu layout cho màn hình nhỏ để đảm bảo PDF hiển thị tốt trên di động."
+  },
+  {
+    "question": "Cách xử lý lỗi khi PDF chứa nhiều bảng và biểu đồ?",
+    "answer": "Kiểm tra lại cấu trúc HTML/CSS, sử dụng các thẻ hợp lệ cho bảng và biểu đồ, đảm bảo dữ liệu được tối ưu và kiểm tra trước khi render PDF để tránh lỗi."
+  },
+  {
+    "question": "Làm thế nào để tối ưu hóa kích thước file PDF tạo từ VisualForce?",
+    "answer": "Giảm kích thước hình ảnh, sử dụng CSS tối giản, loại bỏ nội dung không cần thiết và tối ưu hóa truy vấn dữ liệu để tạo file PDF có kích thước hợp lý."
+  },
+  {
+    "question": "Có thể chuyển đổi PDF đã tạo thành định dạng hình ảnh như PNG hay JPEG không?",
+    "answer": "SalesForce không hỗ trợ trực tiếp chuyển PDF thành hình ảnh. Bạn cần sử dụng thư viện hoặc dịch vụ bên ngoài để chuyển đổi sau khi tạo PDF."
+  },
+  {
+    "question": "Làm thế nào để tích hợp PDF vào Lightning Components trong SalesForce?",
+    "answer": "Tạo VisualForce page với renderAs='pdf' và nhúng nó vào Lightning Component thông qua iframe hoặc sử dụng Lightning Web Component hỗ trợ hiển thị PDF."
+  },
+  {
+    "question": "Cách hiển thị PDF trực tiếp trong giao diện Lightning Experience?",
+    "answer": "Sử dụng component Visualforce hoặc Lightning Web Component để hiển thị PDF trong iframe, đảm bảo tương thích với giao diện Lightning Experience."
+  },
+  {
+    "question": "Làm thế nào để tạo các mẫu PDF đa ngôn ngữ trong SalesForce?",
+    "answer": "Sử dụng merge fields và Apex controller để thay đổi nội dung dựa trên ngôn ngữ người dùng, kết hợp với tài nguyên dịch thuật để tạo PDF đa ngôn ngữ."
+  },
+  {
+    "question": "Có cách nào để kiểm soát chất lượng hiển thị của PDF theo DPI?",
+    "answer": "SalesForce không cung cấp tùy chọn DPI trực tiếp, do đó bạn cần kiểm tra kết quả PDF và sử dụng các công cụ bên ngoài nếu cần điều chỉnh chất lượng hiển thị cao hơn."
+  },
+  {
+    "question": "Làm thế nào để thực hiện watermark động trên PDF tạo từ VisualForce?",
+    "answer": "Sử dụng CSS để thêm watermark dạng background hoặc overlay trong VisualForce page, hoặc tích hợp thư viện bên ngoài để xử lý watermark sau khi PDF được tạo."
+  },
+  {
+    "question": "Làm thế nào để gộp nhiều trang PDF thành một tài liệu duy nhất?",
+    "answer": "SalesForce không hỗ trợ gộp PDF trực tiếp. Bạn cần sử dụng các công cụ hoặc thư viện bên thứ ba sau khi tạo PDF để hợp nhất nhiều file thành một tài liệu."
+  },
+  {
+    "question": "Làm thế nào để tách các trang riêng lẻ từ một file PDF đã tạo?",
+    "answer": "Sử dụng công cụ xử lý PDF bên ngoài hoặc dịch vụ API để tách các trang từ file PDF sau khi PDF được tạo."
+  },
+  {
+    "question": "Cách xử lý lỗi bộ nhớ khi tạo PDF với dữ liệu quá lớn?",
+    "answer": "Phân trang dữ liệu, sử dụng Batch Apex để xử lý theo lô và tối ưu hóa truy vấn dữ liệu nhằm giảm tải bộ nhớ khi render PDF."
+  },
+  {
+    "question": "Có thể sử dụng biểu đồ và đồ thị trong PDF tạo từ VisualForce không?",
+    "answer": "Có, bạn có thể hiển thị biểu đồ và đồ thị bằng cách render chúng dưới dạng hình ảnh hoặc sử dụng thư viện hỗ trợ tạo đồ thị có khả năng render PDF."
+  },
+  {
+    "question": "Làm thế nào để cập nhật phiên bản PDF khi có thay đổi dữ liệu?",
+    "answer": "Sử dụng Apex trigger hoặc Scheduled Apex để tự động kiểm tra thay đổi dữ liệu và tạo lại PDF mới, đảm bảo phiên bản PDF luôn cập nhật."
+  },
+  {
+    "question": "Làm thế nào để đảm bảo rằng PDF được render đúng định dạng với nhiều ngôn ngữ khác nhau?",
+    "answer": "Sử dụng merge fields và tài nguyên ngôn ngữ trong Apex controller, đồng thời đảm bảo font chữ hỗ trợ đa ngôn ngữ để PDF hiển thị đúng định dạng."
+  },
+  {
+    "question": "Cách xử lý lỗi khi sử dụng merge fields trong PDF?",
+    "answer": "Đảm bảo cú pháp merge fields chính xác, kiểm tra dữ liệu tồn tại và theo dõi debug logs để xác định lỗi khi render PDF."
+  },
+  {
+    "question": "Làm thế nào để thêm chữ ký số vào PDF được tạo từ SalesForce?",
+    "answer": "Tích hợp các dịch vụ chữ ký số như DocuSign hoặc thêm hình ảnh chữ ký vào VisualForce page để nhúng vào PDF."
+  },
+  {
+    "question": "Làm thế nào để kiểm tra hiệu suất tạo PDF trên môi trường sandbox?",
+    "answer": "Thực hiện kiểm tra trên sandbox, theo dõi debug logs và sử dụng công cụ profiling của SalesForce để đo thời gian render PDF và tối ưu hóa code."
+  },
+  {
+    "question": "Có thể sử dụng các framework JavaScript bên ngoài để hỗ trợ tạo PDF hay không?",
+    "answer": "Do JavaScript thường bị vô hiệu hóa trong quá trình render PDF của SalesForce, bạn nên sử dụng CSS và Apex để tạo PDF hoặc tích hợp dịch vụ bên ngoài nếu cần."
+  },
+  {
+    "question": "Làm thế nào để chuyển đổi HTML phức tạp thành PDF mà vẫn giữ nguyên định dạng?",
+    "answer": "Đơn giản hóa HTML, sử dụng CSS chuẩn và kiểm tra trước khi render. Nếu cần, tích hợp các công cụ bên ngoài chuyên chuyển đổi HTML phức tạp thành PDF."
+  },
+  {
+    "question": "Có thể tùy chỉnh chế độ in (print mode) cho PDF khi hiển thị trên trình duyệt không?",
+    "answer": "Bạn có thể sử dụng CSS media queries để định nghĩa kiểu in riêng cho PDF, tuy nhiên cần kiểm tra khả năng hỗ trợ của trình duyệt khi in từ PDF."
+  },
+  {
+    "question": "Làm thế nào để thêm trường tùy chỉnh vào PDF dựa trên quyền truy cập của người dùng?",
+    "answer": "Sử dụng Apex controller để kiểm tra quyền của người dùng và render các trường tùy chỉnh trên VisualForce page dựa trên quyền truy cập đó."
+  },
+  {
+    "question": "Cách kết hợp dữ liệu từ nhiều đối tượng vào một PDF duy nhất?",
+    "answer": "Sử dụng SOQL kết hợp và Apex controller để truy xuất dữ liệu từ nhiều đối tượng, sau đó hiển thị chúng trên một VisualForce page để tạo PDF tổng hợp."
+  },
+  {
+    "question": "Làm thế nào để xử lý lỗi khi vượt quá giới hạn kích thước file PDF?",
+    "answer": "Tối ưu hóa nội dung, hình ảnh và truy vấn dữ liệu, đồng thời sử dụng phân trang nếu cần để đảm bảo file PDF không vượt quá giới hạn bộ nhớ của SalesForce."
+  },
+  {
+    "question": "Có thể tự động phân loại các PDF tạo ra theo loại bản ghi trong SalesForce không?",
+    "answer": "Có, sử dụng Apex để gán metadata hoặc phân loại PDF dựa trên loại bản ghi, sau đó lưu trữ dưới dạng ContentDocument hoặc attachment phù hợp."
+  },
+  {
+    "question": "Làm thế nào để xử lý trường hợp PDF không hiển thị hình ảnh do lỗi URL?",
+    "answer": "Kiểm tra URL hình ảnh, đảm bảo quyền truy cập đúng và nếu cần, sử dụng static resources để đảm bảo hình ảnh được tải chính xác trong PDF."
+  },
+  {
+    "question": "Làm thế nào để tạo PDF có tính năng tìm kiếm nội dung bên trong?",
+    "answer": "Nếu text trong PDF được render dưới dạng text (không chuyển thành hình ảnh), PDF sẽ có khả năng tìm kiếm nội dung. Kiểm tra cấu hình của VisualForce page để đảm bảo điều này."
+  },
+  {
+    "question": "Có cách nào để tạo PDF với định dạng tương tự như bảng tính Excel không?",
+    "answer": "Bạn có thể thiết kế layout PDF theo dạng bảng biểu với CSS và HTML để bắt chước giao diện bảng tính Excel, tuy nhiên một số tính năng động của Excel có thể không được hỗ trợ."
+  },
+  {
+    "question": "Làm thế nào để kiểm soát màu sắc và định dạng màu trong PDF tạo từ VisualForce?",
+    "answer": "Sử dụng CSS để định nghĩa màu sắc và kiểu dáng, đồng thời kiểm tra các thuộc tính CSS được hỗ trợ trong quá trình render PDF của SalesForce."
+  },
+  {
+    "question": "Làm thế nào để xử lý việc render các bảng dữ liệu phức tạp có nhiều dòng trong PDF?",
+    "answer": "Phân trang dữ liệu, sử dụng các thẻ HTML như <table>, <tr>, <td> và áp dụng CSS phù hợp cho từng dòng để đảm bảo bảng hiển thị rõ ràng và không bị cắt xén."
+  },
+  {
+    "question": "Có cách nào để tích hợp API bên ngoài để xử lý và tối ưu PDF sau khi tạo không?",
+    "answer": "Có, bạn có thể sử dụng API của bên thứ ba để xử lý, nén file, hoặc thêm watermark vào PDF sau khi nó được tạo từ SalesForce."
+  },
+  {
+    "question": "Làm thế nào để triển khai các thay đổi về giao diện PDF mà không ảnh hưởng đến các chức năng khác?",
+    "answer": "Tách riêng logic tạo PDF và giao diện hiển thị. Sử dụng versioning cho VisualForce page và kiểm tra kỹ trên môi trường sandbox trước khi triển khai trên production."
+  },
+  {
+    "question": "Làm thế nào để tạo PDF có tính năng tự động lưu trữ và backup định kỳ?",
+    "answer": "Sử dụng Scheduled Apex để tự động tạo và lưu trữ PDF vào ContentDocument hoặc hệ thống lưu trữ bên ngoài, kết hợp với các quy trình backup định kỳ."
+  },
+  {
+    "question": "Làm thế nào để cấu hình và sử dụng các static resources cho việc tạo PDF chất lượng cao?",
+    "answer": "Upload các static resources như CSS, hình ảnh và font chữ lên SalesForce, sau đó tham chiếu chúng trong VisualForce page để đảm bảo PDF được render với giao diện và chất lượng cao."
+  },
+  {
+    "question": "Làm thế nào để theo dõi và log quá trình tạo PDF nhằm dễ dàng debug các lỗi phát sinh?",
+    "answer": "Sử dụng debug logs của SalesForce, tích hợp logging trong Apex và theo dõi các log file để nắm bắt quá trình render PDF, từ đó xác định và sửa lỗi phát sinh."
+  }
+],
     "Dynamics: Dynamics365 Environment Preparation": [
         {
             "question": "Những bước để tạo một tổ chức mới trong Dynamics 365 là gì?",
