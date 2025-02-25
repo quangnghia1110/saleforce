@@ -134,15 +134,58 @@ document.addEventListener('DOMContentLoaded', async () => {
             topicsContainer.appendChild(topicElement);
         });
 
-        // Add search functionality
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            document.querySelectorAll('.qa-item').forEach(item => {
-                const question = item.querySelector('.question-text')?.textContent.toLowerCase() || '';
-                const answer = item.querySelector('.answer')?.textContent.toLowerCase() || '';
-                const shouldShow = question.includes(searchTerm) || answer.includes(searchTerm);
-                item.style.display = shouldShow ? 'block' : 'none';
+        function filterQuestions(searchText) {
+            const searchTerm = searchText.toLowerCase();
+            const topics = document.querySelectorAll('.topic');
+            let hasResults = false;
+
+            topics.forEach(topic => {
+                const qaItems = topic.querySelectorAll('.qa-item');
+                let topicHasMatch = false;
+                let visibleQuestions = 0;
+                let completedVisibleQuestions = 0;
+
+                qaItems.forEach(item => {
+                    const questionText = item.querySelector('.question-text').textContent.toLowerCase();
+                    const matches = questionText.includes(searchTerm);
+                    
+                    item.style.display = matches ? 'block' : 'none';
+                    if (matches) {
+                        topicHasMatch = true;
+                        hasResults = true;
+                        visibleQuestions++;
+                        // Đếm số câu hỏi đã hoàn thành trong các câu đang hiển thị
+                        if (item.querySelector('input[type="checkbox"]').checked) {
+                            completedVisibleQuestions++;
+                        }
+                    }
+                });
+
+                // Cập nhật badge với số câu đã hoàn thành trên tổng số câu đang hiển thị
+                const progressBadge = topic.querySelector('.progress-badge');
+                if (progressBadge) {
+                    progressBadge.textContent = `${completedVisibleQuestions}/${visibleQuestions}`;
+                }
+
+                topic.style.display = topicHasMatch ? 'block' : 'none';
             });
+
+            // Hiển thị thông báo nếu không có kết quả
+            const errorMessage = document.querySelector('.error-message') || createErrorMessage();
+            errorMessage.style.display = hasResults ? 'none' : 'block';
+        }
+
+        function createErrorMessage() {
+            const message = document.createElement('div');
+            message.className = 'error-message';
+            message.textContent = 'Không tìm thấy câu hỏi nào phù hợp';
+            document.querySelector('.container').appendChild(message);
+            return message;
+        }
+
+        // Thêm event listener cho input search
+        document.querySelector('.search-input').addEventListener('input', (e) => {
+            filterQuestions(e.target.value);
         });
         
     } catch (error) {
