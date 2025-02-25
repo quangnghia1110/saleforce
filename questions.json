@@ -1855,7 +1855,75 @@
     {
       "question": "Có thể sử dụng Batch Apex để xử lý dữ liệu trong Salesforce Industries không?",
       "answer": "Có, Batch Apex có thể được sử dụng để tự động hóa quy trình ngành cụ thể, như bảo hiểm, năng lượng, hoặc viễn thông, đảm bảo hiệu suất."
-    }
+    },
+    {
+    "question": "Làm cách nào để giám sát và phân tích hiệu suất Batch Apex qua debug logs?",
+    "answer": "Sử dụng debug logs và Developer Console để theo dõi thời gian chạy, số lượng bản ghi xử lý và lỗi của từng lô, từ đó tối ưu hóa hiệu suất."
+  },
+  {
+    "question": "Có giới hạn số lượng Batch Apex job có thể chạy đồng thời không?",
+    "answer": "Có, số lượng job đồng thời bị giới hạn theo cấu hình tổ chức và giấy phép, do đó cần lập kế hoạch và phân bổ tài nguyên hợp lý."
+  },
+  {
+    "question": "Làm cách nào để đảm bảo Batch Apex không làm ảnh hưởng đến hiệu suất của hệ thống production?",
+    "answer": "Chạy job vào giờ thấp điểm, tối ưu hóa kích thước lô và truy vấn SOQL, đồng thời giám sát tài nguyên hệ thống qua debug logs."
+  },
+  {
+    "question": "Có cách nào để phân chia và xử lý một Batch Apex job theo nhiều bước phụ (sub-batches)?",
+    "answer": "Bạn có thể chia nhỏ công việc thành các sub-batches bằng cách sử dụng logic phân chia trong phương thức execute và sử dụng biến để quản lý trạng thái từng sub-batch."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex xử lý dữ liệu khi gặp trường hợp 'Mixed DML'?",
+    "answer": "Sử dụng kỹ thuật @future hoặc Queueable Apex để tách các thao tác DML không thể thực hiện cùng nhau thành các giao dịch riêng biệt."
+  },
+  {
+    "question": "Làm cách nào để tối ưu hóa truy vấn SOQL trong Batch Apex để giảm thời gian chạy?",
+    "answer": "Viết truy vấn SOQL hiệu quả, chỉ lấy các trường cần thiết và sử dụng điều kiện lọc chặt chẽ để giảm số lượng bản ghi trả về."
+  },
+  {
+    "question": "Làm cách nào để sử dụng QueryLocator trong Batch Apex và lợi ích của nó là gì?",
+    "answer": "QueryLocator cho phép truy xuất tập hợp bản ghi lớn mà không bị giới hạn số lượng, giúp Batch Apex xử lý dữ liệu lớn hiệu quả hơn."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex xử lý các tác vụ liên quan đến báo cáo tự động?",
+    "answer": "Batch Apex có thể truy vấn, tổng hợp và lưu trữ dữ liệu vào các đối tượng báo cáo, sau đó tự động gửi báo cáo qua email hoặc cập nhật dashboard."
+  },
+  {
+    "question": "Có thể sử dụng Batch Apex để tự động xóa dữ liệu cũ không?",
+    "answer": "Có, Batch Apex có thể xóa hàng loạt bản ghi cũ dựa trên điều kiện nhất định, giúp duy trì dữ liệu sạch và tối ưu hiệu suất."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex tích hợp với các công cụ giám sát của Salesforce?",
+    "answer": "Kết hợp debug logs, Developer Console và Apex Jobs Dashboard để theo dõi hoạt động, hiệu suất và lỗi của Batch Apex."
+  },
+  {
+    "question": "Làm cách nào để kiểm soát mức độ sử dụng tài nguyên khi chạy Batch Apex?",
+    "answer": "Sử dụng kích thước lô phù hợp, tối ưu hóa SOQL và đặt giới hạn cho số lượng bản ghi xử lý trong mỗi lô để không vượt quá giới hạn governor."
+  },
+  {
+    "question": "Làm cách nào để xử lý lỗi phức tạp khi Batch Apex không thể hoàn thành một lô do ngoại lệ?",
+    "answer": "Áp dụng cấu hình retry, sử dụng try-catch để ghi log và tách riêng các lô lỗi để có thể chạy lại mà không ảnh hưởng đến các lô khác."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex xử lý các dữ liệu cập nhật liên tục từ hệ thống bên ngoài?",
+    "answer": "Thiết kế job để kiểm tra định kỳ, truy vấn các bản ghi cần cập nhật và đồng bộ hóa dữ liệu thông qua các cơ chế asynchronous."
+  },
+  {
+    "question": "Có thể sử dụng Batch Apex để đồng bộ hóa dữ liệu giữa các đối tượng không liên quan trực tiếp không?",
+    "answer": "Có, Batch Apex có thể đồng bộ hóa dữ liệu giữa các đối tượng thông qua truy vấn SOQL phức tạp và logic cập nhật tùy chỉnh."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex làm việc với các đối tượng có lượng dữ liệu cực lớn như 1 triệu bản ghi?",
+    "answer": "Sử dụng QueryLocator để truy xuất dữ liệu, chia nhỏ lô phù hợp và xử lý bất đồng bộ để đảm bảo hiệu suất cao."
+  },
+  {
+    "question": "Làm cách nào để Batch Apex kết hợp với các kỹ thuật asynchronous khác để tối ưu hóa quá trình xử lý?",
+    "answer": "Kết hợp Batch Apex với Queueable Apex hoặc future methods để chia nhỏ tác vụ và xử lý bất đồng bộ, giảm tải hệ thống."
+  },
+  {
+    "question": "Làm cách nào để theo dõi và báo cáo các thông số quan trọng của Batch Apex job như thời gian chạy, số bản ghi xử lý, và lỗi?",
+    "answer": "Sử dụng debug logs và Apex Jobs Dashboard để thu thập thông tin về thời gian chạy, số bản ghi xử lý và lỗi, từ đó tạo báo cáo và tối ưu hóa hiệu suất."
+  }
   ],
   "SFDC’s TestClass": [
     {
